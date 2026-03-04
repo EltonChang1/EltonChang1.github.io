@@ -32,84 +32,212 @@
         </div>
     </section>
 
-    <!-- Project Detail -->
-    <section class="project-detail">
+    <!-- Featured Projects Grid -->
+    <section class="featured-projects">
         <div class="container">
-            <div class="project-main">
-                <h2>PokeFind - Real-Time Pokémon Tracker</h2>
-                <p class="project-tagline">Full-stack web application with interactive maps and real-time data</p>
-                
-                <div class="project-image-large">
+            <!-- Project 1: PokeFind -->
+            <div class="project-card-interactive" onclick="toggleProject('pokefind')">
+                <div class="project-image">
                     <img src="images/pokemon-radar-main.png" alt="PokeFind Main Interface">
-                </div>
-
-                <div class="project-section">
-                    <h3>Overview</h3>
-                    <p>PokeFind is a comprehensive web application designed to enhance the Pokémon Go experience by providing real-time Pokémon radar, Gym and Raid information, and GPS route import/export features. Built with modern web technologies, it offers an intuitive interface for tracking Pokémon spawns in your area.</p>
-                </div>
-
-                <div class="project-section">
-                    <h3>Key Features</h3>
-                    <ul class="features-list">
-                        <li><strong>Real-Time Pokémon Radar:</strong> Displays nearby Pokémon spawns on an interactive map with customizable search radius</li>
-                        <li><strong>Location Search:</strong> Search any location worldwide using address or GPS coordinates</li>
-                        <li><strong>GPS Route Import/Export:</strong> Upload and download GPX files for optimized Pokémon hunting routes</li>
-                        <li><strong>Gym & Raid Battle Information:</strong> Live updates on nearby Gym battles and Raid participation</li>
-                        <li><strong>Detailed Pokémon Info:</strong> View IV stats, spawn/despawn times, rarity levels, and accuracy ratings</li>
-                        <li><strong>Interactive Maps:</strong> Powered by Leaflet with smooth recentering and zoom controls</li>
-                    </ul>
-                </div>
-
-                <div class="screenshots-grid">
-                    <div class="screenshot-item">
-                        <img src="images/pokemon-map-view.png" alt="Pokemon Map View">
-                        <p>Interactive Map View</p>
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="images/raids-view.png" alt="Raids View">
-                        <p>Raid Battles</p>
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="images/pokemon-popup-gengar.png" alt="Pokemon Details">
-                        <p>Detailed Pokémon Info</p>
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="images/location-search-modal.png" alt="Location Search">
-                        <p>Location Search</p>
+                    <div class="project-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Click to expand</span>
                     </div>
                 </div>
-
-                <div class="project-section">
-                    <h3>Technology Stack</h3>
-                    <div class="tech-stack">
-                        <div class="tech-category">
-                            <h4>Frontend</h4>
-                            <ul>
-                                <li><strong>React.js:</strong> Component-based UI development and state management</li>
-                                <li><strong>Leaflet.js:</strong> Interactive map rendering and geospatial visualization</li>
-                                <li><strong>Axios:</strong> HTTP client for API communication</li>
-                            </ul>
+                <div class="project-details">
+                    <h3>PokeFind - Real-Time Pokémon Tracker</h3>
+                    <p class="project-tagline">Full-stack web application with interactive maps and real-time data</p>
+                    <p>Comprehensive web application designed to enhance the Pokémon Go experience by providing real-time Pokémon radar, Gym and Raid information, and GPS route import/export features.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">React.js</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">Leaflet.js</span>
+                        <span class="tech-badge">Express</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Full-Stack</span>
                         </div>
-                        <div class="tech-category">
-                            <h4>Backend</h4>
-                            <ul>
-                                <li><strong>Node.js + Express:</strong> RESTful API server for handling Pokémon data</li>
-                                <li><strong>MongoDB:</strong> NoSQL database for storing Pokémon spawns and routes</li>
-                                <li><strong>Mongoose:</strong> Object modeling and data validation</li>
-                            </ul>
+                        <div class="stat">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Interactive Maps</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-clock"></i>
+                            <span>Real-Time Data</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-links-section">
-                    <a href="userguide.html" class="btn btn-primary btn-large">
-                        <i class="fas fa-book-open"></i> Interactive User Guide
-                    </a>
-                    <a href="https://github.com/EltonChang1/Pokemon-Finder-App" target="_blank" class="btn btn-secondary btn-large">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
                 </div>
             </div>
+
+            <!-- Expanded PokeFind Details -->
+            <div id="pokefind-expanded" class="project-expanded" style="display: none;">
+                <div class="expanded-content">
+                    <button class="close-btn" onclick="toggleProject('pokefind')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <h2>PokeFind - Real-Time Pokémon Tracker</h2>
+                    
+                    <div class="project-section">
+                        <h3>Key Features</h3>
+                        <ul class="features-list">
+                            <li><strong>Real-Time Pokémon Radar:</strong> Displays nearby Pokémon spawns on an interactive map with customizable search radius</li>
+                            <li><strong>Location Search:</strong> Search any location worldwide using address or GPS coordinates</li>
+                            <li><strong>GPS Route Import/Export:</strong> Upload and download GPX files for optimized Pokémon hunting routes</li>
+                            <li><strong>Gym & Raid Battle Information:</strong> Live updates on nearby Gym battles and Raid participation</li>
+                            <li><strong>Detailed Pokémon Info:</strong> View IV stats, spawn/despawn times, rarity levels, and accuracy ratings</li>
+                            <li><strong>Interactive Maps:</strong> Powered by Leaflet with smooth recentering and zoom controls</li>
+                        </ul>
+                    </div>
+
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="images/pokemon-map-view.png" alt="Pokemon Map View">
+                            <p>Interactive Map View</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/raids-view.png" alt="Raids View">
+                            <p>Raid Battles</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/pokemon-popup-gengar.png" alt="Pokemon Details">
+                            <p>Detailed Pokémon Info</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/location-search-modal.png" alt="Location Search">
+                            <p>Location Search</p>
+                        </div>
+                    </div>
+
+                    <div class="project-links-section">
+                        <a href="userguide.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-book-open"></i> Interactive User Guide
+                        </a>
+                        <a href="https://github.com/EltonChang1/Pokemon-Finder-App" target="_blank" class="btn btn-secondary btn-large">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Meritocracy Research -->
+            <div class="project-card-interactive" onclick="toggleProject('meritocracy')">
+                <div class="project-image">
+                    <img src="images/meritocracy-tvl.png" alt="Talent vs Luck Visualization">
+                    <div class="project-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Click to expand</span>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Quantifying Meritocracy</h3>
+                    <p class="project-tagline">Computational research validating that luck dominates success</p>
+                    <p>Agent-based simulation extending the "Talent vs. Luck" model to test whether solidarity-based redistribution can correct meritocracy's inherent randomness. Demonstrates 92% inequality reduction with moderate policies.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Matplotlib</span>
+                        <span class="tech-badge">Agent-Based Modeling</span>
+                        <span class="tech-badge">Statistical Analysis</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Data Science</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <span>1000 Agents</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-flask"></i>
+                            <span>6 Experiments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expanded Meritocracy Details -->
+            <div id="meritocracy-expanded" class="project-expanded" style="display: none;">
+                <div class="expanded-content">
+                    <button class="close-btn" onclick="toggleProject('meritocracy')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <h2>Quantifying Meritocracy: Talent vs. Luck Extended</h2>
+                    
+                    <div class="project-section">
+                        <h3>Overview</h3>
+                        <p>This two-part computational research project validates the landmark paper "Talent vs Luck" (Pluchino et al., 2018) and extends it to test solidarity-based redistribution policies. Through agent-based simulation, it demonstrates that success in pure meritocracies depends more on random luck than talent—and that moderate redistribution (15-25%) can reduce inequality by 92% while achieving perfect social mobility.</p>
+                    </div>
+
+                    <div class="project-section">
+                        <h3>Key Findings</h3>
+                        <ul class="features-list">
+                            <li><strong>Luck Dominates Success:</strong> Weak correlation (r=0.31) between talent and wealth; most talented individuals rank ~184th in wealth distribution</li>
+                            <li><strong>Pure Meritocracy Creates Extreme Inequality:</strong> Without intervention, Gini coefficient reaches 0.393 (comparable to U.S. inequality)</li>
+                            <li><strong>15-25% Redistribution Optimal:</strong> Reduces inequality by 92% (Gini: 0.39 → 0.03) while maintaining 100% upward mobility</li>
+                            <li><strong>Preventive Policies Win:</strong> Early intervention prevents 50-80 years of unnecessary inequality vs. reactive approaches</li>
+                            <li><strong>Robust to Tax Avoidance:</strong> Even with 60% non-compliance, system achieves 90% inequality reduction</li>
+                            <li><strong>Simple Beats Complex:</strong> Fixed-rate redistribution outperforms progressive taxation and multi-mechanism policies</li>
+                        </ul>
+                    </div>
+
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="images/meritocracy-tvl.png" alt="TvL Validation">
+                            <p>Talent vs. Luck Validation</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/meritocracy-solidarity.png" alt="Solidarity Analysis">
+                            <p>Solidarity Mechanisms Analysis</p>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h3>Methodology</h3>
+                        <p><strong>Part 1:</strong> Recreated the original TvL model simulating 1,000 agents with normally distributed talent over 40-year careers, validating that random events determine success more than ability.</p>
+                        <p><strong>Part 2:</strong> Extended the model with 6 comprehensive experiments testing fixed redistribution, dynamic policies, tax avoidance scenarios, policy timing, multi-dimensional mechanisms, and parameter sensitivity across 100 economic iterations.</p>
+                    </div>
+
+                    <div class="project-section">
+                        <h3>Technology & Metrics</h3>
+                        <div class="tech-details">
+                            <div>
+                                <h4>Core Stack</h4>
+                                <ul>
+                                    <li>Python 3.11 for agent-based simulation</li>
+                                    <li>NumPy for statistical distributions</li>
+                                    <li>Matplotlib/Seaborn for publication-quality visualizations</li>
+                                    <li>SciPy for advanced analytics</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Key Metrics</h4>
+                                <ul>
+                                    <li>Gini coefficient (inequality measurement)</li>
+                                    <li>Upward mobility rates</li>
+                                    <li>Wealth concentration ratios</li>
+                                    <li>Talent-wealth correlation analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-links-section">
+                        <a href="https://github.com/EltonChang1/Quantifying-Meritocracy-TvL-Solidarity" target="_blank" class="btn btn-primary btn-large">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                        <a href="https://github.com/EltonChang1/Quantifying-Meritocracy-TvL-Solidarity/blob/main/RESULTS.md" target="_blank" class="btn btn-secondary btn-large">
+                            <i class="fas fa-chart-bar"></i> Full Results & Analysis
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 

@@ -98,6 +98,63 @@ screenshots.forEach(screenshot => {
     });
 });
 
+// Toggle project expanded view
+function toggleProject(projectId) {
+    const expandedSection = document.getElementById(`${projectId}-expanded`);
+    const allExpanded = document.querySelectorAll('.project-expanded');
+    const allCards = document.querySelectorAll('.project-card-interactive');
+    
+    // Close all other expanded sections
+    allExpanded.forEach(section => {
+        if (section.id !== `${projectId}-expanded`) {
+            section.style.display = 'none';
+        }
+    });
+    
+    // Toggle current section
+    if (expandedSection.style.display === 'none' || !expandedSection.style.display) {
+        // Show expanded view
+        expandedSection.style.display = 'block';
+        // Smooth scroll to expanded section
+        setTimeout(() => {
+            expandedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+        // Hide all project cards
+        allCards.forEach(card => {
+            card.style.opacity = '0.3';
+            card.style.pointerEvents = 'none';
+        });
+    } else {
+        // Hide expanded view
+        expandedSection.style.display = 'none';
+        // Show all project cards
+        allCards.forEach(card => {
+            card.style.opacity = '1';
+            card.style.pointerEvents = 'auto';
+        });
+    }
+}
+
+// Close expanded view when clicking outside
+document.addEventListener('click', function(event) {
+    const expandedSections = document.querySelectorAll('.project-expanded');
+    const isClickInside = event.target.closest('.project-card-interactive') || 
+                          event.target.closest('.project-expanded');
+    
+    if (!isClickInside) {
+        expandedSections.forEach(section => {
+            if (section.style.display === 'block') {
+                const allCards = document.querySelectorAll('.project-card-interactive');
+                section.style.display = 'none';
+                allCards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.pointerEvents = 'auto';
+                });
+            }
+        });
+    }
+});
+
 // Navbar scroll effect
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
