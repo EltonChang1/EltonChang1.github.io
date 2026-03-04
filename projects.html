@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Notle</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Notle</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="https://github.com/Notle-eltoN" target="_blank">GitHub</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Header -->
+    <section class="projects-header">
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>A collection of my recent work and personal projects</p>
+        </div>
+    </section>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-main">
+                <h2>PokeFind - Real-Time Pokémon Tracker</h2>
+                <p class="project-tagline">Full-stack web application with interactive maps and real-time data</p>
+                
+                <div class="project-image-large">
+                    <img src="images/pokemon-radar-main.png" alt="PokeFind Main Interface">
+                </div>
+
+                <div class="project-section">
+                    <h3>Overview</h3>
+                    <p>PokeFind is a comprehensive web application designed to enhance the Pokémon Go experience by providing real-time Pokémon radar, Gym and Raid information, and GPS route import/export features. Built with modern web technologies, it offers an intuitive interface for tracking Pokémon spawns in your area.</p>
+                </div>
+
+                <div class="project-section">
+                    <h3>Key Features</h3>
+                    <ul class="features-list">
+                        <li><strong>Real-Time Pokémon Radar:</strong> Displays nearby Pokémon spawns on an interactive map with customizable search radius</li>
+                        <li><strong>Location Search:</strong> Search any location worldwide using address or GPS coordinates</li>
+                        <li><strong>GPS Route Import/Export:</strong> Upload and download GPX files for optimized Pokémon hunting routes</li>
+                        <li><strong>Gym & Raid Battle Information:</strong> Live updates on nearby Gym battles and Raid participation</li>
+                        <li><strong>Detailed Pokémon Info:</strong> View IV stats, spawn/despawn times, rarity levels, and accuracy ratings</li>
+                        <li><strong>Interactive Maps:</strong> Powered by Leaflet with smooth recentering and zoom controls</li>
+                    </ul>
+                </div>
+
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="images/pokemon-map-view.png" alt="Pokemon Map View">
+                        <p>Interactive Map View</p>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/raids-view.png" alt="Raids View">
+                        <p>Raid Battles</p>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/pokemon-popup-gengar.png" alt="Pokemon Details">
+                        <p>Detailed Pokémon Info</p>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/location-search-modal.png" alt="Location Search">
+                        <p>Location Search</p>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-stack">
+                        <div class="tech-category">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li><strong>React.js:</strong> Component-based UI development and state management</li>
+                                <li><strong>Leaflet.js:</strong> Interactive map rendering and geospatial visualization</li>
+                                <li><strong>Axios:</strong> HTTP client for API communication</li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li><strong>Node.js + Express:</strong> RESTful API server for handling Pokémon data</li>
+                                <li><strong>MongoDB:</strong> NoSQL database for storing Pokémon spawns and routes</li>
+                                <li><strong>Mongoose:</strong> Object modeling and data validation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-links-section">
+                    <a href="https://github.com/Notle-eltoN/Pokemon-Finder-App" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Notle. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
