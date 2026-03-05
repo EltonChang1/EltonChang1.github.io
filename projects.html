@@ -238,6 +238,98 @@
                 </div>
             </div>
 
+            <!-- Project 3: MarketPulse AI -->
+            <div class="project-card-interactive" onclick="toggleProject('marketpulse')">
+                <div class="project-image">
+                    <img src="images/marketpulse-overview-top10.png" alt="MarketPulse AI Overview">
+                    <div class="project-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Click to expand</span>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>MarketPulse AI</h3>
+                    <p class="project-tagline">Real-time stock intelligence with technical forecasting and news analysis</p>
+                    <p>Full-stack web app for top US stocks that combines real-time price data, technical indicators, multi-timeframe forecasts, candlestick chart overlays, and LLM-based news impact analysis.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express</span>
+                        <span class="tech-badge">technicalindicators</span>
+                        <span class="tech-badge">Gemini API</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-chart-candlestick"></i>
+                            <span>Candlestick Charts</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-clock"></i>
+                            <span>5 Timeframes</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Live News Feed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expanded MarketPulse Details -->
+            <div id="marketpulse-expanded" class="project-expanded" style="display: none;">
+                <div class="expanded-content">
+                    <button class="close-btn" onclick="toggleProject('marketpulse')">
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                    <h2>MarketPulse AI - Real-Time Stock & News Intelligence</h2>
+
+                    <div class="project-section">
+                        <h3>Key Features</h3>
+                        <ul class="features-list">
+                            <li><strong>Top-10 Stock Coverage:</strong> Tracks AAPL, MSFT, NVDA, AMZN, GOOGL, META, BRK-B, TSLA, AVGO, and JPM</li>
+                            <li><strong>Multi-Timeframe Forecasting:</strong> 1 Week, 1 Month, 3 Months, 6 Months, and 1 Year projections</li>
+                            <li><strong>Candlestick Technical View:</strong> Interactive OHLC chart with SMA overlays and trend label synchronization</li>
+                            <li><strong>Technical Indicator Stack:</strong> RSI, MACD, Bollinger Bands, ADX, Stochastic, ATR, and moving averages</li>
+                            <li><strong>News + LLM Analysis:</strong> Live news ingestion with sentiment impact and structured financial commentary</li>
+                            <li><strong>Fast Filtering UX:</strong> Overview card filter by symbol/company with 1W trend badges</li>
+                        </ul>
+                    </div>
+
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="images/marketpulse-overview-top10.png" alt="MarketPulse Overview">
+                            <p>Top-10 overview with filter and trend badges</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/marketpulse-detail-period-selector.png" alt="Prediction Selector">
+                            <p>Prediction period selector and forecast summary</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/marketpulse-chart-trend-overlay.png" alt="Chart Trend Overlay">
+                            <p>Candlestick chart with SMA overlays and trend label</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/marketpulse-technical-indicators.png" alt="Technical Indicators">
+                            <p>Technical indicators panel</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/marketpulse-comprehensive-analysis-news.png" alt="Comprehensive Analysis">
+                            <p>Comprehensive analysis and latest news</p>
+                        </div>
+                    </div>
+
+                    <div class="project-links-section">
+                        <a href="https://github.com/EltonChang1/MarketPulse-AI/blob/main/USERGUIDE.md" target="_blank" class="btn btn-primary btn-large">
+                            <i class="fas fa-book-open"></i> User Guide
+                        </a>
+                        <a href="https://github.com/EltonChang1/MarketPulse-AI" target="_blank" class="btn btn-secondary btn-large">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
