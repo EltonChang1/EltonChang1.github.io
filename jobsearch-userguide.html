@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search Tool User Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            color: #fff;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.8em; margin-bottom: 10px; }
+        .header p { font-size: 1.15em; opacity: 0.95; }
+        .top-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 22px;
+            flex-wrap: wrap;
+        }
+        .top-links a {
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+        .btn-light {
+            background: #fff;
+            color: #2563eb;
+        }
+        .btn-light:hover { transform: translateY(-2px); }
+
+        .nav {
+            background: #f8fafc;
+            padding: 16px 28px;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .nav a {
+            color: #2563eb;
+            text-decoration: none;
+            padding: 8px 13px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all .2s;
+        }
+        .nav a:hover { background: #2563eb; color: #fff; }
+
+        .content { padding: 36px; }
+        .section { margin-bottom: 44px; }
+        .section h2 {
+            color: #2563eb;
+            font-size: 1.8em;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #2563eb;
+        }
+        .section h3 { color: #0f172a; font-size: 1.2em; margin: 20px 0 10px; }
+        .section ul, .section ol { margin-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        .feature-box {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 18px;
+            margin: 16px 0;
+            border-radius: 8px;
+        }
+        .tip-box {
+            background: #ecfeff;
+            border: 2px solid #67e8f9;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .tip-box strong { color: #0c4a6e; }
+
+        .image-container {
+            text-align: center;
+            margin: 22px 0;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+        }
+        .image-container p {
+            margin-top: 10px;
+            color: #475569;
+            font-style: italic;
+        }
+
+        .quick-ref-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+        .quick-ref-table th {
+            background: #2563eb;
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+        }
+        .quick-ref-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .footer {
+            background: #0f172a;
+            color: #fff;
+            text-align: center;
+            padding: 26px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 8px 16px rgba(0,0,0,.22);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .2s;
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: all; }
+
+        @media (max-width: 768px) {
+            .header { padding: 36px 20px; }
+            .header h1 { font-size: 2.1em; }
+            .content { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header" id="top">
+            <h1><i class="fas fa-briefcase"></i> Job Search Tool User Guide</h1>
+            <p>Interactive walkthrough for searching CS/DS/ML jobs and tracking applications</p>
+            <div class="top-links">
+                <a href="index.html" class="btn-light"><i class="fas fa-home"></i> Portfolio Home</a>
+                <a href="projects.html" class="btn-light"><i class="fas fa-folder-open"></i> Projects</a>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#filters">Filters</a></li>
+                <li><a href="#details">Job Details</a></li>
+                <li><a href="#applied">Applied Jobs</a></li>
+                <li><a href="#tips">Tips</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section id="overview" class="section">
+                <h2>Overview</h2>
+                <p>Job Search Tool is a focused job finder for <strong>Computer Science</strong>, <strong>Data Science</strong>, and <strong>Machine Learning</strong> roles. It aggregates opportunities from multiple platforms and keeps your applied jobs in one place.</p>
+                <div class="image-container">
+                    <img src="images/jobsearch-main.png" alt="Job Search Tool main dashboard">
+                    <p>Main dashboard with search inputs and quick actions</p>
+                </div>
+                <div class="feature-box">
+                    <strong>What makes it useful:</strong> multi-source search, category filtering, human-readable job descriptions, and built-in applied-job tracking.
+                </div>
+            </section>
+
+            <section id="search" class="section">
+                <h2>Search Jobs</h2>
+                <ol>
+                    <li>Enter keywords in <strong>Description</strong> (for example: React, Data Engineer, NLP).</li>
+                    <li>Optionally add a <strong>Location</strong> (or use Remote).</li>
+                    <li>Click <strong>Search</strong> to load matching jobs.</li>
+                    <li>Use <strong>Sort by</strong> to prioritize results.</li>
+                </ol>
+                <div class="image-container">
+                    <img src="images/jobsearch-listings.png" alt="Job listings and cards">
+                    <p>Results list with salary/source badges, quick apply tracking, and details links</p>
+                </div>
+            </section>
+
+            <section id="filters" class="section">
+                <h2>Use Filters & Sorting</h2>
+                <h3>Category Filters</h3>
+                <ul>
+                    <li><strong>Software Engineering / CS</strong></li>
+                    <li><strong>Data Science</strong></li>
+                    <li><strong>Machine Learning / AI</strong></li>
+                </ul>
+                <h3>Other Controls</h3>
+                <ul>
+                    <li>Full-time only toggle</li>
+                    <li>Sort: Relevance, Date Posted, Company, Job Title</li>
+                </ul>
+                <div class="image-container">
+                    <img src="images/jobsearch-filters.png" alt="Category filters and sorting controls">
+                    <p>Category checkbox filtering and sorting controls</p>
+                </div>
+                <div class="tip-box">
+                    <strong>Tip:</strong> Start with all categories selected, then narrow down by one category + location for faster matching.
+                </div>
+            </section>
+
+            <section id="details" class="section">
+                <h2>Read Job Details</h2>
+                <p>Click <strong>View Details</strong> from any job card to open full details.</p>
+                <ul>
+                    <li>Role metadata: type, location, salary, source</li>
+                    <li>Cleaned description in readable format</li>
+                    <li>Direct link to original posting</li>
+                    <li>One-click <strong>Mark as Applied</strong></li>
+                </ul>
+                <div class="image-container">
+                    <img src="images/jobsearch-detail.png" alt="Job detail page">
+                    <p>Detailed role view with readable description and apply action</p>
+                </div>
+            </section>
+
+            <section id="applied" class="section">
+                <h2>Track Applied Jobs</h2>
+                <p>Use <strong>View Applied Jobs</strong> from the search dashboard to open your tracker.</p>
+                <ul>
+                    <li>See all jobs marked as applied</li>
+                    <li>Sort by date, company, or title</li>
+                    <li>Remove entries when needed</li>
+                </ul>
+                <div class="image-container">
+                    <img src="images/jobsearch-applied.png" alt="Applied jobs page">
+                    <p>Applied jobs manager with sorting and remove actions</p>
+                </div>
+                <table class="quick-ref-table">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Where</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark as Applied</td>
+                            <td>Job Card / Job Detail</td>
+                            <td>Saves job to applied list</td>
+                        </tr>
+                        <tr>
+                            <td>View Applied Jobs</td>
+                            <td>Search Header</td>
+                            <td>Opens applied tracker page</td>
+                        </tr>
+                        <tr>
+                            <td>Remove Job</td>
+                            <td>Applied Jobs page</td>
+                            <td>Deletes from tracker</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="tips" class="section">
+                <h2>Best Practices</h2>
+                <div class="feature-box">
+                    <ul>
+                        <li>Use targeted keywords (example: “senior backend engineer python”).</li>
+                        <li>Combine category + location to reduce noise.</li>
+                        <li>Mark jobs right after applying so your tracker stays accurate.</li>
+                        <li>Use sorting by date for freshest opportunities.</li>
+                    </ul>
+                </div>
+                <div class="tip-box">
+                    <strong>Data Note:</strong> Applied jobs are stored locally in your browser for privacy and fast access.
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Job Search Tool Guide • Elton Chang</p>
+        </footer>
+    </div>
+
+    <a href="#top" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
