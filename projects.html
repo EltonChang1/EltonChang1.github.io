@@ -269,7 +269,85 @@
                 </div>
             </div>
 
-            <!-- Project 3: PokeFind -->
+            <!-- Project 3: Job Search Tool -->
+            <div class="project-card-interactive" onclick="toggleProject('jobsearch')">
+                <div class="project-image">
+                    <img src="images/job-search-tool.png" alt="Job Search Tool Interface">
+                    <div class="project-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Click to expand</span>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Job Search Tool</h3>
+                    <p class="project-tagline">Multi-source CS/DS/ML job aggregator with applied-job tracking</p>
+                    <p>Modern React application that aggregates jobs from major listing platforms, filters to software/data/ML roles, normalizes descriptions for readability, and lets users track jobs they already applied to.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Vite</span>
+                        <span class="tech-badge">React Router</span>
+                        <span class="tech-badge">Remotive API</span>
+                        <span class="tech-badge">Arbeitnow API</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Multi-Source Jobs</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-filter"></i>
+                            <span>Smart Filtering</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Applied Tracking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expanded Job Search Tool Details -->
+            <div id="jobsearch-expanded" class="project-expanded" style="display: none;">
+                <div class="expanded-content">
+                    <button class="close-btn" onclick="toggleProject('jobsearch')">
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                    <h2>Job Search Tool - CS/DS/ML Aggregator</h2>
+
+                    <div class="project-section">
+                        <h3>Key Features</h3>
+                        <ul class="features-list">
+                            <li><strong>Aggregated Search:</strong> Pulls jobs from major listing sites (Remotive, Arbeitnow, The Muse) in parallel</li>
+                            <li><strong>Tech-Only Relevance:</strong> Focuses on Computer Science, Data Science, and Machine Learning roles</li>
+                            <li><strong>Human-Readable Descriptions:</strong> Cleans and normalizes job descriptions to remove noisy formatting</li>
+                            <li><strong>Applied Job Tracker:</strong> One-click apply tracking with a dedicated applied-jobs dashboard</li>
+                            <li><strong>Advanced Controls:</strong> Filter by category/location/full-time and sort by relevance/date/company/title</li>
+                        </ul>
+                    </div>
+
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="images/job-search-tool.png" alt="Job Search Tool Main View">
+                            <p>Main search dashboard with category filters</p>
+                        </div>
+                    </div>
+
+                    <div class="project-links-section">
+                        <a href="https://github-job-eltonchang.vercel.app" target="_blank" class="btn btn-primary btn-large">
+                            <i class="fas fa-rocket"></i> Visit Website
+                        </a>
+                        <a href="https://github.com/EltonChang1/Github_Job/blob/main/USERGUIDE.md" target="_blank" class="btn btn-primary btn-large">
+                            <i class="fas fa-book-open"></i> User Guide
+                        </a>
+                        <a href="https://github.com/EltonChang1/Github_Job" target="_blank" class="btn btn-secondary btn-large">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: PokeFind -->
             <div class="project-card-interactive" onclick="toggleProject('pokefind')">
                 <div class="project-image">
                     <img src="images/pokemon-radar-main.png" alt="PokeFind Main Interface">
