@@ -1,7 +1,11 @@
-# Elton Chang — Portfolio
+Elton Chang — Personal Website
 
-Welcome to my portfolio and projects showcase. Visit the live site:
+Welcome — this repository hosts my personal website and portfolio. Visit the live site:
 
-- Website: [https://eltonchang1.github.io](https://eltonchang1.github.io)
+- Website: https://eltonchang1.github.io
 
-This repository contains the source files for the GitHub Pages site, including the interactive user guide and project pages.
+Featured projects and documentation are available in this repository. See the `projects.html` and `userguide.html` pages for details and interactive guides.
+
+If you're looking for the source code for specific projects, check the linked repositories on my GitHub profile.
+
+— Elton
