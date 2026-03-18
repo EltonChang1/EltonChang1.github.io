@@ -38,7 +38,7 @@
             <!-- Project 1: MarketPulse AI -->
             <div class="project-card-interactive" onclick="toggleProject('marketpulse')">
                 <div class="project-image">
-                    <img src="images/11-portfolio-overview.png" alt="MarketPulse AI Portfolio Overview">
+                    <img src="images/1-market-overview.png" alt="MarketPulse AI Market Overview">
                     <div class="project-overlay">
                         <i class="fas fa-expand-alt"></i>
                         <span>Click to expand</span>
@@ -46,27 +46,27 @@
                 </div>
                 <div class="project-details">
                     <h3>MarketPulse AI</h3>
-                    <p class="project-tagline">Portfolio tracking with time-accurate performance and benchmark comparison</p>
-                    <p>Full-stack web app that combines stock analytics with a transaction-ledger portfolio system. Users can add buy/sell trades with dates, automatically derive holdings, visualize allocation by position weight, and compare portfolio return against major US market indexes.</p>
+                    <p class="project-tagline">Market overview + portfolio insights + deep single-stock intelligence</p>
+                    <p>Full-stack web app for market monitoring and stock research. It unifies macro context, watchlist and portfolio views, and detailed individual-stock analysis including chart review, reversal intelligence, prediction calculations, pattern matching, technical indicators, and latest news.</p>
                     <div class="project-tech">
                         <span class="tech-badge">React</span>
                         <span class="tech-badge">Node.js</span>
                         <span class="tech-badge">Express</span>
-                        <span class="tech-badge">localStorage</span>
-                        <span class="tech-badge">Portfolio Analytics</span>
+                        <span class="tech-badge">Yahoo Finance API</span>
+                        <span class="tech-badge">Technical Analysis</span>
                     </div>
                     <div class="project-stats">
                         <div class="stat">
-                            <i class="fas fa-arrows-rotate"></i>
-                            <span>Transaction Ledger</span>
-                        </div>
-                        <div class="stat">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>Allocation Donut</span>
+                            <i class="fas fa-globe"></i>
+                            <span>Market Overview</span>
                         </div>
                         <div class="stat">
                             <i class="fas fa-chart-line"></i>
-                            <span>Index Comparison</span>
+                            <span>Stock Intelligence</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Latest News</span>
                         </div>
                     </div>
                 </div>
@@ -79,52 +79,83 @@
                         <i class="fas fa-times"></i>
                     </button>
 
-                    <h2>MarketPulse AI - Portfolio Tracking & Market Intelligence</h2>
+                    <h2>MarketPulse AI - Market, Portfolio & Stock Intelligence</h2>
 
                     <div class="project-section">
                         <h3>Key Features</h3>
                         <ul class="features-list">
-                            <li><strong>Transaction Ledger:</strong> Records buy/sell transactions with trade date, quantity, and execution price</li>
-                            <li><strong>Time-Accurate Performance:</strong> Replays position history over historical prices so returns reflect actual buy/sell timing</li>
-                            <li><strong>Derived Holdings Engine:</strong> Automatically computes current holdings and cost basis from transaction history</li>
-                            <li><strong>Allocation Visualization:</strong> Donut chart shows each symbol’s weight in total portfolio value</li>
-                            <li><strong>Benchmark Comparison:</strong> Compares portfolio returns with DJIA, NASDAQ, S&amp;P 500, and Russell 2000</li>
-                            <li><strong>Dashboard Integration:</strong> Portfolio symbols appear under watchlist with quick navigation to stock details</li>
-                            <li><strong>Persistent User Storage:</strong> Portfolio data is saved locally per signed-in user key</li>
-                            <li><strong>Backward Compatibility:</strong> Legacy holdings are migrated into transaction-ledger format automatically</li>
-                            <li><strong>Refresh-Safe Routing:</strong> Hash-based routing keeps deep links stable on refresh</li>
-                            <li><strong>Full-Stack Delivery:</strong> React frontend with Express backend for market analysis and charting</li>
+                            <li><strong>Market Overview Layer:</strong> Quick context with market dashboard, commodities, largest companies, and movers</li>
+                            <li><strong>Watchlist Workflow:</strong> Fast symbol tracking and one-click navigation into detailed stock review</li>
+                            <li><strong>Portfolio Monitoring:</strong> Personal portfolio snapshot with deeper breakdown for position-level visibility</li>
+                            <li><strong>Stock Review Pipeline:</strong> Chart, reversal intelligence, prediction calculations, and pattern match analysis</li>
+                            <li><strong>Technical Indicator Stack:</strong> Indicator-rich interpretation for trend, momentum, and risk context</li>
+                            <li><strong>Comprehensive Analysis:</strong> Combined reasoning layer to summarize actionable stock context</li>
+                            <li><strong>Latest News Section:</strong> Recent article feed integrated into each individual-stock page</li>
+                            <li><strong>Refresh-Safe Routing:</strong> Hash-based routing keeps deep links stable on reload</li>
+                            <li><strong>Full-Stack Architecture:</strong> React frontend with Express backend and market/news integrations</li>
                         </ul>
                     </div>
 
                     <div class="screenshots-grid">
                         <div class="screenshot-item">
-                            <img src="images/11-portfolio-overview.png" alt="Portfolio Overview">
-                            <p>Portfolio page overview with summary metrics and analysis cards</p>
+                            <img src="images/1-market-overview.png" alt="Market Overview">
+                            <p>High-level market snapshot and context</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/12-portfolio-add-transaction-form.png" alt="Add Transaction Form">
-                            <p>Buy/sell transaction entry with symbol, quantity, price, and trade date</p>
+                            <img src="images/2-commodities.png" alt="Commodities">
+                            <p>Commodities view for macro-aware monitoring</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/13-portfolio-allocation-donut.png" alt="Allocation Donut">
-                            <p>Position-weight donut chart for portfolio allocation</p>
+                            <img src="images/3-largest-companies.png" alt="Largest Companies">
+                            <p>Largest-company panel for big-cap leadership tracking</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/14-portfolio-vs-market-comparison.png" alt="Portfolio vs Market Comparison">
-                            <p>Time-accurate return series compared against major indexes</p>
+                            <img src="images/4-market-movers.png" alt="Market Movers">
+                            <p>Market movers section for volatility and momentum</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/15-dashboard-portfolio-sidebar.png" alt="Dashboard Portfolio Sidebar">
-                            <p>Portfolio stocks surfaced under dashboard watchlist</p>
+                            <img src="images/5-watchlist-sidebar.png" alt="Watchlist Sidebar">
+                            <p>Watchlist sidebar for personalized symbol tracking</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/16-portfolio-transaction-history.png" alt="Transaction History">
-                            <p>Chronological ledger of buy and sell records</p>
+                            <img src="images/6-personal-portfolio.png" alt="Personal Portfolio">
+                            <p>Portfolio-level monitoring view</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/17-portfolio-derived-holdings.png" alt="Derived Holdings">
-                            <p>Current holdings derived directly from the transaction ledger</p>
+                            <img src="images/7-portfolio-details.png" alt="Portfolio Details">
+                            <p>Detailed portfolio breakdown and position context</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/8-individual-stock-review.png" alt="Individual Stock Review">
+                            <p>Entry point for symbol-level analysis</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/9-individual-stock-chart.png" alt="Individual Stock Chart">
+                            <p>Chart view for trend and price-action inspection</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/10-individual-stock-reversal-intelligence.png" alt="Individual Stock Reversal Intelligence">
+                            <p>Reversal signal insights for directional shifts</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/11-individual-stock-prediction-calculation.png" alt="Individual Stock Prediction Calculation">
+                            <p>Prediction calculation transparency for projected moves</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/12-individual-stock-pattern-match.png" alt="Individual Stock Pattern Match">
+                            <p>Pattern matching output to support chart interpretation</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/13-individual-stock-technical-indicators.png" alt="Individual Stock Technical Indicators">
+                            <p>Technical indicators panel for momentum/trend analysis</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/14-individual-stock-comprehensive-analysis.png" alt="Individual Stock Comprehensive Analysis">
+                            <p>Combined analysis summary for decision context</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/15-individual-stock-latest-news.png" alt="Individual Stock Latest News">
+                            <p>Latest related news feed with source and time context</p>
                         </div>
                     </div>
 
