@@ -1,12 +1,13 @@
 /* Resume Page Styles */
 
 .resume-header {
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    color: var(--white);
+    background: var(--dark-bg);
+    color: #fafafa;
     padding: 4rem 0 3rem;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid #262626;
 }
 
 .resume-header::before {
@@ -24,13 +25,30 @@
 .resume-intro h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #fafafa;
 }
 
 .resume-title {
     font-size: 1.5rem;
-    opacity: 0.95;
-    margin-bottom: 2rem;
+    color: #a3a3a3;
+    margin-bottom: 1.25rem;
+}
+
+.resume-contact {
+    margin-bottom: 1.5rem;
+}
+
+.resume-contact p {
+    color: #a3a3a3;
+    font-size: 0.95rem;
+    margin: 0.35rem 0;
+}
+
+.resume-contact i {
+    margin-right: 0.5rem;
+    color: #737373;
 }
 
 .resume-links {
@@ -54,29 +72,30 @@
 
 .resume-link:hover {
     background-color: var(--white);
-    color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .download-btn {
-    background-color: #fbbf24;
-    color: var(--dark-bg);
-    border-color: #fbbf24;
-    animation: pulse-download 2s ease-in-out infinite;
+    background-color: var(--white);
+    color: var(--text-dark);
+    border-color: var(--white);
+    animation: none;
 }
 
 .download-btn:hover {
-    background-color: #f59e0b;
-    color: var(--white);
+    background-color: #f5f5f5;
+    color: var(--text-dark);
+    border-color: #f5f5f5;
 }
 
 @keyframes pulse-download {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+        box-shadow: none;
     }
     50% {
-        box-shadow: 0 0 0 10px rgba(251, 191, 36, 0);
+        box-shadow: none;
     }
 }
 
@@ -95,8 +114,9 @@
 .resume-main {
     background-color: var(--white);
     padding: 2.5rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-lg);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
 }
 
 .resume-section {
@@ -112,14 +132,15 @@
     color: var(--text-dark);
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
-    border-bottom: 3px solid var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    font-weight: 600;
 }
 
 .section-heading i {
-    color: var(--primary-color);
+    color: var(--text-light);
 }
 
 .summary-text {
@@ -140,8 +161,8 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    width: 2px;
+    background: linear-gradient(to bottom, #d4d4d4, #a3a3a3);
 }
 
 .timeline-item {
@@ -162,19 +183,19 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: var(--text-dark);
     border: 3px solid var(--white);
     box-shadow: 0 0 0 3px var(--light-bg);
     z-index: 1;
-    animation: pulse-marker 2s ease-in-out infinite;
+    animation: none;
 }
 
 @keyframes pulse-marker {
     0%, 100% {
-        box-shadow: 0 0 0 3px var(--light-bg), 0 0 0 6px rgba(99, 102, 241, 0.3);
+        box-shadow: 0 0 0 3px var(--light-bg);
     }
     50% {
-        box-shadow: 0 0 0 3px var(--light-bg), 0 0 0 10px rgba(99, 102, 241, 0);
+        box-shadow: 0 0 0 3px var(--light-bg);
     }
 }
 
@@ -197,7 +218,7 @@
 }
 
 .timeline-content:hover {
-    background-color: #e0e7ff;
+    background-color: #ebebeb;
     box-shadow: var(--shadow);
 }
 
@@ -208,7 +229,7 @@
 }
 
 .company {
-    color: var(--primary-color);
+    color: var(--text-dark);
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
@@ -238,12 +259,13 @@
 }
 
 .tech-tag {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
     padding: 0.3rem 0.8rem;
     border-radius: 1rem;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
 }
 
 /* Project Cards in Resume */
@@ -253,17 +275,18 @@
 }
 
 .project-card-resume {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--white);
+    background: var(--text-dark);
+    color: #fafafa;
     padding: 2rem;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
+    border-radius: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    border: 1px solid #262626;
 }
 
 .project-card-resume:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
 .project-icon {
@@ -293,17 +316,17 @@
 .project-link-btn {
     display: inline-block;
     background-color: var(--white);
-    color: var(--primary-color);
+    color: var(--text-dark);
     padding: 0.75rem 1.5rem;
     border-radius: 2rem;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .project-link-btn:hover {
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(4px);
+    background-color: #f5f5f5;
 }
 
 /* Education */
@@ -311,7 +334,7 @@
     background-color: var(--light-bg);
     padding: 1.5rem;
     border-radius: 0.75rem;
-    border-left: 4px solid var(--primary-color);
+    border-left: 3px solid var(--text-dark);
 }
 
 .education-item h3 {
@@ -321,7 +344,7 @@
 }
 
 .school {
-    color: var(--primary-color);
+    color: var(--text-dark);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -336,8 +359,9 @@
 .sidebar-section {
     background-color: var(--white);
     padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-lg);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
     animation: fadeInRight 0.6s ease-out;
 }
 
@@ -362,7 +386,7 @@
 }
 
 .sidebar-section h3 i {
-    color: var(--primary-color);
+    color: var(--text-light);
 }
 
 /* Skills with animated bars */
@@ -373,17 +397,17 @@
 }
 
 .skill-category {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+    background: var(--light-bg);
     border-radius: 0.75rem;
     padding: 1.25rem;
-    border-left: 4px solid var(--primary-color);
+    border-left: 3px solid var(--text-dark);
     margin-bottom: 1rem;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill-category:hover {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.15);
+    background-color: #ebebeb;
+    box-shadow: var(--shadow);
 }
 
 .category-header {
@@ -397,7 +421,7 @@
 }
 
 .category-header i {
-    color: var(--primary-color);
+    color: var(--text-light);
     font-size: 1.2rem;
 }
 
@@ -435,17 +459,17 @@
 }
 
 .skill-level.master {
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    background-color: var(--text-dark);
     color: var(--white);
 }
 
 .skill-level.advanced {
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    background-color: #525252;
     color: var(--white);
 }
 
 .skill-level.proficient {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background-color: #a3a3a3;
     color: var(--white);
 }
 
@@ -460,12 +484,12 @@
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--text-dark);
     border-radius: 1rem;
     width: 0;
-    transition: width 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+    box-shadow: none;
 }
 
 .skill-progress::after {
@@ -511,9 +535,9 @@
 }
 
 .interest-item:hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--text-dark);
     color: var(--white);
-    transform: translateY(-5px) rotate(2deg);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -546,12 +570,12 @@
 }
 
 .cert-item:hover {
-    background-color: #d1fae5;
-    transform: translateX(5px);
+    background-color: #ebebeb;
+    transform: translateX(4px);
 }
 
 .cert-item i {
-    color: #10b981;
+    color: var(--text-dark);
     font-size: 1.2rem;
 }
 
@@ -580,11 +604,11 @@
 
 .language-dots i {
     font-size: 0.7rem;
-    color: var(--primary-color);
+    color: var(--text-dark);
 }
 
 .language-dots .fa-circle {
-    color: var(--primary-color);
+    color: var(--text-dark);
 }
 
 .language-dots .far.fa-circle {

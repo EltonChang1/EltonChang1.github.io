@@ -3,197 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elton - Full Stack Developer</title>
+    <title>Elton Chang — Software Engineer, Data Science &amp; ML</title>
+    <meta name="description" content="Elton Chang: software engineering, data science, and machine learning. CMU Data Analytics for Science, full-stack projects, and research-driven work.">
+    <link rel="canonical" href="https://eltonchang1.github.io/">
+    <meta property="og:title" content="Elton Chang — Software Engineer, Data Science &amp; ML">
+    <meta property="og:description" content="Portfolio and build log: full-stack apps, ML, and data—CMU Data Analytics for Science.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eltonchang1.github.io/">
+    <meta property="og:image" content="https://eltonchang1.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elton Chang — Software Engineer, Data Science &amp; ML">
+    <meta name="twitter:description" content="Portfolio and build log: full-stack apps, ML, and data—CMU Data Analytics for Science.">
+    <meta name="twitter:image" content="https://eltonchang1.github.io/og-image.png">
+    <link rel="alternate" type="application/rss+xml" title="Elton Chang — Build log" href="https://eltonchang1.github.io/feed.xml">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <a href="index.html">Elton</a>
             </div>
-            <ul class="nav-menu">
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul class="nav-menu" id="site-nav">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="log.html">Log</a></li>
+                <li><a href="writing.html">Writing</a></li>
                 <li><a href="resume.html">Resume</a></li>
-                <li><a href="https://github.com/EltonChang1" target="_blank">GitHub</a></li>
+                <li><a href="https://github.com/EltonChang1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="fade-in-up">Hi, I'm <span class="highlight typing-effect">Elton</span></h1>
-                <p class="description fade-in-up delay-2">I enjoy building things I wish existed—useful, a little nerdy, and weirdly hard to find online.</p>
-                <div class="hero-buttons fade-in-up delay-3">
-                    <a href="projects.html" class="btn btn-primary pulse-btn">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I’m currently studying Data Analytics for Science at Carnegie Mellon. I like solving problems by using code and data to make sense out of the challenge. My work sits at the intersection of software engineering, machine learning, and data science, where I build projects that aim to be both technically solid and actually useful. I enjoy creating things that are useful and make sense. I used my own projects like PokeFind and MarketPulse daily. Feel free to check them out below!</p>
-
-                <div class="skills">
-                    <div class="skill-tag hover-pop">Python</div>
-                    <div class="skill-tag hover-pop">React</div>
-                    <div class="skill-tag hover-pop">Node.js</div>
-                    <div class="skill-tag hover-pop">Machine Learning</div>
-                    <div class="skill-tag hover-pop">Data Analytics</div>
-                    <div class="skill-tag hover-pop">MongoDB</div>
-                    <div class="skill-tag hover-pop">TensorFlow</div>
-                    <div class="skill-tag hover-pop">AWS</div>
-                    <div class="skill-tag hover-pop">Express</div>
-                    <div class="skill-tag hover-pop">API Integration</div>
-                </div>
-                <a href="resume.html" class="btn btn-primary" style="margin-top: 20px;">View My Resume</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects -->
-    <section class="featured-project">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="project-card featured">
-                <div class="project-image">
-                    <img src="images/1-market-overview.png" alt="MarketPulse AI Market Overview">
-                </div>
-                <div class="project-details">
-                    <h3>MarketPulse AI - Market, Portfolio & Stock Intelligence</h3>
-                    <p>A full-stack platform that combines market overview, commodities, largest-company tracking, market movers, watchlist monitoring, portfolio analytics, and deep single-stock analysis including chart intelligence, prediction calculations, technical indicators, and latest news.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Express</span>
-                        <span class="tech-badge">Yahoo Finance API</span>
-                        <span class="tech-badge">Technical Analysis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects.html" class="btn btn-primary">
-                            <i class="fas fa-chart-line"></i> Interactive Project View
-                        </a>
-                        <a href="https://marketpulse-ai-rho.vercel.app" target="_blank" class="btn btn-primary">
-                            <i class="fas fa-globe"></i> Go to Website
-                        </a>
-                        <a href="https://github.com/EltonChang1/MarketPulse-AI" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://github.com/EltonChang1/MarketPulse-AI/blob/main/USERGUIDE.md" target="_blank" class="btn btn-secondary">
-                            <i class="fas fa-book-open"></i> User Guide
-                        </a>
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-eyebrow fade-in-up">Software engineer · Data science · Machine learning</p>
+                    <h1 class="fade-in-up delay-1">Hi, I'm <span class="highlight typing-effect">Elton</span></h1>
+                    <p class="description fade-in-up delay-2">I build full-stack systems, work with data end-to-end, and ship ML that holds up in practice—currently at Carnegie Mellon (Data Analytics for Science).</p>
+                    <div class="hero-buttons fade-in-up delay-3">
+                        <a href="projects.html" class="btn btn-primary">View projects</a>
+                        <a href="log.html" class="btn btn-secondary">Read the log</a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card featured" style="margin-top: 2rem;">
-                <div class="project-image">
-                    <img src="images/meritocracy-tvl.png" alt="Quantifying Meritocracy Visualization">
-                </div>
-                <div class="project-details">
-                    <h3>Quantifying Meritocracy: Talent vs. Luck</h3>
-                    <p>A computational economics research project recreating the Talent vs. Luck model and extending it with solidarity policies. The simulations show luck dominates success in pure meritocracy, while moderate redistribution can reduce inequality by 92% and achieve 100% upward mobility.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">NumPy</span>
-                        <span class="tech-badge">Matplotlib</span>
-                        <span class="tech-badge">Agent-Based Modeling</span>
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="about-content">
+                    <p>I'm a master's student in <strong>Data Analytics for Science</strong> at CMU. I care about software that is reliable and useful, pipelines that scale, and models you can explain and measure. Side projects like <strong>MarketPulse</strong> and <strong>PokeFind</strong> are things I actually use—shipping beats slides.</p>
+
+                    <div class="skills" aria-label="Skills">
+                        <div class="skill-tag hover-pop">Python</div>
+                        <div class="skill-tag hover-pop">React</div>
+                        <div class="skill-tag hover-pop">Node.js</div>
+                        <div class="skill-tag hover-pop">Machine learning</div>
+                        <div class="skill-tag hover-pop">Data analytics</div>
+                        <div class="skill-tag hover-pop">TensorFlow</div>
+                        <div class="skill-tag hover-pop">MongoDB</div>
+                        <div class="skill-tag hover-pop">AWS</div>
+                        <div class="skill-tag hover-pop">Express</div>
+                        <div class="skill-tag hover-pop">APIs</div>
                     </div>
-                    <div class="project-links">
-                        <a href="projects.html" class="btn btn-primary">
-                            <i class="fas fa-chart-bar"></i> Interactive Project View
-                        </a>
-                        <a href="https://github.com/EltonChang1/Quantifying-Meritocracy-TvL-Solidarity" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
+                    <a href="resume.html" class="btn btn-primary about-cta">View resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-project">
+            <div class="container">
+                <h2 class="section-title">Featured projects</h2>
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <img src="images/1-market-overview.png" alt="MarketPulse AI Market Overview">
+                    </div>
+                    <div class="project-details">
+                        <h3>MarketPulse AI — Market, portfolio &amp; stock intelligence</h3>
+                        <p>A full-stack platform that combines market overview, commodities, largest-company tracking, market movers, watchlist monitoring, portfolio analytics, and deep single-stock analysis including chart intelligence, prediction calculations, technical indicators, and latest news.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">Yahoo Finance API</span>
+                            <span class="tech-badge">Technical analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects.html" class="btn btn-primary">
+                                <i class="fas fa-chart-line"></i> Interactive project view
+                            </a>
+                            <a href="https://marketpulse-ai-rho.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fas fa-globe"></i> Live site
+                            </a>
+                            <a href="https://github.com/EltonChang1/MarketPulse-AI" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://github.com/EltonChang1/MarketPulse-AI/blob/main/USERGUIDE.md" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fas fa-book-open"></i> User guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured" style="margin-top: 2rem;">
+                    <div class="project-image">
+                        <img src="images/meritocracy-tvl.png" alt="Quantifying Meritocracy Visualization">
+                    </div>
+                    <div class="project-details">
+                        <h3>Quantifying Meritocracy: Talent vs. Luck</h3>
+                        <p>A computational economics research project recreating the Talent vs. Luck model and extending it with solidarity policies. The simulations show luck dominates success in pure meritocracy, while moderate redistribution can reduce inequality by 92% and achieve 100% upward mobility.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">NumPy</span>
+                            <span class="tech-badge">Matplotlib</span>
+                            <span class="tech-badge">Agent-based modeling</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects.html" class="btn btn-primary">
+                                <i class="fas fa-chart-bar"></i> Interactive project view
+                            </a>
+                            <a href="https://github.com/EltonChang1/Quantifying-Meritocracy-TvL-Solidarity" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured" style="margin-top: 2rem;">
+                    <div class="project-image">
+                        <img src="images/job-search-tool.png" alt="Job Search Tool Interface">
+                    </div>
+                    <div class="project-details">
+                        <h3>Job search tool</h3>
+                        <p>A React-based job aggregator that pulls Computer Science, Data Science, and Machine Learning jobs from major platforms, supports advanced filtering/sorting, and tracks applied jobs with local persistence.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Vite</span>
+                            <span class="tech-badge">React Router</span>
+                            <span class="tech-badge">Job APIs</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="jobsearch-userguide.html" class="btn btn-primary">
+                                <i class="fas fa-book-open"></i> User guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured" style="margin-top: 2rem;">
+                    <div class="project-image">
+                        <img src="images/pokemon-radar-main.png" alt="PokeFind Application">
+                    </div>
+                    <div class="project-details">
+                        <h3>PokeFind — Real-time Pokémon tracker</h3>
+                        <p>A full-stack web application designed to enhance the Pokémon Go experience by providing real-time Pokémon radar, Gym and Raid information, and GPS route import/export features. Built with React, Node.js, and MongoDB.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Leaflet.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="userguide.html" class="btn btn-primary">
+                                <i class="fas fa-book-open"></i> User guide
+                            </a>
+                            <a href="projects.html" class="btn btn-secondary">View details</a>
+                            <a href="https://github.com/EltonChang1/Pokemon-Finder-App" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card featured" style="margin-top: 2rem;">
-                <div class="project-image">
-                    <img src="images/job-search-tool.png" alt="Job Search Tool Interface">
-                </div>
-                <div class="project-details">
-                    <h3>Job Search Tool</h3>
-                    <p>A React-based job aggregator that pulls Computer Science, Data Science, and Machine Learning jobs from major platforms, supports advanced filtering/sorting, and tracks applied jobs with local persistence.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Vite</span>
-                        <span class="tech-badge">React Router</span>
-                        <span class="tech-badge">Job APIs</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="jobsearch-userguide.html" class="btn btn-primary">
-                            <i class="fas fa-book-open"></i> Interactive User Guide
-                        </a>
-                    </div>
+        <section class="latest-log" aria-labelledby="latest-log-heading">
+            <div class="container">
+                <h2 class="section-title" id="latest-log-heading">Latest from the log</h2>
+                <p class="latest-log-intro">Quick notes on what I'm building and learning—see <a href="log.html">full log</a>.</p>
+                <div id="latest-log-entries"></div>
+                <div class="latest-log-cta">
+                    <a href="log.html" class="btn btn-primary">All entries</a>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card featured" style="margin-top: 2rem;">
-                <div class="project-image">
-                    <img src="images/pokemon-radar-main.png" alt="PokeFind Application">
-                </div>
-                <div class="project-details">
-                    <h3>PokeFind - Real-Time Pokémon Tracker</h3>
-                    <p>A full-stack web application designed to enhance the Pokémon Go experience by providing real-time Pokémon radar, Gym and Raid information, and GPS route import/export features. Built with React, Node.js, and MongoDB.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">MongoDB</span>
-                        <span class="tech-badge">Leaflet.js</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="userguide.html" class="btn btn-primary">
-                            <i class="fas fa-book-open"></i> Interactive User Guide
-                        </a>
-                        <a href="projects.html" class="btn btn-secondary">View Details</a>
-                        <a href="https://github.com/EltonChang1/Pokemon-Finder-App" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get in touch</h2>
+                <p class="contact-text">Open to roles and collaborations across engineering, data, and ML.</p>
+                <div class="social-links">
+                    <a href="https://github.com/EltonChang1" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/eltonchang1" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:eltonchangtac@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-text">I'm always open to discussing new projects, creative ideas, or opportunities.</p>
-            <div class="social-links">
-                <a href="https://github.com/EltonChang1" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:eltonchangtac@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Elton. All rights reserved.</p>
+            <p>&copy; 2026 Elton Chang</p>
         </div>
     </footer>
+    <script src="js/nav.js"></script>
+    <script src="js/log.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

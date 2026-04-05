@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Log — Elton Chang</title>
+    <meta name="description" content="Short updates on what Elton Chang is building, learning, and reading—software engineering, data science, and ML.">
+    <link rel="canonical" href="https://eltonchang1.github.io/log.html">
+    <meta property="og:title" content="Build Log — Elton Chang">
+    <meta property="og:description" content="Daily-style notes on shipping, learning, and ML/data/engineering work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eltonchang1.github.io/log.html">
+    <meta property="og:image" content="https://eltonchang1.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Build Log — Elton Chang">
+    <meta name="twitter:description" content="Daily-style notes on shipping, learning, and ML/data/engineering work.">
+    <meta name="twitter:image" content="https://eltonchang1.github.io/og-image.png">
+    <link rel="alternate" type="application/rss+xml" title="Elton Chang — Build log" href="https://eltonchang1.github.io/feed.xml">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Elton</a>
+            </div>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul class="nav-menu" id="site-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="log.html" class="active">Log</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="https://github.com/EltonChang1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="projects-header">
+            <div class="container">
+                <h1>Build log</h1>
+                <p>Short, frequent notes—what I shipped, what I learned, papers or tools I dug into. Updated by editing <code>data/log.json</code> in this repo. Subscribe via <a href="feed.xml">RSS</a>.</p>
+            </div>
+        </section>
+
+        <section class="log-section">
+            <div class="container">
+                <div id="log-entries" class="log-entries" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Elton Chang</p>
+        </div>
+    </footer>
+    <script src="js/nav.js"></script>
+    <script src="js/log.js"></script>
+</body>
+</html>

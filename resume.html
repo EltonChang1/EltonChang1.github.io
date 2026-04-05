@@ -3,34 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Elton Chang</title>
+    <title>Resume — Elton Chang</title>
+    <meta name="description" content="Resume: Elton Chang — software engineering, data science, and machine learning. CMU Data Analytics for Science.">
+    <link rel="canonical" href="https://eltonchang1.github.io/resume.html">
+    <meta property="og:title" content="Resume — Elton Chang">
+    <meta property="og:description" content="Experience in engineering, ML, and data—download PDF or read online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eltonchang1.github.io/resume.html">
+    <meta property="og:image" content="https://eltonchang1.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Resume — Elton Chang">
+    <meta name="twitter:description" content="Experience in engineering, ML, and data—download PDF or read online.">
+    <meta name="twitter:image" content="https://eltonchang1.github.io/og-image.png">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/resume.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <a href="index.html">Elton</a>
             </div>
-            <ul class="nav-menu">
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul class="nav-menu" id="site-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="log.html">Log</a></li>
+                <li><a href="writing.html">Writing</a></li>
                 <li><a href="resume.html" class="active">Resume</a></li>
-                <li><a href="https://github.com/EltonChang1" target="_blank">GitHub</a></li>
+                <li><a href="https://github.com/EltonChang1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <main id="main">
     <!-- Resume Header -->
     <section class="resume-header">
         <div class="container">
             <div class="resume-intro">
                 <h1 class="fade-in-up">Elton Chang</h1>
-                <p class="resume-title fade-in-up delay-1">Data Analytics & Software Engineering</p>
+                <p class="resume-title fade-in-up delay-1">Software engineering · Data science · Machine learning</p>
                 <div class="resume-contact fade-in-up delay-1">
                     <p><i class="fas fa-phone"></i> (510) 513-2561</p>
                     <p><i class="fas fa-envelope"></i> eltonchangtac@gmail.com</p>
@@ -42,7 +62,7 @@
                     <a href="https://github.com/EltonChang1" target="_blank" class="resume-link">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://linkedin.com" target="_blank" class="resume-link">
+                    <a href="https://www.linkedin.com/in/eltonchang1" target="_blank" rel="noopener noreferrer" class="resume-link">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
                     <a href="Elton_Chang_Resume.pdf" download class="resume-link download-btn">
@@ -65,7 +85,7 @@
                             <i class="fas fa-user"></i> Professional Summary
                         </h2>
                         <p class="summary-text">
-                            Master's student in Data Analytics with strong software engineering fundamentals and hands-on experience in data preprocessing, machine learning, and system optimization. Proven track record at Wintec Industries and UC Santa Cruz in building scalable systems, implementing advanced ML models, and improving operational efficiency. Passionate about leveraging data-driven insights and cutting-edge technologies to solve complex real-world problems.
+                            Master's student in Data Analytics for Science (CMU) with strong software engineering fundamentals and hands-on work across data pipelines, machine learning, and full-stack systems. Experience at Wintec Industries and UC Santa Cruz building scalable workflows, CNN-based models, and research-ready datasets. Interested in roles that blend engineering rigor with data and ML impact.
                         </p>
                     </div>
 
@@ -434,13 +454,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    </main>
+
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Elton. All rights reserved.</p>
+            <p>&copy; 2026 Elton Chang</p>
         </div>
     </footer>
     
+    <script src="js/nav.js"></script>
     <script src="js/script.js"></script>
     <script src="js/resume.js"></script>
 </body>

@@ -183,46 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animation);
     }
     
-    // Tech tag hover effects
-    const techTags = document.querySelectorAll('.tech-tag');
-    const techColors = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#3b82f6'];
-    
-    techTags.forEach(tag => {
-        tag.addEventListener('mouseenter', function() {
-            const randomColor = techColors[Math.floor(Math.random() * techColors.length)];
-            this.style.backgroundColor = randomColor;
-            this.style.transform = 'translateY(-3px) scale(1.05)';
-        });
-        
-        tag.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = '';
-            this.style.transform = '';
-        });
-    });
-    
-    // Add a subtle shake animation to the download button periodically
-    setInterval(() => {
-        const downloadBtn = document.querySelector('.download-btn');
-        if (downloadBtn && !downloadBtn.matches(':hover')) {
-            downloadBtn.style.animation = 'shake 0.5s ease';
-            setTimeout(() => {
-                downloadBtn.style.animation = '';
-            }, 500);
-        }
-    }, 10000);
-    
+    // Tech tags: hover styling is in CSS (monochrome).
+
     // Console message
     console.log('📄 Interactive Resume Loaded!');
     console.log('💼 Developed by Elton Chang');
 });
-
-// Shake animation keyframes
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-        20%, 40%, 60%, 80% { transform: translateX(5px); }
-    }
-`;
-document.head.appendChild(style);

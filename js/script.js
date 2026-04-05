@@ -32,22 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(el => observer.observe(el));
 });
 
-// Skill tags hover effect with random colors
-const skillTags = document.querySelectorAll('.skill-tag');
-const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#3b82f6', '#ef4444', '#14b8a6'];
-
-skillTags.forEach(tag => {
-    tag.addEventListener('mouseenter', function() {
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        this.style.backgroundColor = randomColor;
-        this.style.transform = 'scale(1.1) rotate(2deg)';
-    });
-    
-    tag.addEventListener('mouseleave', function() {
-        this.style.backgroundColor = '';
-        this.style.transform = '';
-    });
-});
+// Skill tags: hover styling is handled in CSS (monochrome).
 
 // Typing effect for hero section
 const typingElement = document.querySelector('.typing-effect');
@@ -80,12 +65,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add floating animation to project images
-const projectImages = document.querySelectorAll('.project-image img, .project-image-large img');
-projectImages.forEach((img, index) => {
-    img.style.animation = `float ${3 + index * 0.5}s ease-in-out infinite`;
-});
-
 // Interactive screenshot hover effect
 const screenshots = document.querySelectorAll('.screenshot-item img');
 screenshots.forEach(screenshot => {
@@ -97,6 +76,18 @@ screenshots.forEach(screenshot => {
         this.style.transform = '';
     });
 });
+
+// Reset expanded project UI (used by filters and internal toggles)
+function resetAllProjectsView() {
+    document.querySelectorAll('.project-expanded').forEach(function (section) {
+        section.style.display = 'none';
+    });
+    document.querySelectorAll('.project-card-interactive').forEach(function (card) {
+        card.style.opacity = '1';
+        card.style.pointerEvents = 'auto';
+    });
+}
+window.resetAllProjectsView = resetAllProjectsView;
 
 // Toggle project expanded view
 function toggleProject(projectId) {
@@ -136,22 +127,16 @@ function toggleProject(projectId) {
 }
 
 // Close expanded view when clicking outside
-document.addEventListener('click', function(event) {
-    const expandedSections = document.querySelectorAll('.project-expanded');
-    const isClickInside = event.target.closest('.project-card-interactive') || 
-                          event.target.closest('.project-expanded');
-    
-    if (!isClickInside) {
-        expandedSections.forEach(section => {
-            if (section.style.display === 'block') {
-                const allCards = document.querySelectorAll('.project-card-interactive');
-                section.style.display = 'none';
-                allCards.forEach(card => {
-                    card.style.opacity = '1';
-                    card.style.pointerEvents = 'auto';
-                });
-            }
+document.addEventListener('click', function (event) {
+    var isClickInside =
+        event.target.closest('.project-card-interactive') ||
+        event.target.closest('.project-expanded');
+    if (!isClickInside && typeof resetAllProjectsView === 'function') {
+        var anyOpen = false;
+        document.querySelectorAll('.project-expanded').forEach(function (section) {
+            if (section.style.display === 'block') anyOpen = true;
         });
+        if (anyOpen) resetAllProjectsView();
     }
 });
 
