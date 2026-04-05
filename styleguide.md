@@ -136,6 +136,8 @@ The repo includes [`.github/workflows/deploy-github-pages.yml`](./.github/workfl
 
 **Local build:** `cd react-app && npm run build` → `react-app/dist/`. Do not commit `dist/`; CI builds it on deploy.
 
+**Static parity for Pages:** Anything the live site must serve as a plain file (e.g. `resume.html`, `userguide.html`, `jobsearch-userguide.html`, `images/*`, `elton.jpg`, `css/` for the resume page) lives under **`react-app/public/`** so Vite copies it into `dist/` on build. The React app uses client routes (`/`, `/projects`) plus those static URLs.
+
 ---
 
 ## Layout System

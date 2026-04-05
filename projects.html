@@ -3,47 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects — Elton Chang</title>
-    <meta name="description" content="Software engineering, data science, and ML projects: MarketPulse AI, research simulations, PokeFind, and more.">
-    <link rel="canonical" href="https://eltonchang1.github.io/projects.html">
-    <meta property="og:title" content="Projects — Elton Chang">
-    <meta property="og:description" content="Full-stack, data, and ML portfolio work with demos and documentation.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://eltonchang1.github.io/projects.html">
-    <meta property="og:image" content="https://eltonchang1.github.io/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Projects — Elton Chang">
-    <meta name="twitter:description" content="Full-stack, data, and ML portfolio work with demos and documentation.">
-    <meta name="twitter:image" content="https://eltonchang1.github.io/og-image.png">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Projects - Elton</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <a href="index.html">Elton</a>
             </div>
-            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-            </button>
-            <ul class="nav-menu" id="site-nav">
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="log.html">Log</a></li>
-                <li><a href="writing.html">Writing</a></li>
                 <li><a href="resume.html">Resume</a></li>
-                <li><a href="https://github.com/EltonChang1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://github.com/EltonChang1" target="_blank">GitHub</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <main id="main">
     <!-- Projects Header -->
     <section class="projects-header">
         <div class="container">
@@ -55,15 +35,8 @@
     <!-- Featured Projects Grid -->
     <section class="featured-projects">
         <div class="container">
-            <div class="project-filter-bar" role="group" aria-label="Filter by focus">
-                <button type="button" class="filter-pill active" data-filter="all" aria-pressed="true">All</button>
-                <button type="button" class="filter-pill" data-filter="swe" aria-pressed="false">Software engineering</button>
-                <button type="button" class="filter-pill" data-filter="ds" aria-pressed="false">Data science</button>
-                <button type="button" class="filter-pill" data-filter="ml" aria-pressed="false">Machine learning</button>
-            </div>
-
             <!-- Project 1: MarketPulse AI -->
-            <div class="project-card-interactive" data-project="marketpulse" data-project-tags="swe ds" onclick="toggleProject('marketpulse')">
+            <div class="project-card-interactive" onclick="toggleProject('marketpulse')">
                 <div class="project-image">
                     <img src="images/1-market-overview.png" alt="MarketPulse AI Market Overview">
                     <div class="project-overlay">
@@ -73,10 +46,6 @@
                 </div>
                 <div class="project-details">
                     <h3>MarketPulse AI</h3>
-                    <div class="project-role-tags" aria-label="Focus">
-                        <span class="role-tag">SWE</span>
-                        <span class="role-tag">Data</span>
-                    </div>
                     <p class="project-tagline">Market overview + portfolio insights + deep single-stock intelligence</p>
                     <p>Full-stack web app for market monitoring and stock research. It unifies macro context, watchlist and portfolio views, and detailed individual-stock analysis including chart review, reversal intelligence, prediction calculations, pattern matching, technical indicators, and latest news.</p>
                     <div class="project-tech">
@@ -104,7 +73,7 @@
             </div>
 
             <!-- Expanded MarketPulse Details -->
-            <div id="marketpulse-expanded" class="project-expanded" data-project-tags="swe ds" style="display: none;">
+            <div id="marketpulse-expanded" class="project-expanded" style="display: none;">
                 <div class="expanded-content">
                     <button class="close-btn" onclick="toggleProject('marketpulse')">
                         <i class="fas fa-times"></i>
@@ -205,7 +174,7 @@
             </div>
 
             <!-- Project 2: Meritocracy Research -->
-            <div class="project-card-interactive" data-project="meritocracy" data-project-tags="ds ml" onclick="toggleProject('meritocracy')">
+            <div class="project-card-interactive" onclick="toggleProject('meritocracy')">
                 <div class="project-image">
                     <img src="images/meritocracy-tvl.png" alt="Talent vs Luck Visualization">
                     <div class="project-overlay">
@@ -215,10 +184,6 @@
                 </div>
                 <div class="project-details">
                     <h3>Quantifying Meritocracy</h3>
-                    <div class="project-role-tags" aria-label="Focus">
-                        <span class="role-tag">Data</span>
-                        <span class="role-tag">ML</span>
-                    </div>
                     <p class="project-tagline">Computational research validating that luck dominates success</p>
                     <p>Agent-based simulation extending the "Talent vs. Luck" model to test whether solidarity-based redistribution can correct meritocracy's inherent randomness. Demonstrates 92% inequality reduction with moderate policies.</p>
                     <div class="project-tech">
@@ -246,7 +211,7 @@
             </div>
 
             <!-- Expanded Meritocracy Details -->
-            <div id="meritocracy-expanded" class="project-expanded" data-project-tags="ds ml" style="display: none;">
+            <div id="meritocracy-expanded" class="project-expanded" style="display: none;">
                 <div class="expanded-content">
                     <button class="close-btn" onclick="toggleProject('meritocracy')">
                         <i class="fas fa-times"></i>
@@ -324,7 +289,7 @@
             </div>
 
             <!-- Project 3: Job Search Tool -->
-            <div class="project-card-interactive" data-project="jobsearch" data-project-tags="swe" onclick="toggleProject('jobsearch')">
+            <div class="project-card-interactive" onclick="toggleProject('jobsearch')">
                 <div class="project-image">
                     <img src="images/job-search-tool.png" alt="Job Search Tool Interface">
                     <div class="project-overlay">
@@ -334,9 +299,6 @@
                 </div>
                 <div class="project-details">
                     <h3>Job Search Tool</h3>
-                    <div class="project-role-tags" aria-label="Focus">
-                        <span class="role-tag">SWE</span>
-                    </div>
                     <p class="project-tagline">Multi-source CS/DS/ML job aggregator with applied-job tracking</p>
                     <p>Modern React application that aggregates jobs from major listing platforms, filters to software/data/ML roles, normalizes descriptions for readability, and lets users track jobs they already applied to.</p>
                     <div class="project-tech">
@@ -364,7 +326,7 @@
             </div>
 
             <!-- Expanded Job Search Tool Details -->
-            <div id="jobsearch-expanded" class="project-expanded" data-project-tags="swe" style="display: none;">
+            <div id="jobsearch-expanded" class="project-expanded" style="display: none;">
                 <div class="expanded-content">
                     <button class="close-btn" onclick="toggleProject('jobsearch')">
                         <i class="fas fa-times"></i>
@@ -399,7 +361,7 @@
             </div>
 
             <!-- Project 4: PokeFind -->
-            <div class="project-card-interactive" data-project="pokefind" data-project-tags="swe" onclick="toggleProject('pokefind')">
+            <div class="project-card-interactive" onclick="toggleProject('pokefind')">
                 <div class="project-image">
                     <img src="images/pokemon-radar-main.png" alt="PokeFind Main Interface">
                     <div class="project-overlay">
@@ -409,9 +371,6 @@
                 </div>
                 <div class="project-details">
                     <h3>PokeFind - Real-Time Pokémon Tracker</h3>
-                    <div class="project-role-tags" aria-label="Focus">
-                        <span class="role-tag">SWE</span>
-                    </div>
                     <p class="project-tagline">Full-stack web application with interactive maps and real-time data</p>
                     <p>Comprehensive web application designed to enhance the Pokémon Go experience by providing real-time Pokémon radar, Gym and Raid information, and GPS route import/export features.</p>
                     <div class="project-tech">
@@ -439,7 +398,7 @@
             </div>
 
             <!-- Expanded PokeFind Details -->
-            <div id="pokefind-expanded" class="project-expanded" data-project-tags="swe" style="display: none;">
+            <div id="pokefind-expanded" class="project-expanded" style="display: none;">
                 <div class="expanded-content">
                     <button class="close-btn" onclick="toggleProject('pokefind')">
                         <i class="fas fa-times"></i>
@@ -492,15 +451,12 @@
         </div>
     </section>
 
-    </main>
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Elton Chang</p>
+            <p>&copy; 2024 Elton. All rights reserved.</p>
         </div>
     </footer>
-    <script src="js/nav.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/projects-filter.js"></script>
 </body>
 </html>
