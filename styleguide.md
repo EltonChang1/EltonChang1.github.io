@@ -1,68 +1,140 @@
-# EltonChang1.github.io — UI Style Guide
+# EltonChang1 — Personal Site UI Style Guide
 
 ## Purpose
 
-This style guide defines a **minimal, elegant** portfolio system for [eltonchang1.github.io](https://eltonchang1.github.io): a static **GitHub Pages** site that reads as **mainly black and white, with a restrained use of gray**—no chromatic UI accents.
+This style guide defines a **clean, editorial portfolio system** for [eltonchang1.github.io](https://eltonchang1.github.io): a static GitHub Pages site that feels personal and polished without visual clutter.
 
-**Visual direction**
+**Repository layout (two layers):**
 
-- **Minimal**: few elements per screen, generous whitespace, border-first surfaces, shadows only when they clarify hierarchy (often on hover).
-- **Elegant**: strong typographic hierarchy (weight and spacing, not decoration), subtle letter-spacing on large headings, smooth system fonts, calm motion.
-- **Monochrome**: UI chrome (nav, buttons, tags, bands, focus) stays in **black / white / neutral gray**; screenshots, charts, or third-party embeds may still show color.
+| Layer | Location | Use |
+|--------|----------|-----|
+| **Static site (current live)** | Repo root (`index.html`, `css/`, `js/`, images) | GitHub Pages as-is; no build step. |
+| **React + shadcn (next iteration)** | [`react-app/`](./react-app/) | TypeScript, Tailwind CSS v4, shadcn/ui (Nova / Radix). Build with Vite; deploy `react-app/dist` when you switch hosting to the SPA or a hybrid. |
+
+Keep **one style guide**: tokens and principles below apply to both; the React section maps them to shadcn CSS variables and file paths.
 
 Goals:
 
-- Present **you** clearly: name, positioning, work, and ways to connect.
-- Match the **discipline** of a small design system (tokens, spacing, components) without corporate heaviness.
-- Respect **GitHub Pages**: fast first paint, simple deploys, no required backend.
-- Keep **interactivity intentional**: hover, focus, scroll-triggered reveals, and short motion—never noise or scroll-jacking.
-- Maintain **one coherent look** across `index.html`, `projects.html`, `log.html`, `writing.html`, `resume.html`, `userguide.html`, `jobsearch-userguide.html`, and future pages.
+- Present **you** clearly: name, role, work, and ways to connect.
+- Stay **interactive** through motion, hover, and focus states that feel intentional—not decorative noise.
+- Honor **GitHub Pages** constraints: fast first paint, simple hosting, no required backend.
+- Keep **one coherent aesthetic** across future pages (home, projects, optional blog).
 
 ---
 
 ## Design Principles
 
-1. **Black, white, gray first**  
-   **Near-black** (`#0a0a0a`) and **white** carry structure and emphasis; **gray** is for secondary text, borders, muted fills, and on-dark copy. **No saturated accent colors** in navigation, buttons, chips, or section chrome.
+1. **Calm confidence**  
+   The site should read like a quiet introduction: strong hierarchy, generous space, one accent voice.
 
-2. **Whitespace is structure**  
-   Separate sections with vertical rhythm and alignment before adding borders, bands, or shadows.
+2. **Whitespace is the frame**  
+   Separate sections with rhythm and alignment before reaching for borders or background bands.
 
-3. **Quiet surfaces**  
-   Prefer **1px** neutral borders and flat fills over gradients, glassmorphism stacks, and default drop shadows on every card.
+3. **Interaction earns attention**  
+   Use hover, focus, and small transitions to reward exploration; avoid autoplay, parallax overload, or busy cursors.
 
-4. **One primary action per area**  
-   Each hero or major block has one clear main CTA; everything else reads as secondary.
+4. **One primary action per viewport**  
+   Hero or section: one main CTA (e.g. “View projects”, “Get in touch”). Secondary links stay visually quieter.
 
 5. **Static-first, enhance progressively**  
-   Core content and navigation work without JavaScript; JS adds polish (smooth scroll, reveals, typing) where appropriate.
-
-6. **GitHub.io-aware**  
-   Paths and assets work at the site root or under a project path if you ever change hosting layout.
+   Core content and navigation work without JavaScript; interactivity layers on top for capable browsers.
 
 ---
 
-## GitHub Pages & Repository Conventions
+## GitHub Pages & Repo Conventions
 
-- **Hosting**: Static files from the default branch; no server-side rendering unless you add Jekyll explicitly.
-- **URLs**: Prefer a single **base path** strategy (relative links like `css/style.css`, `projects.html`) or a documented `base` tag / build variable if the site ever lives under a subpath.
-- **HTTPS**: Use `https://` for external assets and social links.
-- **Performance**: Prefer **system font stack** or one webfont family with limited weights; compress images (WebP with fallbacks); lazy-load below-the-fold media.
-- **Suggested layout**: `index.html`, `projects.html`, `log.html`, `writing.html`, `resume.html`, `data/log.json`, `feed.xml`, `robots.txt`, `sitemap.xml`, `og-image.png`, `css/style.css` (+ `resume.css` where needed), `js/script.js`, `js/log.js`, `images/`, `favicon.svg`, Open Graph + Twitter meta.
+- **URL**: User/organization Pages serves from the default branch; site root is often `/` or `/repo-name/` for project sites—use a **single base path** variable in CSS/build so links and assets never break.
+- **HTTPS**: Assume TLS; use absolute `https://` for external assets when needed.
+- **Performance**: Prefer self-hosted or system fonts; limit webfont weights; compress images (WebP/AVIF where supported with fallbacks).
+- **Repo layout** (suggested): `index.html`, `css/`, `js/`, `assets/` (images, favicon). Optional: Jekyll (`_config.yml`, `_layouts/`) only if you want markdown posts—same tokens apply.
+- **React app**: `react-app/src/` — see [React / shadcn stack](#react--shadcn-stack-react-app) below.
 
-**Implementation map (current repo)**
+---
 
-| Area        | Files |
-|------------|--------|
-| Global UI  | `css/style.css`, `js/script.js`, `js/nav.js`, `favicon.svg`, `og-image.png` |
-| Build log  | `data/log.json`, `js/log.js`, `log.html`, `feed.xml`, `scripts/generate_feed.py` |
-| Projects filters | `js/projects-filter.js` (loaded on `projects.html` only) |
-| Resume     | `css/resume.css`, `js/resume.js` |
-| SEO        | `robots.txt`, `sitemap.xml` |
-| OG asset   | `scripts/generate_og_image.py` (regenerates `og-image.png`) |
-| Pages      | `index.html`, `projects.html`, `log.html`, `writing.html`, `resume.html`, `userguide.html`, `jobsearch-userguide.html` |
+## React / shadcn stack (`react-app/`)
 
-When adding styles, **extend tokens** in `:root` rather than sprinkling one-off hex values in components.
+### Default paths (important)
+
+| What | Path | Notes |
+|------|------|--------|
+| **UI components** | `react-app/src/components/ui/` | **This is the shadcn default** (via `@/components/ui` in `components.json`). The CLI installs primitives here (`button`, `input`, …). **Custom composites** (e.g. `hero-block-shadcnui.tsx`) belong in the same folder when they are design-system-level blocks built from those primitives—imports stay consistent: `import { Button } from "@/components/ui/button"`. |
+| **Utilities** | `react-app/src/lib/utils.ts` | `cn()` helper from shadcn. |
+| **Global styles / tokens** | `react-app/src/index.css` | Tailwind v4 `@import "tailwindcss"`, shadcn theme (`@import "shadcn/tailwind.css"`), `:root` **semantic tokens** (`--background`, `--primary`, `--muted-foreground`, …). |
+
+**Why `components/ui` specifically?** The shadcn CLI and docs assume `@/components/ui` so that `npx shadcn@latest add …` drops files in the right place and import paths match every registry example. Putting composites elsewhere works, but you will fight the tooling and copy-paste ergonomics.
+
+**TypeScript path alias:** `@/*` → `react-app/src/*` (see `tsconfig.json`, `tsconfig.app.json`, and `vite.config.ts`).
+
+### If you clone fresh: setup commands
+
+From the repo root:
+
+```bash
+cd react-app
+npm install
+npm run dev
+```
+
+**Initialize shadcn** (already done in this repo; repeat only on a new Vite app):
+
+```bash
+cd react-app
+# Ensure Tailwind v4 + @tailwindcss/vite are configured and src/index.css imports tailwindcss.
+# Ensure tsconfig.json has: "paths": { "@/*": ["./src/*"] }
+npx shadcn@latest init -t vite -b radix -p nova -y
+```
+
+Add more primitives anytime:
+
+```bash
+npx shadcn@latest add dialog card input
+```
+
+**Dependencies for the hero block:**
+
+```bash
+npm install framer-motion
+```
+
+`lucide-react` is already pulled in by shadcn. **Note:** Lucide v1+ may not ship every brand glyph; `hero-block-shadcnui.tsx` uses **inline SVGs** for GitHub and LinkedIn and `lucide-react` for `Mail` and `ArrowDown`.
+
+### Entry points
+
+- `react-app/src/App.tsx` — mounts the demo shell.
+- `react-app/src/demo.tsx` — wraps `HeroBlock` for local preview.
+- `react-app/src/components/ui/hero-block-shadcnui.tsx` — hero section component.
+
+### HeroBlock — structure and integration
+
+| Topic | Answer |
+|--------|--------|
+| **Props / data** | None today; headline, body, and CTA targets are **hardcoded**. When you personalize, prefer optional props (`title`, `subtitle`, `avatarSrc`, `links`) and keep defaults for the demo. |
+| **State** | Stateless; no internal state or data fetching. |
+| **Context / providers** | None required. |
+| **Assets** | Avatar uses a **stable Unsplash URL** (`photo-1507003211169`); replace with your photo under `public/` or your CDN and update `HERO_AVATAR_SRC`. |
+| **Responsive behavior** | Full-viewport hero (`min-h-screen`), centered column `max-w-5xl`, typography `text-5xl` → `md:text-7xl`, wrapping button row. |
+| **Motion** | `framer-motion` with `useReducedMotion()` so animations collapse when the user prefers reduced motion (aligns with [Interactive & Motion](#interactive--motion)). |
+| **Where to use** | Home/landing hero above the fold; one **h1** per page—don’t duplicate on the same route. |
+
+CTAs are wired to your existing static content where possible: **mailto:** `eltonchangtac@gmail.com`, **GitHub** `https://github.com/EltonChang1`, **View Projects** → `#projects` (add `id="projects"` on a section or change `href` to `/projects` when you route in React).
+
+### Aligning static CSS with React tokens
+
+Your static `css/style.css` uses `--primary-color: #6366f1` (indigo). The shadcn Nova preset uses neutral OKLCH primaries. To match the static brand in React, override in `react-app/src/index.css` inside `:root` (e.g. set `--primary` / `--ring` to hues that match `#6366f1`) and verify contrast (WCAG AA).
+
+### Deploying the React app to GitHub Pages
+
+The repo includes [`.github/workflows/deploy-github-pages.yml`](./.github/workflows/deploy-github-pages.yml). On every push to **`main`**, it runs `npm ci` and `npm run build` in `react-app/`, copies `index.html` → `404.html` for SPA-friendly deep links, and publishes **`react-app/dist`** via the official Pages actions.
+
+**One-time GitHub settings** (required or the workflow will not update the live site):
+
+1. Open the repo on GitHub → **Settings** → **Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
+3. Push to `main` (or run the workflow manually under **Actions**). The first run may need you to approve **Pages** deployment permissions.
+
+**Vite `base`:** [`react-app/vite.config.ts`](./react-app/vite.config.ts) uses `base: '/'` for **https://eltonchang1.github.io/** (user site at domain root). For a **project** site (`https://<user>.github.io/<repo>/`), set `base: '/<repo>/'` instead.
+
+**Local build:** `cd react-app && npm run build` → `react-app/dist/`. Do not commit `dist/`; CI builds it on deploy.
 
 ---
 
@@ -70,133 +142,108 @@ When adding styles, **extend tokens** in `:root` rather than sprinkling one-off 
 
 ### Page container
 
-- Max width: **`min(1120px, 100% - 48px)`** on large screens (today’s `1200px` container is acceptable; align breakpoints across pages).
-- Horizontal padding: **`24px`** desktop, **`16px`** mobile.
-- Vertical rhythm between major sections: **`64–96px`** desktop, **`48px`** mobile (section padding in the **`5rem`** range is fine if consistent).
+- Max content width: `min(1120px, 100% - 48px)` on desktop; full width with **horizontal padding `24px`** (mobile **`16px`**).
+- Vertical rhythm between major sections: **`64–96px`** desktop, **`48px`** mobile.
 
 ### Grid
 
-- **12-column** mental model on desktop.
-- Main reading column often **8–10**; side meta **2–4** if needed.
-- Project grids: **2 columns** tablet, **1** mobile; gap **`24px`** (**`16px`** on small screens).
+- Desktop: **12-column** mental model; main column often **8–10** for reading, **sidebar 2–4** for meta/links if needed.
+- Project grids: **2 columns** tablet, **1 column** mobile; consistent gap **`24px`** ( **`16px`** on small screens).
 
-### Section structure
+### Section pattern
 
 Each major block follows:
 
-1. Optional eyebrow / label  
-2. Heading  
-3. One short supporting line  
-4. Content (prose, cards, list)  
-5. Optional single CTA row  
+1. Eyebrow or label (optional)
+2. Heading
+3. Short supporting line
+4. Content (cards, list, or prose)
+5. Optional single CTA row
 
 ---
 
-## Color Palette (black, white, and gray)
+## Color Palette
 
-**Philosophy**: Color does not brand this site—**contrast and tone** do. Use a small **gray ramp** so the interface feels intentional, not empty.
+Use **CSS custom properties** so light/dark or theme tweaks stay centralized.
 
-**Gray ramp (reference)** — use these roles, not random hex between them:
+**Light (default)**
 
-| Step | Hex (reference) | Typical use |
-|------|-----------------|-------------|
-| White | `#ffffff` | Page surface, cards, inverse text on dark |
-| Off-white | `#fafafa` | Optional hero text on dark bands |
-| Light fill | `#f5f5f5` | Section bands, muted panels, table stripes |
-| Border | `#e5e5e5` | Hairlines, chip outlines, dividers |
-| Border strong | `#d4d4d4` | Hover border shift on cards |
-| Secondary text | `#737373` | Captions, nav default, de-emphasized UI |
-| Meta on dark | `#a3a3a3` | Subheads and supporting lines on `#0a0a0a` |
-| Charcoal | `#404040` | Rare secondary emphasis, progress mid-tones |
-| Near-black | `#0a0a0a` | Body, headings, primary buttons, dark bands |
-| Dark hairline | `#262626` | Borders separating regions on dark backgrounds |
+| Token | Role | Suggested value |
+|--------|------|-----------------|
+| `--bg` | Page background | `#fafafa` |
+| `--surface` | Cards, elevated panels | `#ffffff` |
+| `--surface-muted` | Subtle bands, code blocks | `#f4f4f5` |
+| `--text-primary` | Headings, body | `#18181b` |
+| `--text-secondary` | Meta, captions | `#71717a` |
+| `--border` | Dividers, hairlines | `#e4e4e7` |
+| `--accent` | Links, primary buttons, focus emphasis | `#2563eb` (or a single personal accent) |
+| `--accent-muted` | Hover backgrounds, chips | `rgba(37, 99, 235, 0.08)` |
+| `--focus-ring` | Focus visible | `rgba(37, 99, 235, 0.4)` |
 
-**CSS tokens** (`css/style.css` `:root`)
+**Dark (optional)**
 
-| Token | Maps to |
-|--------|---------|
-| `--text-dark` / `--primary-color` | Near-black UI and copy |
-| `--dark-bg` | Hero, contact, page headers |
-| `--white` | Light surfaces |
-| `--light-bg` | Muted sections |
-| `--text-light` | Secondary copy |
-| `--border-color` | Default borders |
-| `--secondary-color` | Deeper gray accents |
-| `--focus-ring` | `rgba(10, 10, 10, 0.25)` on light; use light outline on dark regions |
+- Preserve the same **roles**: deep `--bg`, slightly lifted `--surface`, light `--text-primary`, muted `--text-secondary`, visible `--border`, same accent family adjusted for contrast.
 
-**Rules**
+Rules:
 
-- **No hue** in chrome: no blue links-as-brand, no rainbow hovers, no colored gradients behind nav or CTAs.
-- **Hierarchy** = size, weight, spacing, and black vs gray—not color blocks.
-- **Imagery** may be full color; do not “color-match” the UI to screenshots.
-- Meet **WCAG AA** for text and controls (verify small type on `#a3a3a3` on black).
+- **One accent family** per page; avoid rainbow section backgrounds.
+- Meet **WCAG AA** for text and interactive targets.
 
 ---
 
 ## Typography
 
-Elegance here is **restraint**: one family, clear steps, no decorative type effects.
+- **Primary**: **Inter** or **DM Sans** (Google Fonts) with `system-ui, sans-serif` fallback—or a distinctive but readable display for **headings only** plus neutral body (keep to **two families max**).
+- **Scale** (clamp for fluid type where helpful):  
+  - Display / hero name: `clamp(2rem, 5vw, 3rem)`, semibold  
+  - Page / section title: `1.5rem–1.875rem`, semibold  
+  - Subsection: `1.125rem–1.25rem`, medium  
+  - Body: `1rem` (16px base)  
+  - Small / meta: `0.875rem`, `--text-secondary`
+- **Line length**: ~`65ch` for long prose.
+- **Letter-spacing**: slight tightening on large headings (`-0.02em`); body default.
 
-- **Family**: System stack (`-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, Roboto, …) with antialiasing on. Optional single webfont only if it stays neutral (e.g. Inter)—**one family sitewide** is ideal for this aesthetic.
-- **Scale** (use `clamp` for the hero):
-  - Hero / name: `clamp(2rem, 5vw, 3.5rem)`, **semibold** (600), tracking **-0.02em to -0.03em**
-  - Section title: one consistent scale (e.g. `clamp(1.75rem, 4vw, 2.25rem)`), semibold
-  - Subsection: `1.125rem–1.25rem`, medium
-  - Body: **`1rem` (16px)**, regular, line height ~**1.65**
-  - Meta / small: **`0.875rem`**, color **`--text-light`**
-- **Line length**: ~**65ch** for long prose.
-- **Color**: body and headings default to **`--text-dark`**; secondary lines use **`--text-light`** or **`#a3a3a3`** on dark bands.
-
-**Rules**
-
-- Avoid all-caps except tiny labels.
-- Avoid more than **three** distinct sizes above the fold.
-- Do not rely on **color** for hierarchy within running text; use weight and size.
+Avoid all-caps except tiny labels; avoid more than **three** distinct sizes in one fold.
 
 ---
 
 ## Spacing Scale
 
-Base unit **4px**. Allowed values:
+Base unit **4px**. Use:
 
-`4, 8, 12, 16, 24, 32, 40, 48, 64, 96`
+`4, 8, 12, 16, 24, 32, 48, 64, 96`
 
-- Compact controls / tags: **8–12**  
-- Inside cards: **16–24**  
-- Between cards: **24**  
-- Between page-level groups: **32–48**  
-- Hero / section breathing room: **64–96**  
+- Tight UI (tags, inline controls): `8–12`
+- Card padding: `20–24`
+- Between cards: `24`
+- Section gaps: `48–64`
 
 ---
 
 ## Border Radius
 
-- Small (inputs, small controls): **`8px`**
-- Medium (cards, buttons): **`12px`** (today’s `0.5rem` = 8px—consider bumping cards to **12px** for consistency)
-- Large (modals, wide panels): **`16px`**
-- Pills / avatars: **`9999px`**
+- **Inputs, small controls**: `8px`
+- **Cards, buttons**: `12px`
+- **Large panels**: `16px`
+- **Pills / avatars**: `9999px`
 
 ---
 
 ## Shadows
 
-- **Subtle**: `0 1px 2px rgba(0,0,0,0.05)`  
-- **Medium**: `0 4px 12px rgba(0,0,0,0.08)`  
-- **Lift (hover only)**: `0 8px 24px rgba(0,0,0,0.08)`  
+Portfolio aesthetic: **border-first**, shadow sparingly.
 
-**Usage**
-
-- Default layout: **subtle or none**; prefer **border** for card definition.
-- **Navbar**: very light shadow or bottom border is OK.
-- Avoid **strong** default shadows on every card—reserve lift for **hover** or a **single** featured project.
+- **Hairline**: `0 1px 0 rgba(0,0,0,0.06)` or `1px solid var(--border)`
+- **Lift (cards on hover)**: `0 8px 24px rgba(0,0,0,0.08)`—only on hover or featured item
+- Avoid heavy default shadows on every card
 
 ---
 
-## Divider and Surface Style
+## Surfaces & Dividers
 
-- Default card: `background: var(--white)`, `border: 1px solid var(--border-color)`, modest radius; **no** default heavy shadow.
-- Use **horizontal dividers** (`1px` neutral) between dense lists when spacing alone is not enough.
-- **Hero and key headers**: solid **`--dark-bg`** with light type; following sections alternate **`--white`** and **`--light-bg`** for calm rhythm—not loud color blocks.
+- Default card: `--surface`, `1px solid var(--border)`, `border-radius: 12px`, minimal shadow.
+- Section separation: **space first**; optional `1px` divider full-bleed or inset.
+- Code snippets: `--surface-muted`, monospace, comfortable padding.
 
 ---
 
@@ -204,152 +251,99 @@ Base unit **4px**. Allowed values:
 
 ### Navigation
 
-- Sticky nav: height ~**56–64px**; clear **active** state (class `active` + color or underline).
-- Mobile: collapse menu with preserved **tab order** and focus styles.
-- Optional: `.navbar.scrolled` with backdrop blur—keep performance reasonable.
+- Sticky optional; height ~`56–64px`; clear active state (underline, color, or pill).
+- Mobile: hamburger or bottom sheet—**keyboard and focus** order preserved.
 
-### Buttons
+### Buttons & links
 
-- **Primary (light sections)**: filled **near-black**, white label.
-- **Primary (dark hero / contact)**: filled **white**, near-black label.
-- **Secondary (light sections)**: transparent, **gray border**, dark text; hover = light gray fill.
-- **Secondary (dark bands)**: transparent, **white/low-opacity** border, light text; hover = white fill, dark text.
-- One clear primary per block; height ~**40–44px** where touch matters.
-- **Hover**: small **`translateY(-1px)`** or border/shadow shift—subtle, consistent.
-- **Focus-visible**: visible outline (dark on light, light outline on dark); optional ripple kept **neutral** (e.g. soft black alpha).
-
-### Links
-
-- Default: inherit body color or **near-black**; hover/focus: underline or **slightly darker** gray—still monochrome.
-- External links: `rel="noopener"` where appropriate.
+- **Primary**: solid `--accent`, high contrast text; one per logical section.
+- **Secondary**: ghost or outline using `--border` + `--text-primary`.
+- **Text links**: underline on hover/focus or persistent subtle underline for body links.
+- Min touch target: **44×44px** where applicable.
+- **`:focus-visible`**: ring using `--focus-ring`; never remove focus styles.
 
 ### Project cards
 
-- Image, title, one-line description, **gray-bordered** tech chips.
-- **Entire card** clickable **or** explicit control—one pattern sitewide.
-- **Hover**: small lift + **neutral** shadow or **#d4d4d4** border—**~150–200ms**.
+- Thumbnail or placeholder block, title, one-line description, tech tags (muted chips).
+- Entire card clickable **or** explicit “View” control—pick one pattern sitewide.
+- Hover: subtle lift or border darkening + **150ms** transition.
 
-### Skill tags / tech badges
+### Tags / chips
 
-- Idle: white or light gray fill, **gray border**, dark text.
-- Hover: **invert** to near-black fill and white text (**CSS only**; no random or per-tag colors in JS).
+- Low-saturation background, small radius, `--text-secondary` or slightly stronger for text.
 
 ### Footer
 
-- Dark **near-black** bar or minimal border-top on white; meta text in **muted gray**; social targets invert on hover (black circle, white icon) to match the rest of the system.
+- Compact: copyright, GitHub, LinkedIn, email; same type scale as meta text.
 
 ---
 
-## Interaction Patterns
+## Interactive & Motion
 
-### States
+### Principles
 
-Interactive elements should account for:
+- **Purpose**: feedback (hover, press), guidance (focus), delight (small stagger on load—optional).
+- **Duration**: `120–200ms` for UI; `300–400ms` max for section reveals if used.
+- **Easing**: `cubic-bezier(0.4, 0, 0.2, 1)` or standard `ease-out`.
 
-- default  
-- hover  
-- active  
-- focus-visible  
-- disabled (if applicable)  
+### Ideas that stay “clean”
 
-### Motion
+- Link underline draw or color shift on hover.
+- Project cards: `translateY(-2px)` + shadow on hover.
+- Sticky nav background blur + border on scroll (lightweight CSS).
+- Respect **`prefers-reduced-motion`**: reduce or disable non-essential transitions.
 
-- **Duration**: **120–200ms** for UI; hero entrance **≤ 800ms** if used.
-- **Easing**: `cubic-bezier(0.4, 0, 0.2, 1)` or `ease-out`.
-- **Scroll-triggered**: Intersection Observer reveals (e.g. `.visible` on `.project-card`)—stagger lightly or none.
-- **`prefers-reduced-motion`**: shorten or disable non-essential animations (typing, parallax, pulse).
+### Avoid
 
-### Feedback
-
-- Use clear copy for errors (forms, future contact flows); don’t rely on color alone.
-
----
-
-## Interactive Features (Portfolio-Specific)
-
-These are **on-brand** if kept bounded:
-
-| Feature | Guideline |
-|---------|-----------|
-| Typing effect (hero) | Short string only; respect reduced motion. |
-| Smooth scroll (`#` anchors) | Keep; ensure target `id` exists (`#contact`, `#about`). |
-| Scroll fade-in | Subtle opacity/translate; avoid large delays. |
-| Parallax on hero | Optional; keep subtle; disable or reduce under `prefers-reduced-motion`. |
-| Pulse CTA | Avoid for this aesthetic; if kept, use **opacity** only—no scale bounce. |
-| Easter eggs (e.g. party mode) | Must stay **monochrome** (e.g. brief invert), off by default, non-destructive. |
-
-**Avoid**
-
-- Autoplay sound/video  
-- Scroll-jacking, custom cursor trails, heavy particle layers  
+- Autoplay video/audio.
+- Cursor trails, excessive particle effects, scroll-jacking.
 
 ---
 
 ## Accessibility
 
-- Semantic regions: `header`, `nav`, `main`, `footer`; heading order **h1 → h2 → h3**.
-- **Skip link** to `#main` (add `id="main"` on primary content if missing).
-- **Focus visible** on all controls and menu items.
-- **Contrast**: AA minimum for text and interactive elements.
-- Images: meaningful **`alt`**; decorative `alt=""`.
-- Don’t convey state by color alone (pair with text or icon).
+- Semantic HTML: `header`, `nav`, `main`, `footer`, heading order `h1` → `h2` → …
+- Skip link to `#main` for keyboard users.
+- Visible focus on all interactive elements.
+- Sufficient contrast; do not rely on color alone for state.
+- Meaningful `alt` on images; decorative images `alt=""`.
 
 ---
 
 ## Page-Type Guidelines
 
-### Home (`index.html`)
+### Home / landing
 
-- Single **h1** (name / positioning).
-- Hero: dark band, light type; eyebrow line for triad positioning; one primary CTA + one secondary.
-- About + skills + featured projects + **latest log teaser** + contact: follow section pattern above.
+- Single **h1** (your name or positioning line).
+- Hero: short value prop + primary CTA + secondary link (e.g. résumé PDF).
+- Optional: **one** subtle background (gradient or grid) behind hero only—keep rest calm.
 
-### Build log (`log.html`)
+### Projects index
 
-- **h1**: “Build log” (or equivalent); entries as **articles** with `time` (`datetime` ISO date).
-- Typography: comfortable measure (~**65ch**); date in **muted gray**; optional **tags** as small outlined chips (grayscale).
-- **Video**: optional YouTube embed via id; **no autoplay**; wrapper with border and **16:9** aspect ratio; title on iframe.
-- Data: `data/log.json` loaded client-side; home teaser reuses the same source (see `js/log.js`).
+- Scannable grid or list; consistent card pattern; filter chips optional—keep chip count low.
 
-### Projects (`projects.html`)
+### Project detail (if added)
 
-- Scannable grid; consistent cards; **role tags** (SWE / Data / ML) on each card in grayscale pills.
-- **Filter bar**: `.project-filter-bar` with `.filter-pill` buttons (`active` = filled black). Filters use `data-project-tags` on `.project-card-interactive` (space-separated: `swe`, `ds`, `ml`). Changing filters calls `resetAllProjectsView()` so no orphan expanded panel stays open.
-- Expanded detail blocks stay visually subordinate (border, single-column lists).
+- Title, role, stack, links (repo, demo), screenshots with captions.
+- Long body: readable measure, optional TOC for lengthy writeups.
 
-### Meta, favicon, and social preview
+### About
 
-- **`favicon.svg`** at site root; `<link rel="icon" href="favicon.svg" type="image/svg+xml">` on main pages.
-- **Open Graph**: `og:title`, `og:description`, `og:url`, `og:type`, `og:image` (absolute URL to **`og-image.png`**, 1200×630—regenerate via `scripts/generate_og_image.py`).
-- **Twitter**: `twitter:card` = `summary_large_image` plus matching `twitter:title`, `twitter:description`, `twitter:image` (same URL as `og:image`).
-- **RSS**: `feed.xml` mirrors the build log; refresh with `scripts/generate_feed.py` when `data/log.json` changes; expose with `<link rel="alternate" type="application/rss+xml">` on Home and Log.
+- Photo optional; prose blocks; timeline or skills as simple lists—not flashy infographics unless on-brand.
 
-### Resume (`resume.html`)
+### Contact
 
-- Print-friendly rules live in `resume.css`; screen view should still use global tokens where possible.
-
-### Writing hub (`writing.html`)
-
-- Card grid (`.writing-grid` / `.writing-card`): border-first, hover lift; links may be internal or external (GitHub).
-- Intro links in dark headers use `.projects-header p a` (muted + underline).
-
-### Guides (`userguide.html`, etc.)
-
-- Same **black / white / gray** chrome as the main site; optional content (e.g. tier labels) may use a **gray ramp** only, not rainbow semantics unless the doc truly requires it for meaning.
+- `mailto:` / form (if using external form service) / socials; duplicate critical link in footer.
 
 ---
 
-## Implementation Rules for Future Work
+## Implementation Checklist (GitHub Pages)
 
-1. **Tokens first**: add or change variables in `:root` before hardcoding hex in selectors.
-2. **Spacing scale**: use the allowed steps; avoid arbitrary `margin: 13px`-style values except in rare optical tweaks.
-3. **One shadow language**: default subtle; hover lift where it matters.
-4. **Reuse components**: `.btn`, `.project-card`, `.skill-tag` / `.tech-badge` patterns before inventing new classes.
-5. **JS polish**: any new animation should check **`prefers-reduced-motion`** and avoid blocking content.
-
-**Legacy alignment**
-
-- Tokens live in `:root` as `--primary-color` (black), `--text-dark`, `--border-color`, etc.; extend this grayscale system rather than adding new hues.
+1. Set **canonical base URL** in meta and internal links if using project Pages.
+2. Define **:root** tokens in one stylesheet; components consume tokens only.
+3. **Mobile-first** breakpoints; test **375px** and **1280px+**.
+4. **Favicon** + **Open Graph** meta for link previews.
+5. **Lighthouse**: aim for strong performance and accessibility scores on static assets.
 
 ---
 
@@ -357,36 +351,28 @@ These are **on-brand** if kept bounded:
 
 **Do**
 
-- Let typography and spacing carry the layout.
-- Stay **grayscale** and keep radius/shadow language consistent.
-- Keep interactions **predictable** (hover and focus tell the same story).
-- Project **filter pills**: show active state with filled black **and** `aria-pressed="true"` (not color alone).
+- Let typography and spacing carry the design.
+- Use one accent and consistent radius/shadow language.
+- Make interactivity **predictable** (hover matches focus where possible).
 
 **Don’t**
 
-- Stack competing gradients, patterns, and heavy shadows on every block.
-- Introduce saturated colors into chrome (tags, nav, buttons) outside this grayscale system.
-- Hide contact or main nav behind unexplained icons only.
-
-### Navigation (mobile)
-
-- **≤768px**: `.nav-toggle` (three-bar button) visible; `#site-nav` is a vertical stack below the bar, hidden until `.nav-menu-open`. Toggle updates `aria-expanded`. **Escape** closes the menu (`js/nav.js`). Link click closes the menu.
-- **Outside click**: document listener closes the menu when open and the event target is **outside** `.navbar`; the toggle button calls **`stopPropagation`** on its click so the same click doesn’t immediately dismiss the menu.
+- Stack competing gradients, patterns, and shadows.
+- Hide navigation or contact behind unexplained icons.
+- Ship large uncropped hero images without lazy loading.
 
 ---
 
 ## Definition of Done (UI)
 
-A page or update is ready when:
+A page or feature is ready when:
 
-- It respects the **black / white / gray** system (no new hues in chrome without updating this guide).
-- **Typography and spacing** do most of the work; decoration is minimal.
-- **Keyboard** and screen-reader users can reach all primary actions.
-- Layout is checked at **~375px** and **1280px+**.
-- **Lighthouse**: strong performance for a static site.
-- Motion respects **`prefers-reduced-motion`**.
-- The result feels **calm, minimal, and cohesive** with **EltonChang1.github.io**.
+- It matches tokens (color, type, spacing, radius).
+- Keyboard and screen-reader users can complete primary tasks.
+- It loads quickly on GitHub Pages (reasonable image and font choices).
+- Motion respects `prefers-reduced-motion`.
+- It feels cohesive with the rest of **EltonChang1** on desktop and mobile.
 
 ---
 
-*Single source of truth for visual and interaction decisions on this site; evolve it here if the palette or layout direction changes.*
+*This guide is the single source of truth for visual and interaction decisions on the personal site; evolve it here when the brand or layout changes.*

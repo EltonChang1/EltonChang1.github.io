@@ -1,1 +1,5 @@
 .DS_Store
+
+# React app (Vite + shadcn)
+react-app/node_modules
+react-app/dist
