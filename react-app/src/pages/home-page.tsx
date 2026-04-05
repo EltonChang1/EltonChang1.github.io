@@ -10,7 +10,7 @@ import {
 } from "@/data/projects";
 
 import { IconGithub, IconLinkedin } from "@/components/brand-icons";
-import { RESUME_HTML_URL, RESUME_PDF_URL } from "@/constants/resume";
+import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { LINKEDIN_URL } from "@/constants/social";
 import { FileDown, Mail } from "lucide-react";
 
@@ -49,7 +49,7 @@ export function HomePage() {
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             <Button size="lg" asChild>
-              <a href={RESUME_HTML_URL}>View My Resume</a>
+              <Link to={RESUME_PAGE_PATH}>View My Resume</Link>
             </Button>
             <Button size="lg" variant="outline" className="gap-2" asChild>
               <a href={RESUME_PDF_URL} download>

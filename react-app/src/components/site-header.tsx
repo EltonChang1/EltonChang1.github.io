@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
-import { RESUME_HTML_URL, RESUME_PDF_URL } from "@/constants/resume";
+import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { cn } from "@/lib/utils";
 
 const linkClass =
@@ -35,9 +35,12 @@ export function SiteHeader() {
           >
             Projects
           </NavLink>
-          <a href={RESUME_HTML_URL} className={linkClass}>
+          <NavLink
+            to={RESUME_PAGE_PATH}
+            className={({ isActive }) => cn(linkClass, isActive && activeClass)}
+          >
             Resume
-          </a>
+          </NavLink>
           <a
             href={RESUME_PDF_URL}
             download
