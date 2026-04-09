@@ -72,7 +72,7 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
   {
     title: "MarketPulse AI",
     description:
-      "Real-time stock analysis platform featuring live market data, multi-timeframe technical forecasts, interactive candlestick charts, pattern detection, and LLM-powered news analysis for top US stocks",
+      "Full-stack market intelligence app: accounts, home watchlist screener, portfolio analytics with benchmark charts, multi-horizon predictions and key signals, TradingView Classic workspace, technical indicators, narrative analysis, news, and context-aware Ask AI",
     stats: ["Full-Stack", "AI/ML"],
     href: "/projects#marketpulse",
     icon: "chart",

@@ -151,7 +151,7 @@ function ExpandedPanel({ project, onClose }: { project: ProjectDefinition; onClo
               >
                 <img
                   src={shot.src}
-                  alt=""
+                  alt={shot.caption}
                   className="aspect-video w-full object-cover"
                   loading="lazy"
                 />
@@ -229,10 +229,9 @@ export function ProjectsPage() {
   }, [expandedId]);
 
   return (
-    <div className="relative bg-background">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <header className="mb-14 text-center">
+    <div className="bg-background">
+      <div className="mx-auto max-w-6xl px-4 py-12 md:py-20 lg:py-24 sm:px-6">
+        <header className="mb-12 text-center md:mb-14">
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
             My Projects
           </h1>
@@ -272,7 +271,7 @@ export function ProjectsPage() {
                     <div className="relative overflow-hidden rounded-xl border border-border/60 bg-muted/20">
                       <img
                         src={project.card.image}
-                        alt=""
+                        alt={`Preview for ${project.card.title}`}
                         className="aspect-video w-full object-cover md:aspect-auto md:h-full md:min-h-[200px]"
                         loading="lazy"
                       />

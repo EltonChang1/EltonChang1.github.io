@@ -85,17 +85,12 @@ function SkillBar({
 
 export function ResumePage() {
   useEffect(() => {
-    document.title = "Resume — Elton Chang";
+    document.title = "Résumé — Elton Chang";
   }, []);
 
   return (
-    <div className="relative min-h-full bg-background">
-      <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"
-        aria-hidden
-      />
-
-      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+    <div className="min-h-full bg-background">
+      <div className="mx-auto max-w-6xl px-4 py-12 md:py-20 lg:py-24 sm:px-6">
         {/* Header */}
         <header className="mb-12 text-center md:mb-16">
           <h1 className="mb-2 text-4xl font-bold tracking-tight text-foreground md:text-5xl">

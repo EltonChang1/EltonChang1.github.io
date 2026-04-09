@@ -39,7 +39,7 @@ export function SiteHeader() {
             to={RESUME_PAGE_PATH}
             className={({ isActive }) => cn(linkClass, isActive && activeClass)}
           >
-            Resume
+            Résumé
           </NavLink>
           <a
             href={RESUME_PDF_URL}

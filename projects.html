@@ -38,7 +38,7 @@
             <!-- Project 1: MarketPulse AI -->
             <div class="project-card-interactive" onclick="toggleProject('marketpulse')">
                 <div class="project-image">
-                    <img src="images/1-market-overview.png" alt="MarketPulse AI Market Overview">
+                    <img src="images/mp-3-market-overview.png" alt="MarketPulse AI market overview">
                     <div class="project-overlay">
                         <i class="fas fa-expand-alt"></i>
                         <span>Click to expand</span>
@@ -46,27 +46,28 @@
                 </div>
                 <div class="project-details">
                     <h3>MarketPulse AI</h3>
-                    <p class="project-tagline">Market overview + portfolio insights + deep single-stock intelligence</p>
-                    <p>Full-stack web app for market monitoring and stock research. It unifies macro context, watchlist and portfolio views, and detailed individual-stock analysis including chart review, reversal intelligence, prediction calculations, pattern matching, technical indicators, and latest news.</p>
+                    <p class="project-tagline">Accounts, watchlist screener, portfolio analytics, Classic TradingView, and deep stock intelligence</p>
+                    <p>Full-stack market intelligence platform with a unified dark/light shell. Signed-in users get a home watchlist screener (sparklines, sidebar), market overview and movers, manual portfolio tracking with allocation and benchmark charts, and per-symbol predictions, key signals, technical indicators, comprehensive analysis, and news—plus Classic for the full TradingView embed and Ask AI when enabled.</p>
                     <div class="project-tech">
                         <span class="tech-badge">React</span>
+                        <span class="tech-badge">Vite</span>
                         <span class="tech-badge">Node.js</span>
                         <span class="tech-badge">Express</span>
-                        <span class="tech-badge">Yahoo Finance API</span>
                         <span class="tech-badge">Technical Analysis</span>
+                        <span class="tech-badge">TradingView</span>
                     </div>
                     <div class="project-stats">
                         <div class="stat">
                             <i class="fas fa-globe"></i>
-                            <span>Market Overview</span>
+                            <span>Markets &amp; watchlist</span>
                         </div>
                         <div class="stat">
                             <i class="fas fa-chart-line"></i>
-                            <span>Stock Intelligence</span>
+                            <span>Portfolio analytics</span>
                         </div>
                         <div class="stat">
                             <i class="fas fa-newspaper"></i>
-                            <span>Latest News</span>
+                            <span>Signals &amp; news</span>
                         </div>
                     </div>
                 </div>
@@ -79,83 +80,80 @@
                         <i class="fas fa-times"></i>
                     </button>
 
-                    <h2>MarketPulse AI - Market, Portfolio & Stock Intelligence</h2>
+                    <h2>MarketPulse AI — Market, Portfolio &amp; Stock Intelligence</h2>
 
                     <div class="project-section">
                         <h3>Key Features</h3>
                         <ul class="features-list">
-                            <li><strong>Market Overview Layer:</strong> Quick context with market dashboard, commodities, largest companies, and movers</li>
-                            <li><strong>Watchlist Workflow:</strong> Fast symbol tracking and one-click navigation into detailed stock review</li>
-                            <li><strong>Portfolio Monitoring:</strong> Personal portfolio snapshot with deeper breakdown for position-level visibility</li>
-                            <li><strong>Stock Review Pipeline:</strong> Chart, reversal intelligence, prediction calculations, and pattern match analysis</li>
-                            <li><strong>Technical Indicator Stack:</strong> Indicator-rich interpretation for trend, momentum, and risk context</li>
-                            <li><strong>Comprehensive Analysis:</strong> Combined reasoning layer to summarize actionable stock context</li>
-                            <li><strong>Latest News Section:</strong> Recent article feed integrated into each individual-stock page</li>
-                            <li><strong>Refresh-Safe Routing:</strong> Hash-based routing keeps deep links stable on reload</li>
-                            <li><strong>Full-Stack Architecture:</strong> React frontend with Express backend and market/news integrations</li>
+                            <li><strong>Accounts &amp; auth:</strong> Sign-up / sign-in shell with persistent watchlist and portfolio when logged in</li>
+                            <li><strong>Global shell:</strong> Header nav (Home · Portfolio · Classic), dark/light theme, hash-based deep links</li>
+                            <li><strong>Home &amp; search:</strong> Ticker or company search; watchlist screener table with sparklines and My Watchlist sidebar</li>
+                            <li><strong>Market overview:</strong> Index and indicator cards with mini candles, + Watchlist, View Analysis, portfolio strip in sidebar</li>
+                            <li><strong>Featured stocks &amp; movers:</strong> Highlight cards plus Most Active, Gainers, Losers, and IPO movers columns</li>
+                            <li><strong>Portfolio:</strong> Add transactions, performance tiles, allocation donut, portfolio vs major indexes line chart</li>
+                            <li><strong>Holdings &amp; history:</strong> Positions table and transaction log with buy/sell styling</li>
+                            <li><strong>Stock analysis:</strong> Period tiles, forecast strip (price, move, direction, confidence), reversal intelligence cards</li>
+                            <li><strong>Classic workspace:</strong> Legacy dashboard flow with full embedded TradingView charting and tools</li>
+                            <li><strong>Prediction transparency:</strong> Weighted signal model, pattern matches, and full technical indicator grid</li>
+                            <li><strong>Narrative layer:</strong> Comprehensive analysis with sentiment, risks, and opportunities</li>
+                            <li><strong>Latest news:</strong> Headlines with timestamps and sources on each symbol</li>
+                            <li><strong>Ask AI:</strong> Floating assistant with market context when enabled (Research Briefings removed from UI)</li>
+                            <li><strong>Stack:</strong> React + Vite frontend, Express backend, market feeds and technical-analysis orchestration</li>
                         </ul>
                     </div>
 
                     <div class="screenshots-grid">
                         <div class="screenshot-item">
-                            <img src="images/1-market-overview.png" alt="Market Overview">
-                            <p>High-level market snapshot and context</p>
+                            <img src="images/mp-1-signup.png" alt="MarketPulse sign-up">
+                            <p>Sign-up — dot backdrop, pill nav, auth fields</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/2-commodities.png" alt="Commodities">
-                            <p>Commodities view for macro-aware monitoring</p>
+                            <img src="images/mp-2-watchlist-screener.png" alt="Watchlist screener">
+                            <p>Home — search, watchlist screener table, sidebar</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/3-largest-companies.png" alt="Largest Companies">
-                            <p>Largest-company panel for big-cap leadership tracking</p>
+                            <img src="images/mp-3-market-overview.png" alt="Market overview">
+                            <p>Market overview — index cards, mini candles, actions</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/4-market-movers.png" alt="Market Movers">
-                            <p>Market movers section for volatility and momentum</p>
+                            <img src="images/mp-4-stocks-movers.png" alt="Stocks and movers">
+                            <p>Featured stock cards and market movers columns</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/5-watchlist-sidebar.png" alt="Watchlist Sidebar">
-                            <p>Watchlist sidebar for personalized symbol tracking</p>
+                            <img src="images/mp-5-portfolio-overview.png" alt="Portfolio overview">
+                            <p>Portfolio — transactions, performance, allocation, vs indexes</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/6-personal-portfolio.png" alt="Personal Portfolio">
-                            <p>Portfolio-level monitoring view</p>
+                            <img src="images/mp-6-holdings-transactions.png" alt="Holdings and transactions">
+                            <p>Holdings table and transaction history</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/7-portfolio-details.png" alt="Portfolio Details">
-                            <p>Detailed portfolio breakdown and position context</p>
+                            <img src="images/mp-7-stock-predictions.png" alt="Stock predictions">
+                            <p>Stock page — prediction periods and forecast strip</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/8-individual-stock-review.png" alt="Individual Stock Review">
-                            <p>Entry point for symbol-level analysis</p>
+                            <img src="images/mp-8-tradingview-classic.png" alt="TradingView Classic">
+                            <p>Classic — full TradingView embed and toolbar</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/9-individual-stock-chart.png" alt="Individual Stock Chart">
-                            <p>Chart view for trend and price-action inspection</p>
+                            <img src="images/mp-9-key-signals.png" alt="Key signals">
+                            <p>Reversal intelligence — Bollinger, RSI, volume, ATR, Fib, touches</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/10-individual-stock-reversal-intelligence.png" alt="Individual Stock Reversal Intelligence">
-                            <p>Reversal signal insights for directional shifts</p>
+                            <img src="images/mp-10-prediction-reasoning.png" alt="Prediction reasoning">
+                            <p>Prediction reasoning — weighted signals and pattern matches</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/11-individual-stock-prediction-calculation.png" alt="Individual Stock Prediction Calculation">
-                            <p>Prediction calculation transparency for projected moves</p>
+                            <img src="images/mp-11-technical-indicators.png" alt="Technical indicators">
+                            <p>Technical indicators — MAs, momentum, bands, trend/volume grid</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/12-individual-stock-pattern-match.png" alt="Individual Stock Pattern Match">
-                            <p>Pattern matching output to support chart interpretation</p>
+                            <img src="images/mp-12-comprehensive-analysis.png" alt="Comprehensive analysis">
+                            <p>Comprehensive analysis — summary, sentiment, risks, opportunities</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/13-individual-stock-technical-indicators.png" alt="Individual Stock Technical Indicators">
-                            <p>Technical indicators panel for momentum/trend analysis</p>
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="images/14-individual-stock-comprehensive-analysis.png" alt="Individual Stock Comprehensive Analysis">
-                            <p>Combined analysis summary for decision context</p>
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="images/15-individual-stock-latest-news.png" alt="Individual Stock Latest News">
-                            <p>Latest related news feed with source and time context</p>
+                            <img src="images/mp-13-latest-news.png" alt="Latest news">
+                            <p>Latest news — headlines, time, and sources</p>
                         </div>
                     </div>
 
