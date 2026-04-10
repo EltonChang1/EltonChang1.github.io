@@ -37,7 +37,6 @@ function useIsDark() {
 export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
   const isDark = useIsDark();
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const frameRef = React.useRef(0);
 
   React.useEffect(() => {
     const container = containerRef.current;
@@ -54,11 +53,24 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     camera.position.set(0, 420, 980);
     camera.lookAt(0, 0, 0);
 
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-      powerPreference: "high-performance",
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true,
+        premultipliedAlpha: false,
+        powerPreference: "default",
+        failIfMajorPerformanceCaveat: false,
+      });
+    } catch {
+      return;
+    }
+    const gl = renderer.getContext();
+    if (!gl) {
+      renderer.dispose();
+      return;
+    }
+
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0);
 
@@ -114,9 +126,8 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
       renderer.domElement.style.display = "block";
     };
 
-    const animate = () => {
-      frameRef.current = requestAnimationFrame(animate);
-      const t = performance.now() * 0.001;
+    const tick = (timeMs: number) => {
+      const t = timeMs * 0.001;
 
       const positionAttribute = geometry.attributes.position;
       const pos = positionAttribute.array as Float32Array;
@@ -129,7 +140,6 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
           const ny = iy * 0.27;
           const nxy = (ix + iy) * 0.19;
 
-          // Layered sines so the field never sits still; time-based = steady speed at any FPS.
           const waveY =
             Math.sin(nx + t * 2.15) * 72 +
             Math.sin(ny + t * 2.65) * 68 +
@@ -153,17 +163,19 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     };
 
     renderer.domElement.className =
-      "pointer-events-none absolute inset-0 h-full w-full";
+      "pointer-events-none absolute inset-0 z-[1] block h-full w-full";
+    renderer.domElement.style.touchAction = "none";
     container.appendChild(renderer.domElement);
     requestAnimationFrame(() => resize());
 
     const ro = new ResizeObserver(() => resize());
     ro.observe(container);
     window.addEventListener("resize", resize);
-    animate();
+
+    renderer.setAnimationLoop(tick);
 
     return () => {
-      cancelAnimationFrame(frameRef.current);
+      renderer.setAnimationLoop(null);
       ro.disconnect();
       window.removeEventListener("resize", resize);
       geometry.dispose();

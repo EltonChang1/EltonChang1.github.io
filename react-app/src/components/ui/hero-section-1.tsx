@@ -42,11 +42,7 @@ export function HeroSection() {
         {/* Waving dots + grid live inside this section (same box as the hero copy) */}
         <div
           aria-hidden
-          className={cn(
-            "pointer-events-none absolute inset-0 z-0",
-            "bg-[radial-gradient(circle,oklch(0.15_0_0/0.16)_1.15px,transparent_1.15px)] [background-size:22px_22px]",
-            "dark:bg-[radial-gradient(circle,oklch(0.98_0_0/0.1)_1.05px,transparent_1.05px)] dark:[background-size:24px_24px]",
-          )}
+          className="hero-dot-field pointer-events-none absolute inset-0 z-0"
         />
         <DottedSurface className="z-[1]" />
         <div

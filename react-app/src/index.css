@@ -221,6 +221,119 @@ code {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Hero: always-visible drifting dot grid (WebGL layer may be blocked on some browsers) */
+@keyframes hero-dot-drift-a {
+  from {
+    background-position: 0 0, 11px 11px;
+  }
+  to {
+    background-position: 22px 18px, 33px 29px;
+  }
+}
+
+@keyframes hero-dot-drift-b {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-18px, 14px, 0);
+  }
+}
+
+.hero-dot-field {
+  background-color: transparent;
+  background-image:
+    radial-gradient(
+      circle at center,
+      oklch(0.12 0 0 / 0.22) 1.15px,
+      transparent 1.2px
+    ),
+    radial-gradient(
+      circle at center,
+      oklch(0.18 0 0 / 0.09) 1px,
+      transparent 1.05px
+    );
+  background-size: 22px 22px, 18px 18px;
+  background-position: 0 0, 9px 14px;
+  animation: hero-dot-drift-a 16s linear infinite;
+  will-change: background-position;
+}
+
+.hero-dot-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at center,
+    oklch(0.14 0 0 / 0.12) 1px,
+    transparent 1.05px
+  );
+  background-size: 26px 26px;
+  background-position: 0 0;
+  animation: hero-dot-drift-b 22s linear infinite alternate;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.dark .hero-dot-field,
+.hero-dot-field.dark {
+  background-image:
+    radial-gradient(
+      circle at center,
+      oklch(0.96 0 0 / 0.14) 1.05px,
+      transparent 1.1px
+    ),
+    radial-gradient(
+      circle at center,
+      oklch(0.85 0 0 / 0.07) 1px,
+      transparent 1.05px
+    );
+  background-size: 24px 24px, 20px 20px;
+}
+
+.dark .hero-dot-field::after,
+.hero-dot-field.dark::after {
+  background-image: radial-gradient(
+    circle at center,
+    oklch(0.92 0 0 / 0.09) 1px,
+    transparent 1.05px
+  );
+  background-size: 30px 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .hero-dot-field {
+    background-image:
+      radial-gradient(
+        circle at center,
+        oklch(0.96 0 0 / 0.14) 1.05px,
+        transparent 1.1px
+      ),
+      radial-gradient(
+        circle at center,
+        oklch(0.85 0 0 / 0.07) 1px,
+        transparent 1.05px
+      );
+    background-size: 24px 24px, 20px 20px;
+  }
+
+  html:not(.light) .hero-dot-field::after {
+    background-image: radial-gradient(
+      circle at center,
+      oklch(0.92 0 0 / 0.09) 1px,
+      transparent 1.05px
+    );
+    background-size: 30px 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-dot-field,
+  .hero-dot-field::after {
+    animation: none !important;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
