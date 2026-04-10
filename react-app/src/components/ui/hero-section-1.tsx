@@ -4,12 +4,9 @@ import { ArrowRight, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { AnimatedGroup } from "@/components/ui/animated-group";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { cn } from "@/lib/utils";
-
-/** Optional dark-mode atmosphere (subtle; not a “product screenshot” block). */
-const HERO_BG_DARK =
-  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=3276&q=80";
 
 const transitionVariants = {
   item: {
@@ -35,58 +32,23 @@ export function HeroSection() {
   return (
     <>
       <HeroHeader />
-      <div className="overflow-hidden">
+      <div className="relative isolate min-h-[100svh] overflow-hidden bg-background">
+        <DottedSurface />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 isolate z-[2] hidden contain-strict opacity-50 lg:block"
-        >
-          <div className="absolute left-0 top-0 h-[80rem] w-[35rem] -translate-y-[350px] -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
-          <div className="absolute left-0 top-0 h-[80rem] w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
-          <div className="absolute left-0 top-0 h-[80rem] w-56 -translate-y-[350px] -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
-        </div>
+          className={cn(
+            "pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_85%_65%_at_50%_42%,transparent_0%,var(--background)_68%)]",
+            "opacity-[0.92]",
+          )}
+        />
         <section
           aria-labelledby="hero-heading"
-          className="pb-16 md:pb-24"
+          className="relative z-[2] flex min-h-[100svh] flex-col justify-center pb-16 pt-24 md:pb-24 md:pt-32"
         >
-          <div className="relative pt-24 md:pt-36">
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      delayChildren: 1,
-                    },
-                  },
-                },
-                item: {
-                  hidden: {
-                    opacity: 0,
-                    y: 20,
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      type: "spring",
-                      bounce: 0.3,
-                      duration: 2,
-                    },
-                  },
-                },
-              }}
-              className="absolute inset-0 -z-20"
-            >
-              <img
-                src={HERO_BG_DARK}
-                alt=""
-                className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
-                width={3276}
-                height={4095}
-              />
-            </AnimatedGroup>
+          <div className="relative">
             <div
               aria-hidden
-              className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"
+              className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_78%)]"
             />
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
