@@ -25,7 +25,7 @@ export function BrandMark({
       decoding="async"
       fetchPriority="high"
       className={cn(
-        "h-16 w-auto max-w-full shrink-0 object-contain object-left drop-shadow-md sm:h-20 md:h-24",
+        "h-12 w-auto max-w-full shrink-0 object-contain object-left sm:h-14 md:h-16",
         className,
       )}
     />
@@ -58,7 +58,7 @@ export function BrandHomeLink({
     <Link
       to="/"
       className={cn(
-        "inline-flex min-w-0 max-w-full items-center rounded-md outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "inline-flex min-w-0 max-w-full items-center rounded-md outline-none transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className,
       )}
       aria-label={`${BRAND_NAME} — Home`}
@@ -70,7 +70,7 @@ export function BrandHomeLink({
         decoding="async"
         fetchPriority="high"
         className={cn(
-          "h-16 w-auto max-w-[min(440px,90vw)] object-contain object-left drop-shadow-md sm:h-20 sm:max-w-[min(500px,88vw)] md:h-24 lg:h-28",
+          "h-11 w-auto max-w-[min(260px,72vw)] object-contain object-left opacity-90 sm:h-12 sm:max-w-[min(300px,70vw)] md:h-14 md:max-w-[min(340px,65vw)] lg:h-14",
           logoClassName,
         )}
       />

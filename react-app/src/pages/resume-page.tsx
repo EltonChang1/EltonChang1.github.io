@@ -96,7 +96,7 @@ export function ResumePage() {
         <header className="mb-12 text-center md:mb-16">
           <div className="mb-5 flex justify-center">
             <BrandMark
-              className="h-24 w-auto drop-shadow-lg md:h-28 lg:h-32"
+              className="h-16 w-auto opacity-90 md:h-20 lg:h-[4.5rem]"
               alt=""
               aria-hidden
             />

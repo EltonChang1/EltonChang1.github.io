@@ -180,10 +180,10 @@ function HeroHeader() {
             <div className="flex w-full justify-between lg:w-auto">
               <BrandHomeLink
                 logoClassName={cn(
-                  "transition-[height,max-width,filter] duration-300 ease-out",
+                  "transition-[height,max-width,opacity] duration-300 ease-out",
                   isScrolled
-                    ? "h-10 max-w-[min(200px,42vw)] drop-shadow-md sm:h-11 md:h-12 lg:h-12"
-                    : "h-16 max-w-[min(520px,92vw)] drop-shadow-lg sm:h-20 md:h-24 lg:h-28",
+                    ? "h-9 max-w-[min(170px,40vw)] opacity-100 sm:h-10 md:h-10 lg:h-10"
+                    : "drop-shadow-sm",
                 )}
               />
 
