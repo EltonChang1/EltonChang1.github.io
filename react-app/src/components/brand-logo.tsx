@@ -25,7 +25,7 @@ export function BrandMark({
       decoding="async"
       fetchPriority="high"
       className={cn(
-        "h-14 w-auto max-w-full shrink-0 object-contain object-left drop-shadow-md sm:h-16",
+        "h-20 w-auto max-w-full shrink-0 object-contain object-left drop-shadow-lg sm:h-24 md:h-28",
         className,
       )}
     />
@@ -34,11 +34,9 @@ export function BrandMark({
 
 type BrandLockupProps = {
   className?: string;
-  /** Classes for the `<img>` (e.g. `h-20 w-auto`) */
   imgClassName?: string;
 };
 
-/** Same asset as BrandMark; wordmark is already in the PNG — no extra text. */
 export function BrandLockup({ className, imgClassName }: BrandLockupProps) {
   return (
     <span className={cn("inline-flex items-center", className)}>
@@ -49,11 +47,9 @@ export function BrandLockup({ className, imgClassName }: BrandLockupProps) {
 
 type BrandHomeLinkProps = {
   className?: string;
-  /** Tailwind classes for the logo `<img>` */
   logoClassName?: string;
 };
 
-/** Home link: full logo image only (no duplicate wordmark). */
 export function BrandHomeLink({
   className,
   logoClassName,
@@ -74,7 +70,7 @@ export function BrandHomeLink({
         decoding="async"
         fetchPriority="high"
         className={cn(
-          "h-12 w-auto max-w-[min(440px,92vw)] object-contain object-left drop-shadow-md sm:h-14 sm:max-w-[min(520px,90vw)] md:h-16",
+          "h-20 w-auto max-w-[min(560px,94vw)] object-contain object-left drop-shadow-lg sm:h-24 sm:max-w-[min(640px,92vw)] md:h-28 lg:h-32",
           logoClassName,
         )}
       />
