@@ -43,23 +43,25 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     const container = containerRef.current;
     if (!container) return;
 
-    const SEPARATION = 150;
-    const AMOUNTX = 40;
-    const AMOUNTY = 60;
+    // Wider, denser field so the viewport is always filled; wave motion stays subtle.
+    const SEPARATION = 95;
+    const AMOUNTX = 56;
+    const AMOUNTY = 72;
 
     const scene = new THREE.Scene();
-    const fogColor = isDark ? 0x141414 : 0xf4f4f5;
-    scene.fog = new THREE.Fog(fogColor, 2000, 10000);
+    // No fog — it was washing particles into the background color.
 
-    const camera = new THREE.PerspectiveCamera(60, 1, 1, 10000);
-    camera.position.set(0, 355, 1220);
+    const camera = new THREE.PerspectiveCamera(55, 1, 1, 12000);
+    camera.position.set(0, 420, 980);
+    camera.lookAt(0, 0, 0);
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
+      powerPreference: "high-performance",
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(fogColor, 0);
+    renderer.setClearColor(0x000000, 0);
 
     const geometry = new THREE.BufferGeometry();
     const positions: number[] = [];
@@ -72,9 +74,11 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
         const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
         positions.push(x, y, z);
         if (isDark) {
-          colors.push(0.78, 0.78, 0.78);
+          // Soft light dots on dark hero
+          colors.push(0.9, 0.9, 0.92);
         } else {
-          colors.push(0.12, 0.12, 0.14);
+          // Faint charcoal dots on light hero (readable with site neutrals)
+          colors.push(0.18, 0.18, 0.2);
         }
       }
     }
@@ -88,12 +92,14 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
       new THREE.Float32BufferAttribute(colors, 3),
     );
 
+    // Screen-space point size (pixels) so dots stay visible on mobile / narrow viewports.
     const material = new THREE.PointsMaterial({
-      size: 8,
+      size: isDark ? 2.1 : 2.35,
       vertexColors: true,
       transparent: true,
-      opacity: 0.75,
-      sizeAttenuation: true,
+      opacity: isDark ? 0.38 : 0.42,
+      depthWrite: false,
+      sizeAttenuation: false,
     });
 
     const points = new THREE.Points(geometry, material);
@@ -102,11 +108,16 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     let count = 0;
 
     const resize = () => {
-      const w = container.clientWidth;
-      const h = Math.max(container.clientHeight, 1);
+      const w = Math.max(container.clientWidth, 1);
+      // First paint can report 0 height; fall back to viewport height once.
+      const rawH = container.clientHeight;
+      const h = rawH >= 2 ? rawH : Math.max(window.innerHeight, 1);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
+      renderer.domElement.style.width = "100%";
+      renderer.domElement.style.height = "100%";
+      renderer.domElement.style.display = "block";
     };
 
     const animate = () => {
@@ -129,16 +140,20 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
       count += 0.1;
     };
 
+    renderer.domElement.className =
+      "pointer-events-none absolute inset-0 h-full w-full";
     container.appendChild(renderer.domElement);
-    resize();
+    requestAnimationFrame(() => resize());
 
     const ro = new ResizeObserver(() => resize());
     ro.observe(container);
+    window.addEventListener("resize", resize);
     animate();
 
     return () => {
       cancelAnimationFrame(frameRef.current);
       ro.disconnect();
+      window.removeEventListener("resize", resize);
       geometry.dispose();
       material.dispose();
       renderer.dispose();

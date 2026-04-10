@@ -2,6 +2,9 @@
 #
 # After first push: Repo → Settings → Pages → Build and deployment → Source: GitHub Actions
 # (not “Deploy from a branch”). The first run may require approving the workflow.
+#
+# Action versions below target the Node.js 24 runtime (see GitHub Actions changelog:
+# https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ ).
 
 name: Deploy site to Pages
 
@@ -9,6 +12,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: read
@@ -24,10 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "22"
           cache: npm
@@ -47,10 +53,10 @@ jobs:
         run: cp dist/index.html dist/404.html
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: react-app/dist
 
@@ -63,4 +69,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
