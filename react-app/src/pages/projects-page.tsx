@@ -234,7 +234,11 @@ export function ProjectsPage() {
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-20 lg:py-24 sm:px-6">
         <header className="mb-12 text-center md:mb-14">
           <div className="mb-6 flex justify-center">
-            <BrandMark size={52} className="drop-shadow-sm" />
+            <BrandMark
+              className="h-14 w-auto drop-shadow-sm md:h-16"
+              alt=""
+              aria-hidden
+            />
           </div>
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
             My Projects

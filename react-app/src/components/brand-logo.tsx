@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 
-import { BRAND_LOGO_SRC, BRAND_NAME, BRAND_SHORT } from "@/constants/brand";
+import { BRAND_LOGO_SRC, BRAND_NAME } from "@/constants/brand";
 import { cn } from "@/lib/utils";
 
 type BrandMarkProps = {
-  size?: number;
   className?: string;
-  /** Use empty string when a visible wordmark carries the name. */
   alt?: string;
   "aria-hidden"?: boolean;
 };
 
+/**
+ * Full logo image (PNG includes icon + “Elton Chang”). Use `h-* w-auto` for sizing.
+ */
 export function BrandMark({
-  size = 32,
   className,
   alt = BRAND_NAME,
   "aria-hidden": ariaHidden,
@@ -22,76 +22,60 @@ export function BrandMark({
       src={BRAND_LOGO_SRC}
       alt={alt}
       aria-hidden={ariaHidden}
-      width={size}
-      height={size}
       decoding="async"
-      className={cn("shrink-0 object-contain", className)}
+      className={cn(
+        "h-8 w-auto max-w-full shrink-0 object-contain object-left",
+        className,
+      )}
     />
   );
 }
 
 type BrandLockupProps = {
   className?: string;
-  markClassName?: string;
-  size?: number;
-  variant?: "full" | "short";
+  /** Classes for the `<img>` (e.g. `h-12 w-auto`) */
+  imgClassName?: string;
 };
 
-/**
- * Logo mark + wordmark for headers and footers.
- */
-export function BrandLockup({
-  className,
-  markClassName,
-  size = 30,
-  variant = "full",
-}: BrandLockupProps) {
-  const label = variant === "full" ? BRAND_NAME : BRAND_SHORT;
+/** Same asset as BrandMark; wordmark is already in the PNG — no extra text. */
+export function BrandLockup({ className, imgClassName }: BrandLockupProps) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <BrandMark size={size} className={markClassName} alt="" aria-hidden />
-      <span className="font-bold tracking-tight text-foreground">{label}</span>
+    <span className={cn("inline-flex items-center", className)}>
+      <BrandMark className={imgClassName} alt={BRAND_NAME} />
     </span>
   );
 }
 
 type BrandHomeLinkProps = {
   className?: string;
-  size?: number;
-  variant?: "full" | "short" | "responsive";
+  /** Tailwind height scale for the logo in the nav */
+  logoClassName?: string;
 };
 
-/** Clickable home link with lockup (site chrome). */
+/** Home link: full logo image only (no duplicate wordmark). */
 export function BrandHomeLink({
   className,
-  size = 28,
-  variant = "responsive",
+  logoClassName,
 }: BrandHomeLinkProps) {
-  const wordmark =
-    variant === "short" ? (
-      BRAND_SHORT
-    ) : variant === "full" ? (
-      BRAND_NAME
-    ) : (
-      <>
-        <span className="sm:hidden">{BRAND_SHORT}</span>
-        <span className="hidden sm:inline">{BRAND_NAME}</span>
-      </>
-    );
-
   return (
     <Link
       to="/"
       className={cn(
-        "inline-flex min-w-0 items-center gap-2 rounded-md outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "inline-flex min-w-0 max-w-full items-center rounded-md outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className,
       )}
       aria-label={`${BRAND_NAME} — Home`}
     >
-      <BrandMark size={size} alt="" aria-hidden />
-      <span className="whitespace-nowrap text-lg font-bold tracking-tight text-foreground">
-        {wordmark}
-      </span>
+      <img
+        src={BRAND_LOGO_SRC}
+        alt=""
+        aria-hidden
+        decoding="async"
+        className={cn(
+          "h-8 w-auto max-w-[min(280px,78vw)] object-contain object-left sm:h-9",
+          logoClassName,
+        )}
+      />
     </Link>
   );
 }

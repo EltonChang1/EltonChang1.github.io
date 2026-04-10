@@ -95,7 +95,11 @@ export function ResumePage() {
         {/* Header */}
         <header className="mb-12 text-center md:mb-16">
           <div className="mb-5 flex justify-center">
-            <BrandMark size={56} className="drop-shadow-sm" />
+            <BrandMark
+              className="h-14 w-auto drop-shadow-sm md:h-[4.5rem]"
+              alt=""
+              aria-hidden
+            />
           </div>
           <h1 className="mb-2 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
             {RESUME_HEADER.name}

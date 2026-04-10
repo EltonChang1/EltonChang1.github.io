@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Menu, X } from "lucide-react";
 
-import { BrandHomeLink, BrandMark } from "@/components/brand-logo";
+import { BrandHomeLink } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { DottedSurface } from "@/components/ui/dotted-surface";
@@ -59,14 +59,6 @@ export function HeroSection() {
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
-                  <div className="mb-5 flex justify-center">
-                    <BrandMark
-                      size={48}
-                      className="drop-shadow-sm"
-                      alt=""
-                      aria-hidden
-                    />
-                  </div>
                   <Link
                     to="/#featured-projects"
                     className="group bg-muted hover:bg-background dark:hover:border-t-border mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
@@ -180,7 +172,7 @@ function HeroHeader() {
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
-              <BrandHomeLink size={32} />
+              <BrandHomeLink logoClassName="h-9 sm:h-10" />
 
               <button
                 type="button"

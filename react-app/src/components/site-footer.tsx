@@ -12,7 +12,7 @@ export function SiteFooter() {
           className="rounded-md outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label={`${BRAND_NAME} — Home`}
         >
-          <BrandLockup size={36} className="text-foreground" />
+          <BrandLockup imgClassName="h-10 w-auto sm:h-12" />
         </Link>
         <p>
           &copy; {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.
