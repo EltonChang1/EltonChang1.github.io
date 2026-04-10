@@ -235,7 +235,7 @@ export function ProjectsPage() {
         <header className="mb-12 text-center md:mb-14">
           <div className="mb-6 flex justify-center">
             <BrandMark
-              className="h-14 w-auto drop-shadow-sm md:h-16"
+              className="h-24 w-auto drop-shadow-lg md:h-28 lg:h-32"
               alt=""
               aria-hidden
             />

@@ -23,8 +23,9 @@ export function BrandMark({
       alt={alt}
       aria-hidden={ariaHidden}
       decoding="async"
+      fetchPriority="high"
       className={cn(
-        "h-8 w-auto max-w-full shrink-0 object-contain object-left",
+        "h-14 w-auto max-w-full shrink-0 object-contain object-left drop-shadow-md sm:h-16",
         className,
       )}
     />
@@ -33,7 +34,7 @@ export function BrandMark({
 
 type BrandLockupProps = {
   className?: string;
-  /** Classes for the `<img>` (e.g. `h-12 w-auto`) */
+  /** Classes for the `<img>` (e.g. `h-20 w-auto`) */
   imgClassName?: string;
 };
 
@@ -48,7 +49,7 @@ export function BrandLockup({ className, imgClassName }: BrandLockupProps) {
 
 type BrandHomeLinkProps = {
   className?: string;
-  /** Tailwind height scale for the logo in the nav */
+  /** Tailwind classes for the logo `<img>` */
   logoClassName?: string;
 };
 
@@ -61,7 +62,7 @@ export function BrandHomeLink({
     <Link
       to="/"
       className={cn(
-        "inline-flex min-w-0 max-w-full items-center rounded-md outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "inline-flex min-w-0 max-w-full items-center rounded-md outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className,
       )}
       aria-label={`${BRAND_NAME} — Home`}
@@ -71,8 +72,9 @@ export function BrandHomeLink({
         alt=""
         aria-hidden
         decoding="async"
+        fetchPriority="high"
         className={cn(
-          "h-8 w-auto max-w-[min(280px,78vw)] object-contain object-left sm:h-9",
+          "h-12 w-auto max-w-[min(440px,92vw)] object-contain object-left drop-shadow-md sm:h-14 sm:max-w-[min(520px,90vw)] md:h-16",
           logoClassName,
         )}
       />
