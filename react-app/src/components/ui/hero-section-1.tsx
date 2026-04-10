@@ -170,9 +170,21 @@ function HeroHeader() {
               "max-w-4xl rounded-2xl border border-border/80 bg-background/50 backdrop-blur-lg lg:px-5"
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+          <div
+            className={cn(
+              "relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4",
+              isScrolled && "gap-3 py-2 lg:gap-0 lg:py-2.5",
+            )}
+          >
             <div className="flex w-full justify-between lg:w-auto">
-              <BrandHomeLink logoClassName="h-28 max-w-[min(780px,98vw)] drop-shadow-xl sm:h-32 md:h-36 lg:h-44" />
+              <BrandHomeLink
+                logoClassName={cn(
+                  "transition-[height,max-width,filter] duration-300 ease-out",
+                  isScrolled
+                    ? "h-10 max-w-[min(200px,42vw)] drop-shadow-md sm:h-11 md:h-12 lg:h-12"
+                    : "h-28 max-w-[min(780px,98vw)] drop-shadow-xl sm:h-32 md:h-36 lg:h-44",
+                )}
+              />
 
               <button
                 type="button"
