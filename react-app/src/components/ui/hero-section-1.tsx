@@ -161,19 +161,20 @@ function HeroHeader() {
     <header>
       <nav
         data-state={menuState ? "active" : undefined}
-        className="group fixed z-20 w-full px-2"
+        className="group fixed inset-x-0 top-0 z-20 w-full px-2 pt-[max(0.25rem,env(safe-area-inset-top,0px))]"
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            "mx-auto max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            isScrolled ? "mt-1.5" : "mt-0",
             isScrolled &&
               "max-w-4xl rounded-2xl border border-border/80 bg-background/50 backdrop-blur-lg lg:px-5"
           )}
         >
           <div
             className={cn(
-              "relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4",
-              isScrolled && "gap-3 py-2 lg:gap-0 lg:py-2.5",
+              "relative flex flex-wrap items-center justify-between gap-6 py-2 lg:gap-0 lg:py-3",
+              isScrolled && "gap-3 py-1.5 lg:gap-0 lg:py-2",
             )}
           >
             <div className="flex w-full justify-between lg:w-auto">

@@ -1,15 +1,18 @@
 /**
  * Builds favicon PNGs with a solid white backing so the logo reads on dark browser tabs.
- * Source: public/images/elegant-elton-chang-logo.png (no query string)
+ * Source: tight-trimmed logo from trim-brand-logo.mjs (falls back to full asset if missing).
  */
 import { mkdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
-const input = path.join(root, "public/images/elegant-elton-chang-logo.png");
+const tight = path.join(root, "public/images/elegant-elton-chang-logo-tight.png");
+const full = path.join(root, "public/images/elegant-elton-chang-logo.png");
+const input = existsSync(tight) ? tight : full;
 const outDir = path.join(root, "public");
 
 async function squareFavicon(size, padRatio = 0.1) {

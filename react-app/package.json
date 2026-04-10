@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "trim-brand-logo": "node scripts/trim-brand-logo.mjs",
     "generate-favicon": "node scripts/generate-favicon.mjs",
-    "prebuild": "npm run generate-favicon",
+    "prebuild": "npm run trim-brand-logo && npm run generate-favicon",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
