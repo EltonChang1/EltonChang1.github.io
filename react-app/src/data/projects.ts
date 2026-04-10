@@ -395,7 +395,7 @@ export const SKILLS = [
 ] as const;
 
 export const ABOUT_PARAGRAPH =
-  "I'm currently studying Data Analytics for Science at Carnegie Mellon. I like solving problems by using code and data to make sense out of the challenge. My work sits at the intersection of software engineering, machine learning, and data science, where I build projects that aim to be both technically solid and actually useful. I enjoy creating things that are useful and make sense. I used my own projects like PokeFind and MarketPulse daily. Feel free to check them out below!";
+  "I'm pursuing an M.S. in Data Analytics for Science at Carnegie Mellon, but the work that defines me happens in production: I build full-stack products where serious data and ML meet interfaces people actually want to use. Recent focus spans live analytics experiences like MarketPulse, search and discovery tooling such as PokeFind that I rely on day to day, and this portfolio itself—treated as a shipped product with automated deploys, performance-conscious React, and the kind of visual polish that holds up on real devices and in dark browser chrome. I gravitate to ambiguous problems that need both statistical judgment and engineering discipline—systems that stay fast under load, tell the truth about uncertainty, and earn trust one interaction at a time. Dive into the featured projects below, or open my résumé for the full arc.";
 
 export function projectById(id: ProjectId): ProjectDefinition | undefined {
   return PROJECTS.find((p) => p.id === id);
