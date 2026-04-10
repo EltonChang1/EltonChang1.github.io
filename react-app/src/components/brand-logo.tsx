@@ -25,7 +25,7 @@ export function BrandMark({
       decoding="async"
       fetchPriority="high"
       className={cn(
-        "h-20 w-auto max-w-full shrink-0 object-contain object-left drop-shadow-lg sm:h-24 md:h-28",
+        "h-16 w-auto max-w-full shrink-0 object-contain object-left drop-shadow-md sm:h-20 md:h-24",
         className,
       )}
     />
@@ -70,7 +70,7 @@ export function BrandHomeLink({
         decoding="async"
         fetchPriority="high"
         className={cn(
-          "h-20 w-auto max-w-[min(560px,94vw)] object-contain object-left drop-shadow-lg sm:h-24 sm:max-w-[min(640px,92vw)] md:h-28 lg:h-32",
+          "h-16 w-auto max-w-[min(440px,90vw)] object-contain object-left drop-shadow-md sm:h-20 sm:max-w-[min(500px,88vw)] md:h-24 lg:h-28",
           logoClassName,
         )}
       />

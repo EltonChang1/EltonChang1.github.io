@@ -183,7 +183,7 @@ function HeroHeader() {
                   "transition-[height,max-width,filter] duration-300 ease-out",
                   isScrolled
                     ? "h-10 max-w-[min(200px,42vw)] drop-shadow-md sm:h-11 md:h-12 lg:h-12"
-                    : "h-28 max-w-[min(780px,98vw)] drop-shadow-xl sm:h-32 md:h-36 lg:h-44",
+                    : "h-16 max-w-[min(520px,92vw)] drop-shadow-lg sm:h-20 md:h-24 lg:h-28",
                 )}
               />
 
