@@ -32,8 +32,14 @@ export function HeroSection() {
   return (
     <>
       <HeroHeader />
-      <div className="relative isolate min-h-[100svh] overflow-hidden bg-background">
-        {/* Static micro-grid: always visible if WebGL is blocked; stays subtle under the canvas */}
+      <section
+        aria-labelledby="hero-heading"
+        className={cn(
+          "relative isolate min-h-[100svh] overflow-hidden bg-background",
+          "flex flex-col justify-center pb-16 pt-24 md:pb-24 md:pt-32",
+        )}
+      >
+        {/* Waving dots + grid live inside this section (same box as the hero copy) */}
         <div
           aria-hidden
           className={cn(
@@ -43,15 +49,11 @@ export function HeroSection() {
           )}
         />
         <DottedSurface className="z-[1]" />
-        {/* Soft vignette only — previous layer used ~solid background and hid the dots */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(ellipse_100%_95%_at_50%_48%,transparent_28%,var(--background)_94%)] opacity-[0.16] dark:opacity-[0.22]"
         />
-        <section
-          aria-labelledby="hero-heading"
-          className="relative z-[3] flex min-h-[100svh] flex-col justify-center pb-16 pt-24 md:pb-24 md:pt-32"
-        >
+        <div className="relative z-[3] w-full min-w-0">
           <div className="relative">
             <div
               aria-hidden
@@ -133,8 +135,8 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 }
