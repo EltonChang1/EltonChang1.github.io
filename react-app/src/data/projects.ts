@@ -395,7 +395,7 @@ export const SKILLS = [
 ] as const;
 
 export const ABOUT_PARAGRAPH =
-  "I'm pursuing an M.S. in Data Analytics for Science at Carnegie Mellon, but the work that defines me happens in production: I build full-stack products where serious data and ML meet interfaces people actually want to use. Recent focus spans live analytics experiences like MarketPulse, search and discovery tooling such as PokeFind that I rely on day to day, and this portfolio itself—treated as a shipped product with automated deploys, performance-conscious React, and the kind of visual polish that holds up on real devices and in dark browser chrome. I gravitate to ambiguous problems that need both statistical judgment and engineering discipline—systems that stay fast under load, tell the truth about uncertainty, and earn trust one interaction at a time. Dive into the featured projects below, or open my résumé for the full arc.";
+  "I'm currently a master student in Data Analytics for Science at Carnegie Mellon University. I enjoy building full stack of backend, data, ML, and interfaces that have to behave in the wild—where 'works on my machine' is a bug, not a punchline. Browse the work below; the résumé is shorter, slightly less interesting butmore serious cut.";
 
 export function projectById(id: ProjectId): ProjectDefinition | undefined {
   return PROJECTS.find((p) => p.id === id);
