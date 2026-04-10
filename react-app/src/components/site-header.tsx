@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
+import { BrandHomeLink } from "@/components/brand-logo";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { cn } from "@/lib/utils";
 
@@ -12,12 +13,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link
-          to="/"
-          className="text-lg font-bold tracking-tight text-foreground"
-        >
-          Elton
-        </Link>
+        <BrandHomeLink size={30} />
         <nav
           className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 sm:gap-x-6"
           aria-label="Main"

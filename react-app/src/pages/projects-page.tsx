@@ -16,6 +16,7 @@ import {
   X,
 } from "lucide-react";
 
+import { BrandMark } from "@/components/brand-logo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -232,6 +233,9 @@ export function ProjectsPage() {
     <div className="bg-background">
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-20 lg:py-24 sm:px-6">
         <header className="mb-12 text-center md:mb-14">
+          <div className="mb-6 flex justify-center">
+            <BrandMark size={52} className="drop-shadow-sm" />
+          </div>
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
             My Projects
           </h1>
