@@ -43,10 +43,9 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     const container = containerRef.current;
     if (!container) return;
 
-    // Wider, denser field so the viewport is always filled; wave motion stays subtle.
-    const SEPARATION = 95;
-    const AMOUNTX = 56;
-    const AMOUNTY = 72;
+    const SEPARATION = 88;
+    const AMOUNTX = 58;
+    const AMOUNTY = 76;
 
     const scene = new THREE.Scene();
     // No fog — it was washing particles into the background color.
@@ -74,11 +73,9 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
         const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
         positions.push(x, y, z);
         if (isDark) {
-          // Soft light dots on dark hero
-          colors.push(0.9, 0.9, 0.92);
+          colors.push(0.97, 0.97, 1);
         } else {
-          // Faint charcoal dots on light hero (readable with site neutrals)
-          colors.push(0.18, 0.18, 0.2);
+          colors.push(0.08, 0.08, 0.1);
         }
       }
     }
@@ -92,20 +89,17 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
       new THREE.Float32BufferAttribute(colors, 3),
     );
 
-    // Screen-space point size (pixels) so dots stay visible on mobile / narrow viewports.
     const material = new THREE.PointsMaterial({
-      size: isDark ? 2.1 : 2.35,
+      size: isDark ? 3.1 : 3.45,
       vertexColors: true,
       transparent: true,
-      opacity: isDark ? 0.38 : 0.42,
+      opacity: isDark ? 0.62 : 0.72,
       depthWrite: false,
       sizeAttenuation: false,
     });
 
     const points = new THREE.Points(geometry, material);
     scene.add(points);
-
-    let count = 0;
 
     const resize = () => {
       const w = Math.max(container.clientWidth, 1);
@@ -122,6 +116,8 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 
     const animate = () => {
       frameRef.current = requestAnimationFrame(animate);
+      const t = performance.now() * 0.001;
+
       const positionAttribute = geometry.attributes.position;
       const pos = positionAttribute.array as Float32Array;
 
@@ -129,15 +125,31 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
       for (let ix = 0; ix < AMOUNTX; ix++) {
         for (let iy = 0; iy < AMOUNTY; iy++) {
           const index = i * 3;
-          pos[index + 1] =
-            Math.sin((ix + count) * 0.3) * 50 +
-            Math.sin((iy + count) * 0.5) * 50;
+          const nx = ix * 0.31;
+          const ny = iy * 0.27;
+          const nxy = (ix + iy) * 0.19;
+
+          // Layered sines so the field never sits still; time-based = steady speed at any FPS.
+          const waveY =
+            Math.sin(nx + t * 2.15) * 72 +
+            Math.sin(ny + t * 2.65) * 68 +
+            Math.sin(nxy + t * 1.55) * 52 +
+            Math.cos(nx * 1.4 - ny * 1.1 + t * 3.1) * 38;
+
+          const baseX = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
+          const baseZ = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
+          const waveZ =
+            Math.sin(ny + t * 2.0) * 22 +
+            Math.sin(nx * 0.9 + t * 2.8) * 18;
+
+          pos[index] = baseX;
+          pos[index + 1] = waveY;
+          pos[index + 2] = baseZ + waveZ;
           i++;
         }
       }
       positionAttribute.needsUpdate = true;
       renderer.render(scene, camera);
-      count += 0.1;
     };
 
     renderer.domElement.className =

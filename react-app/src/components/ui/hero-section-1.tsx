@@ -38,15 +38,15 @@ export function HeroSection() {
           aria-hidden
           className={cn(
             "pointer-events-none absolute inset-0 z-0",
-            "bg-[radial-gradient(circle,oklch(0.22_0_0/0.11)_1.1px,transparent_1.1px)] [background-size:22px_22px]",
-            "dark:bg-[radial-gradient(circle,oklch(0.96_0_0/0.06)_1px,transparent_1px)] dark:[background-size:24px_24px]",
+            "bg-[radial-gradient(circle,oklch(0.15_0_0/0.16)_1.15px,transparent_1.15px)] [background-size:22px_22px]",
+            "dark:bg-[radial-gradient(circle,oklch(0.98_0_0/0.1)_1.05px,transparent_1.05px)] dark:[background-size:24px_24px]",
           )}
         />
         <DottedSurface className="z-[1]" />
         {/* Soft vignette only — previous layer used ~solid background and hid the dots */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(ellipse_100%_95%_at_50%_48%,transparent_25%,var(--background)_92%)] opacity-[0.22] dark:opacity-[0.28]"
+          className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(ellipse_100%_95%_at_50%_48%,transparent_28%,var(--background)_94%)] opacity-[0.16] dark:opacity-[0.22]"
         />
         <section
           aria-labelledby="hero-heading"
