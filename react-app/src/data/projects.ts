@@ -26,12 +26,13 @@ export interface ProjectLink {
 
 export interface ProjectDefinition {
   id: ProjectId;
-  /** Short title for home featured cards (optional) */
-  homeTitle?: string;
   homeLinks?: ProjectLink[];
   card: {
+    /** Display name on home and /projects */
     title: string;
+    /** One-sentence, user-facing summary (home featured + accent line on /projects) */
     tagline: string;
+    /** Longer explainer on the /projects card (below tagline) */
     description: string;
     tech: string[];
     stats: { label: string; icon: StatIcon }[];
@@ -53,7 +54,6 @@ export interface ProjectDefinition {
 export const PROJECTS: ProjectDefinition[] = [
   {
     id: "torflix",
-    homeTitle: "Torflix",
     homeLinks: [
       { label: "Interactive User Guide", href: "/torflix-userguide.html" },
       { label: "Interactive Project View", href: "/projects#torflix" },
@@ -183,7 +183,6 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: "marketpulse",
-    homeTitle: "MarketPulse AI — markets, portfolio, and stock intel",
     homeLinks: [
       { label: "Interactive Project View", href: "/projects#marketpulse" },
       {
@@ -311,7 +310,6 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: "meritocracy",
-    homeTitle: "Quantifying Meritocracy — luck, talent, and fairness",
     homeLinks: [
       { label: "Interactive Project View", href: "/projects#meritocracy" },
       {
@@ -400,7 +398,6 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: "jobsearch",
-    homeTitle: "Job Search Tool — tech roles in one place",
     homeLinks: [
       {
         label: "Interactive User Guide",
@@ -448,7 +445,6 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: "pokefind",
-    homeTitle: "PokeFind — map, raids, and routes",
     homeLinks: [
       { label: "Interactive User Guide", href: "/userguide.html" },
       { label: "View Details", href: "/projects#pokefind" },

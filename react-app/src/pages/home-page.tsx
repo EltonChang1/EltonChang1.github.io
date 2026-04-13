@@ -84,10 +84,10 @@ export function HomePage() {
                   </div>
                   <div className="flex flex-col justify-center text-left">
                     <h3 className="mb-3 text-xl font-semibold text-foreground md:text-2xl">
-                      {project.homeTitle ?? project.card.title}
+                      {project.card.title}
                     </h3>
                     <p className="mb-4 text-muted-foreground">
-                      {project.card.description}
+                      {project.card.tagline}
                     </p>
                     <div className="mb-6 flex flex-wrap gap-2">
                       {project.card.tech.map((t) => (
