@@ -53,8 +53,9 @@ export interface ProjectDefinition {
 export const PROJECTS: ProjectDefinition[] = [
   {
     id: "torflix",
-    homeTitle: "Torflix — Local-first BitTorrent & streaming UI",
+    homeTitle: "Torflix — browse, download, watch locally",
     homeLinks: [
+      { label: "Interactive User Guide", href: "/torflix-userguide.html" },
       { label: "Interactive Project View", href: "/projects#torflix" },
       {
         label: "GitHub",
@@ -62,7 +63,7 @@ export const PROJECTS: ProjectDefinition[] = [
         external: true,
       },
       {
-        label: "User Guide",
+        label: "User Guide (GitHub)",
         href: "https://github.com/EltonChang1/PyTorrent/blob/main/docs/USER_GUIDE.md",
         external: true,
       },
@@ -70,9 +71,9 @@ export const PROJECTS: ProjectDefinition[] = [
     card: {
       title: "Torflix",
       tagline:
-        "Python BitTorrent engine, FastAPI daemon, and React UI — browse a catalog, download, or watch while downloading in the browser",
+        "Discover titles like a streaming app, add torrents, track downloads, and play compatible videos in your browser.",
       description:
-        "End-to-end local-first stack: your machine runs the swarm; the browser only talks to your daemon. Includes catalog home with hero and rows, search, My downloads, optional account sync, sequential “watch while downloading” playback for web-friendly formats, and a dashboard to tune home rows — with a cinematic editorial UI.",
+        "You run the app on your PC; then you browse rows, search, open details, and choose a full download or watch-while-downloading. See everything in My downloads, tweak what appears on Home in Dashboard, and sign in if you want settings synced.",
       tech: [
         "Python",
         "FastAPI",
@@ -83,27 +84,70 @@ export const PROJECTS: ProjectDefinition[] = [
         "BitTorrent",
       ],
       stats: [
-        { label: "Local-first", icon: "globe" },
-        { label: "Daemon + UI", icon: "code" },
-        { label: "Catalog & playback", icon: "check" },
+        { label: "Runs on your machine", icon: "globe" },
+        { label: "Browse & track", icon: "code" },
+        { label: "Optional in-browser play", icon: "check" },
       ],
       image: "/images/torflix-home.png",
     },
     expanded: {
-      title: "Torflix — Local-first BitTorrent & streaming UI",
+      title: "Torflix",
+      overviewParagraphs: [
+        "**You** install and start the app on your computer, then use the site to browse a catalog, pick titles, and manage downloads. Playback and progress stay on your machine.",
+        "The layout feels like a streaming service: a big hero, scrollable rows, a detail panel for each title, and pages for downloads and settings. Use the **Interactive User Guide** below for a full click-through.",
+      ],
       featureList: [
-        "BitTorrent engine + torflixd daemon: HTTP API and WebSocket for jobs, health, and live updates",
-        "React/Vite web UI: Netflix-style home with featured hero, horizontal catalog rows, title detail modal",
-        "Search and quick search when the embedded or external catalog API is configured",
-        "My downloads: progress, paths, and jump to in-browser Watch for sequential jobs",
-        "Watch while downloading: rarest-first vs sequential modes; MP4/WebM friendly for the player",
-        "Dashboard: favorite genres, row visibility and order, optional register/sign-in for preferences and continue watching",
-        "Editorial Aura-style shell: midnight palette, gold accents, Noto Serif + Manrope",
+        "Browse Home rows or search; open a title to add to My List, pick quality if offered, then download or start watch-while-downloading.",
+        "Follow jobs and files in My downloads; open Watch when you chose in-browser playback (best with common web video formats).",
+        "Adjust which rows you see and in what order in Dashboard; sign in optionally to sync preferences and continue watching.",
+        "Check Connection & BitTorrent at the bottom if something feels stuck—listener status helps you or whoever runs the machine debug network issues.",
+      ],
+      techDetails: [
+        {
+          title: "Daemon & engine",
+          items: [
+            "Python: BitTorrent engine library + FastAPI app (torflixd)",
+            "HTTP API for torrents, health, user settings; WebSocket for live updates",
+            "Environment: TORFLIX_* (ports, data dir, catalog API, BT listen port)",
+          ],
+        },
+        {
+          title: "Web UI",
+          items: [
+            "React 18, TypeScript, Vite, React Router",
+            "Dev: Vite proxy to daemon; prod: static build served by torflixd or any host",
+            "Service worker shell for offline-friendly app loading (precache)",
+          ],
+        },
+        {
+          title: "Limits (honest)",
+          items: [
+            "In-browser playback depends on codec/container",
+            "Magnets need tracker URLs (tr=); no DHT in this stack yet",
+            "Inbound peers need TORFLIX_BT_PORT reachable if you want remote peers",
+          ],
+        },
       ],
       screenshots: [
         {
+          src: "/images/torflix-welcome.png",
+          caption: "First visit — welcome / important message",
+        },
+        {
           src: "/images/torflix-home.png",
           caption: "Home — hero, navigation, catalog rows",
+        },
+        {
+          src: "/images/torflix-rows-recent-top10.png",
+          caption: "Recently added, Top 10, horizontal scrolling",
+        },
+        {
+          src: "/images/torflix-rows-genres.png",
+          caption: "Genre rows (e.g. Sci-Fi, Action)",
+        },
+        {
+          src: "/images/torflix-rows-picked.png",
+          caption: "Highly rated, classics, picked for you",
         },
         {
           src: "/images/torflix-downloads.png",
@@ -111,17 +155,21 @@ export const PROJECTS: ProjectDefinition[] = [
         },
         {
           src: "/images/torflix-dashboard.png",
-          caption: "Dashboard — customize Home and account",
+          caption: "Dashboard — Home customization and account",
         },
       ],
       links: [
+        {
+          label: "Interactive User Guide",
+          href: "/torflix-userguide.html",
+        },
         {
           label: "Repository",
           href: "https://github.com/EltonChang1/PyTorrent",
           external: true,
         },
         {
-          label: "User guide (docs)",
+          label: "User guide (GitHub)",
           href: "https://github.com/EltonChang1/PyTorrent/blob/main/docs/USER_GUIDE.md",
           external: true,
         },
@@ -135,7 +183,7 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: "marketpulse",
-    homeTitle: "MarketPulse AI — Market, Portfolio & Stock Intelligence",
+    homeTitle: "MarketPulse AI — markets, portfolio, and stock intel",
     homeLinks: [
       { label: "Interactive Project View", href: "/projects#marketpulse" },
       {
@@ -157,9 +205,9 @@ export const PROJECTS: ProjectDefinition[] = [
     card: {
       title: "MarketPulse AI",
       tagline:
-        "Accounts, watchlist screener, portfolio analytics, Classic TradingView, and deep stock intelligence",
+        "See movers and your watchlist at a glance, log trades, then open any stock for forecasts, charts, news, and analysis.",
       description:
-        "Full-stack market intelligence platform with a unified dark/light shell. Signed-in users get a home watchlist screener (sparklines, sidebar), market overview cards and movers, manual portfolio tracking with allocation and benchmark charts, and per-symbol analysis: multi-horizon predictions, reversal-style key signals, prediction reasoning and patterns, technical indicators, narrative comprehensive analysis, latest news, plus Classic for the legacy grid and full TradingView embed. Ask AI offers watchlist- and portfolio-aware chat when enabled.",
+        "After you sign in, you get a market-style home: search tickers, a watchlist table with sparklines, index cards, and movers. Track a manual portfolio with performance and allocation charts. On a stock page you can read forecasts, signals, indicators, a written summary, and headlines—or switch to Classic for embedded TradingView. Ask AI can answer with your watchlist and portfolio in context when it’s on.",
       tech: [
         "React",
         "Vite",
@@ -169,29 +217,24 @@ export const PROJECTS: ProjectDefinition[] = [
         "TradingView",
       ],
       stats: [
-        { label: "Markets & watchlist", icon: "globe" },
-        { label: "Portfolio analytics", icon: "chart" },
-        { label: "Signals & news", icon: "news" },
+        { label: "Market overview", icon: "globe" },
+        { label: "Your portfolio", icon: "chart" },
+        { label: "Per-stock intel", icon: "news" },
       ],
       image: "/images/mp-3-market-overview.png",
     },
     expanded: {
-      title: "MarketPulse AI — Market, Portfolio & Stock Intelligence",
+      title: "MarketPulse AI",
+      overviewParagraphs: [
+        "**You** use it to watch the market and your own positions in one place: home dashboards, a portfolio you enter by hand, and a deep stock page when you want forecasts and news beyond a headline.",
+        "Dark/light theme and navigation (Home · Portfolio · Classic) keep it usable for long sessions; Classic is there when you want the full TradingView charting experience.",
+      ],
       featureList: [
-        "Accounts & auth: Sign-up / sign-in shell with persistent watchlist and portfolio when logged in",
-        "Global shell: Header nav (Home · Portfolio · Classic), dark/light theme, hash-based deep links",
-        "Home & search: Ticker or company search; watchlist screener table with sparklines and My Watchlist sidebar",
-        "Market overview: Index and indicator cards with mini candles, + Watchlist, View Analysis, portfolio strip in sidebar",
-        "Featured stocks & movers: Highlight cards plus Most Active, Gainers, Losers, and IPO movers columns",
-        "Portfolio: Add transactions, performance tiles, allocation donut, portfolio vs major indexes line chart",
-        "Holdings & history: Positions table and transaction log with buy/sell styling",
-        "Stock analysis: Period tiles, forecast strip (price, move, direction, confidence), reversal intelligence cards",
-        "Classic workspace: Legacy dashboard flow with full embedded TradingView charting and tools",
-        "Prediction transparency: Weighted signal model, pattern matches, and full technical indicator grid",
-        "Narrative layer: Comprehensive analysis with sentiment, risks, and opportunities",
-        "Latest news: Headlines with timestamps and sources on each symbol",
-        "Ask AI: Floating assistant with market context when the feature is enabled (Research Briefings removed from UI)",
-        "Stack: React + Vite frontend, Express backend, market feeds and technical-analysis orchestration",
+        "Sign up to save a watchlist and portfolio between visits.",
+        "On Home: search, screener-style table with sparklines, market index cards, featured names, and gainers/losers movers.",
+        "Portfolio: add buys and sells, see performance, allocation, vs indexes, holdings, and history.",
+        "Stock page: pick a time horizon, read forecast and signals, open indicators and pattern context, scan a narrative summary, and read latest headlines.",
+        "Optional Ask AI chat uses your watchlist and portfolio when enabled.",
       ],
       screenshots: [
         {
@@ -268,7 +311,7 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: "meritocracy",
-    homeTitle: "Quantifying Meritocracy: Talent vs. Luck",
+    homeTitle: "Quantifying Meritocracy — luck, talent, and fairness",
     homeLinks: [
       { label: "Interactive Project View", href: "/projects#meritocracy" },
       {
@@ -279,9 +322,9 @@ export const PROJECTS: ProjectDefinition[] = [
     ],
     card: {
       title: "Quantifying Meritocracy",
-      tagline: "Computational research validating that luck dominates success",
+      tagline: "See how luck and simple rules change who gets rich in simulated economies.",
       description:
-        'Agent-based simulation extending the "Talent vs. Luck" model to test whether solidarity-based redistribution can correct meritocracy\'s inherent randomness. Demonstrates 92% inequality reduction with moderate policies.',
+        "You explore results from thousands of simulated people and careers: how luck skews success, how unequal a “merit” system can get, and how redistribution shifts outcomes. The repo walks you through charts and experiments—no GUI, but the story reads like a research paper you can rerun.",
       tech: [
         "Python",
         "NumPy",
@@ -290,28 +333,26 @@ export const PROJECTS: ProjectDefinition[] = [
         "Statistical Analysis",
       ],
       stats: [
-        { label: "Data Science", icon: "chart" },
-        { label: "1000 Agents", icon: "users" },
-        { label: "6 Experiments", icon: "flask" },
+        { label: "Simulation results", icon: "chart" },
+        { label: "Many agents", icon: "users" },
+        { label: "Policy experiments", icon: "flask" },
       ],
       image: "/images/meritocracy-tvl.png",
     },
     expanded: {
-      title: "Quantifying Meritocracy: Talent vs. Luck Extended",
+      title: "Quantifying Meritocracy",
       overviewParagraphs: [
-        'This two-part computational research project validates the landmark paper "Talent vs Luck" (Pluchino et al., 2018) and extends it to test solidarity-based redistribution policies. Through agent-based simulation, it demonstrates that success in pure meritocracies depends more on random luck than talent—and that moderate redistribution (15-25%) can reduce inequality by 92% while achieving perfect social mobility.',
+        "**You** read the write-up and figures to understand: in a simple world where talent exists but luck matters, who ends up rich—and whether sharing rules can flatten the ladder without killing mobility.",
       ],
       findingsList: [
-        "Luck Dominates Success: Weak correlation (r=0.31) between talent and wealth; most talented individuals rank ~184th in wealth distribution",
-        "Pure Meritocracy Creates Extreme Inequality: Without intervention, Gini coefficient reaches 0.393 (comparable to U.S. inequality)",
-        "15-25% Redistribution Optimal: Reduces inequality by 92% (Gini: 0.39 → 0.03) while maintaining 100% upward mobility",
-        "Preventive Policies Win: Early intervention prevents 50-80 years of unnecessary inequality vs. reactive approaches",
-        "Robust to Tax Avoidance: Even with 60% non-compliance, system achieves 90% inequality reduction",
-        "Simple Beats Complex: Fixed-rate redistribution outperforms progressive taxation and multi-mechanism policies",
+        "Talent and wealth don’t line up: luck explains most of the spread.",
+        "A pure merit-style run can look as unequal as real economies unless you add policy.",
+        "Moderate redistribution in the model cuts inequality sharply while keeping mobility high.",
+        "Early, simple rules often beat late, complicated ones in the simulations.",
       ],
       methodologyParagraphs: [
-        "Part 1: Recreated the original TvL model simulating 1,000 agents with normally distributed talent over 40-year careers, validating that random events determine success more than ability.",
-        "Part 2: Extended the model with 6 comprehensive experiments testing fixed redistribution, dynamic policies, tax avoidance scenarios, policy timing, multi-dimensional mechanisms, and parameter sensitivity across 100 economic iterations.",
+        "Part 1: Replays the classic Talent vs. Luck setup with many agents over simulated careers.",
+        "Part 2: Tries different redistribution and timing experiments so you can compare outcomes side by side.",
       ],
       techDetails: [
         {
@@ -359,7 +400,7 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: "jobsearch",
-    homeTitle: "Job Search Tool",
+    homeTitle: "Job Search Tool — tech roles in one place",
     homeLinks: [
       {
         label: "Interactive User Guide",
@@ -368,9 +409,9 @@ export const PROJECTS: ProjectDefinition[] = [
     ],
     card: {
       title: "Job Search Tool",
-      tagline: "Multi-source CS/DS/ML job aggregator with applied-job tracking",
+      tagline: "Search CS, data science, and ML jobs from several boards and remember what you already applied to.",
       description:
-        "A React-based job aggregator that pulls Computer Science, Data Science, and Machine Learning jobs from major platforms, supports advanced filtering/sorting, and tracks applied jobs with local persistence.",
+        "You filter by role type and preferences, sort results, read cleaned-up postings, and mark jobs as applied so your list doesn’t get messy. Everything stays in your browser for privacy.",
       tech: [
         "React",
         "Vite",
@@ -386,13 +427,13 @@ export const PROJECTS: ProjectDefinition[] = [
       image: "/images/job-search-tool.png",
     },
     expanded: {
-      title: "Job Search Tool - CS/DS/ML Aggregator",
+      title: "Job Search Tool",
       featureList: [
-        "Aggregated Search: Pulls jobs from major listing sites (Remotive, Arbeitnow, The Muse) in parallel",
-        "Tech-Only Relevance: Focuses on Computer Science, Data Science, and Machine Learning roles",
-        "Human-Readable Descriptions: Cleans and normalizes job descriptions to remove noisy formatting",
-        "Applied Job Tracker: One-click apply tracking with a dedicated applied-jobs dashboard",
-        "Advanced Controls: Filter by category/location/full-time and sort by relevance/date/company/title",
+        "Search keywords and location; results pull from multiple public job sources.",
+        "Focus on software, data science, and ML categories so you’re not wading through unrelated roles.",
+        "Descriptions are cleaned up so they’re easier to scan on the page.",
+        "Mark applied roles and revisit them on a dedicated applied list.",
+        "Sort and filter to match how you actually hunt (date, company, relevance, etc.).",
       ],
       screenshots: [
         {
@@ -407,7 +448,7 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: "pokefind",
-    homeTitle: "PokeFind - Real-Time Pokémon Tracker",
+    homeTitle: "PokeFind — map, raids, and routes",
     homeLinks: [
       { label: "Interactive User Guide", href: "/userguide.html" },
       { label: "View Details", href: "/projects#pokefind" },
@@ -420,9 +461,9 @@ export const PROJECTS: ProjectDefinition[] = [
     card: {
       title: "PokeFind",
       tagline:
-        "Full-stack web application with interactive maps and real-time data",
+        "Open a map to see spawns, raids, and gyms near you—or anywhere you search.",
       description:
-        "Comprehensive web application designed to enhance the Pokémon Go experience by providing real-time Pokémon radar, Gym and Raid information, and GPS route import/export features.",
+        "You pan and zoom the map, tap Pokémon for details, check raid and gym activity, and import or export GPX routes to plan how you move. Built for players who want situational awareness beyond the game’s default map.",
       tech: ["React.js", "Node.js", "MongoDB", "Leaflet.js", "Express"],
       stats: [
         { label: "Full-Stack", icon: "code" },
@@ -432,14 +473,13 @@ export const PROJECTS: ProjectDefinition[] = [
       image: "/images/pokemon-radar-main.png",
     },
     expanded: {
-      title: "PokeFind - Real-Time Pokémon Tracker",
+      title: "PokeFind",
       featureList: [
-        "Real-Time Pokémon Radar: Displays nearby Pokémon spawns on an interactive map with customizable search radius",
-        "Location Search: Search any location worldwide using address or GPS coordinates",
-        "GPS Route Import/Export: Upload and download GPX files for optimized Pokémon hunting routes",
-        "Gym & Raid Battle Information: Live updates on nearby Gym battles and Raid participation",
-        "Detailed Pokémon Info: View IV stats, spawn/despawn times, rarity levels, and accuracy ratings",
-        "Interactive Maps: Powered by Leaflet with smooth recentering and zoom controls",
+        "See Pokémon on a map around your location or after you search elsewhere.",
+        "Adjust how wide you search and recenter the map when you move.",
+        "Open a Pokémon to check timing, rarity-style info, and how trustworthy the signal is.",
+        "Watch gyms and raids so you know what’s active before you go.",
+        "Load or save GPX routes when you want a planned path instead of wandering.",
       ],
       screenshots: [
         {

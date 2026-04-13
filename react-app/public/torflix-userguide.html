@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Torflix — step-by-step user guide: local-first BitTorrent, catalog home, downloads, watch, dashboard." />
+  <title>Torflix — Interactive User Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --midnight: #0a1128;
+      --midnight2: #141a32;
+      --gold: #e2b042;
+      --gold-hover: #f2bf4f;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --card: #0d1428;
+      --border: rgba(226, 176, 66, 0.25);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Manrope", system-ui, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: linear-gradient(145deg, var(--midnight) 0%, var(--midnight2) 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--midnight) 0%, var(--midnight2) 100%);
+      padding: 48px 32px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .header h1 {
+      font-family: "Noto Serif", Georgia, serif;
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .header .kicker {
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+    .top-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .top-links a {
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: #261900;
+    }
+    .btn-gold:hover { background: var(--gold-hover); }
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.12); }
+
+    .nav {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    .nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav a:hover {
+      color: var(--gold);
+      background: rgba(226, 176, 66, 0.1);
+    }
+
+    .content { padding: 36px 28px 48px; }
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: 88px;
+    }
+    .section h2 {
+      font-family: "Noto Serif", Georgia, serif;
+      color: var(--text);
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .section h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      margin: 22px 0 10px;
+      font-weight: 700;
+    }
+    .section p { margin-bottom: 14px; color: var(--muted); }
+    .section ul, .section ol {
+      margin: 12px 0 12px 22px;
+      color: var(--muted);
+    }
+    .section li { margin-bottom: 8px; }
+    .section strong { color: var(--text); }
+
+    .callout {
+      border-left: 4px solid var(--gold);
+      padding: 16px 18px;
+      margin: 18px 0;
+      background: rgba(226, 176, 66, 0.08);
+      border-radius: 0 10px 10px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .callout strong { color: var(--gold); }
+
+    .figure {
+      margin: 24px 0;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+    }
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+    .figure figcaption {
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    table.guide {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+    table.guide th {
+      background: rgba(226, 176, 66, 0.15);
+      color: var(--gold);
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    table.guide td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 28px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .footer a { color: var(--gold); }
+
+    .back-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #261900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .back-top.visible { opacity: 1; pointer-events: all; }
+
+    @media (max-width: 640px) {
+      .content { padding: 28px 18px 40px; }
+      .header { padding: 36px 20px 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="top">
+      <p class="kicker">Portfolio · Interactive guide</p>
+      <h1>Torflix — User Guide</h1>
+      <p>
+        Local-first BitTorrent: your machine runs <strong style="color: var(--text)">torflixd</strong> and the swarm;
+        this walkthrough covers the web UI—home, catalog rows, title details, downloads, watch, and dashboard.
+      </p>
+      <div class="top-links">
+        <a class="btn-gold" href="/">Portfolio home</a>
+        <a class="btn-outline" href="/projects#torflix">Project overview</a>
+        <a class="btn-outline" href="https://github.com/EltonChang1/PyTorrent" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Guide sections">
+      <ul>
+        <li><a href="#first">First visit</a></li>
+        <li><a href="#home">Home &amp; nav</a></li>
+        <li><a href="#rows">Catalog rows</a></li>
+        <li><a href="#title">Title details</a></li>
+        <li><a href="#search">Search</a></li>
+        <li><a href="#downloads">My downloads</a></li>
+        <li><a href="#watch">Watch</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#status">Connection</a></li>
+        <li><a href="#trouble">Troubleshooting</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <section id="first" class="section">
+        <h2>1. First time you open the app</h2>
+        <p>
+          You may see a short <strong>welcome / legal</strong> dialog. It reminds you that Torflix runs on
+          <strong>your computer</strong>, that you should only access content you have the right to use, and where to find settings later.
+        </p>
+        <div class="callout">
+          <strong>Action:</strong> Click <strong>Got it</strong> to dismiss. You can use the app normally afterward.
+        </div>
+        <figure class="figure">
+          <img src="/images/torflix-welcome.png" alt="Torflix welcome dialog" width="920" />
+          <figcaption>Welcome and important information</figcaption>
+        </figure>
+      </section>
+
+      <section id="home" class="section">
+        <h2>2. Home — top bar and hero</h2>
+        <p><strong>Home</strong> opens with a large featured area and catalog rows below. In the top bar:</p>
+        <ul>
+          <li><strong>Torflix</strong> (logo) — return to Home.</li>
+          <li><strong>Home</strong> — curated rows (trending, genres, recommendations, Dashboard rules).</li>
+          <li><strong>Search</strong> — keyword search <em>(when catalog search is enabled)</em>.</li>
+          <li><strong>My downloads</strong> — torrents you added and their status.</li>
+          <li><strong>Dashboard</strong> — customize Home; optional <strong>Sign in</strong>.</li>
+        </ul>
+        <p>On the right: <strong>Quick search</strong> — type at least two characters and press <strong>Enter</strong> to jump to Search with that query.</p>
+        <figure class="figure">
+          <img src="/images/torflix-home.png" alt="Torflix home screen with hero and rows" width="920" />
+          <figcaption>Home — hero, navigation, catalog rows</figcaption>
+        </figure>
+      </section>
+
+      <section id="rows" class="section">
+        <h2>3. Catalog rows</h2>
+        <p>
+          Below the hero, titles are grouped into <strong>horizontal rows</strong>. Scroll sideways to see more posters.
+          Row labels depend on the catalog and your <strong>Dashboard</strong> (e.g. Recently added, Top 10, trending).
+        </p>
+        <h3>Recently added &amp; Top 10</h3>
+        <figure class="figure">
+          <img src="/images/torflix-rows-recent-top10.png" alt="Recently added and Top 10 rows" width="920" />
+          <figcaption>Recently added and Top 10 style rows</figcaption>
+        </figure>
+        <p><strong>Continue watching</strong> (when shown) resumes in-browser playback. Other rows may include trending, genres, and “picked for you.”</p>
+        <h3>Genres (e.g. Sci-Fi, Action)</h3>
+        <figure class="figure">
+          <img src="/images/torflix-rows-genres.png" alt="Genre rows" width="920" />
+          <figcaption>Genre and category rows</figcaption>
+        </figure>
+        <h3>Highly rated, classics, picked for you</h3>
+        <figure class="figure">
+          <img src="/images/torflix-rows-picked.png" alt="Highly rated and recommendations" width="920" />
+          <figcaption>Highly rated, classics, and picked-for-you style rows</figcaption>
+        </figure>
+        <p>Click any <strong>poster</strong> to open title details (next section).</p>
+      </section>
+
+      <section id="title" class="section">
+        <h2>4. Title details — list, download, watch</h2>
+        <p>After you click a poster, a <strong>detail panel</strong> opens with artwork, size, seeders, and actions:</p>
+        <ul>
+          <li><strong>Add to My List</strong> (heart) — saves the title in this browser; with an account, settings can sync on this server.</li>
+          <li><strong>Full download</strong> — standard BitTorrent download (rarest-first). Best when you want to keep the file.</li>
+          <li><strong>Watch while downloading</strong> — requests <strong>sequential</strong> download from the start so the <strong>Watch</strong> page can play while data arrives. Best for <strong>MP4/WebM</strong>; other formats may not play in the browser.</li>
+          <li><strong>View source page</strong> — opens the listing site in a new tab (if provided).</li>
+        </ul>
+        <p>
+          If several torrents exist (different qualities), open <strong>Quality / version</strong>, pick a line, then
+          <strong>Full download</strong> or <strong>Watch while downloading</strong>.
+        </p>
+        <div class="callout">
+          <strong>Legal:</strong> Only add and share content you are permitted to use.
+        </div>
+      </section>
+
+      <section id="search" class="section">
+        <h2>5. Search</h2>
+        <p>
+          Use <strong>Search</strong> in the top bar or <strong>Quick search</strong>. Results open the same
+          <strong>title details</strong> flow as Home.
+        </p>
+      </section>
+
+      <section id="downloads" class="section">
+        <h2>6. My downloads</h2>
+        <p>
+          Lists everything you added: progress, status, and shortcuts to <strong>Watch</strong> for jobs started with
+          <strong>Watch while downloading</strong>.
+        </p>
+        <figure class="figure">
+          <img src="/images/torflix-downloads.png" alt="My downloads page" width="920" />
+          <figcaption>My downloads — jobs and status</figcaption>
+        </figure>
+      </section>
+
+      <section id="watch" class="section">
+        <h2>7. Watching in the browser</h2>
+        <p>
+          Playback opens on the <strong>Watch</strong> page. If the stream stalls, wait for more data and press
+          <strong>Play</strong> again. Volume may be remembered on this device.
+        </p>
+        <p>Typical shortcuts (see on-page hints): <strong>Space</strong> play/pause, <strong>arrows</strong> seek, <strong>M</strong> mute, <strong>F</strong> fullscreen.</p>
+      </section>
+
+      <section id="dashboard" class="section">
+        <h2>8. Dashboard — customize Home</h2>
+        <ul>
+          <li><strong>Favorite genres</strong> — comma-separated; feeds recommendation-style rows.</li>
+          <li>Toggle <strong>recommendation</strong> rows on or off.</li>
+          <li><strong>Show/hide</strong> Home rows and <strong>reorder</strong> with up/down controls.</li>
+          <li><strong>Save</strong> — local for guests; on the server if you <strong>register</strong> and <strong>sign in</strong>.</li>
+        </ul>
+        <p>Sign-in is optional; it mainly syncs Dashboard preferences and <strong>continue watching</strong> on this server.</p>
+        <figure class="figure">
+          <img src="/images/torflix-dashboard.png" alt="Dashboard settings" width="920" />
+          <figcaption>Dashboard — customize Home and account</figcaption>
+        </figure>
+      </section>
+
+      <section id="status" class="section">
+        <h2>9. Connection &amp; BitTorrent</h2>
+        <p>
+          At the <strong>bottom</strong> of the page, expand <strong>Connection &amp; BitTorrent</strong> to see WebSocket status and the
+          <strong>listener</strong> summary. Slow downloads or missing peers may involve firewall, VPN, or port settings on the machine running
+          <strong>torflixd</strong>.
+        </p>
+      </section>
+
+      <section id="trouble" class="section">
+        <h2>10. Troubleshooting</h2>
+        <table class="guide">
+          <thead>
+            <tr>
+              <th>Issue</th>
+              <th>What to try</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>“Catalog unavailable”</strong></td>
+              <td>Daemon needs the embedded catalog API or a configured search API. You can still use <strong>My downloads</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Video won’t play</strong></td>
+              <td>Format may be unsupported in-browser; use <strong>Full download</strong> and a local player.</td>
+            </tr>
+            <tr>
+              <td><strong>Slow / no peers</strong></td>
+              <td>Swarms and trackers vary; check firewall/VPN and listener status.</td>
+            </tr>
+            <tr>
+              <td><strong>Search missing</strong></td>
+              <td>Catalog search may be disabled on the server.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 20px;">
+          Install and configuration: see the
+          <a href="https://github.com/EltonChang1/PyTorrent/blob/main/README.md" target="_blank" rel="noreferrer" style="color: var(--gold)">README</a>
+          and
+          <a href="https://github.com/EltonChang1/PyTorrent/blob/main/docs/CONFIGURATION.md" target="_blank" rel="noreferrer" style="color: var(--gold)">Configuration</a>
+          on GitHub.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Torflix · Interactive User Guide · <a href="/">Elton Chang</a></p>
+    </footer>
+  </div>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="Back to top">↑</a>
+  <script>
+    var b = document.getElementById("backTop");
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 320) b.classList.add("visible");
+      else b.classList.remove("visible");
+    });
+  </script>
+</body>
+</html>

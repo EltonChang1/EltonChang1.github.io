@@ -64,7 +64,7 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
   {
     title: "Torflix",
     description:
-      "Local-first BitTorrent: Python engine and FastAPI daemon plus a React UI for catalog browsing, downloads, and watch-while-downloading in the browser — your machine runs the swarm",
+      "You run it on your computer, then browse and queue downloads like a streaming app—track jobs and optionally watch compatible files in the browser.",
     stats: ["Systems", "Full-Stack"],
     href: "/projects#torflix",
     icon: "film",
@@ -72,7 +72,7 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
   {
     title: "Quantifying Meritocracy (Research)",
     description:
-      "Extended the Talent vs. Luck model with a solidarity parameter, applying statistical modeling and agent-based simulations to analyze systemic drivers of inequality",
+      "You read simulation results that show how luck and simple sharing rules change who gets rich in toy economies—grounded in the Talent vs. Luck research line.",
     stats: ["Research", "Data Analysis"],
     href: "/projects#meritocracy",
     icon: "microscope",
@@ -80,7 +80,7 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
   {
     title: "MarketPulse AI",
     description:
-      "Full-stack market intelligence app: accounts, home watchlist screener, portfolio analytics with benchmark charts, multi-horizon predictions and key signals, TradingView Classic workspace, technical indicators, narrative analysis, news, and context-aware Ask AI",
+      "You sign in to watch markets, maintain a watchlist and portfolio, then open any ticker for forecasts, charts, headlines, and optional chat tied to what you follow.",
     stats: ["Full-Stack", "AI/ML"],
     href: "/projects#marketpulse",
     icon: "chart",
@@ -95,7 +95,7 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
   {
     title: "Pokemon Finder App",
     description:
-      "Full-stack application with real-time Pokémon tracking, interactive maps, and GPS route management",
+      "You use a map to see spawns, raids, and gyms, search any area, and save routes—so you can plan how you play instead of guessing.",
     stats: ["Full-Stack", "MERN Stack"],
     href: "/projects#pokefind",
     icon: "map",

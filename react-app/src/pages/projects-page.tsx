@@ -45,6 +45,7 @@ const statIcons: Record<
 };
 
 const PROJECT_IDS: ProjectId[] = [
+  "torflix",
   "marketpulse",
   "meritocracy",
   "jobsearch",
@@ -244,9 +245,8 @@ export function ProjectsPage() {
             My Projects
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            My work sits at the intersection of software engineering, machine
-            learning, and data analytics, and these are projects I use
-            daily—like PokeFind and MarketPulse.
+            Below is what each project does for you as a user—browse the cards,
+            then expand for screenshots and links.
           </p>
         </header>
 
