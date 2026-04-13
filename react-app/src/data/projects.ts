@@ -53,7 +53,7 @@ export interface ProjectDefinition {
 export const PROJECTS: ProjectDefinition[] = [
   {
     id: "torflix",
-    homeTitle: "Torflix — browse, download, watch locally",
+    homeTitle: "Torflix",
     homeLinks: [
       { label: "Interactive User Guide", href: "/torflix-userguide.html" },
       { label: "Interactive Project View", href: "/projects#torflix" },
@@ -71,9 +71,9 @@ export const PROJECTS: ProjectDefinition[] = [
     card: {
       title: "Torflix",
       tagline:
-        "Discover titles like a streaming app, add torrents, track downloads, and play compatible videos in your browser.",
+        "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
       description:
-        "You run the app on your PC; then you browse rows, search, open details, and choose a full download or watch-while-downloading. See everything in My downloads, tweak what appears on Home in Dashboard, and sign in if you want settings synced.",
+        "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
       tech: [
         "Python",
         "FastAPI",
@@ -93,8 +93,8 @@ export const PROJECTS: ProjectDefinition[] = [
     expanded: {
       title: "Torflix",
       overviewParagraphs: [
-        "**You** install and start the app on your computer, then use the site to browse a catalog, pick titles, and manage downloads. Playback and progress stay on your machine.",
-        "The layout feels like a streaming service: a big hero, scrollable rows, a detail panel for each title, and pages for downloads and settings. Use the **Interactive User Guide** below for a full click-through.",
+        "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
+        "The layout mirrors streaming: hero, rows, title details, downloads, dashboard. Use the **Interactive User Guide** below for a full click-through.",
       ],
       featureList: [
         "Browse Home rows or search; open a title to add to My List, pick quality if offered, then download or start watch-while-downloading.",

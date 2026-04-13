@@ -64,7 +64,7 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
   {
     title: "Torflix",
     description:
-      "You run it on your computer, then browse and queue downloads like a streaming app—track jobs and optionally watch compatible files in the browser.",
+      "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
     stats: ["Systems", "Full-Stack"],
     href: "/projects#torflix",
     icon: "film",
