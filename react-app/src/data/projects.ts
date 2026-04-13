@@ -73,7 +73,7 @@ export const PROJECTS: ProjectDefinition[] = [
       tagline:
         "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
       description:
-        "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
+        "A local daemon (torflixd) runs BitTorrent on your machine; a web UI in your browser lets you browse the catalog, add magnets, track downloads, and play video. The browser only talks to your daemon, not the swarm.",
       tech: [
         "Python",
         "FastAPI",
@@ -94,7 +94,7 @@ export const PROJECTS: ProjectDefinition[] = [
       title: "Torflix",
       overviewParagraphs: [
         "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
-        "The layout mirrors streaming: hero, rows, title details, downloads, dashboard. Use the **Interactive User Guide** below for a full click-through.",
+        "The layout mirrors streaming: hero, rows, title details, downloads, dashboard. Use the Interactive User Guide below for a full click-through.",
       ],
       featureList: [
         "Browse Home rows or search; open a title to add to My List, pick quality if offered, then download or start watch-while-downloading.",
