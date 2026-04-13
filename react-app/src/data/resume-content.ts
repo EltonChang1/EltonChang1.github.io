@@ -57,10 +57,18 @@ export type ResumeProjectCard = {
   description: string;
   stats: string[];
   href?: string;
-  icon: "microscope" | "chart" | "home" | "map";
+  icon: "microscope" | "chart" | "home" | "map" | "film";
 };
 
 export const RESUME_PROJECTS: ResumeProjectCard[] = [
+  {
+    title: "Torflix",
+    description:
+      "Local-first BitTorrent: Python engine and FastAPI daemon plus a React UI for catalog browsing, downloads, and watch-while-downloading in the browser — your machine runs the swarm",
+    stats: ["Systems", "Full-Stack"],
+    href: "/projects#torflix",
+    icon: "film",
+  },
   {
     title: "Quantifying Meritocracy (Research)",
     description:

@@ -16,6 +16,7 @@ import {
   Mail,
   MapPin,
   Microscope,
+  Clapperboard,
   Phone,
   Settings2,
   User,
@@ -49,6 +50,7 @@ const projectIcons: Record<
   chart: ChartLine,
   home: Home,
   map: MapPin,
+  film: Clapperboard,
 };
 
 const categoryIcons = {

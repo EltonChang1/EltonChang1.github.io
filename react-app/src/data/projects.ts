@@ -1,4 +1,9 @@
-export type ProjectId = "marketpulse" | "meritocracy" | "jobsearch" | "pokefind";
+export type ProjectId =
+  | "torflix"
+  | "marketpulse"
+  | "meritocracy"
+  | "jobsearch"
+  | "pokefind";
 
 export type StatIcon =
   | "globe"
@@ -46,6 +51,88 @@ export interface ProjectDefinition {
 }
 
 export const PROJECTS: ProjectDefinition[] = [
+  {
+    id: "torflix",
+    homeTitle: "Torflix — Local-first BitTorrent & streaming UI",
+    homeLinks: [
+      { label: "Interactive Project View", href: "/projects#torflix" },
+      {
+        label: "GitHub",
+        href: "https://github.com/EltonChang1/PyTorrent",
+        external: true,
+      },
+      {
+        label: "User Guide",
+        href: "https://github.com/EltonChang1/PyTorrent/blob/main/docs/USER_GUIDE.md",
+        external: true,
+      },
+    ],
+    card: {
+      title: "Torflix",
+      tagline:
+        "Python BitTorrent engine, FastAPI daemon, and React UI — browse a catalog, download, or watch while downloading in the browser",
+      description:
+        "End-to-end local-first stack: your machine runs the swarm; the browser only talks to your daemon. Includes catalog home with hero and rows, search, My downloads, optional account sync, sequential “watch while downloading” playback for web-friendly formats, and a dashboard to tune home rows — with a cinematic editorial UI.",
+      tech: [
+        "Python",
+        "FastAPI",
+        "React",
+        "TypeScript",
+        "Vite",
+        "WebSocket",
+        "BitTorrent",
+      ],
+      stats: [
+        { label: "Local-first", icon: "globe" },
+        { label: "Daemon + UI", icon: "code" },
+        { label: "Catalog & playback", icon: "check" },
+      ],
+      image: "/images/torflix-home.png",
+    },
+    expanded: {
+      title: "Torflix — Local-first BitTorrent & streaming UI",
+      featureList: [
+        "BitTorrent engine + torflixd daemon: HTTP API and WebSocket for jobs, health, and live updates",
+        "React/Vite web UI: Netflix-style home with featured hero, horizontal catalog rows, title detail modal",
+        "Search and quick search when the embedded or external catalog API is configured",
+        "My downloads: progress, paths, and jump to in-browser Watch for sequential jobs",
+        "Watch while downloading: rarest-first vs sequential modes; MP4/WebM friendly for the player",
+        "Dashboard: favorite genres, row visibility and order, optional register/sign-in for preferences and continue watching",
+        "Editorial Aura-style shell: midnight palette, gold accents, Noto Serif + Manrope",
+      ],
+      screenshots: [
+        {
+          src: "/images/torflix-home.png",
+          caption: "Home — hero, navigation, catalog rows",
+        },
+        {
+          src: "/images/torflix-downloads.png",
+          caption: "My downloads — jobs and status",
+        },
+        {
+          src: "/images/torflix-dashboard.png",
+          caption: "Dashboard — customize Home and account",
+        },
+      ],
+      links: [
+        {
+          label: "Repository",
+          href: "https://github.com/EltonChang1/PyTorrent",
+          external: true,
+        },
+        {
+          label: "User guide (docs)",
+          href: "https://github.com/EltonChang1/PyTorrent/blob/main/docs/USER_GUIDE.md",
+          external: true,
+        },
+        {
+          label: "README",
+          href: "https://github.com/EltonChang1/PyTorrent/blob/main/README.md",
+          external: true,
+        },
+      ],
+    },
+  },
   {
     id: "marketpulse",
     homeTitle: "MarketPulse AI — Market, Portfolio & Stock Intelligence",

@@ -1,8 +1,9 @@
-This repository hosts my personal website and what i built through out the years. Visit the live site:
+This repository hosts my personal website and projects. Live site:
 
-- Website: https://eltonchang1.github.io
+- **Website:** https://eltonchang1.github.io
 
-Featured projects and documentation are available in this repository. See the `projects.html` and `userguide.html` pages for details and interactive guides.
+The main experience is the **React app** under `react-app/` (Vite, GitHub Actions deploy to Pages). **Featured projects** — including **Torflix** (local-first BitTorrent + streaming UI), MarketPulse AI, research work, and more — are listed on the home page and on `/projects`.
 
+Legacy static pages (`index.html`, `userguide.html`, `jobsearch-userguide.html`, etc.) remain for older links.
 
 — Elton
