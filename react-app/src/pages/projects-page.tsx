@@ -16,9 +16,9 @@ import {
   X,
 } from "lucide-react";
 
-import { BrandMark } from "@/components/brand-logo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { InnerPageHero } from "@/components/ui/inner-page-hero";
 import {
   type ProjectDefinition,
   type ProjectId,
@@ -232,24 +232,12 @@ export function ProjectsPage() {
 
   return (
     <div className="bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-12 md:py-20 lg:py-24 sm:px-6">
-        <header className="mb-12 text-center md:mb-14">
-          <div className="mb-6 flex justify-center">
-            <BrandMark
-              className="h-16 w-auto opacity-90 md:h-20 lg:h-[4.5rem]"
-              alt=""
-              aria-hidden
-            />
-          </div>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-            My Projects
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Below is what each project does for you as a user—browse the cards,
-            then expand for screenshots and links.
-          </p>
-        </header>
+      <InnerPageHero
+        title="My Projects"
+        subtitle="What each project does for you—browse the cards, then expand for screenshots and links."
+      />
 
+      <div className="mx-auto max-w-6xl px-4 py-12 md:py-16 lg:py-20 sm:px-6">
         <div className="flex flex-col gap-10">
           {PROJECTS.map((project) => {
             const isExpanded = expandedId === project.id;

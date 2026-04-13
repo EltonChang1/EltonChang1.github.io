@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import { BrandHomeLink } from "@/components/brand-logo";
@@ -9,9 +10,26 @@ const linkClass =
 
 const activeClass = "text-foreground font-semibold";
 
+/** Matches home hero nav: light glass over dotted backgrounds, stronger bar on scroll. */
 export function SiteHeader() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full transition-[background,box-shadow,border-color] duration-300",
+        isScrolled
+          ? "border-b border-border/60 bg-background/85 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/75"
+          : "border-b border-transparent bg-background/55 backdrop-blur-md supports-[backdrop-filter]:bg-background/45",
+      )}
+    >
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <BrandHomeLink />
         <nav

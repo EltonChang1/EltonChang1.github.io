@@ -22,8 +22,8 @@ import {
   User,
 } from "lucide-react";
 
-import { BrandMark } from "@/components/brand-logo";
 import { IconGithub, IconLinkedin } from "@/components/brand-icons";
+import { InnerPageHero } from "@/components/ui/inner-page-hero";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RESUME_PDF_URL } from "@/constants/resume";
@@ -93,70 +93,56 @@ export function ResumePage() {
 
   return (
     <div className="min-h-full bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-12 md:py-20 lg:py-24 sm:px-6">
-        {/* Header */}
-        <header className="mb-12 text-center md:mb-16">
-          <div className="mb-5 flex justify-center">
-            <BrandMark
-              className="h-16 w-auto opacity-90 md:h-20 lg:h-[4.5rem]"
-              alt=""
-              aria-hidden
-            />
-          </div>
-          <h1 className="mb-2 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-            {RESUME_HEADER.name}
-          </h1>
-          <p className="mb-6 text-lg text-primary md:text-xl">
-            {RESUME_HEADER.title}
-          </p>
-          <div className="mb-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            <a
-              href={`tel:${RESUME_HEADER.phone.replace(/\D/g, "")}`}
-              className="flex items-center gap-2 hover:text-foreground"
-            >
-              <Phone className="h-4 w-4 shrink-0 text-primary" />
-              {RESUME_HEADER.phone}
+      <InnerPageHero title={RESUME_HEADER.name} subtitle={RESUME_HEADER.title}>
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <a
+            href={`tel:${RESUME_HEADER.phone.replace(/\D/g, "")}`}
+            className="flex items-center gap-2 hover:text-foreground"
+          >
+            <Phone className="h-4 w-4 shrink-0 text-primary" />
+            {RESUME_HEADER.phone}
+          </a>
+          <a
+            href={`mailto:${RESUME_HEADER.email}`}
+            className="flex items-center gap-2 hover:text-foreground"
+          >
+            <Mail className="h-4 w-4 shrink-0 text-primary" />
+            {RESUME_HEADER.email}
+          </a>
+        </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <Button size="lg" className="gap-2" asChild>
+            <a href={`mailto:${RESUME_HEADER.email}`}>
+              <Mail className="h-4 w-4" />
+              Email
             </a>
+          </Button>
+          <Button size="lg" variant="outline" className="gap-2" asChild>
             <a
-              href={`mailto:${RESUME_HEADER.email}`}
-              className="flex items-center gap-2 hover:text-foreground"
+              href="https://github.com/EltonChang1"
+              target="_blank"
+              rel="noreferrer"
             >
-              <Mail className="h-4 w-4 shrink-0 text-primary" />
-              {RESUME_HEADER.email}
+              <IconGithub className="h-4 w-4" />
+              GitHub
             </a>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Button size="lg" className="gap-2" asChild>
-              <a href={`mailto:${RESUME_HEADER.email}`}>
-                <Mail className="h-4 w-4" />
-                Email
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="gap-2" asChild>
-              <a
-                href="https://github.com/EltonChang1"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <IconGithub className="h-4 w-4" />
-                GitHub
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="gap-2" asChild>
-              <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">
-                <IconLinkedin className="h-4 w-4" />
-                LinkedIn
-              </a>
-            </Button>
-            <Button size="lg" variant="secondary" className="gap-2" asChild>
-              <a href={RESUME_PDF_URL} download>
-                <Download className="h-4 w-4" />
-                Download PDF
-              </a>
-            </Button>
-          </div>
-        </header>
+          </Button>
+          <Button size="lg" variant="outline" className="gap-2" asChild>
+            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">
+              <IconLinkedin className="h-4 w-4" />
+              LinkedIn
+            </a>
+          </Button>
+          <Button size="lg" variant="secondary" className="gap-2" asChild>
+            <a href={RESUME_PDF_URL} download>
+              <Download className="h-4 w-4" />
+              Download PDF
+            </a>
+          </Button>
+        </div>
+      </InnerPageHero>
 
+      <div className="mx-auto max-w-6xl px-4 py-12 md:py-16 lg:py-20 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[1fr_320px] lg:gap-12">
           {/* Main column */}
           <div className="space-y-12">
