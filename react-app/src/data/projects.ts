@@ -1,6 +1,7 @@
 export type ProjectId =
   | "torflix"
   | "marketpulse"
+  | "zoe"
   | "meritocracy"
   | "jobsearch"
   | "pokefind";
@@ -303,6 +304,74 @@ export const PROJECTS: ProjectDefinition[] = [
         {
           label: "View on GitHub",
           href: "https://github.com/EltonChang1/MarketPulse-AI",
+          external: true,
+        },
+      ],
+    },
+  },
+  {
+    id: "zoe",
+    homeLinks: [
+      { label: "Interactive Project View", href: "/projects#zoe" },
+      {
+        label: "GitHub",
+        href: "https://github.com/EltonChang1/Zoe",
+        external: true,
+      },
+      {
+        label: "Product brief (PRD)",
+        href: "https://github.com/EltonChang1/Zoe/blob/main/PRD/Zoe_PRD.md",
+        external: true,
+      },
+    ],
+    card: {
+      title: "Zoe",
+      tagline:
+        "Discover lifestyle ideas, rank what you love, and follow how taste evolves across people you care about.",
+      description:
+        "A mobile-first taste graph: save and compare ranked lists, browse discovery content in a familiar social shell, and use an immersive vertical-video lane when you want dense browsing—so identity shows up through rankings and updates, not anonymous feeds alone.",
+      tech: [
+        "Mobile",
+        "Product design",
+        "Social graph",
+        "Ranking",
+        "Content",
+      ],
+      stats: [
+        { label: "Taste graph", icon: "users" },
+        { label: "Ranked lists", icon: "chart" },
+        { label: "Discovery + social", icon: "globe" },
+      ],
+      image: "/images/zoe-card.svg",
+    },
+    expanded: {
+      title: "Zoe",
+      overviewParagraphs: [
+        "**Zoe** is where you discover life through taste: practical ideas worth trying, ranked lists that encode what you prefer, and a social layer so you see how friends’ and creators’ tastes move over time.",
+        "The product pairs editorial-style home discovery with list-building and followable ranking updates—so the app stays useful on Monday and expressive on Friday.",
+      ],
+      featureList: [
+        "Discovery and search oriented around lifestyle questions and current interests—not entertainment-only scrolling.",
+        "Ranked lists you maintain yourself, with updates others can follow when your order changes.",
+        "Profile-centered sharing, comments, and chat so recommendations and debate stay in one place.",
+        "Immersive vertical video lane (Shorts) with a dark, glass-forward chrome for long sessions.",
+        "Five-tab mobile information architecture tuned for daily return visits.",
+      ],
+      screenshots: [
+        {
+          src: "/images/zoe-card.svg",
+          caption: "Placeholder — replace with product screenshots when available.",
+        },
+      ],
+      links: [
+        {
+          label: "View repository",
+          href: "https://github.com/EltonChang1/Zoe",
+          external: true,
+        },
+        {
+          label: "Product brief (PRD)",
+          href: "https://github.com/EltonChang1/Zoe/blob/main/PRD/Zoe_PRD.md",
           external: true,
         },
       ],

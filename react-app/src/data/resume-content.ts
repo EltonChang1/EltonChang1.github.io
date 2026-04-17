@@ -83,6 +83,14 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
     href: "/projects#marketpulse",
     icon: "chart",
   },
+  {
+    title: "Zoe (entrepreneurial)",
+    description:
+      "A mobile social app where people discover lifestyle ideas, capture what they love in ranked lists, and follow how friends’ and creators’ tastes evolve—a living taste graph rather than generic feeds alone.",
+    stats: ["Mobile", "Product"],
+    href: "/projects#zoe",
+    icon: "home",
+  },
 ];
 
 export type EducationItem = {

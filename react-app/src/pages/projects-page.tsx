@@ -47,6 +47,7 @@ const statIcons: Record<
 const PROJECT_IDS: ProjectId[] = [
   "torflix",
   "marketpulse",
+  "zoe",
   "meritocracy",
   "jobsearch",
   "pokefind",
