@@ -506,19 +506,19 @@ export const PROJECTS: ProjectDefinition[] = [
 
 export const SKILLS = [
   "Python",
+  "Go",
+  "Java",
+  "C / C++",
   "React",
-  "Node.js",
+  "SQL",
+  "Spark",
   "Machine Learning",
-  "Data Analytics",
-  "MongoDB",
-  "TensorFlow",
-  "AWS",
-  "Express",
-  "API Integration",
+  "Large-scale systems",
+  "Full-stack",
 ] as const;
 
 export const ABOUT_PARAGRAPH =
-  "I'm currently a master student in Data Analytics for Science at Carnegie Mellon University. I enjoy building full stack of backend, data, ML, and interfaces that have to behave in the wild—where 'works on my machine' is a bug, not a punchline. Browse the work below; the résumé is shorter, slightly less interesting butmore serious cut.";
+  "I'm a master's student in Data Analytics for Science at Carnegie Mellon. I build data pipelines, ML models, and full-stack products that have to behave in the wild—where “works on my machine” is a bug, not a punchline. Browse the work below; the résumé is the shorter, slightly more serious cut.";
 
 export function projectById(id: ProjectId): ProjectDefinition | undefined {
   return PROJECTS.find((p) => p.id === id);

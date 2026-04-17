@@ -4,7 +4,7 @@ import { ArrowDown, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { IconGithub, IconLinkedin } from "@/components/brand-icons";
-import { LINKEDIN_URL } from "@/constants/social";
+import { LINKEDIN_URL, SITE_EMAIL } from "@/constants/social";
 
 export function HeroBlock() {
   const reduceMotion = useReducedMotion();
@@ -91,7 +91,7 @@ export function HeroBlock() {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="gap-2" asChild>
-              <a href="mailto:eltonchangtac@gmail.com">
+              <a href={`mailto:${SITE_EMAIL}`}>
                 <Mail className="h-4 w-4" />
                 Get in Touch
               </a>
@@ -113,7 +113,7 @@ export function HeroBlock() {
               { icon: IconLinkedin, href: LINKEDIN_URL, label: "LinkedIn" },
               {
                 icon: Mail,
-                href: "mailto:eltonchangtac@gmail.com",
+                href: `mailto:${SITE_EMAIL}`,
                 label: "Email",
               },
             ].map((social) => (

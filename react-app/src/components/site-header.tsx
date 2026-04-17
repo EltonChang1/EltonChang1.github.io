@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { BrandHomeLink } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
+import { SITE_EMAIL } from "@/constants/social";
 import { cn } from "@/lib/utils";
 
 /**
@@ -147,7 +148,7 @@ export function SiteHeader() {
                   size="sm"
                   className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
                 >
-                  <a href="mailto:eltonchangtac@gmail.com">
+                  <a href={`mailto:${SITE_EMAIL}`}>
                     <span>Email me</span>
                   </a>
                 </Button>

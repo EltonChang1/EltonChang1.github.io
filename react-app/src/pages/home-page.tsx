@@ -11,7 +11,7 @@ import {
 
 import { IconGithub, IconLinkedin } from "@/components/brand-icons";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
-import { LINKEDIN_URL } from "@/constants/social";
+import { LINKEDIN_URL, SITE_EMAIL } from "@/constants/social";
 import { FileDown, Mail } from "lucide-react";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
@@ -168,7 +168,7 @@ export function HomePage() {
               <IconLinkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:eltonchangtac@gmail.com"
+              href={`mailto:${SITE_EMAIL}`}
               className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-foreground transition-colors duration-150 hover:bg-primary hover:text-primary-foreground"
               aria-label="Email"
             >

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { DottedSurface } from "@/components/ui/dotted-surface";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
+import { SITE_EMAIL } from "@/constants/social";
 import { cn } from "@/lib/utils";
 
 const transitionVariants = {
@@ -87,9 +88,9 @@ export function HeroSection() {
                     Elton Chang
                   </h1>
                   <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
-                    Software engineer and builder. Browse projects and
-                    documentation below, open my résumé, or reach out to
-                    collaborate.
+                    Data analytics, software engineering, and infrastructure.
+                    Browse projects and documentation below, open my résumé, or
+                    reach out to collaborate.
                   </p>
                 </AnimatedGroup>
 
@@ -258,7 +259,7 @@ function HeroHeader() {
                   size="sm"
                   className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
                 >
-                  <a href="mailto:eltonchangtac@gmail.com">
+                  <a href={`mailto:${SITE_EMAIL}`}>
                     <span>Email me</span>
                   </a>
                 </Button>

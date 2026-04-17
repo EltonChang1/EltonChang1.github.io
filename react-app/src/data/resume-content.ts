@@ -1,12 +1,14 @@
+import { SITE_EMAIL } from "@/constants/social";
+
 export const RESUME_HEADER = {
   name: "Elton Chang",
   title: "Data Analytics & Software Engineering",
   phone: "(510) 513-2561",
-  email: "eltonchangtac@gmail.com",
+  email: SITE_EMAIL,
 } as const;
 
 export const PROFESSIONAL_SUMMARY =
-  "Master's student in Data Analytics with strong software engineering fundamentals and hands-on experience in data preprocessing, machine learning, and system optimization. Proven track record at Wintec Industries and UC Santa Cruz in building scalable systems, implementing advanced ML models, and improving operational efficiency. Passionate about leveraging data-driven insights and cutting-edge technologies to solve complex real-world problems.";
+  "M.S. student in Data Analytics for Science at Carnegie Mellon, focused on scalable data pipelines, production machine learning, and reliable systems. Research experience automating large research corpora and improving CNN accuracy; industry internships spanning IaC-backed infrastructure, telemetry for backup pipelines, and cloud file platforms with strong documentation.";
 
 export type ExperienceItem = {
   role: string;
@@ -20,35 +22,32 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     role: "Undergraduate Research Assistant",
     company: "University of California, Santa Cruz",
-    date: "September 2024 - June 2025",
+    date: "September 2024 – June 2025",
     bullets: [
-      "Preprocessed and structured over 600 files, enabling clean, analyzable datasets to accelerate faculty research",
-      "Optimized data pipelines for large-scale experiments, cutting dataset preparation time from several hours to under 30 minutes",
-      "Implemented convolutional neural networks for image classification, boosting prediction accuracy from baseline 65% to over 85%",
+      "Developed scalable and automated data pipelines to clean, standardize, and structure around 600 research files (~24 GB) of data, cutting processing time from days of manual work to under an hour",
+      "Optimized CNN-based image classification models, improving predictive accuracy from 63% to 82%",
     ],
-    tech: ["Python", "TensorFlow", "CNN", "Data Processing"],
+    tech: ["Python", "CNN", "Data pipelines", "TensorFlow"],
+  },
+  {
+    role: "Infrastructure Engineer Intern",
+    company: "Wintec Industries Inc.",
+    date: "July 2023 – September 2023",
+    bullets: [
+      "Implemented IaC-defined provisioning for non-production testing environments, standardizing builds and reducing manual configuration drift across 15+ hosts",
+      "Engineered telemetry and alerting across enterprise backup and replication pipelines, turning operational signals into reliability dashboards and cutting anomaly detection time by 40%",
+    ],
+    tech: ["IaC", "Telemetry", "Monitoring", "Networking"],
   },
   {
     role: "Software Engineer Intern",
     company: "Wintec Industries Inc.",
-    date: "July 2023 - September 2023",
+    date: "July 2022 – September 2022",
     bullets: [
-      "Built and automated backup & recovery pipelines for internal storage systems, cutting potential data loss incidents by ~80%",
-      "Migrated legacy on-premise servers to cloud-based environment, enabling scalable data management and reducing maintenance overhead",
-      "Enhanced system performance and security by refactoring critical code (10-30% faster processing) and implementing encryption protocols",
+      "Built an internal file management system on cloud infrastructure for elastic capacity, with a pipeline for automated ingestion, metadata indexing, and lifecycle tracking of company data",
+      "Created developer- and user-facing documentation for platform architecture, workflows, and system usage, improving onboarding and adoption by 35%",
     ],
-    tech: ["AWS", "Python", "Encryption", "DevOps"],
-  },
-  {
-    role: "Software Engineer Intern",
-    company: "Wintec Industries Inc.",
-    date: "July 2022 - September 2022",
-    bullets: [
-      "Developed internal file management platform to process and organize company data daily, improving operational efficiency",
-      "Created comprehensive technical documentation and user guides, boosting first-time user efficiency by ~35%",
-      "Introduced role-based permissions and encryption layers to safeguard sensitive files with strong access control measures",
-    ],
-    tech: ["Java", "SQL", "Security", "Documentation"],
+    tech: ["Cloud", "Java", "Documentation", "SQL"],
   },
 ];
 
@@ -62,43 +61,27 @@ export type ResumeProjectCard = {
 
 export const RESUME_PROJECTS: ResumeProjectCard[] = [
   {
-    title: "Torflix",
+    title: "Next Best Action (PNC collaboration)",
     description:
-      "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
+      "An intelligent next-best-action engine for PNC Bank that uses client financial behavior, product holdings, and engagement signals to predict the most relevant high-impact opportunity for advisor outreach.",
+    stats: ["ML", "Finance"],
+    icon: "chart",
+  },
+  {
+    title: "Torflix (open source)",
+    description:
+      "A BitTorrent-backed movie library with a FastAPI service that owns swarm I/O, storage, and progressive streaming, plus web clients for catalog, magnet enqueue, and playback while transfers complete.",
     stats: ["Systems", "Full-Stack"],
     href: "/projects#torflix",
     icon: "film",
   },
   {
-    title: "Quantifying Meritocracy (Research)",
+    title: "MarketPulse (public website)",
     description:
-      "You read simulation results that show how luck and simple sharing rules change who gets rich in toy economies—grounded in the Talent vs. Luck research line.",
-    stats: ["Research", "Data Analysis"],
-    href: "/projects#meritocracy",
-    icon: "microscope",
-  },
-  {
-    title: "MarketPulse AI",
-    description:
-      "You sign in to watch markets, maintain a watchlist and portfolio, then open any ticker for forecasts, charts, headlines, and optional chat tied to what you follow.",
+      "An end-to-end equity intelligence desk that unifies live market views, portfolio analytics, technical signals, and a contextual AI research copilot in one polished full-stack application.",
     stats: ["Full-Stack", "AI/ML"],
     href: "/projects#marketpulse",
     icon: "chart",
-  },
-  {
-    title: "SCHouse (Entrepreneurial)",
-    description:
-      "Launched a housing marketplace for Santa Cruz applying data-driven analytics and matchmaking algorithms to improve transparency for renters and landlords",
-    stats: ["Entrepreneurial", "Data Analytics"],
-    icon: "home",
-  },
-  {
-    title: "Pokemon Finder App",
-    description:
-      "You use a map to see spawns, raids, and gyms, search any area, and save routes—so you can plan how you play instead of guessing.",
-    stats: ["Full-Stack", "MERN Stack"],
-    href: "/projects#pokefind",
-    icon: "map",
   },
 ];
 
@@ -115,7 +98,7 @@ export const EDUCATION: EducationItem[] = [
     school: "Carnegie Mellon University",
     dateLocation: "Expected May 2026 | Pittsburgh, PA",
     coursework:
-      "Large Scale Computing, Computational Modeling, Computational Linear Algebra, Information Visualization, Neural Networks and Deep Learning",
+      "Algorithm Design & Analysis, Competition Programming, Large Scale Computing, Neural Networks & Deep Learning, Machine Learning in Production, Computational Modeling",
   },
   {
     degree: "Bachelor of Science in Computer Science, GPA: 3.7/4.0",
@@ -136,32 +119,31 @@ export type SkillCategory = {
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: "Backend & Data Science",
+    title: "Languages & data",
     icon: "database",
     skills: [
-      { name: "Python", level: "Expert", percent: 95 },
-      { name: "Machine Learning & Neural Networks", level: "Advanced", percent: 90 },
-      { name: "TensorFlow & PyTorch", level: "Advanced", percent: 88 },
-      { name: "SQL & Data Pipeline", level: "Advanced", percent: 85 },
+      { name: "Python", level: "Advanced", percent: 92 },
+      { name: "C / C++ / Go / Java", level: "Advanced", percent: 85 },
+      { name: "SQL & Spark", level: "Advanced", percent: 86 },
+      { name: "R", level: "Proficient", percent: 78 },
     ],
   },
   {
-    title: "Frontend & Web",
+    title: "Web & interfaces",
     icon: "code",
     skills: [
-      { name: "React & JavaScript", level: "Advanced", percent: 85 },
-      { name: "Node.js & Express", level: "Advanced", percent: 80 },
-      { name: "HTML, CSS & Responsive Design", level: "Advanced", percent: 82 },
-      { name: "MongoDB & NoSQL", level: "Proficient", percent: 75 },
+      { name: "React", level: "Advanced", percent: 86 },
+      { name: "Vue", level: "Proficient", percent: 76 },
     ],
   },
   {
-    title: "DevOps & Tools",
+    title: "Engineering focus",
     icon: "gears",
     skills: [
-      { name: "Git & Version Control", level: "Advanced", percent: 85 },
-      { name: "Docker & Cloud Deploy", level: "Proficient", percent: 75 },
-      { name: "Linux & CLI", level: "Advanced", percent: 80 },
+      { name: "Full-stack development", level: "Advanced", percent: 88 },
+      { name: "Large-scale computing", level: "Advanced", percent: 85 },
+      { name: "Machine learning", level: "Advanced", percent: 88 },
+      { name: "System design", level: "Advanced", percent: 82 },
     ],
   },
 ];
@@ -170,16 +152,16 @@ export const INTERESTS = [
   "Machine Learning",
   "Data Analytics",
   "System Design",
-  "Startups",
+  "Open Source",
   "Research",
   "Collaboration",
 ] as const;
 
 export const TECHNICAL_AREAS = [
-  "Deep Learning & Neural Networks",
-  "High-Performance Computing",
-  "NLP & LLM Optimization",
-  "Statistical Modeling",
+  "Large-scale computing",
+  "Machine learning in production",
+  "System design & reliability",
+  "Full-stack web applications",
 ] as const;
 
 export const LANGUAGES: { name: string; filled: number }[] = [
