@@ -421,7 +421,7 @@ export const PROJECTS: ProjectDefinition[] = [
         { label: "Ranked lists", icon: "chart" },
         { label: "Discovery + social", icon: "globe" },
       ],
-      image: "/images/zoe-card.svg",
+      image: "/images/elegant-elton-chang-logo-tight.png",
     },
     expanded: {
       title: "Zoe",
