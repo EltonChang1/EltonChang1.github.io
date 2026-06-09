@@ -406,48 +406,85 @@ export const PROJECTS: ProjectDefinition[] = [
     card: {
       title: "Zoe",
       tagline:
-        "Discover lifestyle ideas, rank what you love, and follow how taste evolves across people you care about.",
+        "A social app for discovering what’s worth loving — and ranking it.",
       description:
-        "A mobile-first taste graph: save and compare ranked lists, browse discovery content in a familiar social shell, and use an immersive vertical-video lane when you want dense browsing—so identity shows up through rankings and updates, not anonymous feeds alone.",
+        "Zoe (from the Greek ζωή, “life”) is a mobile taste platform that blends an Instagram-familiar shell, RedNote-style recommendation utility, and Beli-style ranking. You discover lifestyle ideas, build living ranked lists, and follow how friends’, creators’, and celebrities’ tastes evolve — all in a custom “Soft Editorial Luxury” design system. Built as a real Expo + React Native app (v1.2, submitted to Y Combinator S26).",
       tech: [
-        "Mobile",
+        "React Native",
+        "Expo",
+        "expo-router",
+        "TypeScript",
+        "NativeWind",
         "Product design",
-        "Social graph",
-        "Ranking",
-        "Content",
       ],
       stats: [
         { label: "Taste graph", icon: "users" },
         { label: "Ranked lists", icon: "chart" },
-        { label: "Discovery + social", icon: "globe" },
+        { label: "Discovery + Shorts", icon: "globe" },
       ],
-      image: "/images/elegant-elton-chang-logo-tight.png",
+      image: "/images/zoe-icon-preview.png",
     },
     expanded: {
       title: "Zoe",
       overviewParagraphs: [
-        "**Zoe** is where you discover life through taste: practical ideas worth trying, ranked lists that capture what you prefer, and a social layer so you can see how friends’ and creators’ tastes shift over time.",
-        "It pairs editorial-style discovery with list-building and followable ranking updates — so it’s practical for everyday recommendations and expressive enough to show off your taste.",
+        "**Zoe** (from the Greek *ζωή*, “life”) is a mobile social app for discovering, saving, discussing, and **ranking** the things that shape your taste. It deliberately combines three proven ideas: an **Instagram-familiar shell**, **RedNote-style** recommendation utility, and **Beli-style** ranking that turns favorites into living, followable lists.",
+        "The build is a real Expo + React Native vertical slice with five tabs — **Discover · Search · Rankings · Shorts · Profile** — three editorial post-detail templates, and a pairwise add-to-ranking flow, all rendered in a custom *Soft Editorial Luxury* design system (Newsreader / Cormorant Garamond / Inter type, warm neutrals, glass navigation).",
+        "A companion vertical, **Zoe Fashion**, points the same taste-and-ranking model at shopping: a unified catalog with effortless **side-by-side comparison** (price, brand, fit, material) so you can decide before you buy.",
       ],
       featureList: [
-        "Discovery and search oriented around lifestyle questions and current interests—not entertainment-only scrolling.",
-        "Ranked lists you maintain yourself, with updates others can follow when your order changes.",
-        "Profile-centered sharing, comments, and chat so recommendations and debate stay in one place.",
-        "Immersive vertical video lane (Shorts) with a dark, glass-forward chrome for long sessions.",
-        "Five-tab mobile information architecture tuned for daily return visits.",
+        "Discover — a two-column editorial masonry feed with category chips and interleaved curator quote cards.",
+        "Search / Following Activity — an italic editorial search plus a stacked feed of what people you follow just ranked, saved, or reviewed.",
+        "Rankings hub — community and personal taste libraries with a pairwise add flow (category → compare → caption) that returns an insertion rank, not a flat 1–10 score.",
+        "Shorts — an immersive vertical-video lane with a glass right rail (Rank · Like · Comment · Save) and curator attribution.",
+        "Profile — identity-first, with Posts / Shorts / Rankings tabs, highlights, and taste badges.",
+        "Three editorial post-detail templates (discovery photo, album review, product hero) selected automatically from the linked object’s category.",
+      ],
+      techDetails: [
+        {
+          title: "Mobile app",
+          items: [
+            "Expo SDK 52 + expo-router v4 (file-based navigation)",
+            "React Native with TypeScript (strict mode)",
+            "NativeWind v4 — Tailwind utility model for React Native",
+          ],
+        },
+        {
+          title: "Design system",
+          items: [
+            "“Soft Editorial Luxury” — warm neutrals, tonal depth, no divider lines",
+            "Newsreader / Cormorant Garamond / Inter type system",
+            "Glassmorphic nav + gradient CTAs (expo-blur, expo-linear-gradient)",
+          ],
+        },
       ],
       screenshots: [
         {
-          src: "/images/zoe-discovery.svg",
-          caption: "Discovery — lifestyle ideas worth trying (design concept)",
+          src: "/images/zoe-screen-home-framed.png",
+          caption: "Discover — editorial masonry feed with curator quote cards",
         },
         {
-          src: "/images/zoe-rankings.svg",
-          caption: "Ranked lists with followable updates (design concept)",
+          src: "/images/zoe-screen-search-framed.png",
+          caption: "Search / Following Activity — what people you follow just ranked",
         },
         {
-          src: "/images/zoe-social.svg",
-          caption: "A social taste graph that evolves over time (design concept)",
+          src: "/images/zoe-screen-rankings-framed.png",
+          caption: "Rankings — a community hub of living, curated lists",
+        },
+        {
+          src: "/images/zoe-screen-shorts-framed.png",
+          caption: "Shorts — immersive vertical video with a glass action rail",
+        },
+        {
+          src: "/images/zoe-screen-profile-framed.png",
+          caption: "Profile — identity-first, with posts, shorts, and rankings",
+        },
+        {
+          src: "/images/zoe-screen-album-framed.png",
+          caption: "Post detail — one of three editorial templates (album review)",
+        },
+        {
+          src: "/images/zoe-fashion-compare-framed.png",
+          caption: "Zoe Fashion — side-by-side comparison to decide before you buy",
         },
       ],
       links: [
