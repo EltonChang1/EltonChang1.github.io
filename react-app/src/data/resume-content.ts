@@ -56,7 +56,7 @@ export type ResumeProjectCard = {
   description: string;
   stats: string[];
   href?: string;
-  icon: "microscope" | "chart" | "home" | "map" | "film";
+  icon: "microscope" | "chart" | "home" | "map" | "film" | "shield";
 };
 
 export const RESUME_PROJECTS: ResumeProjectCard[] = [
@@ -76,20 +76,20 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
     icon: "film",
   },
   {
-    title: "MarketPulse (public website)",
+    title: "Quantifying Meritocracy (research)",
     description:
-      "An end-to-end equity intelligence desk that unifies live market views, portfolio analytics, technical signals, and a contextual AI research copilot in one polished full-stack application.",
-    stats: ["Full-Stack", "AI/ML"],
-    href: "/projects#marketpulse",
-    icon: "chart",
+      "Extended the University of Catania’s Talent vs. Luck model by introducing a solidarity parameter and applying statistical modeling with agent-based simulations to quantify systemic drivers of inequality.",
+    stats: ["Research", "Simulation"],
+    href: "/projects#meritocracy",
+    icon: "microscope",
   },
   {
-    title: "Zoe (entrepreneurial)",
+    title: "Ashe System (entrepreneurial)",
     description:
-      "A mobile social app where people discover lifestyle ideas, capture what they love in ranked lists, and follow how friends’ and creators’ tastes evolve—a living taste graph rather than generic feeds alone.",
-    stats: ["Mobile", "Product"],
-    href: "/projects#zoe",
-    icon: "home",
+      "A decision-support platform that transforms maintenance, inventory, supplier, certificate, and schedule data into explainable AOG risk scores, operational recommendations, and executive readiness reports.",
+    stats: ["Aviation", "Full-Stack"],
+    href: "/projects#ashe",
+    icon: "shield",
   },
 ];
 
@@ -102,11 +102,11 @@ export type EducationItem = {
 
 export const EDUCATION: EducationItem[] = [
   {
-    degree: "Master of Science in Data Analytics for Science, GPA: 4.0/4.0",
+    degree: "Master of Science in Data Analytics for Science, GPA: 3.97/4.0",
     school: "Carnegie Mellon University",
     dateLocation: "Expected May 2026 | Pittsburgh, PA",
     coursework:
-      "Algorithm Design & Analysis, Competition Programming, Large Scale Computing, Neural Networks & Deep Learning, Machine Learning in Production, Computational Modeling",
+      "Competition Programming, Large Scale Computing, Neural Networks & Deep Learning, Machine Learning in Production, Computational Modeling, Computational Linear Algebra",
   },
   {
     degree: "Bachelor of Science in Computer Science, GPA: 3.7/4.0",
@@ -131,9 +131,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: "database",
     skills: [
       { name: "Python", level: "Advanced", percent: 92 },
+      { name: "TypeScript", level: "Advanced", percent: 85 },
       { name: "C / C++ / Go / Java", level: "Advanced", percent: 85 },
-      { name: "SQL & Spark", level: "Advanced", percent: 86 },
-      { name: "R", level: "Proficient", percent: 78 },
+      { name: "SQL", level: "Advanced", percent: 86 },
     ],
   },
   {
@@ -141,6 +141,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: "code",
     skills: [
       { name: "React", level: "Advanced", percent: 86 },
+      { name: "Next.js", level: "Advanced", percent: 82 },
       { name: "Vue", level: "Proficient", percent: 76 },
     ],
   },
@@ -149,8 +150,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: "gears",
     skills: [
       { name: "Full-stack development", level: "Advanced", percent: 88 },
-      { name: "Large-scale computing", level: "Advanced", percent: 85 },
-      { name: "Machine learning", level: "Advanced", percent: 88 },
+      { name: "RESTful API design", level: "Advanced", percent: 84 },
+      { name: "Database architecture", level: "Advanced", percent: 82 },
       { name: "System design", level: "Advanced", percent: 82 },
     ],
   },

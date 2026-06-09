@@ -12,6 +12,7 @@ import {
   MapPin,
   Maximize2,
   Newspaper,
+  ShieldCheck,
   Users,
   X,
 } from "lucide-react";
@@ -42,9 +43,11 @@ const statIcons: Record<
   code: Code2,
   map: MapPin,
   clock: Clock,
+  shield: ShieldCheck,
 };
 
 const PROJECT_IDS: ProjectId[] = [
+  "ashe",
   "torflix",
   "marketpulse",
   "zoe",

@@ -19,6 +19,7 @@ import {
   Clapperboard,
   Phone,
   Settings2,
+  ShieldCheck,
   User,
 } from "lucide-react";
 
@@ -51,6 +52,7 @@ const projectIcons: Record<
   home: Home,
   map: MapPin,
   film: Clapperboard,
+  shield: ShieldCheck,
 };
 
 const categoryIcons = {

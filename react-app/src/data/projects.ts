@@ -1,4 +1,5 @@
 export type ProjectId =
+  | "ashe"
   | "torflix"
   | "marketpulse"
   | "zoe"
@@ -17,7 +18,8 @@ export type StatIcon =
   | "check"
   | "code"
   | "map"
-  | "clock";
+  | "clock"
+  | "shield";
 
 export interface ProjectLink {
   label: string;
@@ -53,6 +55,82 @@ export interface ProjectDefinition {
 }
 
 export const PROJECTS: ProjectDefinition[] = [
+  {
+    id: "ashe",
+    homeLinks: [
+      { label: "Interactive Project View", href: "/projects#ashe" },
+      {
+        label: "Go to Website",
+        href: "https://ashesystem.com",
+        external: true,
+      },
+    ],
+    card: {
+      title: "Ashe System — AOG Shield",
+      tagline: "Predict risk. Prepare parts. Reduce downtime.",
+      description:
+        "AOG Shield turns an aviation operator's existing maintenance, inventory, supplier, certificate, and schedule exports into explainable 0–100 AOG risk scores, prioritized recommendations, and an executive-ready readiness report—so teams catch parts-driven Aircraft-on-Ground risk before it grounds a plane.",
+      tech: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "FastAPI",
+        "Python",
+        "Tailwind CSS",
+      ],
+      stats: [
+        { label: "Explainable risk scores", icon: "chart" },
+        { label: "Readiness reports", icon: "news" },
+        { label: "Decision support", icon: "shield" },
+      ],
+      image: "/images/Ashesystem_homepage.png",
+    },
+    expanded: {
+      title: "Ashe System — AOG Shield",
+      overviewParagraphs: [
+        "**AOG Shield** helps airlines, cargo operators, MROs, and aviation materials teams identify parts-driven AOG (Aircraft on Ground) risk before a missing or unavailable certified part creates avoidable downtime.",
+        "It is decision-support and risk advisory only—it surfaces risk and the evidence behind it so maintenance, quality, supply-chain, and planning teams can act faster, without replacing human review or determining airworthiness.",
+      ],
+      featureList: [
+        "Turns existing operator CSV exports into explainable 0–100 risk scores for aircraft, stations, parts, suppliers, and documentation.",
+        "Generates prioritized recommendations—transfer, source, repair, borrow/exchange, supplier review, stock-level review, certificate review, or quarantine pending review.",
+        "Shows the evidence behind every recommendation so teams can trust and verify each call.",
+        "Compiles an executive-ready AOG Readiness Diagnostic Report from anonymized data.",
+        "Includes a dashboard for operational exploration of risk across the fleet.",
+      ],
+      techDetails: [
+        {
+          title: "Product & data",
+          items: [
+            "Python data pipeline (pandas, numpy) for ingest and scoring",
+            "FastAPI backend serving read-oriented risk APIs",
+            "Explainable scoring with per-recommendation evidence",
+          ],
+        },
+        {
+          title: "Web & reports",
+          items: [
+            "Next.js App Router, React, TypeScript dashboard",
+            "Tailwind CSS marketing site at ashesystem.com",
+            "Generated PDF AOG Readiness Diagnostic Reports",
+          ],
+        },
+      ],
+      screenshots: [
+        {
+          src: "/images/Ashesystem_homepage.png",
+          caption: "AOG Shield — product homepage",
+        },
+      ],
+      links: [
+        {
+          label: "Visit ashesystem.com",
+          href: "https://ashesystem.com",
+          external: true,
+        },
+      ],
+    },
+  },
   {
     id: "torflix",
     homeLinks: [
@@ -575,10 +653,12 @@ export const PROJECTS: ProjectDefinition[] = [
 
 export const SKILLS = [
   "Python",
+  "TypeScript",
   "Go",
   "Java",
   "C / C++",
   "React",
+  "Next.js",
   "SQL",
   "Spark",
   "Machine Learning",
