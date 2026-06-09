@@ -58,18 +58,18 @@ export const PROJECTS: ProjectDefinition[] = [
   {
     id: "ashe",
     homeLinks: [
-      { label: "Interactive Project View", href: "/projects#ashe" },
       {
-        label: "Go to Website",
+        label: "Visit live site",
         href: "https://ashesystem.com",
         external: true,
       },
+      { label: "Interactive Project View", href: "/projects#ashe" },
     ],
     card: {
       title: "Ashe System — AOG Shield",
       tagline: "Predict risk. Prepare parts. Reduce downtime.",
       description:
-        "AOG Shield turns an aviation operator's existing maintenance, inventory, supplier, certificate, and schedule exports into explainable 0–100 AOG risk scores, prioritized recommendations, and an executive-ready readiness report—so teams catch parts-driven Aircraft-on-Ground risk before it grounds a plane.",
+        "AOG Shield turns an aviation operator’s existing maintenance, inventory, supplier, certificate, and schedule exports into explainable 0–100 AOG risk scores, prioritized recommendations, and an executive-ready readiness report—so teams catch parts-driven Aircraft-on-Ground risk before it grounds a plane.",
       tech: [
         "Next.js",
         "React",
@@ -119,12 +119,17 @@ export const PROJECTS: ProjectDefinition[] = [
       screenshots: [
         {
           src: "/images/Ashesystem_homepage.png",
-          caption: "AOG Shield — product homepage",
+          caption: "AOG Shield landing page — explore the full live product at ashesystem.com",
         },
       ],
       links: [
         {
-          label: "Visit ashesystem.com",
+          label: "Visit the live site — ashesystem.com",
+          href: "https://ashesystem.com",
+          external: true,
+        },
+        {
+          label: "Request an AOG Readiness Diagnostic",
           href: "https://ashesystem.com",
           external: true,
         },
@@ -150,7 +155,7 @@ export const PROJECTS: ProjectDefinition[] = [
     card: {
       title: "Torflix",
       tagline:
-        "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
+        "A self-hosted movie library that runs BitTorrent on your own machine — browse a catalog, add magnets, and stream titles while they finish downloading.",
       description:
         "A local daemon (torflixd) runs BitTorrent on your machine; a web UI in your browser lets you browse the catalog, add magnets, track downloads, and play video. The browser only talks to your daemon, not the swarm.",
       tech: [
@@ -172,8 +177,8 @@ export const PROJECTS: ProjectDefinition[] = [
     expanded: {
       title: "Torflix",
       overviewParagraphs: [
-        "A movie library on your hardware, aimed at a century of film in the wild, not this month's licensed row.",
-        "The layout mirrors streaming: hero, rows, title details, downloads, dashboard. Use the Interactive User Guide below for a full click-through.",
+        "Torflix is a self-hosted movie library: a local daemon runs BitTorrent on your machine while a familiar streaming-style web UI lets you browse, queue magnets, track downloads, and watch.",
+        "The layout mirrors streaming services — hero, rows, title details, downloads, dashboard. Use the Interactive User Guide below for a full click-through.",
       ],
       featureList: [
         "Browse Home rows or search; open a title to add to My List, pick quality if offered, then download or start watch-while-downloading.",
@@ -285,7 +290,7 @@ export const PROJECTS: ProjectDefinition[] = [
       tagline:
         "See movers and your watchlist at a glance, log trades, then open any stock for forecasts, charts, news, and analysis.",
       description:
-        "After you sign in, you get a market-style home: search tickers, a watchlist table with sparklines, index cards, and movers. Track a manual portfolio with performance and allocation charts. On a stock page you can read forecasts, signals, indicators, a written summary, and headlines—or switch to Classic for embedded TradingView. Ask AI can answer with your watchlist and portfolio in context when it’s on.",
+        "After you sign in, you get a market-style home: search tickers, a watchlist table with sparklines, index cards, and movers. Track a manual portfolio with performance and allocation charts. On a stock page you can read forecasts, signals, indicators, a written summary, and headlines — or switch to Classic for embedded TradingView. An optional Ask AI assistant answers questions using your watchlist and portfolio for context.",
       tech: [
         "React",
         "Vite",
@@ -322,10 +327,6 @@ export const PROJECTS: ProjectDefinition[] = [
         {
           src: "/images/mp-2-watchlist-screener.png",
           caption: "Home — search, watchlist screener table, sidebar",
-        },
-        {
-          src: "/images/mp-3-market-overview.png",
-          caption: "Market overview — index cards, mini candles, actions",
         },
         {
           src: "/images/mp-4-stocks-movers.png",
@@ -425,8 +426,8 @@ export const PROJECTS: ProjectDefinition[] = [
     expanded: {
       title: "Zoe",
       overviewParagraphs: [
-        "**Zoe** is where you discover life through taste: practical ideas worth trying, ranked lists that encode what you prefer, and a social layer so you see how friends’ and creators’ tastes move over time.",
-        "The product pairs editorial-style home discovery with list-building and followable ranking updates—so the app stays useful on Monday and expressive on Friday.",
+        "**Zoe** is where you discover life through taste: practical ideas worth trying, ranked lists that capture what you prefer, and a social layer so you can see how friends’ and creators’ tastes shift over time.",
+        "It pairs editorial-style discovery with list-building and followable ranking updates — so it’s practical for everyday recommendations and expressive enough to show off your taste.",
       ],
       featureList: [
         "Discovery and search oriented around lifestyle questions and current interests—not entertainment-only scrolling.",
@@ -437,8 +438,16 @@ export const PROJECTS: ProjectDefinition[] = [
       ],
       screenshots: [
         {
-          src: "/images/zoe-card.svg",
-          caption: "Placeholder — replace with product screenshots when available.",
+          src: "/images/zoe-discovery.svg",
+          caption: "Discovery — lifestyle ideas worth trying (design concept)",
+        },
+        {
+          src: "/images/zoe-rankings.svg",
+          caption: "Ranked lists with followable updates (design concept)",
+        },
+        {
+          src: "/images/zoe-social.svg",
+          caption: "A social taste graph that evolves over time (design concept)",
         },
       ],
       links: [
@@ -469,7 +478,7 @@ export const PROJECTS: ProjectDefinition[] = [
       title: "Quantifying Meritocracy",
       tagline: "See how luck and simple rules change who gets rich in simulated economies.",
       description:
-        "You explore results from thousands of simulated people and careers: how luck skews success, how unequal a “merit” system can get, and how redistribution shifts outcomes. The repo walks you through charts and experiments—no GUI, but the story reads like a research paper you can rerun.",
+        "You explore results from thousands of simulated people and careers: how luck skews success, how unequal a “merit” system can get, and how redistribution shifts outcomes. It reads like a reproducible research paper — every chart and experiment can be rerun straight from the repo.",
       tech: [
         "Python",
         "NumPy",
@@ -581,8 +590,20 @@ export const PROJECTS: ProjectDefinition[] = [
       ],
       screenshots: [
         {
-          src: "/images/job-search-tool.png",
-          caption: "Main search dashboard with category filters",
+          src: "/images/jobsearch-filters.png",
+          caption: "Filter by role type and preferences",
+        },
+        {
+          src: "/images/jobsearch-listings.png",
+          caption: "Results list with cleaned-up postings",
+        },
+        {
+          src: "/images/jobsearch-detail.png",
+          caption: "Full posting detail, easy to scan",
+        },
+        {
+          src: "/images/jobsearch-applied.png",
+          caption: "Track roles you’ve already applied to",
         },
       ],
       links: [
@@ -667,7 +688,7 @@ export const SKILLS = [
 ] as const;
 
 export const ABOUT_PARAGRAPH =
-  "I'm a master's student in Data Analytics for Science at Carnegie Mellon. I build data pipelines, ML models, and full-stack products that have to behave in the wild—where “works on my machine” is a bug, not a punchline. Browse the work below; the résumé is the shorter, slightly more serious cut.";
+  "I’m a master’s student in Data Analytics for Science at Carnegie Mellon. I build data pipelines, ML models, and full-stack products that have to behave in the wild—where “works on my machine” is a bug, not a punchline. Browse the work below; the résumé is the shorter, slightly more serious cut.";
 
 export function projectById(id: ProjectId): ProjectDefinition | undefined {
   return PROJECTS.find((p) => p.id === id);

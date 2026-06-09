@@ -272,7 +272,7 @@ export function ProjectsPage() {
                       <img
                         src={project.card.image}
                         alt={`Preview for ${project.card.title}`}
-                        className="aspect-video w-full object-cover md:aspect-auto md:h-full md:min-h-[200px]"
+                        className="aspect-video w-full object-cover object-top md:aspect-auto md:h-full md:min-h-[200px]"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-background/60 opacity-0 transition-opacity hover:opacity-100">
