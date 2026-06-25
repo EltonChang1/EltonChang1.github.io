@@ -1,5 +1,6 @@
 export type ProjectId =
   | "ashe"
+  | "traceframe"
   | "torflix"
   | "marketpulse"
   | "zoe"
@@ -131,6 +132,119 @@ export const PROJECTS: ProjectDefinition[] = [
         {
           label: "Request an AOG Readiness Diagnostic",
           href: "https://ashesystem.com",
+          external: true,
+        },
+      ],
+    },
+  },
+  {
+    id: "traceframe",
+    homeLinks: [
+      { label: "Sample Audit Report", href: "/traceframe-ecommerce-audit.html" },
+      { label: "Interactive Project View", href: "/projects#traceframe" },
+      {
+        label: "GitHub",
+        href: "https://github.com/EltonChang1/traceframe",
+        external: true,
+      },
+    ],
+    card: {
+      title: "TraceFrame",
+      tagline:
+        "A local-first evidence tracker for data science workflows — record datasets, transforms, metrics, charts, claims, and lineage on your machine.",
+      description:
+        "TraceFrame writes project evidence under a local `.traceframe/` directory: no cloud service, telemetry, or external API by default. Use the Python API or CLI to capture what you ran, validate results with checks, trace lineage upstream and downstream, and export an HTML audit report.",
+      tech: [
+        "Python",
+        "DuckDB",
+        "pandas",
+        "Polars",
+        "SQLite",
+        "Local-first",
+      ],
+      stats: [
+        { label: "Local evidence store", icon: "shield" },
+        { label: "Lineage & checks", icon: "flask" },
+        { label: "Audit reports", icon: "check" },
+      ],
+      image: "/images/traceframe-home.png",
+    },
+    expanded: {
+      title: "TraceFrame",
+      overviewParagraphs: [
+        "**TraceFrame** is a local-first evidence tracker for data science workflows. It records datasets, transformations, SQL outputs, metrics, charts, claims, checks, source-row samples, and lineage under a project-local `.traceframe/` directory.",
+        "Nothing leaves your disk unless you export it — built for reproducibility, debugging, and explaining results when a metric or chart needs to be audited.",
+      ],
+      featureList: [
+        "Track pandas, Polars, and DuckDB SQL workflows with an explicit Python API (`tf.read_csv`, `tf.sql`, `tf.metric`, `tf.chart`, `tf.claim`).",
+        "Run data quality checks (`expect_not_null`, `expect_unique`, schema and range validators) and surface failures in reports or CI via `--json`.",
+        "Inspect upstream and downstream lineage from any artifact with `traceframe lineage` or `tf.lineage_graph`.",
+        "Sample source rows and drill into chart points locally — chart drilldown data stays in DuckDB under `.traceframe/source_rows/`.",
+        "Export a self-contained HTML audit report with datasets, lineage, metrics, charts, claims, checks, and project health.",
+        "Ships runnable ecommerce and Olist-inspired examples; deterministic local assistant planning when you want guided analysis setup.",
+      ],
+      techDetails: [
+        {
+          title: "Evidence model",
+          items: [
+            "JSON metadata in `.traceframe/` — project, lineage, metrics, charts, claims, checks, runs",
+            "Source-row samples as local JSON; chart drilldown in DuckDB",
+            "Audit logs per evidence record for change history",
+          ],
+        },
+        {
+          title: "API & CLI",
+          items: [
+            "Python 3.10+ library: `pip install -e .` from the repo",
+            "CLI: `traceframe init`, `status`, `lineage`, `checks`, `report`, `doctor`, `verify`",
+            "Notebook context via `tf.start(..., notebook_name=...)` and `tf.note_cell`",
+          ],
+        },
+        {
+          title: "MVP scope (v0.1)",
+          items: [
+            "Explicit instrumentation — not automatic full operation tracing",
+            "No cloud sync, hosted dashboards, telemetry, or notebook extensions yet",
+            "MIT licensed; CI with pytest, ruff, black, and mypy",
+          ],
+        },
+      ],
+      screenshots: [
+        {
+          src: "/images/traceframe-home.png",
+          caption: "Audit report — project health, datasets, and evidence summary",
+        },
+        {
+          src: "/images/traceframe-lineage.png",
+          caption: "Full audit report with lineage, metrics, charts, claims, and checks",
+        },
+        {
+          src: "/images/traceframe-olist.png",
+          caption: "Multi-table Olist example — join lineage across orders, items, and customers",
+        },
+      ],
+      links: [
+        {
+          label: "Ecommerce sample audit report",
+          href: "/traceframe-ecommerce-audit.html",
+        },
+        {
+          label: "Olist sample audit report",
+          href: "/traceframe-olist-audit.html",
+        },
+        {
+          label: "Repository",
+          href: "https://github.com/EltonChang1/traceframe",
+          external: true,
+        },
+        {
+          label: "Getting started",
+          href: "https://github.com/EltonChang1/traceframe/blob/main/docs/getting-started.md",
+          external: true,
+        },
+        {
+          label: "Evidence model",
+          href: "https://github.com/EltonChang1/traceframe/blob/main/docs/evidence-model.md",
           external: true,
         },
       ],

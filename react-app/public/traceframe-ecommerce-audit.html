@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TraceFrame Audit Report</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1d2733;
+      --muted: #647184;
+      --line: #d9e0e8;
+      --soft: #f6f8fb;
+      --panel: #ffffff;
+      --accent: #1b7f7a;
+      --warn: #a15c00;
+      --bad: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: #eef3f7;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      margin: 0;
+    }
+    main { margin: 0 auto; max-width: 1120px; padding: 32px 20px 56px; }
+    header { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
+    h1, h2, h3 { color: #111827; letter-spacing: 0; margin: 0; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 21px; margin: 32px 0 12px; }
+    h3 { font-size: 16px; margin: 18px 0 8px; }
+    p { margin: 8px 0; }
+    table { background: var(--panel); border: 1px solid var(--line); border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid var(--line); padding: 9px 10px; text-align: left; vertical-align: top; }
+    th { background: var(--soft); font-size: 13px; font-weight: 700; }
+    code { background: #edf1f5; border-radius: 4px; padding: 2px 4px; word-break: break-word; }
+    .muted { color: var(--muted); }
+    .summary { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-top: 18px; }
+    .stat { background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+    .stat strong { display: block; font-size: 24px; line-height: 1.1; }
+    .status { border-radius: 999px; display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; }
+    .ok { background: #e7f6ef; color: #067647; }
+    .stale { background: #fff4df; color: var(--warn); }
+    .missing { background: #fdecec; color: var(--bad); }
+    .section-note { color: var(--muted); margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>TraceFrame Audit Report</h1>
+    <p class="muted">Project: ecommerce_revenue_analysis · TraceFrame 0.1.0 · Generated 2026-06-25T06:43:16.439982+00:00</p>
+    <div class="summary">
+      <div class="stat"><strong>1</strong><span>Datasets</span></div>
+      <div class="stat"><strong>2</strong><span>Transformations</span></div>
+      <div class="stat"><strong>1</strong><span>Metrics</span></div>
+      <div class="stat"><strong>1</strong><span>Charts</span></div>
+      <div class="stat"><strong>1</strong><span>Claims</span></div>
+      <div class="stat"><strong>0</strong><span>Failed checks</span></div>
+      <div class="stat"><strong>0</strong><span>Assistant plans</span></div>
+      <div class="stat"><strong>0</strong><span>Stale warnings</span></div>
+    </div>
+  </header>
+
+  <h2>Project Health</h2>
+  <table>
+    <tr><th>Status</th><th>Issues</th></tr>
+    <tr><td><span class="status ok">ok</span></td><td>0</td></tr>
+  </table>
+  <table>
+    <tr><th>Severity</th><th>Type</th><th>Message</th></tr>
+    
+    <tr><td colspan="3">No issues found.</td></tr>
+    
+  </table>
+
+  <h2>Run Context</h2>
+  <table>
+    <tr><th>Run ID</th><th>Started</th><th>Context</th><th>Notebook</th><th>Script</th></tr>
+    
+    <tr>
+      <td><code>run_ecommerce_revenue_analysis_31caa5f8</code></td>
+      <td>2026-06-25T06:43:16.039316+00:00</td>
+      <td>script</td>
+      <td></td>
+      <td><code>/Users/long_leg_maniac/Documents/github/traceframe/examples/ecommerce/analysis.py</code></td>
+    </tr>
+    
+  </table>
+
+  <h2>Stale Checks</h2>
+  <p class="section-note">TraceFrame compares stored dataset hashes with the current local files when this report is generated.</p>
+  <table>
+    <tr><th>Dataset</th><th>Status</th><th>Path</th><th>Message</th></tr>
+    
+    <tr>
+      <td>orders</td>
+      <td><span class="status ok">ok</span></td>
+      <td><code>orders.csv</code></td>
+      <td>Current file matches tracked hash.</td>
+    </tr>
+    
+  </table>
+
+  <h2>Dataset Manifest</h2>
+  <table>
+    <tr><th>Name</th><th>Rows</th><th>Columns</th><th>Run</th><th>Hash</th></tr>
+    
+    <tr>
+      <td>orders</td>
+      <td>6</td>
+      <td>4</td>
+      <td><code>run_ecommerce_revenue_analysis_31caa5f8</code></td>
+      <td><code>sha256:1c23c2d6719d2b454e846a703821842bf393aa33c0ef1a9fce23381b6cadad4a</code></td>
+    </tr>
+    
+  </table>
+
+  <h2>Data Quality Summary</h2>
+  
+  <h3>orders</h3>
+  <p>Duplicate rows: 1</p>
+  <table>
+    <tr><th>Column</th><th>Missing values</th><th>Type</th></tr>
+    
+    <tr><td>order_date</td><td>0</td><td>str</td></tr>
+    
+    <tr><td>order_id</td><td>0</td><td>int64</td></tr>
+    
+    <tr><td>status</td><td>0</td><td>str</td></tr>
+    
+    <tr><td>total_price</td><td>0</td><td>float64</td></tr>
+    
+  </table>
+  
+
+  <h2>Lineage</h2>
+  <p class="section-note">Use <code>traceframe lineage ARTIFACT</code> to inspect upstream and downstream dependencies for a single artifact.</p>
+  <table>
+    <tr><th>ID</th><th>Type</th><th>Name</th></tr>
+    
+    <tr><td><code>ds_orders_7e1a331f</code></td><td>dataset</td><td>orders</td></tr>
+    
+    <tr><td><code>tf_clean_orders_d885ddc7</code></td><td>transformation</td><td>clean_orders</td></tr>
+    
+    <tr><td><code>tf_large_orders_b03740a2</code></td><td>transformation</td><td>large_orders</td></tr>
+    
+    <tr><td><code>sql_monthly_revenue_9c0a56ab</code></td><td>sql_result</td><td>monthly_revenue</td></tr>
+    
+  </table>
+  <h3>Edges</h3>
+  <table>
+    <tr><th>From</th><th>To</th><th>Type</th></tr>
+    
+    <tr>
+      <td>orders <code>ds_orders_7e1a331f</code></td>
+      <td>clean_orders <code>tf_clean_orders_d885ddc7</code></td>
+      <td>derived_from</td>
+    </tr>
+    
+    <tr>
+      <td>clean_orders <code>tf_clean_orders_d885ddc7</code></td>
+      <td>large_orders <code>tf_large_orders_b03740a2</code></td>
+      <td>derived_from</td>
+    </tr>
+    
+    <tr>
+      <td>large_orders <code>tf_large_orders_b03740a2</code></td>
+      <td>monthly_revenue <code>sql_monthly_revenue_9c0a56ab</code></td>
+      <td>derived_from</td>
+    </tr>
+    
+  </table>
+
+  <h2>Metrics</h2>
+  <table>
+    <tr><th>Name</th><th>Formula</th><th>Source</th><th>Run</th><th>Description</th></tr>
+    
+    <tr><td>revenue</td><td><code>SUM(total_price)</code></td><td>large_orders</td><td><code>run_ecommerce_revenue_analysis_31caa5f8</code></td><td>Total order revenue after duplicate order IDs are removed.</td></tr>
+    
+  </table>
+
+  <h2>Chart Evidence</h2>
+  <table>
+    <tr><th>Name</th><th>Kind</th><th>X</th><th>Y</th><th>Run</th><th>Spec</th><th>Drilldown</th></tr>
+    
+    <tr>
+      <td>monthly_revenue_chart</td>
+      <td>line</td>
+      <td>month</td>
+      <td>revenue</td>
+      <td><code>run_ecommerce_revenue_analysis_31caa5f8</code></td>
+      <td><code>/Users/long_leg_maniac/Documents/github/traceframe/examples/ecommerce/.traceframe/audit_logs/chart_monthly_revenue_chart_8f3d6958_vegalite.json</code></td>
+      <td><code>chart_chart_monthly_revenue_chart_8f3d6958</code></td>
+    </tr>
+    
+  </table>
+
+  <h2>Source Rows</h2>
+  <p class="section-note">Samples are stored locally and can be exported with <code>traceframe source-rows ARTIFACT</code>.</p>
+  <table>
+    <tr><th>Artifact</th><th>Type</th><th>Sample file</th></tr>
+    
+    <tr><td>orders</td><td>dataset</td><td><code>/Users/long_leg_maniac/Documents/github/traceframe/examples/ecommerce/.traceframe/source_rows/ds_orders_7e1a331f_sample.json</code></td></tr>
+    
+    <tr><td>clean_orders</td><td>transformation</td><td><code>/Users/long_leg_maniac/Documents/github/traceframe/examples/ecommerce/.traceframe/source_rows/tf_clean_orders_d885ddc7_sample.json</code></td></tr>
+    
+    <tr><td>large_orders</td><td>transformation</td><td><code>/Users/long_leg_maniac/Documents/github/traceframe/examples/ecommerce/.traceframe/source_rows/tf_large_orders_b03740a2_sample.json</code></td></tr>
+    
+    <tr><td>monthly_revenue</td><td>sql_result</td><td><code>/Users/long_leg_maniac/Documents/github/traceframe/examples/ecommerce/.traceframe/source_rows/sql_monthly_revenue_9c0a56ab_sample.json</code></td></tr>
+    
+    <tr><td>monthly_revenue_chart</td><td>chart</td><td><code>/Users/long_leg_maniac/Documents/github/traceframe/examples/ecommerce/.traceframe/source_rows/chart_monthly_revenue_chart_8f3d6958_sample.json</code></td></tr>
+    
+  </table>
+
+  <h2>Chart Drilldowns</h2>
+  <table>
+    <tr><th>Chart</th><th>DuckDB file</th><th>Table</th></tr>
+    
+    <tr><td>monthly_revenue_chart</td><td><code>/Users/long_leg_maniac/Documents/github/traceframe/examples/ecommerce/.traceframe/source_rows/chart_drilldown.duckdb</code></td><td><code>chart_chart_monthly_revenue_chart_8f3d6958</code></td></tr>
+    
+  </table>
+
+  <h2>Claims</h2>
+  <table>
+    <tr><th>Claim</th><th>Supports</th><th>Confidence</th><th>Run</th></tr>
+    
+    <tr><td>Monthly revenue trend was calculated after removing duplicate order IDs.</td><td>monthly_revenue, monthly_revenue_chart</td><td>high</td><td><code>run_ecommerce_revenue_analysis_31caa5f8</code></td></tr>
+    
+  </table>
+
+  <h2>Data Quality Checks</h2>
+  <table>
+    <tr><th>Name</th><th>Type</th><th>Status</th><th>Severity</th><th>Source</th><th>Details</th></tr>
+    
+    <tr>
+      <td>not_null_total_price</td>
+      <td>not_null</td>
+      <td><span class="status ok">pass</span></td>
+      <td>error</td>
+      <td>large_orders</td>
+      <td><code>{'columns': ['total_price'], 'missing_values': {'total_price': 0}}</code></td>
+    </tr>
+    
+    <tr>
+      <td>unique_order_id</td>
+      <td>unique</td>
+      <td><span class="status ok">pass</span></td>
+      <td>error</td>
+      <td>large_orders</td>
+      <td><code>{'columns': ['order_id'], 'duplicate_count': 0}</code></td>
+    </tr>
+    
+  </table>
+
+  <h2>Notebook Cell Notes</h2>
+  <table>
+    <tr><th>Run</th><th>Cell ID</th><th>Execution</th><th>Source Hash</th><th>Tags</th></tr>
+    
+    <tr><td colspan="5">No notebook cell notes recorded.</td></tr>
+    
+  </table>
+
+  <h2>Assistant Plans</h2>
+  <p class="section-note">TraceFrame assistant planning is local-first. No external API calls are made unless you explicitly run your own local command.</p>
+  <table>
+    <tr><th>ID</th><th>Mode</th><th>Request</th><th>Steps</th></tr>
+    
+    <tr><td colspan="4">No assistant plans recorded.</td></tr>
+    
+  </table>
+
+  <h2>Reproducibility</h2>
+  <p>Run the analysis script or notebook from the project root, then regenerate this report with <code>traceframe report</code>. Use <code>traceframe stale</code> before relying on old evidence.</p>
+</main>
+</body>
+</html>

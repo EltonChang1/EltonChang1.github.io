@@ -48,6 +48,7 @@ const statIcons: Record<
 
 const PROJECT_IDS: ProjectId[] = [
   "ashe",
+  "traceframe",
   "torflix",
   "marketpulse",
   "zoe",

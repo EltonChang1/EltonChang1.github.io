@@ -68,6 +68,14 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
     icon: "chart",
   },
   {
+    title: "TraceFrame (open source)",
+    description:
+      "A local-first evidence tracker for data science workflows that records datasets, transforms, SQL outputs, metrics, charts, claims, checks, and lineage under a project-local `.traceframe/` directory — no cloud or telemetry by default.",
+    stats: ["Data Science", "Python"],
+    href: "/projects#traceframe",
+    icon: "microscope",
+  },
+  {
     title: "Torflix (open source)",
     description:
       "A BitTorrent-backed movie library with a FastAPI service that owns swarm I/O, storage, and progressive streaming, plus web clients for catalog, magnet enqueue, and playback while transfers complete.",
