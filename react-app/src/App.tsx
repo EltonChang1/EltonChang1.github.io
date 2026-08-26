@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { SiteLayout } from "@/components/site-layout";
 import { RESUME_PAGE_PATH } from "@/constants/resume";
 import { HomePage } from "@/pages/home-page";
+import { OpenSourcePage } from "@/pages/open-source-page";
 import { ProjectsPage } from "@/pages/projects-page";
 import { ResumePage } from "@/pages/resume-page";
 
@@ -12,6 +13,7 @@ export default function App() {
       <Route element={<SiteLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/open-source" element={<OpenSourcePage />} />
         <Route path={RESUME_PAGE_PATH} element={<ResumePage />} />
       </Route>
     </Routes>

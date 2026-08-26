@@ -3,17 +3,28 @@ import { Link } from "react-router-dom";
 import { HeroSection } from "@/components/ui/hero-section-1";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { OpenSourceCard } from "@/components/open-source-card";
 import {
   ABOUT_PARAGRAPH,
   FEATURED_PROJECTS,
   SKILLS,
 } from "@/data/projects";
 import { WRITING_AND_EVIDENCE } from "@/data/writing";
+import {
+  CONTRIBUTION_STATS,
+  FEATURED_CONTRIBUTIONS,
+} from "@/data/open-source";
 
 import { IconGithub, IconLinkedin } from "@/components/brand-icons";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { LINKEDIN_URL, SITE_EMAIL } from "@/constants/social";
-import { ArrowUpRight, BookOpen, FileDown, Mail } from "lucide-react";
+import {
+  ArrowUpRight,
+  BookOpen,
+  FileDown,
+  GitPullRequest,
+  Mail,
+} from "lucide-react";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
@@ -192,8 +203,53 @@ export function HomePage() {
       </section>
 
       <section
-        id="contact"
+        id="open-source"
         className="scroll-mt-28 border-t border-border/60 py-12 md:py-20 lg:py-24"
+      >
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionTitle>Open Source Contributions</SectionTitle>
+          <p className="mx-auto mb-8 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
+            Public, reviewable fixes and documentation improvements contributed
+            upstream across Python, data tooling, visualization, and developer
+            infrastructure.
+          </p>
+          <div className="mx-auto mb-10 grid max-w-4xl grid-cols-2 gap-3 md:grid-cols-4">
+            {CONTRIBUTION_STATS.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl border border-border/70 bg-muted/20 p-4 text-center"
+              >
+                <p className="text-2xl font-semibold text-foreground">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {FEATURED_CONTRIBUTIONS.map((contribution) => (
+              <OpenSourceCard
+                key={contribution.url}
+                contribution={contribution}
+              />
+            ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Button size="lg" asChild>
+              <Link to="/open-source" className="gap-2">
+                <GitPullRequest className="h-4 w-4" />
+                Explore all contributions
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        className="scroll-mt-28 border-t border-border/60 bg-muted/20 py-12 md:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
           <SectionTitle>Contact</SectionTitle>
