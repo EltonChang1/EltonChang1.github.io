@@ -88,9 +88,9 @@ export function HeroSection() {
                     Elton Chang
                   </h1>
                   <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
-                    Data analytics, software engineering, and infrastructure.
-                    Browse projects and documentation below, open my résumé, or
-                    reach out to collaborate.
+                    Governed AI systems, data analytics, software engineering,
+                    and infrastructure. Browse projects and documentation below,
+                    open my résumé, or reach out to collaborate.
                   </p>
                 </AnimatedGroup>
 
@@ -142,6 +142,7 @@ export function HeroSection() {
 const menuItems = [
   { name: "Home", to: "/" as const },
   { name: "Projects", to: "/projects" as const },
+  { name: "Writing", to: "/#writing" as const },
   { name: "Résumé", to: RESUME_PAGE_PATH },
   { name: "Contact", to: "/#contact" as const },
 ];

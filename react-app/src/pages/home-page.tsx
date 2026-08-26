@@ -5,14 +5,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   ABOUT_PARAGRAPH,
-  PROJECTS,
+  FEATURED_PROJECTS,
   SKILLS,
 } from "@/data/projects";
+import { WRITING_AND_EVIDENCE } from "@/data/writing";
 
 import { IconGithub, IconLinkedin } from "@/components/brand-icons";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { LINKEDIN_URL, SITE_EMAIL } from "@/constants/social";
-import { FileDown, Mail } from "lucide-react";
+import { ArrowUpRight, BookOpen, FileDown, Mail } from "lucide-react";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
@@ -68,7 +69,7 @@ export function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionTitle>Featured Projects</SectionTitle>
           <div className="flex flex-col gap-12">
-            {PROJECTS.map((project) => (
+            {FEATURED_PROJECTS.map((project) => (
               <article
                 key={project.id}
                 className="overflow-hidden rounded-2xl border border-border/80 bg-card shadow-sm transition-shadow duration-150 hover:shadow-md"
@@ -139,8 +140,60 @@ export function HomePage() {
       </section>
 
       <section
-        id="contact"
+        id="writing"
         className="scroll-mt-28 border-t border-border/60 bg-muted/20 py-12 md:py-20 lg:py-24"
+      >
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionTitle>Selected Writing &amp; Evidence</SectionTitle>
+          <p className="mx-auto mb-10 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
+            Research, architecture, and product artifacts that show how the
+            systems work—not just what the interfaces look like.
+          </p>
+          <div className="grid gap-5 md:grid-cols-2">
+            {WRITING_AND_EVIDENCE.map((item) => (
+              <article
+                key={item.title}
+                className="flex flex-col rounded-2xl border border-border/80 bg-card p-6 shadow-sm transition-shadow duration-150 hover:shadow-md md:p-7"
+              >
+                <div className="mb-5 flex items-start justify-between gap-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <BookOpen className="h-5 w-5" />
+                  </div>
+                  <Badge variant="outline">{item.kind}</Badge>
+                </div>
+                <h3 className="mb-3 text-xl font-semibold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mb-4 flex-1 leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+                <p className="mb-5 text-sm font-medium text-foreground/75">
+                  {item.meta}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {item.links.map((link) => (
+                    <Button key={link.label} size="sm" variant="outline" asChild>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="gap-1.5"
+                      >
+                        {link.label}
+                        <ArrowUpRight className="h-3.5 w-3.5" />
+                      </a>
+                    </Button>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        className="scroll-mt-28 border-t border-border/60 py-12 md:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
           <SectionTitle>Contact</SectionTitle>

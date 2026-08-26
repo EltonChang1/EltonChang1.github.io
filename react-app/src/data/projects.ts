@@ -1,5 +1,7 @@
 export type ProjectId =
+  | "amos"
   | "ashe"
+  | "next-best-action"
   | "traceframe"
   | "torflix"
   | "marketpulse"
@@ -30,6 +32,8 @@ export interface ProjectLink {
 
 export interface ProjectDefinition {
   id: ProjectId;
+  /** A small, intentional set shown on the home page. */
+  featured?: boolean;
   homeLinks?: ProjectLink[];
   card: {
     /** Display name on home and /projects */
@@ -57,7 +61,113 @@ export interface ProjectDefinition {
 
 export const PROJECTS: ProjectDefinition[] = [
   {
+    id: "amos",
+    featured: true,
+    homeLinks: [
+      {
+        label: "Visit AMOS",
+        href: "https://amoslabs.dev",
+        external: true,
+      },
+      { label: "Interactive Project View", href: "/projects#amos" },
+      {
+        label: "GitHub",
+        href: "https://github.com/EltonChang1/AMOS",
+        external: true,
+      },
+    ],
+    card: {
+      title: "AMOS",
+      tagline:
+        "An internally deployed AI analyst that verifies the work behind every answer.",
+      description:
+        "AMOS connects to company data and tools, proposes analytical work with a local agent, runs authoritative calculations outside the model, checks claims against evidence, and produces reviewable reports, charts, and slides. The Rust control layer keeps permissions, execution, provenance, review, and replay explicit.",
+      tech: [
+        "Rust",
+        "Axum",
+        "SQLite",
+        "AI governance",
+        "Data systems",
+      ],
+      stats: [
+        { label: "Permission-first control", icon: "shield" },
+        { label: "Verified claims", icon: "check" },
+        { label: "Review & replay", icon: "chart" },
+      ],
+      image: "/images/amos-overview.png",
+    },
+    expanded: {
+      title: "AMOS — Verified AI Analysis Inside the Enterprise",
+      overviewParagraphs: [
+        "**AMOS** is an internally deployed analyst system for business questions that require more than a plausible model response. A local analyst agent proposes the work; the AMOS control layer decides what is permitted, runs deterministic calculations, verifies the resulting claims, and preserves the evidence needed for review or replay.",
+        "I co-founded AMOS after seeing the same analytical workflow repeat across finance, aviation, and research projects: reconcile the right data and definitions, choose the right computation, validate the result, and communicate it in a decision-ready form.",
+      ],
+      featureList: [
+        "Permission-first context compilation filters inaccessible, stale, revoked, or superseded memory before it reaches the model.",
+        "Governed SQL, statistics, and chart workers perform authoritative computation outside the language model.",
+        "Typed claims, dependency edges, evidence records, and independent validity dimensions make results inspectable.",
+        "Human review, correction, invalidation, and level-3 replay preserve control after an analysis is produced.",
+        "A hardened customer-evaluation package supports installation on a customer-controlled Linux server.",
+      ],
+      techDetails: [
+        {
+          title: "Control layer",
+          items: [
+            "Rust application, CLI, API, UI rendering, persistence, connectors, workers, and tests",
+            "Atomic analytical-state transactions with idempotency, leases, fencing, audit, and outbox delivery",
+            "Capability-bound tool execution with schema, metric, column, row, byte, and time controls",
+          ],
+        },
+        {
+          title: "Evidence & operations",
+          items: [
+            "Typed reports, claims, provenance, review, invalidation, and replay",
+            "Analysis Workspace, Memory Studio, Review Queue, and Operations Console",
+            "OCI image, hardened Docker Compose evaluation topology, backups, and diagnostics",
+          ],
+        },
+      ],
+      screenshots: [
+        {
+          src: "/images/amos-overview.png",
+          caption: "AMOS — verified analysis inside the company environment",
+        },
+        {
+          src: "/images/amos-product-flow.png",
+          caption: "Product flow from business question to governed artifact",
+        },
+        {
+          src: "/images/amos-analysis-chart.png",
+          caption: "Deterministically generated analysis artifact",
+        },
+      ],
+      links: [
+        {
+          label: "Visit AMOS",
+          href: "https://amoslabs.dev",
+          external: true,
+        },
+        {
+          label: "View repository",
+          href: "https://github.com/EltonChang1/AMOS",
+          external: true,
+        },
+        {
+          label: "Read the research paper",
+          href: "https://github.com/EltonChang1/AMOS/blob/main/papers/AMOS_research_paper.pdf",
+          external: true,
+        },
+        {
+          label: "Technical architecture",
+          href: "https://amoslabs.dev/amos-technical-architecture.pdf",
+          external: true,
+        },
+      ],
+    },
+  },
+  {
     id: "ashe",
+    featured: true,
     homeLinks: [
       {
         label: "Visit live site",
@@ -65,6 +175,11 @@ export const PROJECTS: ProjectDefinition[] = [
         external: true,
       },
       { label: "Interactive Project View", href: "/projects#ashe" },
+      {
+        label: "Sample readiness report",
+        href: "https://ashesystem.com/sample-aog-readiness-report.pdf",
+        external: true,
+      },
     ],
     card: {
       title: "Ashe System — AOG Shield",
@@ -80,9 +195,9 @@ export const PROJECTS: ProjectDefinition[] = [
         "Tailwind CSS",
       ],
       stats: [
-        { label: "Explainable risk scores", icon: "chart" },
-        { label: "Readiness reports", icon: "news" },
-        { label: "Decision support", icon: "shield" },
+        { label: "1.2K+ record risk engine", icon: "chart" },
+        { label: "Modeled $15K/mo opportunity", icon: "news" },
+        { label: "Explainable decision support", icon: "shield" },
       ],
       image: "/images/Ashesystem_homepage.png",
     },
@@ -90,6 +205,7 @@ export const PROJECTS: ProjectDefinition[] = [
       title: "Ashe System — AOG Shield",
       overviewParagraphs: [
         "**AOG Shield** helps airlines, cargo operators, MROs, and aviation materials teams identify parts-driven AOG (Aircraft on Ground) risk before a missing or unavailable certified part creates avoidable downtime.",
+        "As founder and technical lead, I translated operator validation into more than 50 MVP requirements and built a 1.2K+ record risk-engine demonstration that modeled up to $15K per month in avoidable downtime opportunity per operator.",
         "It is decision-support and risk advisory only—it surfaces risk and the evidence behind it so maintenance, quality, supply-chain, and planning teams can act faster, without replacing human review or determining airworthiness.",
       ],
       featureList: [
@@ -130,15 +246,93 @@ export const PROJECTS: ProjectDefinition[] = [
           external: true,
         },
         {
-          label: "Request an AOG Readiness Diagnostic",
-          href: "https://ashesystem.com",
+          label: "Product brief",
+          href: "https://ashesystem.com/ashe-system-product-brief.pdf",
+          external: true,
+        },
+        {
+          label: "Sample readiness report",
+          href: "https://ashesystem.com/sample-aog-readiness-report.pdf",
           external: true,
         },
       ],
     },
   },
   {
+    id: "next-best-action",
+    featured: true,
+    homeLinks: [
+      {
+        label: "Interactive Project View",
+        href: "/projects#next-best-action",
+      },
+    ],
+    card: {
+      title: "Next Best Action",
+      tagline:
+        "Rank the most relevant high-impact opportunity for each advisor conversation.",
+      description:
+        "Built through a Carnegie Mellon collaboration with PNC, this machine-learning pipeline used client behavior, product holdings, and engagement signals to predict next-month product adoption and rank supported recommendations for advisor outreach.",
+      tech: [
+        "Python",
+        "HistGradientBoosting",
+        "LightGBM",
+        "XGBoost",
+        "Ranking",
+      ],
+      stats: [
+        { label: "0.811 ROC AUC", icon: "chart" },
+        { label: "95% top-3 hit rate", icon: "check" },
+        { label: "Multi-model ensemble", icon: "flask" },
+      ],
+      image: "/images/next-best-action.svg",
+    },
+    expanded: {
+      title: "Next Best Action — PNC Collaboration",
+      overviewParagraphs: [
+        "This project reframed product propensity modeling as a decision-support problem: instead of returning a single opaque score, the system ranks the most relevant supported opportunities an advisor could discuss with a client.",
+        "The portfolio case study intentionally stays at the methodology-and-results level. Client data, implementation details governed by the collaboration, and proprietary business logic are not published.",
+      ],
+      featureList: [
+        "Prepared behavioral, holdings, product, and engagement signals for next-month adoption prediction.",
+        "Compared histogram gradient boosting, LightGBM, XGBoost, and ensemble strategies.",
+        "Evaluated both discrimination and recommendation usefulness rather than relying on accuracy alone.",
+        "Produced a ranked top-three opportunity set suitable for human advisor review.",
+      ],
+      methodologyParagraphs: [
+        "Model selection used ROC AUC to assess ranking quality across positive and negative outcomes, while a top-three hit-rate metric tested whether the supported next action appeared in the short list an advisor would realistically inspect.",
+        "The selected pipeline achieved 0.811 ROC AUC and a 95% top-three hit rate on supported recommendations.",
+      ],
+      techDetails: [
+        {
+          title: "Modeling",
+          items: [
+            "HistGradientBoosting baseline",
+            "LightGBM and XGBoost candidates",
+            "LightGBM–XGBoost ensemble",
+          ],
+        },
+        {
+          title: "Evaluation",
+          items: [
+            "Next-month adoption target",
+            "ROC AUC for ranking quality",
+            "Top-three hit rate for advisor usefulness",
+          ],
+        },
+      ],
+      screenshots: [
+        {
+          src: "/images/next-best-action.svg",
+          caption: "Confidentiality-safe project summary and evaluation results",
+        },
+      ],
+      links: [{ label: "View résumé", href: "/resume" }],
+    },
+  },
+  {
     id: "traceframe",
+    featured: true,
     homeLinks: [
       { label: "Sample Audit Report", href: "/traceframe-ecommerce-audit.html" },
       { label: "Interactive Project View", href: "/projects#traceframe" },
@@ -824,6 +1018,7 @@ export const PROJECTS: ProjectDefinition[] = [
 ];
 
 export const SKILLS = [
+  "Rust",
   "Python",
   "TypeScript",
   "Go",
@@ -834,12 +1029,17 @@ export const SKILLS = [
   "SQL",
   "Spark",
   "Machine Learning",
+  "AI Governance",
   "Large-scale systems",
   "Full-stack",
 ] as const;
 
 export const ABOUT_PARAGRAPH =
-  "I’m a master’s student in Data Analytics for Science at Carnegie Mellon. I build data pipelines, ML models, and full-stack products that have to behave in the wild—where “works on my machine” is a bug, not a punchline. Browse the work below; the résumé is the shorter, slightly more serious cut.";
+  "I’m a Carnegie Mellon M.S. graduate in Data Analytics for Science and a co-founder of AMOS. I build governed AI systems, data pipelines, ML models, and full-stack products that have to behave in the wild—where “works on my machine” is a bug, not a punchline. Browse the work below; the résumé is the shorter, slightly more serious cut.";
+
+export const FEATURED_PROJECTS = PROJECTS.filter(
+  (project) => project.featured,
+);
 
 export function projectById(id: ProjectId): ProjectDefinition | undefined {
   return PROJECTS.find((p) => p.id === id);

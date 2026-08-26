@@ -2,13 +2,13 @@ import { SITE_EMAIL } from "@/constants/social";
 
 export const RESUME_HEADER = {
   name: "Elton Chang",
-  title: "Data Analytics & Software Engineering",
+  title: "Governed AI Systems, Data Analytics & Software Engineering",
   phone: "(510) 513-2561",
   email: SITE_EMAIL,
 } as const;
 
 export const PROFESSIONAL_SUMMARY =
-  "M.S. student in Data Analytics for Science at Carnegie Mellon, focused on scalable data pipelines, production machine learning, and reliable systems. Research experience automating large research corpora and improving CNN accuracy; industry internships spanning IaC-backed infrastructure, telemetry for backup pipelines, and cloud file platforms with strong documentation.";
+  "Carnegie Mellon M.S. graduate in Data Analytics for Science and co-founder of AMOS, focused on governed AI systems, scalable data pipelines, production machine learning, and reliable software. Built products spanning verified enterprise analysis, aviation risk decision support, local-first data evidence, infrastructure automation, and applied ML.";
 
 export type ExperienceItem = {
   role: string;
@@ -19,6 +19,26 @@ export type ExperienceItem = {
 };
 
 export const EXPERIENCE: ExperienceItem[] = [
+  {
+    role: "Co-Founder",
+    company: "AMOS",
+    date: "2026 – Present",
+    bullets: [
+      "Co-founded an internally deployed analyst system that connects to company data and tools, performs verified analysis, and produces reviewable charts, reports, and presentation plans",
+      "Built the Rust control-layer foundation for permission-first context, governed execution, typed claims, evidence, review, invalidation, replay, and customer-controlled deployment",
+    ],
+    tech: ["Rust", "Axum", "SQLite", "AI governance"],
+  },
+  {
+    role: "Founder / Technical Lead",
+    company: "Ashe System",
+    date: "August 2025 – Present",
+    bullets: [
+      "Modeled up to $15K per month in avoidable downtime opportunity per operator with a 1.2K+ record risk-engine demonstration that flags grounding risk, diagnoses causes, and recommends preventive actions",
+      "Translated validation with cargo and small-aircraft owner-operators into more than 50 MVP requirements across maintenance, inventory, suppliers, certification, and scheduling",
+    ],
+    tech: ["Python", "FastAPI", "Next.js", "Decision support"],
+  },
   {
     role: "Undergraduate Research Assistant",
     company: "University of California, Santa Cruz",
@@ -61,10 +81,19 @@ export type ResumeProjectCard = {
 
 export const RESUME_PROJECTS: ResumeProjectCard[] = [
   {
+    title: "AMOS",
+    description:
+      "An internally deployed AI analyst with a Rust control layer for permissions, governed execution, verified claims, review, invalidation, replay, and customer-controlled deployment.",
+    stats: ["Rust", "Governed AI"],
+    href: "/projects#amos",
+    icon: "shield",
+  },
+  {
     title: "Next Best Action (PNC collaboration)",
     description:
-      "An intelligent next-best-action engine for PNC Bank that uses client financial behavior, product holdings, and engagement signals to predict the most relevant high-impact opportunity for advisor outreach.",
-    stats: ["ML", "Finance"],
+      "A product-adoption ranking pipeline using HistGradientBoosting, LightGBM, XGBoost, and an ensemble strategy; achieved 0.811 ROC AUC and a 95% top-three hit rate on supported recommendations.",
+    stats: ["0.811 ROC AUC", "95% Top-3"],
+    href: "/projects#next-best-action",
     icon: "chart",
   },
   {
@@ -91,14 +120,6 @@ export const RESUME_PROJECTS: ResumeProjectCard[] = [
     href: "/projects#meritocracy",
     icon: "microscope",
   },
-  {
-    title: "Ashe System (entrepreneurial)",
-    description:
-      "A decision-support platform that transforms maintenance, inventory, supplier, certificate, and schedule data into explainable AOG risk scores, operational recommendations, and executive readiness reports.",
-    stats: ["Aviation", "Full-Stack"],
-    href: "/projects#ashe",
-    icon: "shield",
-  },
 ];
 
 export type EducationItem = {
@@ -112,7 +133,7 @@ export const EDUCATION: EducationItem[] = [
   {
     degree: "Master of Science in Data Analytics for Science, GPA: 3.97/4.0",
     school: "Carnegie Mellon University",
-    dateLocation: "Expected May 2026 | Pittsburgh, PA",
+    dateLocation: "May 2026 | Pittsburgh, PA",
     coursework:
       "Competition Programming, Large Scale Computing, Neural Networks & Deep Learning, Machine Learning in Production, Computational Modeling, Computational Linear Algebra",
   },
@@ -140,7 +161,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: "Python", level: "Advanced", percent: 92 },
       { name: "TypeScript", level: "Advanced", percent: 85 },
-      { name: "C / C++ / Go / Java", level: "Advanced", percent: 85 },
+      { name: "Rust", level: "Advanced", percent: 84 },
+      { name: "C / C++ / Go / Java", level: "Proficient", percent: 82 },
       { name: "SQL", level: "Advanced", percent: 86 },
     ],
   },
@@ -158,6 +180,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: "gears",
     skills: [
       { name: "Full-stack development", level: "Advanced", percent: 88 },
+      { name: "Governed AI systems", level: "Advanced", percent: 86 },
       { name: "RESTful API design", level: "Advanced", percent: 84 },
       { name: "Database architecture", level: "Advanced", percent: 82 },
       { name: "System design", level: "Advanced", percent: 82 },
@@ -166,6 +189,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 ];
 
 export const INTERESTS = [
+  "Governed AI",
   "Machine Learning",
   "Data Analytics",
   "System Design",
@@ -175,6 +199,7 @@ export const INTERESTS = [
 ] as const;
 
 export const TECHNICAL_AREAS = [
+  "Governed AI and evidence systems",
   "Large-scale computing",
   "Machine learning in production",
   "System design & reliability",

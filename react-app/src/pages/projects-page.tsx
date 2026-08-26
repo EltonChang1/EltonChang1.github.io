@@ -46,16 +46,7 @@ const statIcons: Record<
   shield: ShieldCheck,
 };
 
-const PROJECT_IDS: ProjectId[] = [
-  "ashe",
-  "traceframe",
-  "torflix",
-  "marketpulse",
-  "zoe",
-  "meritocracy",
-  "jobsearch",
-  "pokefind",
-];
+const PROJECT_IDS: ProjectId[] = PROJECTS.map((project) => project.id);
 
 function isProjectId(s: string): s is ProjectId {
   return PROJECT_IDS.includes(s as ProjectId);
@@ -195,20 +186,18 @@ function ExpandedPanel({ project, onClose }: { project: ProjectDefinition; onClo
 }
 
 export function ProjectsPage() {
-  const [expandedId, setExpandedId] = useState<ProjectId | null>(null);
+  const [expandedId, setExpandedId] = useState<ProjectId | null>(() => {
+    if (typeof window === "undefined") return null;
+
+    const raw = window.location.hash.replace("#", "");
+    return raw && isProjectId(raw) ? raw : null;
+  });
 
   const toggle = useCallback((id: ProjectId) => {
     setExpandedId((cur) => (cur === id ? null : id));
   }, []);
 
   const close = useCallback(() => setExpandedId(null), []);
-
-  useEffect(() => {
-    const raw = window.location.hash.replace("#", "");
-    if (raw && isProjectId(raw)) {
-      setExpandedId(raw);
-    }
-  }, []);
 
   useEffect(() => {
     if (!expandedId) return;
