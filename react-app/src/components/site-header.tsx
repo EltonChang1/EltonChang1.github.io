@@ -15,7 +15,6 @@ import { cn } from "@/lib/utils";
 const menuItems = [
   { name: "Home", to: "/" as const },
   { name: "Projects", to: "/projects" as const },
-  { name: "Writing", to: "/#writing" as const },
   { name: "Open Source", to: "/open-source" as const },
   { name: "Résumé", to: RESUME_PAGE_PATH },
   { name: "Contact", to: "/#contact" as const },

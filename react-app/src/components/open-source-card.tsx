@@ -11,6 +11,7 @@ export function OpenSourceCard({
   contribution: OpenSourceContribution;
 }) {
   const merged = contribution.status === "merged";
+  const draft = contribution.status === "open" && contribution.draft;
   const StatusIcon = merged ? GitMerge : GitPullRequest;
 
   return (
@@ -35,11 +36,13 @@ export function OpenSourceCard({
             "shrink-0 gap-1.5",
             merged
               ? "border-emerald-600/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
-              : "border-sky-600/30 bg-sky-500/10 text-sky-700 dark:text-sky-300",
+              : draft
+                ? "border-amber-600/30 bg-amber-500/10 text-amber-700 dark:text-amber-300"
+                : "border-sky-600/30 bg-sky-500/10 text-sky-700 dark:text-sky-300",
           )}
         >
           <StatusIcon className="h-3.5 w-3.5" />
-          {merged ? "Merged" : "Open"}
+          {merged ? "Merged" : draft ? "Draft" : "Open"}
         </Badge>
       </div>
 
