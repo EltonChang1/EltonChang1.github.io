@@ -56,7 +56,7 @@ export function OpenSourcePage() {
         <div className="flex flex-wrap justify-center gap-3">
           <Button size="lg" asChild>
             <a
-              href="https://github.com/pulls?q=is%3Apr+author%3AEltonChang1"
+              href="https://github.com/search?q=is%3Apr+author%3AEltonChang1&type=pullrequests"
               target="_blank"
               rel="noreferrer"
             >

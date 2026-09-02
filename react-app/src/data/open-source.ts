@@ -33,6 +33,24 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
   {
     project: "SGLang",
     repository: "sgl-project/sglang",
+    pullRequest: 37074,
+    title: "Clarify Mamba speculative slot accounting",
+    summary:
+      "Corrects Mamba cache sizing guidance by separating speculative intermediate buffers from persistent allocator slots and reserving headroom for chunk-boundary donation.",
+    status: "open",
+    draft: true,
+    area: "ai",
+    date: "Opened Aug 29, 2026",
+    url: "https://github.com/sgl-project/sglang/pull/37074",
+    repositoryUrl: "https://github.com/sgl-project/sglang",
+    additions: 26,
+    deletions: 11,
+    files: 1,
+    tags: ["AI inference", "Mamba", "Memory management"],
+  },
+  {
+    project: "SGLang",
+    repository: "sgl-project/sglang",
     pullRequest: 36801,
     title: "Fix MMLU thresholds in NPU DeepEP tests",
     summary:
@@ -201,6 +219,7 @@ export const DATA_INFRASTRUCTURE_CONTRIBUTIONS: OpenSourceContribution[] = [
     summary:
       "Adds a dedicated invoke-operator section and points the operator reference to the correct Google Cloud Functions documentation target.",
     status: "open",
+    draft: true,
     area: "data-infrastructure",
     date: "Opened Jul 1, 2026",
     url: "https://github.com/apache/airflow/pull/69226",
@@ -394,12 +413,12 @@ export const DATA_SCIENCE_CONTRIBUTIONS: OpenSourceContribution[] = [
     status: "open",
     draft: true,
     area: "data-science",
-    date: "Updated Aug 27, 2026",
+    date: "Updated Aug 29, 2026",
     url: "https://github.com/StingraySoftware/stingray/pull/980",
     repositoryUrl: "https://github.com/StingraySoftware/stingray",
-    additions: 11,
-    deletions: 4,
-    files: 4,
+    additions: 32,
+    deletions: 3,
+    files: 5,
     tags: ["Python", "Scientific computing", "Numba"],
   },
   {
@@ -534,8 +553,8 @@ export const FEATURED_CONTRIBUTIONS = [
 ];
 
 export const CONTRIBUTION_STATS = [
-  { value: "24", label: "Tracked upstream PRs" },
+  { value: "25", label: "Tracked upstream PRs" },
   { value: "7", label: "Merged upstream" },
-  { value: "17", label: "Currently open" },
+  { value: "18", label: "Currently open" },
   { value: "6", label: "Contributor repositories" },
 ];

@@ -47,10 +47,16 @@ jobs:
         working-directory: react-app
         run: npm run build
 
-      # GitHub Pages serves 404.html for unknown paths; copy SPA shell for client-side routes later.
-      - name: SPA fallback for Pages
+      # Give known client-side routes real Pages entry points, then retain a fallback
+      # for unknown paths handled by React Router.
+      - name: Create SPA route entry points
         working-directory: react-app
-        run: cp dist/index.html dist/404.html
+        run: |
+          for route in projects open-source resume; do
+            mkdir -p "dist/$route"
+            cp dist/index.html "dist/$route/index.html"
+          done
+          cp dist/index.html dist/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
