@@ -63,7 +63,11 @@ export function OpenSourceCard({
 
       <div className="mb-5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
         <span>+{contribution.additions} additions</span>
-        <span>-{contribution.deletions} deletions</span>
+        <span>
+          {contribution.deletions > 0 ? "-" : ""}
+          {contribution.deletions}{" "}
+          {contribution.deletions === 1 ? "deletion" : "deletions"}
+        </span>
         <span>
           {contribution.files} {contribution.files === 1 ? "file" : "files"}
         </span>
