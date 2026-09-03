@@ -448,7 +448,7 @@ export const DATA_SCIENCE_CONTRIBUTIONS: OpenSourceContribution[] = [
     status: "open",
     draft: true,
     area: "data-science",
-    date: "Updated Aug 27, 2026",
+    date: "Updated Aug 29, 2026",
     url: "https://github.com/vega/vegafusion/pull/590",
     repositoryUrl: "https://github.com/vega/vegafusion",
     additions: 76,
