@@ -22,9 +22,9 @@ import {
 const contributionGroups = [
   {
     eyebrow: "AI systems",
-    title: "AI inference and production infrastructure",
+    title: "AI applications, inference, and production infrastructure",
     description:
-      "Model-serving correctness, accelerator-aware tests, cache infrastructure, container efficiency, and evaluation-data tooling.",
+      "Application reliability, model-serving correctness, accelerator-aware tests, cache infrastructure, container efficiency, and evaluation-data tooling.",
     icon: BrainCircuit,
     contributions: AI_CONTRIBUTIONS,
   },
@@ -51,7 +51,7 @@ export function OpenSourcePage() {
     <div className="bg-background">
       <InnerPageHero
         title="Open Source Contributions"
-        subtitle="Verified upstream work organized from AI systems and inference infrastructure through data engineering, statistics, visualization, and scientific Python."
+        subtitle="Verified upstream work organized from AI applications and inference infrastructure through data engineering, statistics, visualization, and scientific Python."
       >
         <div className="flex flex-wrap justify-center gap-3">
           <Button size="lg" asChild>

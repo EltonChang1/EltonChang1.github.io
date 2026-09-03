@@ -172,6 +172,23 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
     files: 5,
     tags: ["ML tooling", "React", "Evaluation data"],
   },
+  {
+    project: "Career Ops",
+    repository: "career-ops-hq/career-ops",
+    pullRequest: 3264,
+    title: "Handle quoted angle brackets when stripping HTML",
+    summary:
+      "Makes the shared HTML-to-text parser quote-aware so angle brackets inside quoted attributes stay within the tag, with regression coverage for literal and encoded quote forms.",
+    status: "merged",
+    area: "ai",
+    date: "Merged Aug 25, 2026",
+    url: "https://github.com/career-ops-hq/career-ops/pull/3264",
+    repositoryUrl: "https://github.com/career-ops-hq/career-ops",
+    additions: 51,
+    deletions: 3,
+    files: 2,
+    tags: ["JavaScript", "Text extraction", "Regression testing"],
+  },
 ];
 
 export const DATA_INFRASTRUCTURE_CONTRIBUTIONS: OpenSourceContribution[] = [
@@ -489,6 +506,16 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     evidenceUrls: ["https://github.com/aeon-toolkit/aeon/pull/3762"],
   },
   {
+    project: "Career Ops",
+    repository: "career-ops-hq/career-ops",
+    repositoryUrl: "https://github.com/career-ops-hq/career-ops",
+    description:
+      "An open-source, locally run AI-assisted workflow for job search and application tracking.",
+    ecosystem: "AI applications",
+    mergedPullRequests: 1,
+    evidenceUrls: ["https://github.com/career-ops-hq/career-ops/pull/3264"],
+  },
+  {
     project: "SQLFluff",
     repository: "sqlfluff/sqlfluff",
     repositoryUrl: "https://github.com/sqlfluff/sqlfluff",
@@ -553,8 +580,8 @@ export const FEATURED_CONTRIBUTIONS = [
 ];
 
 export const CONTRIBUTION_STATS = [
-  { value: "25", label: "Tracked upstream PRs" },
-  { value: "7", label: "Merged upstream" },
+  { value: "26", label: "Tracked upstream PRs" },
+  { value: "8", label: "Merged upstream" },
   { value: "18", label: "Currently open" },
-  { value: "6", label: "Contributor repositories" },
+  { value: "7", label: "Contributor repositories" },
 ];
