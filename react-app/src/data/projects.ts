@@ -451,12 +451,12 @@ export const PROJECTS: ProjectDefinition[] = [
       { label: "Interactive Project View", href: "/projects#torflix" },
       {
         label: "GitHub",
-        href: "https://github.com/EltonChang1/PyTorrent",
+        href: "https://github.com/EltonChang1/Torflix",
         external: true,
       },
       {
         label: "User Guide (GitHub)",
-        href: "https://github.com/EltonChang1/PyTorrent/blob/main/docs/USER_GUIDE.md",
+        href: "https://github.com/EltonChang1/Torflix/blob/main/docs/USER_GUIDE.md",
         external: true,
       },
     ],
@@ -557,17 +557,17 @@ export const PROJECTS: ProjectDefinition[] = [
         },
         {
           label: "Repository",
-          href: "https://github.com/EltonChang1/PyTorrent",
+          href: "https://github.com/EltonChang1/Torflix",
           external: true,
         },
         {
           label: "User guide (GitHub)",
-          href: "https://github.com/EltonChang1/PyTorrent/blob/main/docs/USER_GUIDE.md",
+          href: "https://github.com/EltonChang1/Torflix/blob/main/docs/USER_GUIDE.md",
           external: true,
         },
         {
           label: "README",
-          href: "https://github.com/EltonChang1/PyTorrent/blob/main/README.md",
+          href: "https://github.com/EltonChang1/Torflix/blob/main/README.md",
           external: true,
         },
       ],
