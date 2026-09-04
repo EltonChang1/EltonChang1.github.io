@@ -31,6 +31,24 @@ export type ContributorRepository = {
 
 export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
   {
+    project: "Dynamo",
+    repository: "ai-dynamo/dynamo",
+    pullRequest: 14295,
+    title: "Pass framework metadata through shared tests",
+    summary:
+      "Passes each reusable test suite's backend name into local pytest invocations so test metadata, coverage artifacts, and Allure artifacts no longer use an unknown framework label.",
+    status: "open",
+    draft: true,
+    area: "ai",
+    date: "Opened Sep 3, 2026",
+    url: "https://github.com/ai-dynamo/dynamo/pull/14295",
+    repositoryUrl: "https://github.com/ai-dynamo/dynamo",
+    additions: 3,
+    deletions: 0,
+    files: 1,
+    tags: ["LLM infrastructure", "CI", "Test metadata"],
+  },
+  {
     project: "SGLang",
     repository: "sgl-project/sglang",
     pullRequest: 37074,
@@ -574,14 +592,14 @@ export const ALL_CONTRIBUTIONS = [
 ];
 
 export const FEATURED_CONTRIBUTIONS = [
-  AI_CONTRIBUTIONS[2],
+  AI_CONTRIBUTIONS[3],
   DATA_INFRASTRUCTURE_CONTRIBUTIONS[1],
   DATA_SCIENCE_CONTRIBUTIONS[0],
 ];
 
 export const CONTRIBUTION_STATS = [
-  { value: "26", label: "Tracked upstream PRs" },
+  { value: "27", label: "Tracked upstream PRs" },
   { value: "8", label: "Merged upstream" },
-  { value: "18", label: "Currently open" },
+  { value: "19", label: "Currently open" },
   { value: "7", label: "Contributor repositories" },
 ];
