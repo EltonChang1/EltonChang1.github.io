@@ -33,6 +33,24 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
   {
     project: "Dynamo",
     repository: "ai-dynamo/dynamo",
+    pullRequest: 14311,
+    title: "Preserve VRAM worker sizing for xdist auto",
+    summary:
+      "Adds pytest-xdist's auto-worker hook so GPU test jobs using -n auto keep VRAM-aware worker sizing instead of falling back to the host CPU count.",
+    status: "open",
+    draft: true,
+    area: "ai",
+    date: "Opened Sep 3, 2026",
+    url: "https://github.com/ai-dynamo/dynamo/pull/14311",
+    repositoryUrl: "https://github.com/ai-dynamo/dynamo",
+    additions: 38,
+    deletions: 0,
+    files: 2,
+    tags: ["LLM infrastructure", "CI", "GPU testing"],
+  },
+  {
+    project: "Dynamo",
+    repository: "ai-dynamo/dynamo",
     pullRequest: 14295,
     title: "Pass framework metadata through shared tests",
     summary:
@@ -592,14 +610,14 @@ export const ALL_CONTRIBUTIONS = [
 ];
 
 export const FEATURED_CONTRIBUTIONS = [
-  AI_CONTRIBUTIONS[3],
+  AI_CONTRIBUTIONS[4],
   DATA_INFRASTRUCTURE_CONTRIBUTIONS[1],
   DATA_SCIENCE_CONTRIBUTIONS[0],
 ];
 
 export const CONTRIBUTION_STATS = [
-  { value: "27", label: "Tracked upstream PRs" },
+  { value: "28", label: "Tracked upstream PRs" },
   { value: "8", label: "Merged upstream" },
-  { value: "19", label: "Currently open" },
+  { value: "20", label: "Currently open" },
   { value: "7", label: "Contributor repositories" },
 ];
