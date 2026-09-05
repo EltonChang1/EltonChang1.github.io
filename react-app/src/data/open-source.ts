@@ -31,6 +31,24 @@ export type ContributorRepository = {
 
 export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
   {
+    project: "ONNX Runtime",
+    repository: "microsoft/onnxruntime",
+    pullRequest: 32448,
+    title: "Fix virtual-only CUDA architecture normalization",
+    summary:
+      "Preserves a virtual-only CMake CUDA architecture during normalization instead of reintroducing the cached value as a real target, with configuration-level regression coverage.",
+    status: "open",
+    draft: true,
+    area: "ai",
+    date: "Opened Sep 4, 2026",
+    url: "https://github.com/microsoft/onnxruntime/pull/32448",
+    repositoryUrl: "https://github.com/microsoft/onnxruntime",
+    additions: 33,
+    deletions: 1,
+    files: 3,
+    tags: ["ML inference", "CUDA", "CMake"],
+  },
+  {
     project: "Dynamo",
     repository: "ai-dynamo/dynamo",
     pullRequest: 14311,
@@ -38,7 +56,6 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
     summary:
       "Adds pytest-xdist's auto-worker hook so GPU test jobs using -n auto keep VRAM-aware worker sizing instead of falling back to the host CPU count.",
     status: "open",
-    draft: true,
     area: "ai",
     date: "Opened Sep 3, 2026",
     url: "https://github.com/ai-dynamo/dynamo/pull/14311",
@@ -610,14 +627,14 @@ export const ALL_CONTRIBUTIONS = [
 ];
 
 export const FEATURED_CONTRIBUTIONS = [
-  AI_CONTRIBUTIONS[4],
+  AI_CONTRIBUTIONS[5],
   DATA_INFRASTRUCTURE_CONTRIBUTIONS[1],
   DATA_SCIENCE_CONTRIBUTIONS[0],
 ];
 
 export const CONTRIBUTION_STATS = [
-  { value: "28", label: "Tracked upstream PRs" },
+  { value: "29", label: "Tracked upstream PRs" },
   { value: "8", label: "Merged upstream" },
-  { value: "20", label: "Currently open" },
+  { value: "21", label: "Currently open" },
   { value: "7", label: "Contributor repositories" },
 ];
