@@ -24,8 +24,8 @@ export type ContributorRepository = {
   repository: string;
   repositoryUrl: string;
   description: string;
-  ecosystem: string;
-  mergedPullRequests: number;
+  role: "Contributor" | "Pull request contributor";
+  stars: number;
   evidenceUrls: string[];
 };
 
@@ -547,77 +547,230 @@ export const DATA_SCIENCE_CONTRIBUTIONS: OpenSourceContribution[] = [
   },
 ];
 
+// GitHub repository metadata and authored PR evidence verified on the snapshot date.
+// Contributor requires merged work or GitHub contributor association; otherwise use PR contributor.
+export const REPOSITORY_STARS_CHECKED_AT = "2026-09-17";
+
 export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
   {
-    project: "Aeon",
-    repository: "aeon-toolkit/aeon",
-    repositoryUrl: "https://github.com/aeon-toolkit/aeon",
-    description:
-      "A scikit-learn-compatible toolkit for time-series machine learning.",
-    ecosystem: "Time-series ML",
-    mergedPullRequests: 1,
-    evidenceUrls: ["https://github.com/aeon-toolkit/aeon/pull/3762"],
+    "project": "Career Ops",
+    "repository": "career-ops-hq/career-ops",
+    "repositoryUrl": "https://github.com/career-ops-hq/career-ops",
+    "description": "Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
+    "role": "Contributor",
+    "stars": 71850,
+    "evidenceUrls": [
+      "https://github.com/career-ops-hq/career-ops/pull/3264"
+    ]
   },
   {
-    project: "Career Ops",
-    repository: "career-ops-hq/career-ops",
-    repositoryUrl: "https://github.com/career-ops-hq/career-ops",
-    description:
-      "An open-source, locally run AI-assisted workflow for job search and application tracking.",
-    ecosystem: "AI applications",
-    mergedPullRequests: 1,
-    evidenceUrls: ["https://github.com/career-ops-hq/career-ops/pull/3264"],
+    "project": "Apache Airflow",
+    "repository": "apache/airflow",
+    "repositoryUrl": "https://github.com/apache/airflow",
+    "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
+    "role": "Pull request contributor",
+    "stars": 46876,
+    "evidenceUrls": [
+      "https://github.com/apache/airflow/pull/69226"
+    ]
   },
   {
-    project: "SQLFluff",
-    repository: "sqlfluff/sqlfluff",
-    repositoryUrl: "https://github.com/sqlfluff/sqlfluff",
-    description: "A modular SQL linter and formatter supporting many dialects.",
-    ecosystem: "Data infrastructure",
-    mergedPullRequests: 1,
-    evidenceUrls: ["https://github.com/sqlfluff/sqlfluff/pull/8052"],
+    "project": "SGLang",
+    "repository": "sgl-project/sglang",
+    "repositoryUrl": "https://github.com/sgl-project/sglang",
+    "description": "SGLang is a high-performance serving framework for large language models and multimodal models.",
+    "role": "Pull request contributor",
+    "stars": 36079,
+    "evidenceUrls": [
+      "https://github.com/sgl-project/sglang/pull/36771",
+      "https://github.com/sgl-project/sglang/pull/36801",
+      "https://github.com/sgl-project/sglang/pull/37074"
+    ]
   },
   {
-    project: "Statsmodels",
-    repository: "statsmodels/statsmodels",
-    repositoryUrl: "https://github.com/statsmodels/statsmodels",
-    description:
-      "Statistical models, tests, and data exploration tools for Python.",
-    ecosystem: "Statistics",
-    mergedPullRequests: 1,
-    evidenceUrls: ["https://github.com/statsmodels/statsmodels/pull/9881"],
+    "project": "MLflow",
+    "repository": "mlflow/mlflow",
+    "repositoryUrl": "https://github.com/mlflow/mlflow",
+    "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+    "role": "Pull request contributor",
+    "stars": 27991,
+    "evidenceUrls": [
+      "https://github.com/mlflow/mlflow/pull/25378"
+    ]
   },
   {
-    project: "Plotnine",
-    repository: "has2k1/plotnine",
-    repositoryUrl: "https://github.com/has2k1/plotnine",
-    description: "A grammar-of-graphics visualization system for Python.",
-    ecosystem: "Visualization",
-    mergedPullRequests: 1,
-    evidenceUrls: ["https://github.com/has2k1/plotnine/pull/1092"],
+    "project": "ONNX Runtime",
+    "repository": "microsoft/onnxruntime",
+    "repositoryUrl": "https://github.com/microsoft/onnxruntime",
+    "description": "ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator",
+    "role": "Pull request contributor",
+    "stars": 21869,
+    "evidenceUrls": [
+      "https://github.com/microsoft/onnxruntime/pull/32448"
+    ]
   },
   {
-    project: "Panel",
-    repository: "holoviz/panel",
-    repositoryUrl: "https://github.com/holoviz/panel",
-    description:
-      "A high-level framework for building data applications and dashboards.",
-    ecosystem: "Data applications",
-    mergedPullRequests: 2,
-    evidenceUrls: [
-      "https://github.com/holoviz/panel/pull/8736",
+    "project": "Statsmodels",
+    "repository": "statsmodels/statsmodels",
+    "repositoryUrl": "https://github.com/statsmodels/statsmodels",
+    "description": "Statsmodels: statistical modeling and econometrics in Python",
+    "role": "Contributor",
+    "stars": 11626,
+    "evidenceUrls": [
+      "https://github.com/statsmodels/statsmodels/pull/9881"
+    ]
+  },
+  {
+    "project": "SQLFluff",
+    "repository": "sqlfluff/sqlfluff",
+    "repositoryUrl": "https://github.com/sqlfluff/sqlfluff",
+    "description": "A modular SQL linter and auto-formatter with support for multiple dialects and templated code.",
+    "role": "Contributor",
+    "stars": 9876,
+    "evidenceUrls": [
+      "https://github.com/sqlfluff/sqlfluff/pull/8052"
+    ]
+  },
+  {
+    "project": "Apache DataFusion",
+    "repository": "apache/datafusion",
+    "repositoryUrl": "https://github.com/apache/datafusion",
+    "description": "Apache DataFusion SQL Query Engine",
+    "role": "Pull request contributor",
+    "stars": 9319,
+    "evidenceUrls": [
+      "https://github.com/apache/datafusion/pull/24713",
+      "https://github.com/apache/datafusion/pull/24738"
+    ]
+  },
+  {
+    "project": "Dynamo",
+    "repository": "ai-dynamo/dynamo",
+    "repositoryUrl": "https://github.com/ai-dynamo/dynamo",
+    "description": "A Datacenter Scale Distributed Inference Serving Framework",
+    "role": "Pull request contributor",
+    "stars": 8090,
+    "evidenceUrls": [
+      "https://github.com/ai-dynamo/dynamo/pull/14295",
+      "https://github.com/ai-dynamo/dynamo/pull/14311"
+    ]
+  },
+  {
+    "project": "Featuretools",
+    "repository": "alteryx/featuretools",
+    "repositoryUrl": "https://github.com/alteryx/featuretools",
+    "description": "An open source python library for automated feature engineering",
+    "role": "Pull request contributor",
+    "stars": 7677,
+    "evidenceUrls": [
+      "https://github.com/alteryx/featuretools/pull/2774"
+    ]
+  },
+  {
+    "project": "Panel",
+    "repository": "holoviz/panel",
+    "repositoryUrl": "https://github.com/holoviz/panel",
+    "description": "Panel: The powerful data exploration & web app framework for Python",
+    "role": "Contributor",
+    "stars": 5773,
+    "evidenceUrls": [
+      "https://github.com/holoviz/panel/pull/8659",
       "https://github.com/holoviz/panel/pull/8660",
-    ],
+      "https://github.com/holoviz/panel/pull/8736",
+      "https://github.com/holoviz/panel/pull/8743"
+    ]
   },
   {
-    project: "Py-Shiny",
-    repository: "posit-dev/py-shiny",
-    repositoryUrl: "https://github.com/posit-dev/py-shiny",
-    description: "A reactive web application framework for Python data work.",
-    ecosystem: "Data applications",
-    mergedPullRequests: 1,
-    evidenceUrls: ["https://github.com/posit-dev/py-shiny/pull/2278"],
+    "project": "Plotnine",
+    "repository": "has2k1/plotnine",
+    "repositoryUrl": "https://github.com/has2k1/plotnine",
+    "description": "A Grammar of Graphics for Python",
+    "role": "Contributor",
+    "stars": 4758,
+    "evidenceUrls": [
+      "https://github.com/has2k1/plotnine/pull/1092"
+    ]
   },
+  {
+    "project": "vLLM Production Stack",
+    "repository": "vllm-project/production-stack",
+    "repositoryUrl": "https://github.com/vllm-project/production-stack",
+    "description": "vLLM’s reference system for K8S-native cluster-wide deployment with community-driven performance optimization",
+    "role": "Pull request contributor",
+    "stars": 2576,
+    "evidenceUrls": [
+      "https://github.com/vllm-project/production-stack/pull/1058"
+    ]
+  },
+  {
+    "project": "Py-Shiny",
+    "repository": "posit-dev/py-shiny",
+    "repositoryUrl": "https://github.com/posit-dev/py-shiny",
+    "description": "Shiny for Python",
+    "role": "Contributor",
+    "stars": 1752,
+    "evidenceUrls": [
+      "https://github.com/posit-dev/py-shiny/pull/2278",
+      "https://github.com/posit-dev/py-shiny/pull/2468"
+    ]
+  },
+  {
+    "project": "Aeon",
+    "repository": "aeon-toolkit/aeon",
+    "repositoryUrl": "https://github.com/aeon-toolkit/aeon",
+    "description": "A toolkit for time series  machine learning and deep learning",
+    "role": "Contributor",
+    "stars": 1447,
+    "evidenceUrls": [
+      "https://github.com/aeon-toolkit/aeon/pull/3762"
+    ]
+  },
+  {
+    "project": "vLLM TPU Inference",
+    "repository": "vllm-project/tpu-inference",
+    "repositoryUrl": "https://github.com/vllm-project/tpu-inference",
+    "description": "TPU inference for vLLM, with unified JAX and PyTorch support.",
+    "role": "Contributor",
+    "stars": 435,
+    "evidenceUrls": [
+      "https://github.com/vllm-project/tpu-inference/pull/3471",
+      "https://github.com/vllm-project/tpu-inference/pull/3474",
+      "https://github.com/vllm-project/tpu-inference/pull/3475"
+    ]
+  },
+  {
+    "project": "VegaFusion",
+    "repository": "vega/vegafusion",
+    "repositoryUrl": "https://github.com/vega/vegafusion",
+    "description": "Serverside scaling for Vega and Altair visualizations",
+    "role": "Pull request contributor",
+    "stars": 422,
+    "evidenceUrls": [
+      "https://github.com/vega/vegafusion/pull/590"
+    ]
+  },
+  {
+    "project": "Stingray",
+    "repository": "StingraySoftware/stingray",
+    "repositoryUrl": "https://github.com/StingraySoftware/stingray",
+    "description": "Anything can happen in the next half hour (including spectral timing made easy)!",
+    "role": "Pull request contributor",
+    "stars": 225,
+    "evidenceUrls": [
+      "https://github.com/StingraySoftware/stingray/pull/980"
+    ]
+  },
+  {
+    "project": "nbsite",
+    "repository": "holoviz-dev/nbsite",
+    "repositoryUrl": "https://github.com/holoviz-dev/nbsite",
+    "description": "Build a tested, sphinx-based website from notebooks",
+    "role": "Pull request contributor",
+    "stars": 32,
+    "evidenceUrls": [
+      "https://github.com/holoviz-dev/nbsite/pull/360"
+    ]
+  }
 ];
 
 export const ALL_CONTRIBUTIONS = [
