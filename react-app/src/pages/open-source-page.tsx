@@ -10,7 +10,10 @@ import {
 } from "@/data/open-source";
 
 const repositories = [...CONTRIBUTOR_REPOSITORIES].sort(
-  (a, b) => b.stars - a.stars || a.repository.localeCompare(b.repository),
+  (a, b) =>
+    Number(b.role === "Contributor") - Number(a.role === "Contributor") ||
+    b.stars - a.stars ||
+    a.repository.localeCompare(b.repository),
 );
 
 export function OpenSourcePage() {
@@ -39,7 +42,7 @@ export function OpenSourcePage() {
               Repositories
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Most stars first · GitHub star counts as of{" "}
+              Contributors first, then most stars · GitHub star counts as of{" "}
               <time dateTime={REPOSITORY_STARS_CHECKED_AT}>
                 {REPOSITORY_STARS_CHECKED_AT}
               </time>
