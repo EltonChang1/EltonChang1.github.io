@@ -1,4 +1,9 @@
-import { ArrowUpRight, GitMerge, GitPullRequest } from "lucide-react";
+import {
+  ArrowUpRight,
+  GitMerge,
+  GitPullRequest,
+  GitPullRequestClosed,
+} from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,8 +16,13 @@ export function OpenSourceCard({
   contribution: OpenSourceContribution;
 }) {
   const merged = contribution.status === "merged";
+  const closed = contribution.status === "closed";
   const draft = contribution.status === "open" && contribution.draft;
-  const StatusIcon = merged ? GitMerge : GitPullRequest;
+  const StatusIcon = merged
+    ? GitMerge
+    : closed
+      ? GitPullRequestClosed
+      : GitPullRequest;
 
   return (
     <article className="flex h-full flex-col rounded-2xl border border-border/80 bg-card p-6 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md">
@@ -36,13 +46,15 @@ export function OpenSourceCard({
             "shrink-0 gap-1.5",
             merged
               ? "border-emerald-600/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
-              : draft
-                ? "border-amber-600/30 bg-amber-500/10 text-amber-700 dark:text-amber-300"
-                : "border-sky-600/30 bg-sky-500/10 text-sky-700 dark:text-sky-300",
+              : closed
+                ? "border-border text-muted-foreground"
+                : draft
+                  ? "border-amber-600/30 bg-amber-500/10 text-amber-700 dark:text-amber-300"
+                  : "border-sky-600/30 bg-sky-500/10 text-sky-700 dark:text-sky-300",
           )}
         >
           <StatusIcon className="h-3.5 w-3.5" />
-          {merged ? "Merged" : draft ? "Draft" : "Open"}
+          {merged ? "Merged" : closed ? "Closed" : draft ? "Draft" : "Open"}
         </Badge>
       </div>
 

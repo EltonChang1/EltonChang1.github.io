@@ -1,4 +1,4 @@
-export type ContributionStatus = "merged" | "open";
+export type ContributionStatus = "merged" | "open" | "closed";
 export type ContributionArea = "ai" | "data-infrastructure" | "data-science";
 
 export type OpenSourceContribution = {
@@ -72,10 +72,9 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
     title: "Pass framework metadata through shared tests",
     summary:
       "Passes each reusable test suite's backend name into local pytest invocations so test metadata, coverage artifacts, and Allure artifacts no longer use an unknown framework label.",
-    status: "open",
-    draft: true,
+    status: "closed",
     area: "ai",
-    date: "Opened Sep 3, 2026",
+    date: "Closed Sep 20, 2026",
     url: "https://github.com/ai-dynamo/dynamo/pull/14295",
     repositoryUrl: "https://github.com/ai-dynamo/dynamo",
     additions: 3,
@@ -252,13 +251,12 @@ export const DATA_INFRASTRUCTURE_CONTRIBUTIONS: OpenSourceContribution[] = [
     title: "Refresh parser settings between query files",
     summary:
       "Refreshes SQL parser options before every statistics query file so ordered test suites follow the current session state after SET commands.",
-    status: "open",
-    draft: true,
+    status: "merged",
     area: "data-infrastructure",
-    date: "Opened Aug 27, 2026",
+    date: "Merged Sep 28, 2026",
     url: "https://github.com/apache/datafusion/pull/24738",
     repositoryUrl: "https://github.com/apache/datafusion",
-    additions: 133,
+    additions: 141,
     deletions: 45,
     files: 1,
     tags: ["Rust", "Query engine", "SQL parser"],
@@ -547,7 +545,7 @@ export const DATA_SCIENCE_CONTRIBUTIONS: OpenSourceContribution[] = [
   },
 ];
 
-// GitHub repository metadata and authored PR evidence verified on the snapshot date.
+// GitHub star counts were verified on the snapshot date; roles follow authored PR evidence.
 // Contributor requires merged work or GitHub contributor association; otherwise use PR contributor.
 export const REPOSITORY_STARS_CHECKED_AT = "2026-09-17";
 
@@ -636,7 +634,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repository": "apache/datafusion",
     "repositoryUrl": "https://github.com/apache/datafusion",
     "description": "Apache DataFusion SQL Query Engine",
-    "role": "Pull request contributor",
+    "role": "Contributor",
     "stars": 9319,
     "evidenceUrls": [
       "https://github.com/apache/datafusion/pull/24713",
@@ -787,7 +785,7 @@ export const FEATURED_CONTRIBUTIONS = [
 
 export const CONTRIBUTION_STATS = [
   { value: "29", label: "Tracked upstream PRs" },
-  { value: "8", label: "Merged upstream" },
-  { value: "21", label: "Currently open" },
-  { value: "7", label: "Contributor repositories" },
+  { value: "9", label: "Merged upstream" },
+  { value: "19", label: "Currently open" },
+  { value: "9", label: "Contributor repositories" },
 ];
