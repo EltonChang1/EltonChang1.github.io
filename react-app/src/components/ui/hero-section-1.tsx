@@ -6,6 +6,7 @@ import { BrandHomeLink } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { DottedSurface } from "@/components/ui/dotted-surface";
+import { RESEARCH_PROPOSAL_PAGE_PATH } from "@/constants/research";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { SITE_EMAIL } from "@/constants/social";
 import { cn } from "@/lib/utils";
@@ -143,6 +144,7 @@ const menuItems = [
   { name: "Home", to: "/" as const },
   { name: "Projects", to: "/projects" as const },
   { name: "Open Source", to: "/open-source" as const },
+  { name: "Research", to: RESEARCH_PROPOSAL_PAGE_PATH },
   { name: "Résumé", to: RESUME_PAGE_PATH },
   { name: "Contact", to: "/#contact" as const },
 ];
@@ -162,12 +164,13 @@ function HeroHeader() {
   return (
     <header>
       <nav
+        aria-label="Main navigation"
         data-state={menuState ? "active" : undefined}
         className="group fixed inset-x-0 top-0 z-20 w-full px-2 pt-[max(0.25rem,env(safe-area-inset-top,0px))]"
       >
         <div
           className={cn(
-            "mx-auto max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            "mx-auto max-w-6xl px-6 transition-all duration-300 xl:px-12",
             isScrolled ? "mt-1.5" : "mt-0",
             isScrolled &&
               "max-w-4xl rounded-2xl border border-border/80 bg-background/50 backdrop-blur-lg lg:px-5"
@@ -175,17 +178,17 @@ function HeroHeader() {
         >
           <div
             className={cn(
-              "relative flex flex-wrap items-center justify-between gap-6 py-2 lg:gap-0 lg:py-3",
-              isScrolled && "gap-3 py-1.5 lg:gap-0 lg:py-2",
+              "relative flex flex-wrap items-center justify-between gap-6 py-2 lg:gap-4 lg:py-3",
+              isScrolled && "gap-3 py-1.5 lg:gap-4 lg:py-2",
             )}
           >
-            <div className="flex w-full justify-between lg:w-auto">
+            <div className="flex w-full justify-between lg:w-auto lg:shrink-0">
               <BrandHomeLink
                 logoClassName={cn(
                   "transition-[height,max-width,opacity] duration-300 ease-out",
                   isScrolled
                     ? "h-9 max-w-[min(170px,40vw)] opacity-100 sm:h-10 md:h-10 lg:h-10"
-                    : "drop-shadow-sm",
+                    : "drop-shadow-sm lg:max-w-[200px] xl:max-w-[240px]",
                 )}
               />
 
@@ -193,6 +196,7 @@ function HeroHeader() {
                 type="button"
                 onClick={() => setMenuState(!menuState)}
                 aria-label={menuState ? "Close menu" : "Open menu"}
+                aria-expanded={menuState}
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
                 <Menu className="m-auto size-6 duration-200 group-data-[state=active]:scale-0 group-data-[state=active]:rotate-180 group-data-[state=active]:opacity-0" />
@@ -200,8 +204,8 @@ function HeroHeader() {
               </button>
             </div>
 
-            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-              <ul className="flex gap-8 text-sm">
+            <div className="hidden lg:block lg:shrink-0">
+              <ul className="flex gap-4 whitespace-nowrap text-sm xl:gap-6">
                 {menuItems.map((item) => (
                   <li key={item.name}>
                     <Link

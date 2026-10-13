@@ -12,7 +12,12 @@ export function ScrollToHash() {
       document.getElementById(id) ??
       document.getElementById(`project-${id}`);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+        block: "start",
+      });
     }
   }, [pathname, hash]);
 

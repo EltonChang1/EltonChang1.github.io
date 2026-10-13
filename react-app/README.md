@@ -2,6 +2,10 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Research proposal
+
+`/research-proposal` presents the TactileWorld research question, completed work, proposed experiments, evaluation plan, and references in concise sections. The shared navigation labels it **Research**. Keep completed evidence and proposed milestones distinct when updating `src/pages/research-proposal-page.tsx`, and retain its direct GitHub Pages route entry in `.github/workflows/deploy-github-pages.yml`.
+
 ## Resume pages
 
 `/resume` is the table of contents. Purpose-specific pages live at `/resume/general`, `/resume/robotics`, `/resume/research`, and `/resume/data-science`. Each has its own PDF preview, named download, and links to the other versions.
