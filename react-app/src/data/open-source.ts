@@ -89,10 +89,9 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
     title: "Clarify Mamba speculative slot accounting",
     summary:
       "Corrects Mamba cache sizing guidance by separating speculative intermediate buffers from persistent allocator slots and reserving headroom for chunk-boundary donation.",
-    status: "open",
-    draft: true,
+    status: "closed",
     area: "ai",
-    date: "Opened Aug 29, 2026",
+    date: "Closed Oct 5, 2026",
     url: "https://github.com/sgl-project/sglang/pull/37074",
     repositoryUrl: "https://github.com/sgl-project/sglang",
     additions: 26,
@@ -107,10 +106,9 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
     title: "Fix MMLU thresholds in NPU DeepEP tests",
     summary:
       "Corrects stale threshold attribute names in five Ascend NPU test classes so MMLU accuracy checks no longer fall back to a false-success threshold of zero.",
-    status: "open",
-    draft: true,
+    status: "closed",
     area: "ai",
-    date: "Opened Aug 28, 2026",
+    date: "Closed Oct 5, 2026",
     url: "https://github.com/sgl-project/sglang/pull/36801",
     repositoryUrl: "https://github.com/sgl-project/sglang",
     additions: 5,
@@ -125,10 +123,9 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
     title: "Avoid committing temporary Docker build artifacts",
     summary:
       "Replaces COPY layers with build-time mounts so temporary AI-inference build artifacts do not remain in the final container image as hidden whiteout data.",
-    status: "open",
-    draft: true,
+    status: "closed",
     area: "ai",
-    date: "Opened Aug 28, 2026",
+    date: "Closed Oct 5, 2026",
     url: "https://github.com/sgl-project/sglang/pull/36771",
     repositoryUrl: "https://github.com/sgl-project/sglang",
     additions: 9,
@@ -358,10 +355,9 @@ export const DATA_SCIENCE_CONTRIBUTIONS: OpenSourceContribution[] = [
     title: "Fix DatetimeSlider same-day bounds",
     summary:
       "Normalizes datetime start, end, and value fields consistently so same-day non-midnight ranges no longer collapse to invalid equal bounds.",
-    status: "open",
-    draft: true,
+    status: "merged",
     area: "data-science",
-    date: "Opened Aug 27, 2026",
+    date: "Merged Oct 12, 2026",
     url: "https://github.com/holoviz/panel/pull/8743",
     repositoryUrl: "https://github.com/holoviz/panel",
     additions: 17,
@@ -785,7 +781,7 @@ export const FEATURED_CONTRIBUTIONS = [
 
 export const CONTRIBUTION_STATS = [
   { value: "29", label: "Tracked upstream PRs" },
-  { value: "9", label: "Merged upstream" },
-  { value: "19", label: "Currently open" },
+  { value: "10", label: "Merged upstream" },
+  { value: "15", label: "Currently open" },
   { value: "9", label: "Contributor repositories" },
 ];
