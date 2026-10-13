@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 import { BrandHomeLink } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
-import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
+import { getResumeVersion, RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { SITE_EMAIL } from "@/constants/social";
 import { cn } from "@/lib/utils";
 
@@ -24,6 +24,10 @@ const navLinkClass =
   "text-muted-foreground hover:text-accent-foreground block duration-150";
 
 export function SiteHeader() {
+  const { pathname } = useLocation();
+  const currentResume = pathname.startsWith(`${RESUME_PAGE_PATH}/`)
+    ? getResumeVersion(pathname.slice(RESUME_PAGE_PATH.length + 1).replace(/\/$/, ""))
+    : undefined;
   const [menuState, setMenuState] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -127,7 +131,10 @@ export function SiteHeader() {
                   size="sm"
                   className={cn(isScrolled && "lg:hidden")}
                 >
-                  <a href={RESUME_PDF_URL} download>
+                  <a
+                    href={currentResume?.pdfUrl ?? RESUME_PDF_URL}
+                    download={currentResume?.downloadFilename ?? "Elton_Chang_Resume.pdf"}
+                  >
                     <span>Download PDF</span>
                   </a>
                 </Button>
