@@ -31,3 +31,26 @@ Use a single-column document with selectable text, clear conventional headings, 
 After changing source content or layout, run `python output/resume/build_all_resumes.py` and `python output/resume/validate_ats_resumes.py`, review the text/audit artifacts in `output/resume/ats-audit/`, and inspect rendered pages for clipping, overlap, and readable spacing. Keep general-resume website PDF copies synchronized. Preserve supported claims and research evidence limits during keyword tailoring.
 
 These are formatting and local readability checks, not a guaranteed score from an employer's ATS or a promise of screening success. Verify the receiving application's autofilled fields before submission. The guide links the primary Greenhouse documentation used for this requirement.
+
+## Software engineering variant — October 14, 2026
+
+Target: full-stack and AI engineering roles. Source: `build_software_engineering_resume.py`; website page `/resume/software-engineering`. The user asked for every supported software engineering skill, including full-stack and AI engineering stacks, a Technical Skills section of no more than two lines, and skills shown through the work rather than only listed.
+
+### Guidance and how it was applied
+
+1. **Use a conventional one-page structure for a recent graduate.** The Tech Interview Handbook recommends standard headings, one page, at least 10-point type, Education first for candidates with under three years of experience, a GitHub profile in the contact details, and project names linked to their code. The variant keeps Education first, adds the GitHub URL to the visible contact line, uses the general resume's 11-point Times layout, and links each project title to its repository. [Tech Interview Handbook](https://www.techinterviewhandbook.org/resume/)
+
+2. **Show the skills inside the work.** The handbook recommends repeating skill keywords in experience entries, and MIT's checklist asks for action verbs, evidence, quantification, and industry keywords. Every bullet names the stack behind a specific system or result, so the two-line skills section summarizes rather than introduces skills. Only Go, C/C++, and PyTorch appear solely in the skills lines; their evidence is listed below. [MIT resume checklist](https://capd.mit.edu/resources/resume-checklist/)
+
+3. **Pair actions with outcomes.** The existing Ashe, Wintec, and open-source numbers are retained unchanged. Project bullets describe concrete capabilities rather than adding unsupported usage or performance metrics.
+
+4. **Select rather than list everything.** Four projects cover full-stack web, mobile, LLM applications, and networked systems. TraceFrame, Next Best Action, and Quantifying Meritocracy remain in the general, data science, and research variants.
+
+### Evidence and claim limits
+
+- **AMOS:** The repository README (main branch) supports the Rust/Axum control layer, parsed SQL subset, role checks, versioned OpenAPI API, idempotent SQLite transactions, and GitHub Actions gates. The non-root Docker image and hardened Docker Compose package are on the `finance` branch. The README states that the local analyst agent is not yet in the Rust implementation, so the bullet describes the control layer only. The date stays "2026 - Present" because no start month is recorded.
+- **Ashe System and Wintec:** The Ashe stack comes from the website project description; all metrics are unchanged from the general resume. The 2022 Java and SQL references come from that role's website technology tags.
+- **Projects:** Commit history shows Elton authored 101 of 106 MarketPulse commits and all commits in the Enterprise AI Assistant, Zoe, and Torflix repositories. On October 14, 2026, the MarketPulse Vercel client responded; its committed production configuration points to a Google Cloud Run API that returned a 503 that day, so the bullet describes the launch rather than current uptime. The Enterprise AI Assistant uses OpenAI `text-embedding-3-small` vectors with cosine similarity and a lexical fallback. Zoe's Hono, Prisma, PostgreSQL, argon2id, Google/Apple sign-in, S3 presigned upload, and `tsvector` search code is in its `server/` directory. Torflix implements its own asyncio BitTorrent engine and HTTP range responses.
+- **Open source:** GitHub showed 10 merged upstream pull requests on October 14, 2026. The vLLM TPU Inference, Dynamo, ONNX Runtime, and vLLM Production Stack pull requests were still open and are described only as opened. SGLang pull requests closed without merging are excluded.
+- **Skills without a dedicated bullet:** Go (the Go/Vue.js chat app with a goroutine WebSocket hub), C/C++ (Squid RP2040 firmware), and PyTorch (tactile prediction research). LangChain, LangGraph, and LlamaIndex appear on the general resume, but no project evidence was found, so this variant omits them until a supporting project is provided.
+- **Excluded project:** Enterprise AI Suite's deployment workflow never succeeded and its agents do not call an LLM, so its Kubernetes and deployment claims are not used.

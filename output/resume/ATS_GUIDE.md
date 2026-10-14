@@ -11,7 +11,7 @@ The resume should expose its actual text in a clear reading order so software ca
 - Use one column and clear headings such as Education, Professional Experience, Research Experience, Selected Projects, and Technical Skills. Distinct independent research and research-interest sections are appropriate when they accurately describe the work.
 - Place the name, phone, email, and visible website address at the top of the main page body. Keep each employer, full job title, location, and date associated with its entry in the extracted text.
 - Avoid tables used for layout, sidebars, floating text boxes, graphics, photos, word art, icons, and essential content in headers or footers. Keep all resume wording as selectable text rather than a scan, screenshot, or outlined lettering. Greenhouse documents these layout and image choices as potential causes of incomplete parsing. [Greenhouse: Unsuccessful resume parse](https://support.greenhouse.io/hc/en-us/articles/200989175-Unsuccessful-resume-parse)
-- Retain readable conventional type. The general resume uses 11-point Times body text; the research and role-specific variants use 12-point Times. All use half-inch side margins. Preserve the current size where practical, and shorten lower-priority content before reducing readability. Respect a variant's page-count and skills-length requirements; an academic CV can use more pages when the application calls for it.
+- Retain readable conventional type. The general and software engineering resumes use 11-point Times body text; the research and other role-specific variants use 12-point Times. All use half-inch side margins. Preserve the current size where practical, and shorten lower-priority content before reducing readability. Respect a variant's page-count and skills-length requirements; an academic CV can use more pages when the application calls for it.
 - Use ordinary text bullets, separators, and consistent month/year dates. Avoid decorative spacing between letters. Confirm punctuation, technical names, percentages, and comparison symbols survive text extraction. A right-aligned date on the same entry line is acceptable only when the extracted order still keeps it with that entry.
 - Make important contact and portfolio URLs visible when they matter to an application. Hyperlink annotations can supplement the text but must not carry a qualification or required contact detail on their own.
 
@@ -33,15 +33,16 @@ python output/resume/build_all_resumes.py
 python output/resume/validate_ats_resumes.py
 ```
 
-Use the saved sources/builders rather than hand-editing a generated PDF. The full build keeps every website download copy synchronized and rebuilds the distinct tailored variants. The website's `/resume` index links to separate purpose pages at `/resume/general`, `/resume/robotics`, `/resume/research`, and `/resume/data-science`.
+Use the saved sources/builders rather than hand-editing a generated PDF. The full build keeps every website download copy synchronized and rebuilds the distinct tailored variants. The website's `/resume` index links to separate purpose pages at `/resume/general`, `/resume/software-engineering`, `/resume/robotics`, `/resume/research`, and `/resume/data-science`.
 
-The Python dependencies are listed in `output/resume/requirements.txt`; the builders use the installed Windows Times New Roman fonts. This workspace's bundled Python was used for verification. Poppler's `pdftoppm` is used for rendered checks and refreshing the JPEG preview when available.
+The Python dependencies are listed in `output/resume/requirements.txt`; the builders use the installed Windows Times New Roman fonts. This workspace's bundled Python was used for verification. On Linux, the builders resolve `C:/Windows/Fonts` relative to the repository root; on October 14, 2026, Microsoft's core-fonts Times New Roman files placed there temporarily (never committed) reproduced the committed PDFs' glyph widths and line breaks exactly. Poppler's `pdftoppm` is used for rendered checks and refreshing the JPEG preview when available.
 
 Canonical builders and outputs:
 
 | Builder | Application PDF | Synchronized copies |
 | --- | --- | --- |
 | `build_general_resume.py` | `output/pdf/Elton_Chang_Resume.pdf` | Root `Resume.pdf`, root `Elton_Chang_Resume.pdf`, and `react-app/public/Elton_Chang_Resume.pdf` |
+| `build_software_engineering_resume.py` | `output/pdf/Elton_Chang_Software_Engineering_Resume.pdf` | `react-app/public/resumes/software-engineering.pdf` |
 | `build_robotic_resume.py` | `output/pdf/robotic_resume.pdf` | `react-app/public/resumes/robotics.pdf` |
 | `build_cmu_research_associate_resume.py` | `output/pdf/robotic_resume_cmu_research_associate_2025207.pdf` | `output/pdf/research.pdf` and `react-app/public/resumes/research.pdf` |
 | `build_stanford_reglab_resume.py` | `output/pdf/Elton_Chang_Stanford_RegLab_Data_Scientist_Resume.pdf` | `react-app/public/resumes/data-science.pdf` |

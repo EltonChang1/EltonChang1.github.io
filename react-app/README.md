@@ -8,7 +8,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 ## Resume pages
 
-`/resume` is the table of contents. Purpose-specific pages live at `/resume/general`, `/resume/robotics`, `/resume/research`, and `/resume/data-science`. Each has its own PDF preview, named download, and links to the other versions.
+`/resume` is the table of contents. Purpose-specific pages live at `/resume/general`, `/resume/software-engineering`, `/resume/robotics`, `/resume/research`, and `/resume/data-science`. Each has its own PDF preview, named download, and links to the other versions.
 
 The catalog is maintained in `src/constants/resume.ts`. Download PDFs are served from `public/Elton_Chang_Resume.pdf` and `public/resumes/`. From the repository root, `python output/resume/build_all_resumes.py` rebuilds, synchronizes, and checks all resume files using the saved ATS guidance. Keep the route entry points in `.github/workflows/deploy-github-pages.yml` aligned when adding a new purpose page.
 
