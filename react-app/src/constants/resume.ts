@@ -4,7 +4,12 @@ export const RESUME_PAGE_PATH = "/resume";
 /** Served from site root via Vite `public/` (file: `public/Elton_Chang_Resume.pdf`). */
 export const RESUME_PDF_URL = "/Elton_Chang_Resume.pdf";
 
-export type ResumeSlug = "general" | "robotics" | "research" | "data-science";
+export type ResumeSlug =
+  | "general"
+  | "software-engineering"
+  | "robotics"
+  | "research"
+  | "data-science";
 
 export type ResumeVersion = {
   slug: ResumeSlug;
@@ -20,13 +25,23 @@ export type ResumeVersion = {
 export const RESUME_VERSIONS: ResumeVersion[] = [
   {
     slug: "general",
-    title: "Software Engineering",
-    purpose: "Software and AI engineering roles",
+    title: "General",
+    purpose: "Software, data analytics, and machine learning roles",
     description:
       "A broad overview of software development, AI systems, infrastructure experience, and selected projects.",
     focus: ["Software development", "AI systems", "Infrastructure"],
     pdfUrl: RESUME_PDF_URL,
     downloadFilename: "Elton_Chang_Resume.pdf",
+  },
+  {
+    slug: "software-engineering",
+    title: "Software Engineering",
+    purpose: "Full-stack and AI engineering roles",
+    description:
+      "Shows full-stack web and mobile development, LLM applications, and cloud infrastructure through experience, projects, and open-source contributions.",
+    focus: ["Full-stack development", "AI engineering", "Cloud infrastructure"],
+    pdfUrl: "/resumes/software-engineering.pdf",
+    downloadFilename: "Elton_Chang_Software_Engineering_Resume.pdf",
   },
   {
     slug: "robotics",
