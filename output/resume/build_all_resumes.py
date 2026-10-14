@@ -8,6 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 BUILDERS = [
     "build_general_resume.py",
+    "build_software_engineering_resume.py",
     "build_robotic_resume.py",
     "build_cmu_research_associate_resume.py",
     "build_stanford_reglab_resume.py",
@@ -17,6 +18,9 @@ DOWNLOAD_COPIES = {
         "Resume.pdf",
         "Elton_Chang_Resume.pdf",
         "react-app/public/Elton_Chang_Resume.pdf",
+    ],
+    "output/pdf/Elton_Chang_Software_Engineering_Resume.pdf": [
+        "react-app/public/resumes/software-engineering.pdf",
     ],
     "output/pdf/robotic_resume.pdf": ["react-app/public/resumes/robotics.pdf"],
     "output/pdf/research.pdf": ["react-app/public/resumes/research.pdf"],

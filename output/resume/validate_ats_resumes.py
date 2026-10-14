@@ -29,6 +29,7 @@ DEFAULT_REPORT_DIR = ROOT / "output" / "resume" / "ats-audit"
 SOURCE_DIR = ROOT / "output" / "resume" / "ats-sources"
 # Website aliases have concise URLs; map each to its canonical intended text.
 WEBSITE_SOURCE_ALIASES = {
+    "react-app/public/resumes/software-engineering.pdf": "Elton_Chang_Software_Engineering_Resume.pdf.txt",
     "react-app/public/resumes/robotics.pdf": "robotic_resume.pdf.txt",
     "react-app/public/resumes/research.pdf": "research.pdf.txt",
     "react-app/public/resumes/data-science.pdf": "Elton_Chang_Stanford_RegLab_Data_Scientist_Resume.pdf.txt",
