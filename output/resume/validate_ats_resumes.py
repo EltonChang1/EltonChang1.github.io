@@ -50,12 +50,22 @@ HEADINGS = {
 }
 
 
+def is_cover_letter(path: Path) -> bool:
+    """Cover letters are application PDFs, not résumé variants with section headings."""
+    name = path.name.casefold()
+    return "cover_letter" in name or "cover-letter" in name
+
+
 def default_paths() -> list[Path]:
     """Include every PDF resume currently kept in this repository."""
+    resume_pdfs = [
+        path for path in sorted((ROOT / "output" / "pdf").glob("*.pdf"))
+        if not is_cover_letter(path)
+    ]
     return [
         ROOT / "Resume.pdf",
         ROOT / "Elton_Chang_Resume.pdf",
-        *sorted((ROOT / "output" / "pdf").glob("*.pdf")),
+        *resume_pdfs,
         ROOT / "react-app" / "public" / "Elton_Chang_Resume.pdf",
         *(ROOT / relative for relative in WEBSITE_SOURCE_ALIASES),
     ]
