@@ -11,7 +11,7 @@ This guide defines how **your** personal site ([eltonchang1.github.io](https://e
 | Layer | Location | Use |
 |--------|----------|-----|
 | **Static site (legacy / assets)** | Repo root (`index.html`, `css/`, `js/`, images) | Optional parity; primary UI is the React app when deployed from CI. |
-| **React + shadcn (`react-app/`)** | TypeScript, Tailwind CSS v4, shadcn/ui (Nova / Radix), Vite | **Canonical UI** for `/`, `/projects`, `/resume`. Build: `react-app/dist`. |
+| **React + shadcn (`react-app/`)** | TypeScript, Tailwind CSS v4, shadcn/ui (Nova / Radix), Vite | **Canonical UI** for `/`, `/projects`, `/open-source`, `/research-proposal`, `/resume`. Build: `react-app/dist`. |
 
 ---
 
@@ -151,7 +151,9 @@ Semantic landmarks, one home **`h1`**, meaningful image `alt` (decorative backgr
 ## Home page structure (intended)
 
 1. **Hero** — your intro + pill + CTAs + atmosphere (**reference-scoped** as above).  
-2. **About → Featured projects → Contact** — portfolio sections in `home-page.tsx` (not part of the Tailark reference).
+2. **About → Featured projects → Open source → Contact** — portfolio sections in `home-page.tsx` (not part of the Tailark reference).
+
+**About** is the one place that should sound most like you. Its copy lives in `react-app/src/data/about.ts`: a first-person story, a short "Right now" list linking to current work, quick facts, and a grouped toolbox. The photo column sits first visually (sticky on desktop) while the heading stays first in the DOM. Keep the voice plain, specific, and a little wry; keep every claim backed by a project, résumé, or repository.
 
 ---
 
