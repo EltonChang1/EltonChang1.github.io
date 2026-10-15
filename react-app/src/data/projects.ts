@@ -100,7 +100,8 @@ export const PROJECTS: ProjectDefinition[] = [
       title: "AMOS — Verified AI Analysis Inside the Enterprise",
       overviewParagraphs: [
         "**AMOS** is an internally deployed analyst system for business questions that require more than a plausible model response. A local analyst agent proposes the work; the AMOS control layer decides what is permitted, runs deterministic calculations, verifies the resulting claims, and preserves the evidence needed for review or replay.",
-        "I co-founded AMOS after seeing the same analytical workflow repeat across finance, aviation, and research projects: reconcile the right data and definitions, choose the right computation, validate the result, and communicate it in a decision-ready form.",
+        "I started AMOS after graduating from Carnegie Mellon, once I noticed the same workflow repeating across a PNC next-best-action project, Ashe System, and other analytics work: reconcile the right data and definitions, choose the right computation, verify the result, and package it for a decision. We are four technical founders who build the product ourselves. We had a working Rust prototype within the first month and have interviewed nine data leaders, analysts, and technical experts about the need.",
+        "Today the Rust control layer is the working foundation: permissions, governed SQL, statistics, and chart workers, typed claims, review, invalidation, and replay. We are looking for design partners with a recurring analyst workflow.",
       ],
       featureList: [
         "Permission-first context compilation filters inaccessible, stale, revoked, or superseded memory before it reaches the model.",
@@ -187,16 +188,16 @@ export const PROJECTS: ProjectDefinition[] = [
       description:
         "AOG Shield turns an aviation operator’s existing maintenance, inventory, supplier, certificate, and schedule exports into explainable 0–100 AOG risk scores, prioritized recommendations, and an executive-ready readiness report—so teams catch parts-driven Aircraft-on-Ground risk before it grounds a plane.",
       tech: [
+        "Python",
+        "XGBoost",
+        "FastAPI",
         "Next.js",
         "React",
         "TypeScript",
-        "FastAPI",
-        "Python",
-        "Tailwind CSS",
       ],
       stats: [
-        { label: "1.2K+ record risk engine", icon: "chart" },
-        { label: "Modeled $15K/mo opportunity", icon: "news" },
+        { label: "Precision@20: 35% → 62%", icon: "chart" },
+        { label: "Warning lead time: 6.5 → 10.2 days", icon: "clock" },
         { label: "Explainable decision support", icon: "shield" },
       ],
       image: "/images/Ashesystem_homepage.png",
@@ -205,8 +206,12 @@ export const PROJECTS: ProjectDefinition[] = [
       title: "Ashe System — AOG Shield",
       overviewParagraphs: [
         "**AOG Shield** helps airlines, cargo operators, MROs, and aviation materials teams identify parts-driven AOG (Aircraft on Ground) risk before a missing or unavailable certified part creates avoidable downtime.",
-        "As founder and technical lead, I translated operator validation into more than 50 MVP requirements and built a 1.2K+ record risk-engine demonstration that modeled up to $15K per month in avoidable downtime opportunity per operator.",
+        "As founder and technical lead, I turned validation conversations with cargo and small-aircraft owner-operators into more than 50 MVP requirements across maintenance, inventory, suppliers, certification, and scheduling, then built the scoring pipeline, API, and dashboard.",
         "It is decision-support and risk advisory only—it surfaces risk and the evidence behind it so maintenance, quality, supply-chain, and planning teams can act faster, without replacing human review or determining airworthiness.",
+      ],
+      methodologyParagraphs: [
+        "An XGBoost model ranks temporal AOG risk from maintenance, inventory, and supplier features. In validation it improved Precision@20 from 35% to 62%, and tuning its hyperparameters and early-warning thresholds with Optuna raised the median warning lead time from 6.5 to 10.2 days.",
+        "A 1.2K+ record risk-engine demonstration modeled up to $15K per month in avoidable downtime opportunity per operator.",
       ],
       featureList: [
         "Turns existing operator CSV exports into explainable 0–100 risk scores for aircraft, stations, parts, suppliers, and documentation.",
@@ -498,9 +503,9 @@ export const PROJECTS: ProjectDefinition[] = [
         {
           title: "Daemon & engine",
           items: [
-            "Python: BitTorrent engine library + FastAPI app (torflixd)",
-            "HTTP API for torrents, health, user settings; WebSocket for live updates",
-            "Environment: TORFLIX_* (ports, data dir, catalog API, BT listen port)",
+            "Its own asyncio BitTorrent engine: peer wire protocol, HTTP/UDP trackers, piece selection",
+            "FastAPI daemon (torflixd) with HTTP range streaming and WebSocket live updates",
+            "Environment: `TORFLIX_*` (ports, data dir, catalog API, BT listen port)",
           ],
         },
         {
@@ -598,13 +603,14 @@ export const PROJECTS: ProjectDefinition[] = [
       tagline:
         "See movers and your watchlist at a glance, log trades, then open any stock for forecasts, charts, news, and analysis.",
       description:
-        "After you sign in, you get a market-style home: search tickers, a watchlist table with sparklines, index cards, and movers. Track a manual portfolio with performance and allocation charts. On a stock page you can read forecasts, signals, indicators, a written summary, and headlines — or switch to Classic for embedded TradingView. An optional Ask AI assistant answers questions using your watchlist and portfolio for context.",
+        "After you sign in, you get a market-style home: search tickers, a watchlist table with sparklines, index cards, and movers. Track a manual portfolio with performance and allocation charts. On a stock page you can read forecasts, signals, indicators, a written summary, and headlines — or switch to Classic for embedded TradingView. An optional Ask AI assistant uses OpenAI tool calling with your watchlist and portfolio for context, and the same tools also run as a Model Context Protocol (MCP) server.",
       tech: [
         "React",
-        "Vite",
         "Node.js",
         "Express",
-        "Technical Analysis",
+        "MongoDB",
+        "OpenAI tool calling",
+        "MCP",
         "TradingView",
       ],
       stats: [
@@ -617,7 +623,7 @@ export const PROJECTS: ProjectDefinition[] = [
     expanded: {
       title: "MarketPulse AI",
       overviewParagraphs: [
-        "**You** use it to watch the market and your own positions in one place: home dashboards, a portfolio you enter by hand, and a deep stock page when you want forecasts and news beyond a headline.",
+        "I built **MarketPulse** to watch the market and my own positions in one place, and used it every day: home dashboards, a portfolio you enter by hand, and a deep stock page when you want forecasts and news beyond a headline.",
         "Dark/light theme and navigation (Home · Portfolio · Classic) keep it usable for long sessions; Classic is there when you want the full TradingView charting experience.",
       ],
       featureList: [
@@ -626,6 +632,23 @@ export const PROJECTS: ProjectDefinition[] = [
         "Portfolio: add buys and sells, see performance, allocation, vs indexes, holdings, and history.",
         "Stock page: pick a time horizon, read forecast and signals, open indicators and pattern context, scan a narrative summary, and read latest headlines.",
         "Optional Ask AI chat uses your watchlist and portfolio when enabled.",
+      ],
+      techDetails: [
+        {
+          title: "App & data",
+          items: [
+            "React client on Vercel; Express API on Google Cloud Run",
+            "MongoDB storage with JWT authentication",
+            "Technical indicators, pattern matching, and TradingView charts",
+          ],
+        },
+        {
+          title: "AI assistant",
+          items: [
+            "OpenAI tool calling grounded in your watchlist and portfolio",
+            "The same tools exposed as a Model Context Protocol (MCP) server",
+          ],
+        },
       ],
       screenshots: [
         {
@@ -716,13 +739,14 @@ export const PROJECTS: ProjectDefinition[] = [
       tagline:
         "A social app for discovering what’s worth loving — and ranking it.",
       description:
-        "Zoe (from the Greek ζωή, “life”) is a mobile taste platform that blends an Instagram-familiar shell, RedNote-style recommendation utility, and Beli-style ranking. You discover lifestyle ideas, build living ranked lists, and follow how friends’, creators’, and celebrities’ tastes evolve — all in a custom “Soft Editorial Luxury” design system. Built as a real Expo + React Native app (v1.2, submitted to Y Combinator S26).",
+        "Zoe (from the Greek ζωή, “life”) is a mobile taste platform that blends an Instagram-familiar shell, RedNote-style recommendation utility, and Beli-style ranking. You discover lifestyle ideas, build living ranked lists, and follow how friends’, creators’, and celebrities’ tastes evolve — all in a custom “Soft Editorial Luxury” design system. Built as a real Expo + React Native app with its own Hono and PostgreSQL API (v1.2, submitted to Y Combinator S26).",
       tech: [
         "React Native",
         "Expo",
-        "expo-router",
         "TypeScript",
         "NativeWind",
+        "Hono",
+        "PostgreSQL",
         "Product design",
       ],
       stats: [
@@ -754,6 +778,14 @@ export const PROJECTS: ProjectDefinition[] = [
             "Expo SDK 52 + expo-router v4 (file-based navigation)",
             "React Native with TypeScript (strict mode)",
             "NativeWind v4 — Tailwind utility model for React Native",
+          ],
+        },
+        {
+          title: "API & data",
+          items: [
+            "Hono + Prisma API on PostgreSQL",
+            "argon2id sessions with Google and Apple sign-in",
+            "S3 presigned uploads and PostgreSQL full-text search",
           ],
         },
         {
@@ -841,7 +873,7 @@ export const PROJECTS: ProjectDefinition[] = [
     expanded: {
       title: "Quantifying Meritocracy",
       overviewParagraphs: [
-        "**You** read the write-up and figures to understand: in a simple world where talent exists but luck matters, who ends up rich—and whether sharing rules can flatten the ladder without killing mobility.",
+        "The write-up and figures ask a simple question: in a world where talent exists but luck matters, who ends up rich—and can sharing rules flatten the ladder without killing mobility?",
       ],
       findingsList: [
         "Talent and wealth don’t line up: luck explains most of the spread.",
@@ -1016,26 +1048,6 @@ export const PROJECTS: ProjectDefinition[] = [
     },
   },
 ];
-
-export const SKILLS = [
-  "Rust",
-  "Python",
-  "TypeScript",
-  "Go",
-  "Java",
-  "C / C++",
-  "React",
-  "Next.js",
-  "SQL",
-  "Spark",
-  "Machine Learning",
-  "AI Governance",
-  "Large-scale systems",
-  "Full-stack",
-] as const;
-
-export const ABOUT_PARAGRAPH =
-  "I’m a Carnegie Mellon M.S. graduate in Data Analytics for Science and a co-founder of AMOS. I build governed AI systems, data pipelines, ML models, and full-stack products that have to behave in the wild—where “works on my machine” is a bug, not a punchline. Browse the work below; the résumé is the shorter, slightly more serious cut.";
 
 export const FEATURED_PROJECTS = PROJECTS.filter(
   (project) => project.featured,

@@ -22,7 +22,7 @@ export function ResumePage() {
     <div className="min-h-full bg-background">
       <InnerPageHero
         title="Résumés"
-        subtitle="Different perspectives on my work. Choose the résumé that fits your role or research interest."
+        subtitle="Same person, different angles. Pick the version closest to the role you’re hiring for; each one is a one-page, text-based PDF."
         className="pb-10 md:pb-12 lg:pb-14"
       />
 

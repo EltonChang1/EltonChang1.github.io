@@ -4,3 +4,6 @@ export const BRAND_LOGO_SRC =
 
 export const BRAND_NAME = "Elton Chang";
 export const BRAND_SHORT = "Elton";
+
+/** Keep in sync with the static `<title>` in `index.html`. */
+export const SITE_TITLE = "Elton Chang — Engineer & founder";

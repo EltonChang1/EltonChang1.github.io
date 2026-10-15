@@ -58,7 +58,7 @@ export const RESUME_VERSIONS: ResumeVersion[] = [
     title: "Research Engineering",
     purpose: "Research software and experimental engineering roles",
     description:
-      "Tailored for the CMU Research Associate application, highlighting Squid robotics software, experimental methods, and reproducible research tooling.",
+      "Leads with Squid’s C++ firmware and ROS 2 data-collection software, tactile experiments, and reproducible research tooling.",
     focus: ["C++ and ROS 2", "Experimental methods", "Reproducibility"],
     pdfUrl: "/resumes/research.pdf",
     downloadFilename: "Elton_Chang_Research_Engineering_Resume.pdf",
@@ -68,7 +68,7 @@ export const RESUME_VERSIONS: ResumeVersion[] = [
     title: "Data Science",
     purpose: "Data science and research analytics roles",
     description:
-      "Tailored for the Stanford RegLab Data Scientist application, emphasizing traceable analytics, machine learning evaluation, and policy simulation.",
+      "Emphasizes traceable analytics, machine-learning evaluation, data-quality checks, and agent-based policy simulation.",
     focus: ["Machine learning", "Data quality", "Policy simulation"],
     pdfUrl: "/resumes/data-science.pdf",
     downloadFilename: "Elton_Chang_Data_Science_Resume.pdf",

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ArrowUpRight, Star } from "lucide-react";
 
 import { IconGithub } from "@/components/brand-icons";
@@ -17,11 +18,15 @@ const repositories = [...CONTRIBUTOR_REPOSITORIES].sort(
 );
 
 export function OpenSourcePage() {
+  useEffect(() => {
+    document.title = "Open Source — Elton Chang";
+  }, []);
+
   return (
     <div className="bg-background">
       <InnerPageHero
         title="Open Source"
-        subtitle="Projects I contribute to, from AI infrastructure to scientific Python."
+        subtitle="Where I send fixes upstream, from AI inference engines to scientific Python."
       >
         <Button size="lg" variant="outline" asChild>
           <a

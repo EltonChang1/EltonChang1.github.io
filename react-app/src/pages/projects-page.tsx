@@ -26,6 +26,7 @@ import {
   PROJECTS,
   type StatIcon,
 } from "@/data/projects";
+import { renderInline } from "@/lib/inline-markdown";
 import { cn } from "@/lib/utils";
 
 const statIcons: Record<
@@ -80,7 +81,7 @@ function ExpandedPanel({ project, onClose }: { project: ProjectDefinition; onClo
           </h3>
           <ul className="list-inside list-disc space-y-2 text-muted-foreground">
             {e.featureList.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>{renderInline(item)}</li>
             ))}
           </ul>
         </div>
@@ -91,7 +92,7 @@ function ExpandedPanel({ project, onClose }: { project: ProjectDefinition; onClo
           <h3 className="text-lg font-semibold text-foreground">Overview</h3>
           {e.overviewParagraphs.map((p, i) => (
             <p key={i} className="text-muted-foreground">
-              {p}
+              {renderInline(p)}
             </p>
           ))}
         </div>
@@ -104,7 +105,7 @@ function ExpandedPanel({ project, onClose }: { project: ProjectDefinition; onClo
           </h3>
           <ul className="list-inside list-disc space-y-2 text-muted-foreground">
             {e.findingsList.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>{renderInline(item)}</li>
             ))}
           </ul>
         </div>
@@ -115,7 +116,7 @@ function ExpandedPanel({ project, onClose }: { project: ProjectDefinition; onClo
           <h3 className="text-lg font-semibold text-foreground">Methodology</h3>
           {e.methodologyParagraphs.map((p, i) => (
             <p key={i} className="text-muted-foreground">
-              {p}
+              {renderInline(p)}
             </p>
           ))}
         </div>
@@ -128,7 +129,7 @@ function ExpandedPanel({ project, onClose }: { project: ProjectDefinition; onClo
               <h4 className="mb-2 font-semibold text-foreground">{col.title}</h4>
               <ul className="list-inside list-disc space-y-1 text-sm text-muted-foreground">
                 {col.items.map((item, i) => (
-                  <li key={i}>{item}</li>
+                  <li key={i}>{renderInline(item)}</li>
                 ))}
               </ul>
             </div>
@@ -200,6 +201,10 @@ export function ProjectsPage() {
   const close = useCallback(() => setExpandedId(null), []);
 
   useEffect(() => {
+    document.title = "Projects — Elton Chang";
+  }, []);
+
+  useEffect(() => {
     if (!expandedId) return;
     const t = window.setTimeout(() => {
       document
@@ -228,7 +233,7 @@ export function ProjectsPage() {
     <div className="bg-background">
       <InnerPageHero
         title="My Projects"
-        subtitle="What each project does for you—browse the cards, then expand for screenshots and links."
+        subtitle="Things I’ve built, from an AI analyst for enterprises to a Pokémon Go radar I used every day. Open any card for screenshots, details, and links."
       />
 
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-16 lg:py-20 sm:px-6">
@@ -280,7 +285,7 @@ export function ProjectsPage() {
                         {project.card.tagline}
                       </p>
                       <p className="mb-4 text-muted-foreground">
-                        {project.card.description}
+                        {renderInline(project.card.description)}
                       </p>
                       <div className="mb-4 flex flex-wrap gap-2">
                         {project.card.tech.map((t) => (

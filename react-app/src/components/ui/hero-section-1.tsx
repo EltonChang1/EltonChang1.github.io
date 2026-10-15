@@ -62,11 +62,11 @@ export function HeroSection() {
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
                   <Link
-                    to="/projects"
+                    to="/projects#amos"
                     className="group bg-muted hover:bg-background dark:hover:border-t-border mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                   >
                     <span className="text-foreground text-sm">
-                      See featured projects
+                      Now: co-founding AMOS
                     </span>
                     <span className="block h-4 w-0.5 border-l bg-white dark:border-background dark:bg-zinc-700" />
 
@@ -89,9 +89,10 @@ export function HeroSection() {
                     Elton Chang
                   </h1>
                   <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
-                    Governed AI systems, data analytics, software engineering,
-                    and infrastructure. Browse projects and documentation below,
-                    open my résumé, or reach out to collaborate.
+                    Engineer, founder, and recent Carnegie Mellon grad. I build
+                    software that shows its work: AI analysis that cites its
+                    evidence, risk scores that explain themselves, and tools I
+                    actually use.
                   </p>
                 </AnimatedGroup>
 
