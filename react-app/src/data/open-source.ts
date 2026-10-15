@@ -31,6 +31,24 @@ export type ContributorRepository = {
 
 export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
   {
+    project: "vLLM TPU Inference",
+    repository: "vllm-project/tpu-inference",
+    pullRequest: 3604,
+    title: "Guard weight-only compressed-tensors scheme selection",
+    summary:
+      "Guards the dynamic W8A8 scheme check for compressed-tensors checkpoints without input-activation quantization, so weight-only configurations reach the intended unsupported-scheme error instead of crashing.",
+    status: "open",
+    draft: true,
+    area: "ai",
+    date: "Opened Sep 20, 2026",
+    url: "https://github.com/vllm-project/tpu-inference/pull/3604",
+    repositoryUrl: "https://github.com/vllm-project/tpu-inference",
+    additions: 51,
+    deletions: 1,
+    files: 2,
+    tags: ["LLM inference", "Quantization", "TPU"],
+  },
+  {
     project: "ONNX Runtime",
     repository: "microsoft/onnxruntime",
     pullRequest: 32448,
@@ -60,8 +78,8 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
     date: "Opened Sep 3, 2026",
     url: "https://github.com/ai-dynamo/dynamo/pull/14311",
     repositoryUrl: "https://github.com/ai-dynamo/dynamo",
-    additions: 38,
-    deletions: 0,
+    additions: 58,
+    deletions: 1,
     files: 2,
     tags: ["LLM infrastructure", "CI", "GPU testing"],
   },
@@ -543,7 +561,7 @@ export const DATA_SCIENCE_CONTRIBUTIONS: OpenSourceContribution[] = [
 
 // GitHub star counts were verified on the snapshot date; roles follow authored PR evidence.
 // Contributor requires merged work or GitHub contributor association; otherwise use PR contributor.
-export const REPOSITORY_STARS_CHECKED_AT = "2026-09-17";
+export const REPOSITORY_STARS_CHECKED_AT = "2026-10-15";
 
 export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
   {
@@ -552,7 +570,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/career-ops-hq/career-ops",
     "description": "Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
     "role": "Contributor",
-    "stars": 71850,
+    "stars": 74980,
     "evidenceUrls": [
       "https://github.com/career-ops-hq/career-ops/pull/3264"
     ]
@@ -563,7 +581,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/apache/airflow",
     "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
     "role": "Pull request contributor",
-    "stars": 46876,
+    "stars": 47183,
     "evidenceUrls": [
       "https://github.com/apache/airflow/pull/69226"
     ]
@@ -574,7 +592,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/sgl-project/sglang",
     "description": "SGLang is a high-performance serving framework for large language models and multimodal models.",
     "role": "Pull request contributor",
-    "stars": 36079,
+    "stars": 37175,
     "evidenceUrls": [
       "https://github.com/sgl-project/sglang/pull/36771",
       "https://github.com/sgl-project/sglang/pull/36801",
@@ -587,7 +605,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/mlflow/mlflow",
     "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
     "role": "Pull request contributor",
-    "stars": 27991,
+    "stars": 28399,
     "evidenceUrls": [
       "https://github.com/mlflow/mlflow/pull/25378"
     ]
@@ -598,7 +616,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/microsoft/onnxruntime",
     "description": "ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator",
     "role": "Pull request contributor",
-    "stars": 21869,
+    "stars": 22083,
     "evidenceUrls": [
       "https://github.com/microsoft/onnxruntime/pull/32448"
     ]
@@ -609,7 +627,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/statsmodels/statsmodels",
     "description": "Statsmodels: statistical modeling and econometrics in Python",
     "role": "Contributor",
-    "stars": 11626,
+    "stars": 11686,
     "evidenceUrls": [
       "https://github.com/statsmodels/statsmodels/pull/9881"
     ]
@@ -620,7 +638,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/sqlfluff/sqlfluff",
     "description": "A modular SQL linter and auto-formatter with support for multiple dialects and templated code.",
     "role": "Contributor",
-    "stars": 9876,
+    "stars": 9973,
     "evidenceUrls": [
       "https://github.com/sqlfluff/sqlfluff/pull/8052"
     ]
@@ -631,7 +649,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/apache/datafusion",
     "description": "Apache DataFusion SQL Query Engine",
     "role": "Contributor",
-    "stars": 9319,
+    "stars": 9447,
     "evidenceUrls": [
       "https://github.com/apache/datafusion/pull/24713",
       "https://github.com/apache/datafusion/pull/24738"
@@ -643,7 +661,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/ai-dynamo/dynamo",
     "description": "A Datacenter Scale Distributed Inference Serving Framework",
     "role": "Pull request contributor",
-    "stars": 8090,
+    "stars": 8304,
     "evidenceUrls": [
       "https://github.com/ai-dynamo/dynamo/pull/14295",
       "https://github.com/ai-dynamo/dynamo/pull/14311"
@@ -655,7 +673,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/alteryx/featuretools",
     "description": "An open source python library for automated feature engineering",
     "role": "Pull request contributor",
-    "stars": 7677,
+    "stars": 7690,
     "evidenceUrls": [
       "https://github.com/alteryx/featuretools/pull/2774"
     ]
@@ -666,7 +684,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/holoviz/panel",
     "description": "Panel: The powerful data exploration & web app framework for Python",
     "role": "Contributor",
-    "stars": 5773,
+    "stars": 5800,
     "evidenceUrls": [
       "https://github.com/holoviz/panel/pull/8659",
       "https://github.com/holoviz/panel/pull/8660",
@@ -680,7 +698,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/has2k1/plotnine",
     "description": "A Grammar of Graphics for Python",
     "role": "Contributor",
-    "stars": 4758,
+    "stars": 4771,
     "evidenceUrls": [
       "https://github.com/has2k1/plotnine/pull/1092"
     ]
@@ -691,7 +709,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/vllm-project/production-stack",
     "description": "vLLM’s reference system for K8S-native cluster-wide deployment with community-driven performance optimization",
     "role": "Pull request contributor",
-    "stars": 2576,
+    "stars": 2671,
     "evidenceUrls": [
       "https://github.com/vllm-project/production-stack/pull/1058"
     ]
@@ -702,7 +720,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/posit-dev/py-shiny",
     "description": "Shiny for Python",
     "role": "Contributor",
-    "stars": 1752,
+    "stars": 1760,
     "evidenceUrls": [
       "https://github.com/posit-dev/py-shiny/pull/2278",
       "https://github.com/posit-dev/py-shiny/pull/2468"
@@ -714,7 +732,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/aeon-toolkit/aeon",
     "description": "A toolkit for time series  machine learning and deep learning",
     "role": "Contributor",
-    "stars": 1447,
+    "stars": 1458,
     "evidenceUrls": [
       "https://github.com/aeon-toolkit/aeon/pull/3762"
     ]
@@ -725,11 +743,12 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/vllm-project/tpu-inference",
     "description": "TPU inference for vLLM, with unified JAX and PyTorch support.",
     "role": "Contributor",
-    "stars": 435,
+    "stars": 461,
     "evidenceUrls": [
       "https://github.com/vllm-project/tpu-inference/pull/3471",
       "https://github.com/vllm-project/tpu-inference/pull/3474",
-      "https://github.com/vllm-project/tpu-inference/pull/3475"
+      "https://github.com/vllm-project/tpu-inference/pull/3475",
+      "https://github.com/vllm-project/tpu-inference/pull/3604"
     ]
   },
   {
@@ -749,7 +768,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/StingraySoftware/stingray",
     "description": "Anything can happen in the next half hour (including spectral timing made easy)!",
     "role": "Pull request contributor",
-    "stars": 225,
+    "stars": 227,
     "evidenceUrls": [
       "https://github.com/StingraySoftware/stingray/pull/980"
     ]
@@ -760,7 +779,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/holoviz-dev/nbsite",
     "description": "Build a tested, sphinx-based website from notebooks",
     "role": "Pull request contributor",
-    "stars": 32,
+    "stars": 33,
     "evidenceUrls": [
       "https://github.com/holoviz-dev/nbsite/pull/360"
     ]
@@ -773,15 +792,31 @@ export const ALL_CONTRIBUTIONS = [
   ...DATA_SCIENCE_CONTRIBUTIONS,
 ];
 
-export const FEATURED_CONTRIBUTIONS = [
-  AI_CONTRIBUTIONS[5],
-  DATA_INFRASTRUCTURE_CONTRIBUTIONS[1],
-  DATA_SCIENCE_CONTRIBUTIONS[0],
+const FEATURED_CONTRIBUTION_URLS = [
+  "https://github.com/apache/datafusion/pull/24738",
+  "https://github.com/holoviz/panel/pull/8743",
+  "https://github.com/aeon-toolkit/aeon/pull/3762",
 ];
 
+export const FEATURED_CONTRIBUTIONS = FEATURED_CONTRIBUTION_URLS.map((url) => {
+  const contribution = ALL_CONTRIBUTIONS.find((item) => item.url === url);
+  if (!contribution) throw new Error(`Featured contribution is not tracked: ${url}`);
+  return contribution;
+});
+
+export const MERGED_CONTRIBUTION_COUNT = ALL_CONTRIBUTIONS.filter(
+  (item) => item.status === "merged",
+).length;
+
 export const CONTRIBUTION_STATS = [
-  { value: "29", label: "Tracked upstream PRs" },
-  { value: "10", label: "Merged upstream" },
-  { value: "15", label: "Currently open" },
-  { value: "9", label: "Contributor repositories" },
+  { value: ALL_CONTRIBUTIONS.length, label: "Tracked upstream PRs" },
+  { value: MERGED_CONTRIBUTION_COUNT, label: "Merged upstream" },
+  {
+    value: ALL_CONTRIBUTIONS.filter((item) => item.status === "open").length,
+    label: "Currently open",
+  },
+  {
+    value: CONTRIBUTOR_REPOSITORIES.filter((repo) => repo.role === "Contributor").length,
+    label: "Contributor repositories",
+  },
 ];
