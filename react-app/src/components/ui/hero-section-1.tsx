@@ -116,7 +116,7 @@ export function HeroSection() {
                       size="lg"
                       className="rounded-xl px-5 text-base"
                     >
-                      <Link to="/#featured-projects">
+                      <Link to="/projects">
                         <span className="text-nowrap">View projects</span>
                       </Link>
                     </Button>
