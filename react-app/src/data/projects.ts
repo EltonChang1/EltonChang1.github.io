@@ -100,7 +100,7 @@ export const PROJECTS: ProjectDefinition[] = [
       title: "AMOS — Verified AI Analysis Inside the Enterprise",
       overviewParagraphs: [
         "**AMOS** is an internally deployed analyst system for business questions that require more than a plausible model response. A local analyst agent proposes the work; the AMOS control layer decides what is permitted, runs deterministic calculations, verifies the resulting claims, and preserves the evidence needed for review or replay.",
-        "I started AMOS after graduating from Carnegie Mellon, once I noticed the same workflow repeating across a PNC next-best-action project, Ashe System, and other analytics work: reconcile the right data and definitions, choose the right computation, verify the result, and package it for a decision. We are four technical founders who build the product ourselves. In our first month we had a working Rust prototype and had interviewed nine data leaders, analysts, and technical experts.",
+        "I started AMOS after graduating from Carnegie Mellon, once I noticed the same workflow repeating across a PNC next-best-action project, Ashe System, and other analytics work: reconcile the right data and definitions, choose the right computation, verify the result, and package it for a decision. We are four technical founders who build the product ourselves. We had a working Rust prototype within the first month and have interviewed nine data leaders, analysts, and technical experts about the need.",
         "Today the Rust control layer is the working foundation: permissions, governed SQL, statistics, and chart workers, typed claims, review, invalidation, and replay. We are looking for design partners with a recurring analyst workflow.",
       ],
       featureList: [

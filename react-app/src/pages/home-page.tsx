@@ -270,10 +270,10 @@ export function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <SectionTitle>Open Source Contributions</SectionTitle>
           <p className="mx-auto mb-8 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
-            I like the unglamorous fixes: a flaky test, a parser setting that
-            leaked between query files, a date slider that broke on same-day
-            ranges. Here are a few that landed, with more in review across AI
-            inference and data tooling.
+            I like the unglamorous fixes: a flaky test, parser settings that
+            went stale between query files, a date slider that broke on
+            same-day ranges. Here are a few that landed, with more in review
+            across AI inference and data tooling.
           </p>
           <div className="mx-auto mb-10 grid max-w-4xl grid-cols-2 gap-3 md:grid-cols-4">
             {CONTRIBUTION_STATS.map((stat) => (
