@@ -49,6 +49,28 @@
             animation: fadeIn 1s ease-out;
         }
 
+        .top-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 22px;
+            flex-wrap: wrap;
+        }
+
+        .top-links a {
+            background: white;
+            color: #5b4bc4;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .top-links a:hover {
+            transform: translateY(-2px);
+        }
+
         .nav {
             background: #f8f9fa;
             padding: 20px 40px;
@@ -303,6 +325,10 @@
         <div class="header">
             <h1>📱 PokeFind User Guide</h1>
             <p>Your Complete Guide to Real-Time Pokémon Tracking</p>
+            <div class="top-links">
+                <a href="/"><i class="fas fa-home"></i> Portfolio Home</a>
+                <a href="/projects#pokefind"><i class="fas fa-folder-open"></i> Project Overview</a>
+            </div>
         </div>
 
         <nav class="nav">
