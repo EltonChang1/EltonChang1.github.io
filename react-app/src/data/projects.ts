@@ -1049,26 +1049,6 @@ export const PROJECTS: ProjectDefinition[] = [
   },
 ];
 
-export const SKILLS = [
-  "Rust",
-  "Python",
-  "TypeScript",
-  "Go",
-  "Java",
-  "C / C++",
-  "React",
-  "Next.js",
-  "SQL",
-  "Spark",
-  "Machine Learning",
-  "AI Governance",
-  "Large-scale systems",
-  "Full-stack",
-] as const;
-
-export const ABOUT_PARAGRAPH =
-  "I’m a Carnegie Mellon M.S. graduate in Data Analytics for Science and a co-founder of AMOS. I build governed AI systems, data pipelines, ML models, and full-stack products that have to behave in the wild—where “works on my machine” is a bug, not a punchline. Browse the work below; the résumé is the shorter, slightly more serious cut.";
-
 export const FEATURED_PROJECTS = PROJECTS.filter(
   (project) => project.featured,
 );
