@@ -260,6 +260,57 @@ export const AI_CONTRIBUTIONS: OpenSourceContribution[] = [
 
 export const DATA_INFRASTRUCTURE_CONTRIBUTIONS: OpenSourceContribution[] = [
   {
+    project: "CycloneDX Python",
+    repository: "CycloneDX/cyclonedx-python",
+    pullRequest: 1123,
+    title: "Add opt-in isolated environment path detection",
+    summary: "Adds an opt-in isolated environment probe that removes Python path environment overrides when generating an SBOM.",
+    status: "open",
+    draft: true,
+    area: "data-infrastructure",
+    date: "Opened Oct 17, 2026",
+    url: "https://github.com/CycloneDX/cyclonedx-python/pull/1123",
+    repositoryUrl: "https://github.com/CycloneDX/cyclonedx-python",
+    additions: 114,
+    deletions: 7,
+    files: 4,
+    tags: ["Python", "SBOM", "Environment isolation"],
+  },
+  {
+    project: "CycloneDX Python",
+    repository: "CycloneDX/cyclonedx-python",
+    pullRequest: 1122,
+    title: "Gather component identity evidence",
+    summary: "Adds opt-in metadata-source evidence for directly declared component names and versions across Python dependency inputs.",
+    status: "open",
+    draft: true,
+    area: "data-infrastructure",
+    date: "Opened Oct 16, 2026",
+    url: "https://github.com/CycloneDX/cyclonedx-python/pull/1122",
+    repositoryUrl: "https://github.com/CycloneDX/cyclonedx-python",
+    additions: 406,
+    deletions: 8,
+    files: 12,
+    tags: ["Python", "SBOM", "Supply chain"],
+  },
+  {
+    project: "Sigstore Python",
+    repository: "sigstore/sigstore-python",
+    pullRequest: 1944,
+    title: "Add a timeout to Rekor v2",
+    summary: "Adds a timeout to the Rekor v2 client with regression coverage.",
+    status: "open",
+    draft: true,
+    area: "data-infrastructure",
+    date: "Opened Oct 16, 2026",
+    url: "https://github.com/sigstore/sigstore-python/pull/1944",
+    repositoryUrl: "https://github.com/sigstore/sigstore-python",
+    additions: 62,
+    deletions: 1,
+    files: 3,
+    tags: ["Python", "Code signing", "Reliability"],
+  },
+  {
     project: "Apache DataFusion",
     repository: "apache/datafusion",
     pullRequest: 24738,
@@ -561,7 +612,7 @@ export const DATA_SCIENCE_CONTRIBUTIONS: OpenSourceContribution[] = [
 
 // GitHub star counts were verified on the snapshot date; roles follow authored PR evidence.
 // Contributor requires merged work or GitHub contributor association; otherwise use PR contributor.
-export const REPOSITORY_STARS_CHECKED_AT = "2026-10-15";
+export const REPOSITORY_STARS_CHECKED_AT = "2026-10-17";
 
 export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
   {
@@ -570,7 +621,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/career-ops-hq/career-ops",
     "description": "Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
     "role": "Contributor",
-    "stars": 74980,
+    "stars": 75290,
     "evidenceUrls": [
       "https://github.com/career-ops-hq/career-ops/pull/3264"
     ]
@@ -581,7 +632,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/apache/airflow",
     "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
     "role": "Pull request contributor",
-    "stars": 47183,
+    "stars": 47194,
     "evidenceUrls": [
       "https://github.com/apache/airflow/pull/69226"
     ]
@@ -592,7 +643,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/sgl-project/sglang",
     "description": "SGLang is a high-performance serving framework for large language models and multimodal models.",
     "role": "Pull request contributor",
-    "stars": 37175,
+    "stars": 37237,
     "evidenceUrls": [
       "https://github.com/sgl-project/sglang/pull/36771",
       "https://github.com/sgl-project/sglang/pull/36801",
@@ -605,7 +656,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/mlflow/mlflow",
     "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
     "role": "Pull request contributor",
-    "stars": 28399,
+    "stars": 28421,
     "evidenceUrls": [
       "https://github.com/mlflow/mlflow/pull/25378"
     ]
@@ -616,7 +667,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/microsoft/onnxruntime",
     "description": "ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator",
     "role": "Pull request contributor",
-    "stars": 22083,
+    "stars": 22104,
     "evidenceUrls": [
       "https://github.com/microsoft/onnxruntime/pull/32448"
     ]
@@ -627,7 +678,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/statsmodels/statsmodels",
     "description": "Statsmodels: statistical modeling and econometrics in Python",
     "role": "Contributor",
-    "stars": 11686,
+    "stars": 11687,
     "evidenceUrls": [
       "https://github.com/statsmodels/statsmodels/pull/9881"
     ]
@@ -638,7 +689,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/sqlfluff/sqlfluff",
     "description": "A modular SQL linter and auto-formatter with support for multiple dialects and templated code.",
     "role": "Contributor",
-    "stars": 9973,
+    "stars": 9978,
     "evidenceUrls": [
       "https://github.com/sqlfluff/sqlfluff/pull/8052"
     ]
@@ -649,7 +700,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/apache/datafusion",
     "description": "Apache DataFusion SQL Query Engine",
     "role": "Contributor",
-    "stars": 9447,
+    "stars": 9478,
     "evidenceUrls": [
       "https://github.com/apache/datafusion/pull/24713",
       "https://github.com/apache/datafusion/pull/24738"
@@ -661,7 +712,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/ai-dynamo/dynamo",
     "description": "A Datacenter Scale Distributed Inference Serving Framework",
     "role": "Pull request contributor",
-    "stars": 8304,
+    "stars": 8316,
     "evidenceUrls": [
       "https://github.com/ai-dynamo/dynamo/pull/14295",
       "https://github.com/ai-dynamo/dynamo/pull/14311"
@@ -673,7 +724,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/alteryx/featuretools",
     "description": "An open source python library for automated feature engineering",
     "role": "Pull request contributor",
-    "stars": 7690,
+    "stars": 7688,
     "evidenceUrls": [
       "https://github.com/alteryx/featuretools/pull/2774"
     ]
@@ -684,7 +735,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/holoviz/panel",
     "description": "Panel: The powerful data exploration & web app framework for Python",
     "role": "Contributor",
-    "stars": 5800,
+    "stars": 5799,
     "evidenceUrls": [
       "https://github.com/holoviz/panel/pull/8659",
       "https://github.com/holoviz/panel/pull/8660",
@@ -698,7 +749,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/has2k1/plotnine",
     "description": "A Grammar of Graphics for Python",
     "role": "Contributor",
-    "stars": 4771,
+    "stars": 4774,
     "evidenceUrls": [
       "https://github.com/has2k1/plotnine/pull/1092"
     ]
@@ -709,7 +760,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/vllm-project/production-stack",
     "description": "vLLM’s reference system for K8S-native cluster-wide deployment with community-driven performance optimization",
     "role": "Pull request contributor",
-    "stars": 2671,
+    "stars": 2676,
     "evidenceUrls": [
       "https://github.com/vllm-project/production-stack/pull/1058"
     ]
@@ -720,7 +771,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/posit-dev/py-shiny",
     "description": "Shiny for Python",
     "role": "Contributor",
-    "stars": 1760,
+    "stars": 1761,
     "evidenceUrls": [
       "https://github.com/posit-dev/py-shiny/pull/2278",
       "https://github.com/posit-dev/py-shiny/pull/2468"
@@ -743,7 +794,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repositoryUrl": "https://github.com/vllm-project/tpu-inference",
     "description": "TPU inference for vLLM, with unified JAX and PyTorch support.",
     "role": "Contributor",
-    "stars": 461,
+    "stars": 463,
     "evidenceUrls": [
       "https://github.com/vllm-project/tpu-inference/pull/3471",
       "https://github.com/vllm-project/tpu-inference/pull/3474",
@@ -782,6 +833,29 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "stars": 33,
     "evidenceUrls": [
       "https://github.com/holoviz-dev/nbsite/pull/360"
+    ]
+  },
+  {
+    "project": "CycloneDX Python",
+    "repository": "CycloneDX/cyclonedx-python",
+    "repositoryUrl": "https://github.com/CycloneDX/cyclonedx-python",
+    "description": "CycloneDX Software Bill of Materials (SBOM) generator for Python projects and environments",
+    "role": "Pull request contributor",
+    "stars": 394,
+    "evidenceUrls": [
+      "https://github.com/CycloneDX/cyclonedx-python/pull/1123",
+      "https://github.com/CycloneDX/cyclonedx-python/pull/1122"
+    ]
+  },
+  {
+    "project": "Sigstore Python",
+    "repository": "sigstore/sigstore-python",
+    "repositoryUrl": "https://github.com/sigstore/sigstore-python",
+    "description": "A codesigning tool for Python packages",
+    "role": "Pull request contributor",
+    "stars": 336,
+    "evidenceUrls": [
+      "https://github.com/sigstore/sigstore-python/pull/1944"
     ]
   }
 ];
