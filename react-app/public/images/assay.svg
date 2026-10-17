@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
   <title id="title">Assay project summary</title>
-  <desc id="description">A diagram of Assays development foundation: an isolated SQL worker, a claim check against result cells, and one fenced publication path. A correct 200 dollar total is accepted and a duplicated-join 340 dollar total is rejected.</desc>
+  <desc id="description">A diagram of the Assay development foundation: an isolated SQL worker, a claim check against result cells, and one fenced publication path. A correct 200 dollar total is accepted and a duplicated-join 340 dollar total is rejected.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#10140f"/>
