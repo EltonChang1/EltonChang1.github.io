@@ -1,5 +1,6 @@
 export type ProjectId =
   | "amos"
+  | "assay"
   | "ashe"
   | "next-best-action"
   | "traceframe"
@@ -161,6 +162,98 @@ export const PROJECTS: ProjectDefinition[] = [
         {
           label: "Technical architecture",
           href: "https://amoslabs.dev/amos-technical-architecture.pdf",
+          external: true,
+        },
+      ],
+    },
+  },
+  {
+    id: "assay",
+    featured: true,
+    homeLinks: [
+      {
+        label: "View repository",
+        href: "https://github.com/EltonChang1/Assay",
+        external: true,
+      },
+      { label: "Interactive Project View", href: "/projects#assay" },
+      {
+        label: "Read the charter",
+        href: "https://github.com/EltonChang1/Assay/blob/main/docs/CHARTER.md",
+        external: true,
+      },
+    ],
+    card: {
+      title: "Assay",
+      tagline:
+        "Check an AI data analyst’s released numbers against the query that produced them.",
+      description:
+        "Assay is a local research system asking whether executable checks and data provenance reduce unsupported conclusions from an AI data analyst. The working foundation runs analyst SQL in an isolated Docker worker, binds claims to result cells, and publishes through one fenced path. A fully enabled local run passed 436 tests, including 28 real Docker cases. Paid model episodes and the confirmation study are still planned, so this is not a safety result.",
+      tech: ["Python", "SQL", "Docker", "SQLite", "Pydantic"],
+      stats: [
+        { label: "436 local tests", icon: "check" },
+        { label: "Isolated SQL worker", icon: "shield" },
+        { label: "Study still planned", icon: "flask" },
+      ],
+      image: "/images/assay.svg",
+    },
+    expanded: {
+      title: "Assay — Evidence Checks for an AI Data Analyst",
+      overviewParagraphs: [
+        "**Assay** is an AI safety research and systems engineering project. It asks whether executable checks and data provenance reduce unsupported quantitative conclusions released by an AI data analyst, while still keeping useful answers.",
+        "I started the development foundation on October 16, 2026. The Python package and CLI, public task contracts, deterministic synthetic sales data, SQL policy, Docker worker, transactional evidence store, claim-to-cell checks, and fenced publisher are implemented. Episode, reviewer, and arm code runs offline against scripted models or Inspect AI’s mock provider. No paid model has been called, and these tests are not a model-performance or safety result.",
+      ],
+      featureList: [
+        "The first regression accepts the correct **USD 200.00** sales total, rejects a duplicated join that reports **USD 340.00**, and rejects a `SUM(DISTINCT amount)` shortcut when two orders share a value.",
+        "Analyst SQL never runs on the host. A pinned non-root Docker worker gets a read-only frozen snapshot, no network, no Docker socket, resource limits, and no private evaluator.",
+        "Execution receipts keep the query, snapshot hash, worker image, timing, outcome, and result hash. Bounded results commit atomically to local SQLite.",
+        "A claim has to bind to real result cells. One fenced publisher releases a report; stale sources and changed approvals cannot take another path.",
+        "Arms A–E and one bounded correction round are library APIs, with no episode command in the CLI yet. The planned primary comparison gives both reviewers the same checks and oversight budget: one sees evidence links, the other an ordinary summary.",
+        "TraceFrame is an optional, pinned export for researcher audit. AMOS is not integrated, and upstream repositories were not modified.",
+      ],
+      methodologyParagraphs: [
+        "The v1 charter scores three regimes separately: ordinary analytical mistakes, indirect prompt injection in declared text fields, and prompted sabotage with a synthetic side objective. The attacker cannot edit frozen data, the task contract, gateway, checker, authoritative log, publisher, or private scorer.",
+        "Model choice, spending limits, and sample size are unsettled pilot decisions. Oversight and spending caps, lease expiry, benchmark holdouts, and the confirmation study remain planned work. The only released reports so far are offline development fixtures inside tests.",
+      ],
+      techDetails: [
+        {
+          title: "Foundation",
+          items: [
+            "Python 3.12 package and CLI, locked with uv, checked with Ruff, strict mypy, and pytest",
+            "Pydantic contracts for tasks, claims, episodes, receipts, and reports",
+            "A restricted SQL subset and an independent development scorer kept out of the runtime wheel",
+          ],
+        },
+        {
+          title: "Execution and evidence",
+          items: [
+            "Docker worker and gateway, with the 28 boundary cases passing on a hosted Linux runner",
+            "Local SQLite evidence store outside the source workspace",
+            "Typed-slot rendering and source-epoch invalidation on the single publication path",
+          ],
+        },
+      ],
+      screenshots: [
+        {
+          src: "/images/assay.svg",
+          caption:
+            "Development foundation: isolated SQL, claim checks, and one fenced release. Not a safety result.",
+        },
+      ],
+      links: [
+        {
+          label: "View repository",
+          href: "https://github.com/EltonChang1/Assay",
+          external: true,
+        },
+        {
+          label: "Implementation status",
+          href: "https://github.com/EltonChang1/Assay/blob/main/docs/IMPLEMENTATION_STATUS.md",
+          external: true,
+        },
+        {
+          label: "Read the charter",
+          href: "https://github.com/EltonChang1/Assay/blob/main/docs/CHARTER.md",
           external: true,
         },
       ],
