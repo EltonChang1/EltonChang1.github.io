@@ -15,7 +15,7 @@ export const ABOUT_LEDE =
 export const ABOUT_STORY = [
   "At Carnegie Mellon, the same job kept showing up in different outfits: a next-best-action model with PNC, an aircraft-parts risk tool that turned into Ashe System, and a stack of analytics projects. Each time, the real work was finding the right data, running the right analysis, checking it, and explaining it to someone who had to make a call.",
   "So after graduating, I started building AMOS and asked a close friend from high school to join. We’re now four technical founders who write the product ourselves. AMOS is an AI analyst that works inside a company’s own walls: the model proposes the work, and AMOS checks permissions, runs the math with real tools, and ties every claim to evidence.",
-  "Outside of AMOS, I’m usually fixing small things in big open-source projects, testing whether a quick touch can teach a robot how a surface will behave, or building tools for an audience of one. I used my Pokémon Go radar and my stock dashboard every day, which is the most honest user research I know.",
+  "Outside of AMOS, I’m building Assay, a local lab that checks an AI analyst’s numbers against the query behind them before a report can be released. I’m also fixing small things in big open-source projects, testing whether a quick touch can teach a robot how a surface will behave, and building tools for an audience of one. I used my Pokémon Go radar and my stock dashboard every day, which is the most honest user research I know.",
 ] as const;
 
 export type NowItem = {
@@ -30,6 +30,12 @@ export const NOW_ITEMS: NowItem[] = [
     detail:
       "Verified AI analysis that runs inside a company’s own walls. We’re looking for design partners.",
     link: { label: "See AMOS", to: "/projects#amos" },
+  },
+  {
+    title: "Building Assay",
+    detail:
+      "A local research system for AI data analysts: isolated SQL, claim checks, and one fenced way to release a number. The study itself is still ahead.",
+    link: { label: "See Assay", to: "/projects#assay" },
   },
   {
     title: "Running Ashe System",
