@@ -13,8 +13,8 @@ export const ABOUT_LEDE =
   "I work on AI interpretability and tactile representation for physics engines.";
 
 export const ABOUT_STORY = [
+  "I enjoy reading, recently about existential philosophy. Recently read includes Nietzsche’s Thus Spoke Zarathustra, Kierkegaard’s Fear and Trembling, Camus’s The Myth of Sisyphus, and Sartre’s Nausea.",
   "I still build for an audience of one. My Pokémon Go radar and stock dashboard got daily use, which is the most honest review I know.",
-  "I love reading, especially existential philosophy. As of April 2026, I had recently read Nietzsche’s Thus Spoke Zarathustra, Kierkegaard’s Fear and Trembling, Camus’s The Myth of Sisyphus, and Sartre’s Nausea.",
 ] as const;
 
 export type NowItem = {
