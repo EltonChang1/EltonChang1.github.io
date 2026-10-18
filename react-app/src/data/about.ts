@@ -10,7 +10,7 @@ export const ABOUT_PHOTO = {
 } as const;
 
 export const ABOUT_LEDE =
-  "Here is my work. My research areas are AI governance and tactile representation in a physics engine.";
+  "I work on AI governance and tactile representation for physics engines.";
 
 export const ABOUT_STORY = [
   "AI governance asks whether an answer can be checked: who may see the data, which calculation ran, and what evidence supports the claim. Tactile representation asks whether a brief touch can supply the surface properties a physics engine needs — how a surface will feel, and how an object will slide. That study is still in progress. The projects on this site are where the work lives.",
