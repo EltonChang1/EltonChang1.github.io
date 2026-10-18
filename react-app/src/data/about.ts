@@ -10,12 +10,11 @@ export const ABOUT_PHOTO = {
 } as const;
 
 export const ABOUT_LEDE =
-  "I like building software that shows its work. If a system hands you a number, a risk score, or an AI-written conclusion, you should be able to ask “how do you know?” and get a real answer. (“It works on my machine” doesn’t count.)";
+  "I build software that can answer “how do you know?” A score only counts if you can see the data, the calculation, and the evidence behind it.";
 
 export const ABOUT_STORY = [
-  "At Carnegie Mellon, the same job kept showing up in different outfits: a next-best-action model with PNC, an aircraft-parts risk tool that turned into Ashe System, and a stack of analytics projects. Each time, the real work was finding the right data, running the right analysis, checking it, and explaining it to someone who had to make a call.",
-  "So after graduating, I started building AMOS and asked a close friend from high school to join. We’re now four technical founders who write the product ourselves. AMOS is an AI analyst that works inside a company’s own walls: the model proposes the work, and AMOS checks permissions, runs the math with real tools, and ties every claim to evidence.",
-  "Outside of AMOS, I’m usually fixing small things in big open-source projects, testing whether a quick touch can teach a robot how a surface will behave, or building tools for an audience of one. I used my Pokémon Go radar and my stock dashboard every day, which is the most honest user research I know.",
+  "At Carnegie Mellon the domain changed and the job did not: define the data, run the analysis, check it, and leave the reasoning where someone can review it. With PNC I ranked next-best actions from behavior, holdings, and engagement signals, then checked whether the supported recommendation appeared in the top three an advisor would read. The aircraft-parts project became Ashe System: an XGBoost model scores the risk, keeps the features behind each recommendation, and gives a maintenance team something to inspect before a missing part grounds a plane.",
+  "Outside those projects I fix narrow bugs in Apache DataFusion, Panel, and statsmodels, and I’m testing whether a brief touch can tell a robot how a surface will feel and how an object will slide. I also build for an audience of one. I used my Pokémon Go radar and my stock dashboard every day, which is still the most honest review I know.",
 ] as const;
 
 export type NowItem = {
