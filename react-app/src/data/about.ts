@@ -31,6 +31,12 @@ export const NOW_ITEMS: NowItem[] = [
     link: { label: "See AMOS", to: "/projects#amos" },
   },
   {
+    title: "Building Assay",
+    detail:
+      "A local research system for AI data analysts: isolated SQL, claim checks, and one fenced way to release a number. The study itself is still ahead.",
+    link: { label: "See Assay", to: "/projects#assay" },
+  },
+  {
     title: "Running Ashe System",
     detail:
       "AOG Shield spots the missing part before it grounds a plane, and shows its reasoning.",
