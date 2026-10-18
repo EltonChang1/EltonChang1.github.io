@@ -10,11 +10,11 @@ export const ABOUT_PHOTO = {
 } as const;
 
 export const ABOUT_LEDE =
-  "I build software that can answer “how do you know?” A score only counts if you can see the data, the calculation, and the evidence behind it.";
+  "Here is my work. My research areas are AI governance and tactile research.";
 
 export const ABOUT_STORY = [
-  "At Carnegie Mellon the domain changed and the job did not: define the data, run the analysis, check it, and leave the reasoning where someone can review it. With PNC I ranked next-best actions from behavior, holdings, and engagement signals, then checked whether the supported recommendation appeared in the top three an advisor would read. The aircraft-parts project became Ashe System: an XGBoost model scores the risk, keeps the features behind each recommendation, and gives a maintenance team something to inspect before a missing part grounds a plane.",
-  "Outside those projects I fix narrow bugs in Apache DataFusion, Panel, and statsmodels, and I’m testing whether a brief touch can tell a robot how a surface will feel and how an object will slide. I also build for an audience of one. I used my Pokémon Go radar and my stock dashboard every day, which is still the most honest review I know.",
+  "The projects and open-source fixes are on this site. AI governance asks whether an answer can be checked: who may see the data, which calculation ran, and what evidence supports the claim. Tactile research asks whether a brief touch can predict how a surface will feel and how an object will slide.",
+  "I love reading, especially existential philosophy. A few books I find interesting are Nietzsche’s Thus Spoke Zarathustra, Kierkegaard’s Fear and Trembling, Camus’s The Myth of Sisyphus, and Sartre’s Nausea.",
 ] as const;
 
 export type NowItem = {
