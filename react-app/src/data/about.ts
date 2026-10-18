@@ -10,12 +10,11 @@ export const ABOUT_PHOTO = {
 } as const;
 
 export const ABOUT_LEDE =
-  "I like building software that shows its work. If a system hands you a number, a risk score, or an AI-written conclusion, you should be able to ask “how do you know?” and get a real answer. (“It works on my machine” doesn’t count.)";
+  "I work on AI interpretability and tactile representation for physics engines.";
 
 export const ABOUT_STORY = [
-  "At Carnegie Mellon, the same job kept showing up in different outfits: a next-best-action model with PNC, an aircraft-parts risk tool that turned into Ashe System, and a stack of analytics projects. Each time, the real work was finding the right data, running the right analysis, checking it, and explaining it to someone who had to make a call.",
-  "So after graduating, I started building AMOS and asked a close friend from high school to join. We’re now four technical founders who write the product ourselves. AMOS is an AI analyst that works inside a company’s own walls: the model proposes the work, and AMOS checks permissions, runs the math with real tools, and ties every claim to evidence.",
-  "Outside of AMOS, I’m building Assay, a local lab that checks an AI analyst’s numbers against the query behind them before a report can be released. I’m also fixing small things in big open-source projects, testing whether a quick touch can teach a robot how a surface will behave, and building tools for an audience of one. I used my Pokémon Go radar and my stock dashboard every day, which is the most honest user research I know.",
+  "I enjoy reading, recently about existential philosophy. Recently read includes Nietzsche’s Thus Spoke Zarathustra, Kierkegaard’s Fear and Trembling, Camus’s The Myth of Sisyphus, and Sartre’s Nausea.",
+  "I still build for an audience of one. My Pokémon Go radar and stock dashboard got daily use, which is the most honest review I know.",
 ] as const;
 
 export type NowItem = {
