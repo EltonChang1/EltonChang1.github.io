@@ -4,7 +4,10 @@ import { Menu, X } from "lucide-react";
 
 import { BrandHomeLink } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
-import { RESEARCH_PROPOSAL_PAGE_PATH } from "@/constants/research";
+import {
+  RESEARCH_PAGE_PATH,
+  RESEARCH_PROPOSAL_PAGE_PATH,
+} from "@/constants/research";
 import { getResumeVersion, RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { SITE_EMAIL } from "@/constants/social";
 import { cn } from "@/lib/utils";
@@ -17,13 +20,23 @@ const menuItems = [
   { name: "Home", to: "/" as const },
   { name: "Projects", to: "/projects" as const },
   { name: "Open Source", to: "/open-source" as const },
-  { name: "Research", to: RESEARCH_PROPOSAL_PAGE_PATH },
+  { name: "Research", to: RESEARCH_PAGE_PATH },
   { name: "Résumé", to: RESUME_PAGE_PATH },
   { name: "Contact", to: "/#contact" as const },
 ];
 
 const navLinkClass =
   "text-muted-foreground hover:text-accent-foreground block duration-150";
+
+function itemIsCurrent(to: string, pathname: string, isActive: boolean) {
+  if (to === RESEARCH_PAGE_PATH) {
+    return (
+      pathname === RESEARCH_PAGE_PATH ||
+      pathname === RESEARCH_PROPOSAL_PAGE_PATH
+    );
+  }
+  return isActive;
+}
 
 export function SiteHeader() {
   const { pathname } = useLocation();
@@ -94,7 +107,8 @@ export function SiteHeader() {
                       className={({ isActive }) =>
                         cn(
                           navLinkClass,
-                          isActive && "font-semibold text-foreground",
+                          itemIsCurrent(item.to, pathname, isActive) &&
+                            "font-semibold text-foreground",
                         )
                       }
                       end={item.to === "/"}
@@ -116,7 +130,8 @@ export function SiteHeader() {
                         className={({ isActive }) =>
                           cn(
                             navLinkClass,
-                            isActive && "font-semibold text-foreground",
+                            itemIsCurrent(item.to, pathname, isActive) &&
+                              "font-semibold text-foreground",
                           )
                         }
                         end={item.to === "/"}
