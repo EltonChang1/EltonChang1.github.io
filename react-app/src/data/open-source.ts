@@ -352,10 +352,9 @@ export const DATA_INFRASTRUCTURE_CONTRIBUTIONS: OpenSourceContribution[] = [
     title: "Fix the Cloud Function invoke-operator documentation link",
     summary:
       "Adds a dedicated invoke-operator section and points the operator reference to the correct Google Cloud Functions documentation target.",
-    status: "open",
-    draft: true,
+    status: "merged",
     area: "data-infrastructure",
-    date: "Opened Jul 1, 2026",
+    date: "Merged Oct 17, 2026",
     url: "https://github.com/apache/airflow/pull/69226",
     repositoryUrl: "https://github.com/apache/airflow",
     additions: 27,
@@ -631,7 +630,7 @@ export const CONTRIBUTOR_REPOSITORIES: ContributorRepository[] = [
     "repository": "apache/airflow",
     "repositoryUrl": "https://github.com/apache/airflow",
     "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
-    "role": "Pull request contributor",
+    "role": "Contributor",
     "stars": 47194,
     "evidenceUrls": [
       "https://github.com/apache/airflow/pull/69226"
