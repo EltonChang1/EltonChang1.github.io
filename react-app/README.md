@@ -4,7 +4,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 ## Research proposal
 
-`/research-proposal` presents the TactileWorld research question, completed work, proposed experiments, evaluation plan, and references in concise sections. The shared navigation labels it **Research**. Keep completed evidence and proposed milestones distinct when updating `src/pages/research-proposal-page.tsx`, and retain its direct GitHub Pages route entry in `.github/workflows/deploy-github-pages.yml`.
+`/research` is the research index: the AMOS paper, the Tactile World proposal, and Assay. Navigation labels this route **Research**. `/research-proposal` is the Tactile World proposal itself — research question, completed work, proposed experiments, evaluation plan, and references. Keep completed evidence and proposed milestones distinct when updating `src/pages/research-proposal-page.tsx`, and retain both direct GitHub Pages route entries in `.github/workflows/deploy-github-pages.yml`.
 
 ## Resume pages
 

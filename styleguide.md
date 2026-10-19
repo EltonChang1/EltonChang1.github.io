@@ -11,7 +11,7 @@ This guide defines how **your** personal site ([eltonchang1.github.io](https://e
 | Layer | Location | Use |
 |--------|----------|-----|
 | **Static site (legacy / assets)** | Repo root (`index.html`, `css/`, `js/`, images) | Optional parity; primary UI is the React app when deployed from CI. |
-| **React + shadcn (`react-app/`)** | TypeScript, Tailwind CSS v4, shadcn/ui (Nova / Radix), Vite | **Canonical UI** for `/`, `/projects`, `/open-source`, `/research-proposal`, `/resume`. Build: `react-app/dist`. |
+| **React + shadcn (`react-app/`)** | TypeScript, Tailwind CSS v4, shadcn/ui (Nova / Radix), Vite | **Canonical UI** for `/`, `/projects`, `/open-source`, `/research`, `/research-proposal`, `/resume`. Build: `react-app/dist`. |
 
 ---
 

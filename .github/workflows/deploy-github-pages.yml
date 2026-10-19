@@ -52,7 +52,7 @@ jobs:
       - name: Create SPA route entry points
         working-directory: react-app
         run: |
-          for route in projects open-source research-proposal resume resume/general resume/software-engineering resume/robotics resume/research resume/data-science; do
+          for route in projects open-source research research-proposal resume resume/general resume/software-engineering resume/robotics resume/research resume/data-science; do
             mkdir -p "dist/$route"
             cp dist/index.html "dist/$route/index.html"
           done

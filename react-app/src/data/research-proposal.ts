@@ -1,6 +1,13 @@
 /** Public research summary: implementation and evaluation scope reviewed 2026-10-13. */
 export const PROPOSAL_UPDATED = "2026-10-13";
 
+/**
+ * End state of Tactile World. The first study is narrower and does not claim
+ * this engine exists.
+ */
+export const TACTILE_ULTIMATE_OBJECTIVE =
+  "A physics engine in which surface texture is contact state. Spatially registered tactile and mechanical properties condition rigid-body dynamics, so a simulated interaction predicts vibration, contact force, and object motion rather than treating friction as one global constant.";
+
 export const PROPOSAL_SECTIONS = [
   { id: "question", label: "Research question" },
   { id: "context", label: "Context" },

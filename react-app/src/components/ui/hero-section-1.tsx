@@ -6,7 +6,7 @@ import { BrandHomeLink } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { DottedSurface } from "@/components/ui/dotted-surface";
-import { RESEARCH_PROPOSAL_PAGE_PATH } from "@/constants/research";
+import { RESEARCH_PAGE_PATH } from "@/constants/research";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { SITE_EMAIL } from "@/constants/social";
 import { cn } from "@/lib/utils";
@@ -145,7 +145,7 @@ const menuItems = [
   { name: "Home", to: "/" as const },
   { name: "Projects", to: "/projects" as const },
   { name: "Open Source", to: "/open-source" as const },
-  { name: "Research", to: RESEARCH_PROPOSAL_PAGE_PATH },
+  { name: "Research", to: RESEARCH_PAGE_PATH },
   { name: "Résumé", to: RESUME_PAGE_PATH },
   { name: "Contact", to: "/#contact" as const },
 ];

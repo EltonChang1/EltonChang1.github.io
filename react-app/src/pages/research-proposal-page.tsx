@@ -4,7 +4,10 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { InnerPageHero } from "@/components/ui/inner-page-hero";
-import { RESEARCH_PROPOSAL_PAGE_PATH } from "@/constants/research";
+import {
+  RESEARCH_PAGE_PATH,
+  RESEARCH_PROPOSAL_PAGE_PATH,
+} from "@/constants/research";
 import { SITE_EMAIL } from "@/constants/social";
 import {
   COMPLETED_WORK,
@@ -16,6 +19,7 @@ import {
   RESEARCH_MILESTONES,
   RESEARCH_RISKS,
   SCIENTIFIC_REFERENCES,
+  TACTILE_ULTIMATE_OBJECTIVE,
 } from "@/data/research-proposal";
 import { cn } from "@/lib/utils";
 
@@ -58,6 +62,10 @@ export function ResearchProposalPage() {
       >
         <p className="text-sm text-muted-foreground">
           Independent research · Updated <time dateTime={PROPOSAL_UPDATED}>October 13, 2026</time>
+          {" · "}
+          <Link to={RESEARCH_PAGE_PATH} className="rounded-sm font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            All research
+          </Link>
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Button asChild>
@@ -100,8 +108,12 @@ export function ResearchProposalPage() {
             <p className="text-lg font-medium leading-relaxed text-foreground">
               Can brief touch establish a reusable model of an object's surface that predicts what a new action will feel like and how the object will move?
             </p>
+            <div className="mt-6 rounded-xl border border-border bg-muted/50 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Ultimate objective</p>
+              <p className="mt-2 text-lg font-medium leading-relaxed text-foreground">{TACTILE_ULTIMATE_OBJECTIVE}</p>
+            </div>
             <p className="mt-4">
-              The goal is a 3D scene whose objects carry spatially varying tactile and mechanical properties. The first study focuses on controlled sliding with one contact pair; room scenes and planning follow validated contact prediction.
+              The first study is narrower: controlled sliding with one contact pair. Room-scale scenes and multi-step planning follow only after contact prediction is validated.
             </p>
             <p className="mt-4"><strong className="text-foreground">Hypothesis:</strong> Local surface information and action conditions will improve prediction on unseen surfaces over matched retrieval and texture-agnostic friction baselines. This comparison remains to be tested.</p>
             <div className="mt-6 rounded-xl border border-border bg-muted/30 px-5 py-4 text-sm font-medium text-foreground">
