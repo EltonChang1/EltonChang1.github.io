@@ -10,7 +10,6 @@ import {
   ABOUT_PHOTO,
   ABOUT_STORY,
   NOW_ITEMS,
-  QUICK_FACTS,
   TOOLBOX,
 } from "@/data/about";
 import { FEATURED_PROJECTS } from "@/data/projects";
@@ -96,19 +95,6 @@ function AboutSection() {
                 </li>
               ))}
             </ul>
-
-            <dl className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-              {QUICK_FACTS.map((fact) => (
-                <div key={fact.label}>
-                  <dt className="text-sm font-medium text-muted-foreground">
-                    {fact.label}
-                  </dt>
-                  <dd className="mt-1 leading-relaxed text-foreground">
-                    {fact.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           {/* Shown first visually; the heading stays first for screen readers. */}

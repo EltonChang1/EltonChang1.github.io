@@ -55,21 +55,6 @@ export const NOW_ITEMS: NowItem[] = [
   },
 ];
 
-export const QUICK_FACTS = [
-  { label: "Based in", value: "Pittsburgh and San Francisco" },
-  {
-    label: "Studied",
-    value:
-      "Data analytics at Carnegie Mellon (M.S., 2026) and computer science at UC Santa Cruz (B.S., 2025)",
-  },
-  { label: "Speaks", value: "English and Mandarin" },
-  {
-    label: "Ask me about",
-    value:
-      "Why planes get grounded, BitTorrent internals, and what robots can learn from touch",
-  },
-] as const;
-
 export const TOOLBOX = [
   {
     label: "Languages",
