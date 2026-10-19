@@ -1,4 +1,7 @@
-import { RESEARCH_PROPOSAL_PAGE_PATH } from "@/constants/research";
+import {
+  ASSAY_REPORT_URL,
+  RESEARCH_PROPOSAL_PAGE_PATH,
+} from "@/constants/research";
 import { TACTILE_ULTIMATE_OBJECTIVE } from "@/data/research-proposal";
 
 export const AMOS_PAPER_URL =
@@ -61,11 +64,18 @@ export const RESEARCH_ENTRIES: readonly ResearchEntry[] = [
   },
   {
     id: "assay",
-    kind: "Study",
+    kind: "Report",
     title: "Assay",
     summary:
-      "Assay asks whether executable checks and data provenance reduce unsupported quantitative conclusions from an AI data analyst, while still keeping useful answers. The working foundation runs analyst SQL in an isolated Docker worker, binds claims to result cells, and publishes through one fenced path. A fully enabled local run passed 436 tests, including 28 real Docker cases. Paid model episodes and the confirmation study are still planned, so this is not a safety result.",
+      "Assay asks whether executable checks and data provenance reduce unsupported quantitative conclusions from an AI data analyst, while still keeping useful answers. The technical report records a repaired relation-binding gap and a fresh local run of 441 passing tests, including 28 real Docker cases. A 24-episode development pilot called gpt-5.4-mini; every episode used its six analyst calls and stopped before any claim, so nothing was released and the reviewer comparison did not run. The confirmation study is still ahead, so this is not a safety result.",
+    pointsLabel: "The report records",
+    points: [
+      "October 18 local validation: 441 passes, one Windows-inapplicable skip, and all 28 real Docker cases.",
+      "A common table expression that shadows the public tables, or a positional column alias, can change the measured population. Those shapes now return unknown on the query-semantic checks, and the checked publisher withholds.",
+      "October 19 development pilot: 24 assigned episodes, 144 calls to gpt-5.4-mini, zero claims, zero reviews, and zero releases. Required-answer coverage on that list is 0/24.",
+    ],
     links: [
+      { label: "Read the report", href: ASSAY_REPORT_URL, external: true },
       { label: "See the project", href: "/projects#assay" },
       {
         label: "Read the charter",

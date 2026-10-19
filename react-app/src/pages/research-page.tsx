@@ -16,7 +16,7 @@ export function ResearchPage() {
     <div className="min-h-full bg-background">
       <InnerPageHero
         title="Research"
-        subtitle="A paper on governed memory for analysis agents, a proposal for texture-conditioned contact dynamics, and a study of evidence checks for an AI data analyst."
+        subtitle="A paper on governed memory for analysis agents, a proposal for texture-conditioned contact dynamics, and a technical report on evidence checks for an AI data analyst."
         className="pb-10 md:pb-12 lg:pb-14"
       />
 
