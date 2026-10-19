@@ -9,6 +9,7 @@ import {
   ABOUT_LEDE,
   ABOUT_PHOTO,
   ABOUT_STORY,
+  RECENTLY_READ_PAPERS,
   NOW_ITEMS,
   TOOLBOX,
 } from "@/data/about";
@@ -63,6 +64,33 @@ function AboutSection() {
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
               {ABOUT_STORY.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+
+            <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Recently read papers
+            </h3>
+            <div className="mt-4 space-y-5">
+              {RECENTLY_READ_PAPERS.map(({ topic, papers }) => (
+                <div key={topic}>
+                  <h4 className="mb-2 text-sm font-medium text-muted-foreground">
+                    {topic}
+                  </h4>
+                  <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed">
+                    {papers.map((paper) => (
+                      <li key={paper.href}>
+                        <a
+                          href={paper.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-sm text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        >
+                          {paper.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
 

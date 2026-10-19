@@ -13,7 +13,6 @@ export const ABOUT_LEDE =
   "I work on AI interpretability and tactile representation for physics engines.";
 
 export const ABOUT_STORY = [
-  "I enjoy reading, recently about existential philosophy. Recently read includes Nietzsche’s Thus Spoke Zarathustra, Kierkegaard’s Fear and Trembling, Camus’s The Myth of Sisyphus, and Sartre’s Nausea.",
   "I still build for an audience of one. My Pokémon Go radar and stock dashboard got daily use, which is the most honest review I know.",
 ] as const;
 
@@ -71,5 +70,34 @@ export const TOOLBOX = [
   {
     label: "Infrastructure",
     items: ["Docker", "Kubernetes", "Terraform", "Google Cloud", "ROS 2"],
+  },
+] as const;
+
+export const RECENTLY_READ_PAPERS = [
+  {
+    topic: "AI safety",
+    papers: [
+      {
+        title: "Constitutional AI: Harmlessness from AI Feedback",
+        href: "https://arxiv.org/abs/2212.08073",
+      },
+      {
+        title: "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training",
+        href: "https://arxiv.org/abs/2401.05566",
+      },
+    ],
+  },
+  {
+    topic: "Tactile sensing",
+    papers: [
+      {
+        title: "DIGIT: A Novel Design for a Low-Cost Compact High-Resolution Tactile Sensor with Application to In-Hand Manipulation",
+        href: "https://arxiv.org/abs/2005.14679",
+      },
+      {
+        title: "AnySkin: Plug-and-play Skin Sensing for Robotic Touch",
+        href: "https://arxiv.org/abs/2409.08276",
+      },
+    ],
   },
 ] as const;
