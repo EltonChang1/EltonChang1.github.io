@@ -134,7 +134,7 @@ def build():
     gap(7)
 
     section("Open Source Contributions")
-    paragraph("Merged 10 pull requests into Apache DataFusion, SQLFluff, Panel, statsmodels, plotnine, Shiny for Python, aeon, and Career Ops.", bullet=False)
+    paragraph("Merged 11 pull requests into Apache DataFusion, SQLFluff, Apache Airflow, Panel, statsmodels, plotnine, Shiny for Python, aeon, and Career Ops.", bullet=False)
     gap(7)
     section("Technical Skills")
     paragraph("Python, TypeScript, C, Go, SQL, R, React, LangChain, LangGraph, LlamaIndex, Docker, Kubernetes", bullet=False)
