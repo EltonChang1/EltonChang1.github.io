@@ -161,7 +161,7 @@ gap(7)
 section("Open Source Contributions")
 open_source_top = Y
 paragraph("Merged 11 pull requests into open-source projects, including Apache DataFusion (Rust SQL engine), SQLFluff (SparkSQL parser), Career Ops (JavaScript), HoloViz Panel (three UI-state fixes), and Apache Airflow.", bullet=True)
-paragraph("Opened inference-infrastructure pull requests to vLLM TPU Inference (KV-cache connector), Dynamo (VRAM-aware pytest workers), ONNX Runtime (CUDA CMake), and vLLM Production Stack (Kubernetes probe).", bullet=True)
+paragraph("Merged inference-infrastructure pull requests to vLLM TPU Inference (KV-cache connector), Dynamo (VRAM-aware pytest workers), ONNX Runtime (CUDA CMake), and vLLM Production Stack (Kubernetes probe).", bullet=True)
 links.append(("https://eltonchang1.github.io/open-source", (LEFT + 25, Y + SIZE - 2, RIGHT, open_source_top + SIZE - 1)))
 gap(7)
 
