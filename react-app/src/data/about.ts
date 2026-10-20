@@ -32,7 +32,7 @@ export const NOW_ITEMS: NowItem[] = [
   {
     title: "Building Assay",
     detail:
-      "A local research system for AI data analysts: isolated SQL, claim checks, and one fenced way to release a number. The study itself is still ahead.",
+      "Isolated SQL, claim checks, and one fenced release. The technical report is up, including a 24-episode pilot that released nothing. The comparison study is still ahead.",
     link: { label: "See Assay", to: "/projects#assay" },
   },
   {

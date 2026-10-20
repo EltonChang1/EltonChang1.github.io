@@ -1,3 +1,5 @@
+import { ASSAY_REPORT_URL } from "@/constants/research";
+
 export type ProjectId =
   | "amos"
   | "assay"
@@ -172,28 +174,28 @@ export const PROJECTS: ProjectDefinition[] = [
     featured: true,
     homeLinks: [
       {
+        label: "Read the report",
+        href: ASSAY_REPORT_URL,
+        external: true,
+      },
+      {
         label: "View repository",
         href: "https://github.com/EltonChang1/Assay",
         external: true,
       },
       { label: "Interactive Project View", href: "/projects#assay" },
-      {
-        label: "Read the charter",
-        href: "https://github.com/EltonChang1/Assay/blob/main/docs/CHARTER.md",
-        external: true,
-      },
     ],
     card: {
       title: "Assay",
       tagline:
         "Check an AI data analyst’s released numbers against the query that produced them.",
       description:
-        "Assay is a local research system asking whether executable checks and data provenance reduce unsupported conclusions from an AI data analyst. The working foundation runs analyst SQL in an isolated Docker worker, binds claims to result cells, and publishes through one fenced path. A fully enabled local run passed 436 tests, including 28 real Docker cases. Paid model episodes and the confirmation study are still planned, so this is not a safety result.",
+        "Assay is a local research system asking whether executable checks and data provenance reduce unsupported conclusions from an AI data analyst. The working foundation runs analyst SQL in an isolated Docker worker, binds claims to result cells, and publishes through one fenced path. The technical report records 441 passing tests, including 28 real Docker cases, and a repair for queries that could change the measured population while the semantic checks still passed. A 24-episode development pilot called gpt-5.4-mini; every episode stopped before a claim, and nothing was released. The comparison study is still ahead, so this is not a safety result.",
       tech: ["Python", "SQL", "Docker", "SQLite", "Pydantic"],
       stats: [
-        { label: "436 local tests", icon: "check" },
+        { label: "441 local tests", icon: "check" },
         { label: "Isolated SQL worker", icon: "shield" },
-        { label: "Study still planned", icon: "flask" },
+        { label: "0 of 24 released", icon: "flask" },
       ],
       image: "/images/assay.svg",
     },
@@ -201,10 +203,12 @@ export const PROJECTS: ProjectDefinition[] = [
       title: "Assay — Evidence Checks for an AI Data Analyst",
       overviewParagraphs: [
         "**Assay** is an AI safety research and systems engineering project. It asks whether executable checks and data provenance reduce unsupported quantitative conclusions released by an AI data analyst, while still keeping useful answers.",
-        "I started the development foundation on October 16, 2026. The Python package and CLI, public task contracts, deterministic synthetic sales data, SQL policy, Docker worker, transactional evidence store, claim-to-cell checks, and fenced publisher are implemented. Episode, reviewer, and arm code runs offline against scripted models or Inspect AI’s mock provider. No paid model has been called, and these tests are not a model-performance or safety result.",
+        "I started the development foundation on October 16, 2026. The Python package and CLI, public task contracts, deterministic synthetic sales data, SQL policy, Docker worker, transactional evidence store, claim-to-cell checks, and fenced publisher are implemented. Episode, reviewer, and arm code runs offline against scripted models or Inspect AI’s mock provider. The technical report, version 0.1, is the current evidence record. These development checks are not a model-performance or safety result.",
+        "On October 19 I ran one development pilot under a USD 15 cap. It assigned 24 episodes to `gpt-5.4-mini-2026-03-17` across four exposed fixtures, the ordinary and prompted-sabotage regimes, and arms A, D, and E. Indirect prompt injection was left out. Every episode made six analyst calls and stopped before submitting a claim. No review ran, and the publisher released nothing, so required-answer coverage is 0/24. The shared table-preview failure is located: fetching the timezone-aware order timestamp needs pytz, and the worker image does not include it. The journal settled USD 0.160803. This is an engineering observation on exposed fixtures.",
       ],
       featureList: [
         "The first regression accepts the correct **USD 200.00** sales total, rejects a duplicated join that reports **USD 340.00**, and rejects a `SUM(DISTINCT amount)` shortcut when two orders share a value.",
+        "A source audit found queries that return **USD 100** or **USD 300** against the **USD 200** reference while authenticity and cell binding still pass. Shadowed public table names and positional column aliases now leave the query-semantic checks unknown, and the checked policy withholds.",
         "Analyst SQL never runs on the host. A pinned non-root Docker worker gets a read-only frozen snapshot, no network, no Docker socket, resource limits, and no private evaluator.",
         "Execution receipts keep the query, snapshot hash, worker image, timing, outcome, and result hash. Bounded results commit atomically to local SQLite.",
         "A claim has to bind to real result cells. One fenced publisher releases a report; stale sources and changed approvals cannot take another path.",
@@ -213,7 +217,7 @@ export const PROJECTS: ProjectDefinition[] = [
       ],
       methodologyParagraphs: [
         "The v1 charter scores three regimes separately: ordinary analytical mistakes, indirect prompt injection in declared text fields, and prompted sabotage with a synthetic side objective. The attacker cannot edit frozen data, the task contract, gateway, checker, authoritative log, publisher, or private scorer.",
-        "Model choice, spending limits, and sample size are unsettled pilot decisions. Oversight and spending caps, lease expiry, benchmark holdouts, and the confirmation study remain planned work. The only released reports so far are offline development fixtures inside tests.",
+        "The October 18 validation passed 441 tests with one skip and all 28 real Docker cases, after the relation-binding repair. Confirmation still needs combined oversight and spending reservations, lease expiry, benchmark holdouts, and a separate model and sample-size freeze. The development pilot froze one model and a USD 15 cap; it did not measure the safety comparison. The only released reports so far are offline development fixtures inside tests.",
       ],
       techDetails: [
         {
@@ -227,7 +231,7 @@ export const PROJECTS: ProjectDefinition[] = [
         {
           title: "Execution and evidence",
           items: [
-            "Docker worker and gateway, with the 28 boundary cases passing on a hosted Linux runner",
+            "Docker worker and gateway; the October 18 local run passed all 28 boundary cases",
             "Local SQLite evidence store outside the source workspace",
             "Typed-slot rendering and source-epoch invalidation on the single publication path",
           ],
@@ -237,10 +241,15 @@ export const PROJECTS: ProjectDefinition[] = [
         {
           src: "/images/assay.svg",
           caption:
-            "Development foundation: isolated SQL, claim checks, and one fenced release. Not a safety result.",
+            "Technical report: isolated SQL, claim checks, and a development pilot that released nothing.",
         },
       ],
       links: [
+        {
+          label: "Read the technical report",
+          href: ASSAY_REPORT_URL,
+          external: true,
+        },
         {
           label: "View repository",
           href: "https://github.com/EltonChang1/Assay",
