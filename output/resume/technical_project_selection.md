@@ -124,3 +124,34 @@ Cached commit `49ea671ad759a18599dfdaf9255abf9631937881`.
 Development evaluation and pending physical validation remain explicit. No
 untouched-holdout generalization, predictive gain over the stronger baselines,
 GPU training, or production inference performance is implied.
+
+
+## Software engineering revision - October 28, 2026
+
+At the user's request, Ashe System is removed from Experience and Squid joins
+Assay, Torflix, and Zoe in Projects. AMOS and both Wintec internships remain.
+The user selected **Assay | Sandboxed Analytics and Atomic Release Control**
+from subtitle options without the word SQL. Atomic release control refers to
+transactional revision/source-epoch publication checks; it does not establish
+analytical correctness or comparative safety. Assay keeps its research-prototype
+and synthetic-task qualifiers, and AMOS retains co-development/prototype scope.
+The SWE resume remains one page with 11-point Times and two skills lines.
+
+Squid evidence was inspected read-only at commit
+`48e1a4ca01fa7569adc86ba74298ff9cb012f243`:
+
+- [Firmware source](https://github.com/EltonChang1/squid/tree/48e1a4ca01fa7569adc86ba74298ff9cb012f243/firmware):
+  `CMakeLists.txt` selects C++17; `src/main.cpp`, `as5048a.cpp`,
+  `strain_frontend.cpp`, and `test/test_protocol.cpp` support RP2040 SPI
+  encoder/multiplexed strain acquisition, binary USB framing, parity checks,
+  angle unwrapping, and host-side protocol tests.
+- [ROS 2 source](https://github.com/EltonChang1/squid/tree/48e1a4ca01fa7569adc86ba74298ff9cb012f243/ros2_ws/src/tactile_umi):
+  `tactile_umi/protocol.py`, `alignment.py`, `mcap_recorder_node.py`, and the
+  emulation/tests support incremental parser resynchronization, causal timestamp
+  gating, jitter diagnostics, MCAP recording, emulated serial stalls, and fault
+  injection. See also `docs/verification.md` for verification procedures.
+
+Squid keeps Sep 2026. These are software implementation claims, without claims
+of hardware deployment, measured acquisition rate, or calibrated physical
+performance. No underlying project tests or hardware validation were rerun for
+this resume edit.

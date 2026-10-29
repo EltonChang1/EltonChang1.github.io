@@ -78,3 +78,16 @@ Each software-engineering project bullet now keeps that project's hardest suppor
 - **Zoe:** The client binary-searches pairwise comparisons for an insertion rank. `server/src/lib/ranking.ts` then shifts dense 1-indexed ranks in one transaction. The migration defines `UNIQUE (listId, rank) DEFERRABLE INITIALLY DEFERRED`.
 - **Torflix:** `src/pytorrent/piece_picker.py` selects the rarest missing piece and, in the endgame, duplicates the last few blocks. The engine speaks the peer wire protocol and HTTP/UDP trackers, and the daemon serves HTTP range requests while pieces arrive.
 - **Inference pull requests:** The software engineering resume's second open-source bullet now says these pull requests were merged, matching the requested wording: vLLM TPU Inference (KV-cache connector), Dynamo (VRAM-aware pytest workers), ONNX Runtime (CUDA CMake), and vLLM Production Stack (Kubernetes probe). A GitHub check on October 20, 2026 still showed #3471, #3474, #3475, #3604, #14311, #32448, and #1058 open, with no commits by EltonChang1 in those repositories.
+
+
+## Software engineering revision - October 28, 2026
+
+The user removed Ashe System from Experience and added Squid to Projects.
+Keep AMOS and both Wintec internships, with Assay, Squid, Torflix, and Zoe as
+projects. The user selected **Assay | Sandboxed Analytics and Atomic Release
+Control** after requesting subtitle options without the word SQL. This
+supersedes the earlier SWE selection/subtitle; other resume variants keep their
+own choices. Retain one page, 11-point Times, two Technical Skills lines, and
+all co-development, prototype, synthetic-task, and validation limits. Squid's
+source evidence and claim limits are recorded in
+[technical_project_selection.md](technical_project_selection.md).
