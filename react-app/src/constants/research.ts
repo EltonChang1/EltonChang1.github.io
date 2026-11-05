@@ -1,5 +1,5 @@
-/** Research index: the AMOS paper, Tactile World, and Assay. */
 export const RESEARCH_PAGE_PATH = "/research";
+export const COT_MONITORING_PAGE_PATH = "/research/cot-monitoring-interpretability";
 
 /** Assay technical report: systems validation plus the prospective study protocol. */
 export const ASSAY_REPORT_URL =

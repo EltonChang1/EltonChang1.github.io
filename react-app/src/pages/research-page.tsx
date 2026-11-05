@@ -16,12 +16,12 @@ export function ResearchPage() {
     <div className="min-h-full bg-background">
       <InnerPageHero
         title="Research"
-        subtitle="A paper on governed memory for analysis agents, a proposal for texture-conditioned contact dynamics, and a technical report on evidence checks for an AI data analyst."
+        subtitle="Questions, implemented methods, measured results, and the limits of the current evidence."
         className="pb-10 md:pb-12 lg:pb-14"
       />
 
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 md:py-16">
-        <h2 className="sr-only">Three research efforts</h2>
+        <h2 className="sr-only">Research projects</h2>
         <ol className="space-y-6">
           {RESEARCH_ENTRIES.map((entry, index) => (
             <li key={entry.id}>

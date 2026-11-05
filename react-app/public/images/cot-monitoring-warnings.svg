@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="604.8pt" height="259.2pt" viewBox="0 0 604.8 259.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>Warnings on the main generated test</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Warnings on the main generated test</dc:title>
+    <dc:description>At frozen thresholds, task and rules alone flagged 4 of 35 violations and 69 of 281 allowed proposals. With reasoning the monitor flagged 0 of 35 violations and 4 of 281 allowed proposals.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 259.2
+L 604.8 259.2
+L 604.8 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 184.464 215.136
+L 553.392 215.136
+L 553.392 64.8
+L 184.464 64.8
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 184.464 215.136
+L 184.464 64.8
+" clip-path="url(#p3d0ddb0447)" style="fill: none; stroke: #dce3eb; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle" x="184.464" y="230.494281" transform="rotate(-0 184.464 230.494281)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 307.44 215.136
+L 307.44 64.8
+" clip-path="url(#p3d0ddb0447)" style="fill: none; stroke: #dce3eb; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle" x="307.44" y="230.494281" transform="rotate(-0 307.44 230.494281)">10%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 430.416 215.136
+L 430.416 64.8
+" clip-path="url(#p3d0ddb0447)" style="fill: none; stroke: #dce3eb; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle" x="430.416" y="230.494281" transform="rotate(-0 430.416 230.494281)">20%</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 553.392 215.136
+L 553.392 64.8
+" clip-path="url(#p3d0ddb0447)" style="fill: none; stroke: #dce3eb; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle" x="553.392" y="230.494281" transform="rotate(-0 553.392 230.494281)">30%</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle" x="368.928" y="245.140219" transform="rotate(-0 368.928 245.140219)">Share of proposals flagged in each group</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end" x="177.464" y="109.658294" transform="rotate(-0 177.464 109.658294)">Task and rules</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end" x="177.464" y="130.882199" transform="rotate(-0 177.464 130.882199)">+ model reasoning</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11"/>
+     <g id="text_8">
+      <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end" x="177.464" y="176.867329" transform="rotate(-0 177.464 176.867329)">Task and rules</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12"/>
+     <g id="text_9">
+      <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end" x="177.464" y="198.091235" transform="rotate(-0 177.464 198.091235)">+ model reasoning</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 184.464 110.608264
+L 325.008 110.608264
+L 325.008 100.350042
+L 184.464 100.350042
+z
+" clip-path="url(#p3d0ddb0447)" style="fill: #527090"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 184.464 131.832169
+L 184.464 131.832169
+L 184.464 121.573948
+L 184.464 121.573948
+z
+" clip-path="url(#p3d0ddb0447)" style="fill: #087e83"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 184.464 177.817299
+L 486.433537 177.817299
+L 486.433537 167.559078
+L 184.464 167.559078
+z
+" clip-path="url(#p3d0ddb0447)" style="fill: #527090"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 184.464 199.041205
+L 201.96948 199.041205
+L 201.96948 188.782984
+L 184.464 188.782984
+z
+" clip-path="url(#p3d0ddb0447)" style="fill: #087e83"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 184.464 126.703059
+" style="fill: none; stroke: #087e83; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="mb9ddb4856c" d="M 0 2.5
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767
+C 2.236584 1.29895 2.5 0.663008 2.5 0
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767
+C -1.29895 2.236584 -0.663008 2.5 0 2.5
+z
+" style="stroke: #087e83"/>
+    </defs>
+    <g>
+     <use xlink:href="#mb9ddb4856c" x="184.464" y="126.703059" style="fill: #087e83; stroke: #087e83"/>
+    </g>
+   </g>
+   <g id="text_10">
+    <text style="fill: #142433; font: 700 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start" x="36.8928" y="85.670174" transform="rotate(-0 36.8928 85.670174)">Confirmed violations</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #142433; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start" x="332.38656" y="108.514465" transform="rotate(-0 332.38656 108.514465)">11.4%  (4/35)</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #142433; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start" x="191.84256" y="129.738371" transform="rotate(-0 191.84256 129.738371)">0.0%  (0/35)</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #142433; font: 700 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start" x="36.8928" y="152.879209" transform="rotate(-0 36.8928 152.879209)">Allowed proposals</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #142433; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start" x="493.812097" y="175.723501" transform="rotate(-0 493.812097 175.723501)">24.6%  (69/281)</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #142433; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start" x="209.34804" y="196.947407" transform="rotate(-0 209.34804 196.947407)">1.4%  (4/281)</text>
+   </g>
+  </g>
+  <g id="text_16">
+   <text style="fill: #142433; font: 700 17px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start" x="27.216" y="20.736" transform="rotate(-0 27.216 20.736)">Warnings on the main generated test</text>
+  </g>
+  <g id="text_17">
+   <text style="fill: #495b6d; font: 11px 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start" x="27.216" y="42.768" transform="rotate(-0 27.216 42.768)">Study 3 · Same 316 labeled cases · Thresholds set before testing</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3d0ddb0447">
+   <rect x="184.464" y="64.8" width="368.928" height="150.336"/>
+  </clipPath>
+ </defs>
+</svg>

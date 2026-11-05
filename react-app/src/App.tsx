@@ -2,10 +2,12 @@ import { Route, Routes } from "react-router-dom";
 
 import { SiteLayout } from "@/components/site-layout";
 import {
+  COT_MONITORING_PAGE_PATH,
   RESEARCH_PAGE_PATH,
   RESEARCH_PROPOSAL_PAGE_PATH,
 } from "@/constants/research";
 import { RESUME_PAGE_PATH } from "@/constants/resume";
+import { CotMonitoringPage } from "@/pages/cot-monitoring-page";
 import { HomePage } from "@/pages/home-page";
 import { OpenSourcePage } from "@/pages/open-source-page";
 import { ProjectsPage } from "@/pages/projects-page";
@@ -21,6 +23,7 @@ export default function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/open-source" element={<OpenSourcePage />} />
         <Route path={RESEARCH_PAGE_PATH} element={<ResearchPage />} />
+        <Route path={COT_MONITORING_PAGE_PATH} element={<CotMonitoringPage />} />
         <Route path={RESEARCH_PROPOSAL_PAGE_PATH} element={<ResearchProposalPage />} />
         <Route path={RESUME_PAGE_PATH} element={<ResumePage />} />
         <Route path={`${RESUME_PAGE_PATH}/:resumeSlug`} element={<ResumeDetailPage />} />

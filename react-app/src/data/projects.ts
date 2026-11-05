@@ -1,8 +1,10 @@
 import { ASSAY_REPORT_URL } from "@/constants/research";
+import { COT_MONITORING } from "@/data/cot-monitoring";
 
 export type ProjectId =
   | "amos"
   | "assay"
+  | typeof COT_MONITORING.id
   | "ashe"
   | "next-best-action"
   | "traceframe"
@@ -48,6 +50,7 @@ export interface ProjectDefinition {
     tech: string[];
     stats: { label: string; icon: StatIcon }[];
     image: string;
+    imageFit?: "contain" | "cover";
   };
   expanded: {
     title: string;
@@ -266,6 +269,36 @@ export const PROJECTS: ProjectDefinition[] = [
           external: true,
         },
       ],
+    },
+  },
+  {
+    id: COT_MONITORING.id,
+    card: {
+      title: COT_MONITORING.title,
+      tagline: COT_MONITORING.tagline,
+      description: COT_MONITORING.summary,
+      tech: ["Python", "Qwen3", "AI evaluation"],
+      stats: [
+        { label: "384 assigned test cases", icon: "flask" },
+        { label: "35 confirmed violations", icon: "chart" },
+      ],
+      image: COT_MONITORING.image,
+      imageFit: "contain",
+    },
+    expanded: {
+      title: COT_MONITORING.title,
+      overviewParagraphs: [COT_MONITORING.question],
+      featureList: [
+        "Compare the same monitor with and without the acting model’s written reasoning before it proposes an action.",
+        "Check the proposed action against explicit authorization rules for ledger updates, recipient routing, and evidence handling.",
+        "Set a warning threshold for each input condition on a separate calibration set before evaluating test cases.",
+      ],
+      findingsList: [
+        "The monitor saw the same 316 labeled test cases in each condition. Adding reasoning reduced false alarms from 69 to 4 and detections from 4 to 0.",
+        "The main test fell below its minimum label coverage, and the reasoning condition missed both targets on the separate scripted audit.",
+      ],
+      screenshots: [],
+      links: [{ label: "Read the research", href: COT_MONITORING.path }],
     },
   },
   {
