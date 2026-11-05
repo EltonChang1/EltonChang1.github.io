@@ -9,6 +9,7 @@ import { DottedSurface } from "@/components/ui/dotted-surface";
 import { RESEARCH_PAGE_PATH } from "@/constants/research";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { SITE_EMAIL } from "@/constants/social";
+import { COT_MONITORING } from "@/data/cot-monitoring";
 import { cn } from "@/lib/utils";
 
 const transitionVariants = {
@@ -132,6 +133,14 @@ export function HeroSection() {
                     </Link>
                   </Button>
                 </AnimatedGroup>
+
+                <Link
+                  to={COT_MONITORING.path}
+                  className="mx-auto mt-6 inline-flex max-w-full items-center gap-2 rounded-sm text-sm font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  Latest research · {COT_MONITORING.title}
+                  <ArrowRight aria-hidden="true" className="size-4 shrink-0" />
+                </Link>
               </div>
             </div>
           </div>

@@ -23,6 +23,7 @@ import { IconGithub, IconLinkedin } from "@/components/brand-icons";
 import { SITE_TITLE } from "@/constants/brand";
 import { RESUME_PAGE_PATH, RESUME_PDF_URL } from "@/constants/resume";
 import { LINKEDIN_URL, SITE_EMAIL } from "@/constants/social";
+import { cn } from "@/lib/utils";
 import { ArrowRight, FileDown, GitPullRequest, Mail } from "lucide-react";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
@@ -217,7 +218,10 @@ export function HomePage() {
                     <img
                       src={project.card.image}
                       alt={`Preview for ${project.card.title}`}
-                      className="h-full w-full object-cover object-top"
+                      className={cn(
+                        "h-full w-full",
+                        project.card.imageFit === "contain" ? "object-contain" : "object-cover object-top",
+                      )}
                       loading="lazy"
                     />
                   </div>
